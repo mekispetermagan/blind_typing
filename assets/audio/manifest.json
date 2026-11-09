@@ -1,0 +1,170 @@
+{
+  "01_sentence": {
+    "text": "Anna almát tett ide",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f1e751d214ec06286b36ceb184716ad29566e4cae6dcf07ca3538a9b13131801"
+  },
+  "01_word_0": {
+    "text": "Anna",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f0748fedf204523aab7662f8762a81f6a81a138afd95396ac7c6a4a827c6289f"
+  },
+  "01_word_1": {
+    "text": "almát",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "eb9b56f5ce1fd32ce55f35d8673c938d36948e940b37c3f237dbf7950b0df540"
+  },
+  "01_word_2": {
+    "text": "tett",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "8f0f3d0016b3318dbc4657b146184ae405d10efe14cd4886d7fdda68a5617998"
+  },
+  "01_word_3": {
+    "text": "ide",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "26a3d19e8471dd7316527e3b506edbd2eeb8cd8bb2260ebf208833a6bbb4f774"
+  },
+  "02_sentence": {
+    "text": "Ősszel sűrű köd száll",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e5174b9b563689b0cc727acc902244eaa68d90a23047132d410f4fb0a75ef4ce"
+  },
+  "02_word_0": {
+    "text": "Ősszel",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "dafd5a624be27cf50c15248516252d207ce6d399ab2b602aa5a0a416088dce8a"
+  },
+  "02_word_1": {
+    "text": "sűrű",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4b084a91fb43bb42875cd1ce1bf58f300f9e17aae86ae936f9f39597f22ad415"
+  },
+  "02_word_2": {
+    "text": "köd",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "239424b1d36bf49497f1dcba1486c551e3d59efeba2e21d3f417dee40babc8fb"
+  },
+  "02_word_3": {
+    "text": "száll",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bf04e01b4422ac04b3684754ae9264b8519e33b974cee1e2355a82397c27d83b"
+  },
+  "03_sentence": {
+    "text": "A fiú hűs vizet kér",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a21e0e244705206c63d040b3e423ac559ad8f32f1a2eed85c6caef2915190adb"
+  },
+  "03_word_0": {
+    "text": "A",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "67d6c71271c807f95abd47796bc481263fa7b4c65c5f63e2c7b36ef91a99252a"
+  },
+  "03_word_1": {
+    "text": "fiú",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a3326587f67812a7b00fb0fb4ad5ecadf1c10d9d7db74497b2ba60ee96045955"
+  },
+  "03_word_2": {
+    "text": "hűs",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9eb660113d12457ac63053e7a2eb616617398000e50f7537319db3f192e9a8a5"
+  },
+  "03_word_3": {
+    "text": "vizet",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b571a36d91e0f2735d3633e86b216a6c9e7e3a5a7f8bd72c931f8df20c06cb89"
+  },
+  "03_word_4": {
+    "text": "kér",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2ffcf7d96ea8332e3470d04a42f3b1abeae4e6d9345c4c23becaf6accba31fd2"
+  },
+  "04_sentence": {
+    "text": "Gyönyörű pillangó ül kint",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "764e22b34f1f8362a149eb2b20553b8f33388fa23b42d859befe98806e24b91a"
+  },
+  "04_word_0": {
+    "text": "Gyönyörű",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6cf0a6849d5e168550426023fc6a8a114a99150bd5790978b48d92eee65647c8"
+  },
+  "04_word_1": {
+    "text": "pillangó",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ee1a8160fa888af2de417654ed17c57e6d1194d10619681bebd61a5601a3ad01"
+  },
+  "04_word_2": {
+    "text": "ül",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "157a73c3b5e30706707169caab5c48f7d5cdc419fedbfd1615a61bffc1c7162d"
+  },
+  "04_word_3": {
+    "text": "kint",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "54908a129e25bd4a6bdedf9d1aa95fb2dea2cae2b6acdfdd53d7b6d10a348e8b"
+  },
+  "05_sentence": {
+    "text": "Ízletes meggyet szedünk ma",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7cb8686bd3285e94a2b2b0bd31985838b91ad412f75668a6693dfa047f1e52c7"
+  },
+  "05_word_0": {
+    "text": "Ízletes",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b182aefd623f5cd9d543c56080656dbb74efa136eda4ea8351831f437a719f40"
+  },
+  "05_word_1": {
+    "text": "meggyet",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0d4dd00f7e74c75fd111876ccee9385eedbad160fcd641524b108767f0946d3a"
+  },
+  "05_word_2": {
+    "text": "szedünk",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2bc7d8866a624cbff4cc8c747913e550752e3470ea759f59dee7a5784a1abc0b"
+  },
+  "05_word_3": {
+    "text": "ma",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5dd5b15deb046057f79698ec298d906d749c291f5dd966f07ed2430078a2cd9e"
+  },
+  "count_3": {
+    "text": "három",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7d217a5c0449bc122079846b82aac7e0b52c15dd9fe8c83fa9edb62d7042af5f"
+  },
+  "count_2": {
+    "text": "kettő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0133195ff8a96d67ef201ef32b7bda3dcc7208d1edb6d3cffce7991933806baf"
+  },
+  "count_1": {
+    "text": "egy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6a31499a547687258a037659ad019344ae3e8b8ebff88c15bf58a039daf5d782"
+  },
+  "welcome": {
+    "text": "A kezdéshez nyomd meg az Enter billentyűt. Gépeld a hallott szót. A szóköz nem szükséges. Az F egy megismétli a szót. Az Escape szüneteltet. Az F négy kilép.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "90aab326578419339e7b8f8732cd132decd621bfd7a0d281fa6ac5f2670aecc8"
+  },
+  "paused": {
+    "text": "Szünet. A folytatáshoz nyomd meg az Escape billentyűt.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c5d590efeb8ffa24ec666258ffa0982569d068757fe5f2135e22da802706c49b"
+  },
+  "complete": {
+    "text": "Ügyes vagy! Kész az öt mondat. Az Enter újrakezdi a gyakorlást.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "88682f805fa46bb6d29bef33608fb9a38e29a57ab8a444365581ccacf335724d"
+  },
+  "good": {
+    "source": "Original synthesized tone",
+    "duration_ms": 28
+  },
+  "bad": {
+    "source": "Original synthesized tone",
+    "duration_ms": 28
+  }
+}
