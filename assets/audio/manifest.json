@@ -1,4 +1,154 @@
 {
+  "menu_main": {
+    "text": "Főmenü",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fbeaca1a127a6d1626e9183ea24a386d61f424690838a0497bebd3980e64bba9"
+  },
+  "menu_lessons": {
+    "text": "Leckék",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "63908b0ac5af8a2591d232ede447b673dca0f449bb806134e0272fd17efd4bd9"
+  },
+  "menu_home_row": {
+    "text": "aa, es, dé, ef, jé, ká, el, é",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5d068797edfb82427c3fbc87cd4d1ec40f62d9723be4f2e9cd8b4e3fb0037305"
+  },
+  "menu_home_row_letters": {
+    "text": "betűk",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "69544afa9e0488d962958be6717dce46eb5d1ea26851531a6ba0f13500ea7172"
+  },
+  "menu_home_row_words": {
+    "text": "gyakorlatok",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5edcdfa4bc3b2a3bfba2e836e19f6401bb55f6315e4773df3168f2489ab7aa6f"
+  },
+  "menu_practice": {
+    "text": "Gyakorlás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a78b33200361d2763d36dd859e3aecf502b81d46db384d061d9eb17a98dced8f"
+  },
+  "menu_easy": {
+    "text": "könnyű",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a2833f77d1e5f1388686b64373e0e01e643808daf94ca15293331649283be322"
+  },
+  "menu_sample_practice": {
+    "text": "Mintagyakorlás – öt mondat",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "31879a71a851887e595f98bef09b6bbbd9fb872463a12d4d2fdb4c9b0f1a7155"
+  },
+  "menu_pause_menu": {
+    "text": "Szünet",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "671448fbb4f9a660e140826f4e7ece6cacfc4f53f7f17fd9c5ea7183d2aefe2b"
+  },
+  "menu_resume": {
+    "text": "Folytatás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1d02567d7910d208e3853579a57f80c6580a504ecaa2f745506a9dcf6ab2b2b5"
+  },
+  "menu_pause_restart": {
+    "text": "Újrakezdés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "99a797ddf9043bfcd64184658b6a8afc0cd1cee6978c216bae5dc47c88dbac66"
+  },
+  "menu_pause_back": {
+    "text": "Vissza a menübe",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ba47d63abdde941697e300ad770bebca47ab81c5113649e3ef5709dda53590b2"
+  },
+  "menu_complete_menu": {
+    "text": "Kész a feladat",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9ed2790d3e6fe0aac1351a9410dc97c84c093cd21dbabb23dc60230ffcaabf46"
+  },
+  "menu_complete_restart": {
+    "text": "Újrakezdés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "99a797ddf9043bfcd64184658b6a8afc0cd1cee6978c216bae5dc47c88dbac66"
+  },
+  "menu_complete_back": {
+    "text": "Vissza a menübe",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5498050f6df7877080f34ecdf4d79a67b621d5c2d1d1e84249acc5bb4c248a59"
+  },
+  "step_home_row_f_instruction": {
+    "text": "Helyezd a bal kezed mutatóujját a megjelölt F billentyűre a billentyűzet közepétől kicsit balra, és nyomd le.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "14c3f3b4a418f7357fe49a639bdaa9a9df65338153c4a9fe602b203da9649fd5"
+  },
+  "step_home_row_f_retry": {
+    "text": "Próbáld megtalálni a megjelölt F billentyűt.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a5eaf1810a906044f66c9f62e72928fc8ed904b1d59818e6770e9a4c659f684c"
+  },
+  "step_home_row_f_success": {
+    "text": "Igen, ez az F. Nyomd le még egyszer.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "adabec0d993fdcd53c90357ab7a2f65da550087d82d8eb5645b000f9a53571ed"
+  },
+  "step_home_row_f_complete": {
+    "text": "Nagyszerű. Továbblépünk.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9a11d43eec47c291e0023b691f267ed793ac23b4e93aa19d571ddd210c74f134"
+  },
+  "home_row_drill_06_word_0": {
+    "text": "sas",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "190135e7e81d42270337ac5bb469d893ed10428511544e41c541e81a063a7815"
+  },
+  "home_row_drill_07_word_0": {
+    "text": "fél",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9b77afe0a02148e584301b6659a60c7201e1051a1edbe21d908203c80b29d1a1"
+  },
+  "home_row_drill_10_word_0": {
+    "text": "kaka",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a827fa5c51f7ed97c21fc6bfc0b4edf704fc6f28102f303ce4791931f3ab57fc"
+  },
+  "home_row_drill_11_word_0": {
+    "text": "sakk",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9ca7b90098036355cad8b38c411633e7a7d4820e6e09d45a7672846e6e2d95d2"
+  },
+  "home_row_drill_12_word_0": {
+    "text": "éjfél",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7fdeaaa2644ae5c950f819a7a0a9f0c398a5d471e6800f2898e6dbd93d7419ed"
+  },
+  "home_row_drill_13_word_0": {
+    "text": "sédéfé",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7f20b4afd53878b596dd24a7c80e31047abdff008747f59037302035bdc19c73"
+  },
+  "home_row_drill_14_word_0": {
+    "text": "séladé",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "54d59ee4c0fbd41d546538a179f26d4fe77ad3cdee55d762e503ed1e0406ef59"
+  },
+  "home_row_drill_15_word_0": {
+    "text": "jakalas",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "36828bc5baf1944a826ee13433306e5132b70aa030bd316be06f140fbe9a1e50"
+  },
+  "home_row_drill_16_word_0": {
+    "text": "félajék",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ee5c777b3ac98f760dca0f669d54392f4d2d8eec68441477d35ca280df4d1703"
+  },
+  "home_row_drill_23_word_0": {
+    "text": "sékafjél",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c8b865c03ef3cfdd79453d8283762930068514f93dae6fdf4663d411f291c3a6"
+  },
+  "home_row_drill_24_word_0": {
+    "text": "féjakéda",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3272c449ad0574f585ef8a652160d7fbf4411125f26d1bef8fe1c46c2fe2e0e1"
+  },
   "01_sentence": {
     "text": "Anna almát tett ide",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
@@ -320,9 +470,9 @@
     "sha256": "34fc3ba92c3c126e6d09728ebbb84ddd973f7409376f62b62c2ce33ecc3dad24"
   },
   "welcome": {
-    "text": "A kezdéshez nyomd meg az Enter billentyűt. Gépeld a hallott szót. A szóköz nem szükséges. Az F egy megismétli a szót. Az F kettő felolvassa a már beírt betűket. Ezt bármelyik billentyű megnyomása megszakítja. Az F három vált az egyszerű és a haladó mód között. Haladó módban a hibás betűket a Backspace billentyűvel törölheted. Az Escape szüneteltet. Az F négy kilép.",
+    "text": "A kezdéshez nyomd meg az Enter billentyűt. Gépeld a hallott szót. A szóköz nem szükséges. Az F egy megismétli a szót. Az F kettő felolvassa a már beírt betűket. Ezt bármelyik billentyű megnyomása megszakítja. Az F három vált az egyszerű és a haladó mód között. Haladó módban a hibás betűket a Backspace billentyűvel törölheted. Az Escape szüneteltet. Az F négy kilép. A szünet menüben visszatérhetsz a feladatválasztáshoz.",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "78ca96d1c816feaf4ed7e668af040c4e3420af6c106f97e50353a290df12ec6a"
+    "sha256": "492e97ef42b7c0a7268157f976c747436e059b60763d616705850d0c521b49bf"
   },
   "paused": {
     "text": "Szünet. A folytatáshoz nyomd meg az Escape billentyűt.",
@@ -330,9 +480,34 @@
     "sha256": "c5d590efeb8ffa24ec666258ffa0982569d068757fe5f2135e22da802706c49b"
   },
   "complete": {
-    "text": "Ügyes vagy! Kész az öt mondat. Az Enter újrakezdi a gyakorlást.",
+    "text": "Ügyes vagy! Kész a feladat. Az Enter újrakezdi. A lefelé nyíllal választhatod a visszatérést a menübe, majd nyomd meg az Entert.",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "88682f805fa46bb6d29bef33608fb9a38e29a57ab8a444365581ccacf335724d"
+    "sha256": "9bf04d0be7eeb47ecb43688c88d7ca8f2467b3f965acea2137dc46e6f15f4b81"
+  },
+  "menu_welcome": {
+    "text": "Üdvözöllek! A fel és le nyíllal választhatsz. Az Enter megnyitja a kijelölt elemet. Az Escape visszalép. Az F egy megismétli a kijelölt elemet. Az F három módot vált. Az F négy kilép.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d4573367ccb62643d2195a8b0a96713d7f3067c75085ea40dbc04248962be213"
+  },
+  "teaching_welcome": {
+    "text": "Az Enter indítja a betűk tanulását. Kövesd a hallott útmutatót. Az F egy megismétli az útmutatót. Az Escape megnyitja a szünet menüt.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a593e106aa65afbea55a3ca35ac68b0a3a9349a0f8d31f298c03c2306e703321"
+  },
+  "wrong_key_prefix": {
+    "text": "Ez egy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4d0fed33d1fb8bcc31177ce516ee7f0cc73086b55ec598894fe4d690c327b500"
+  },
+  "wrong_key_suffix": {
+    "text": "volt.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0f4043913ae8bd5df78b048864590545349fa5695ba37c7e17dfbae7c0ade60b"
+  },
+  "content_error": {
+    "text": "A feladat nem tölthető be. Az Enter újrapróbálja. Az Escape visszalép.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6f9b143990d22f8b05139e9c4ae4a83ccd2f439ae1861f0fd8b31c8686099545"
   },
   "mode_simple": {
     "text": "Egyszerű mód.",

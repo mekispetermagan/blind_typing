@@ -1,9 +1,14 @@
 import 'package:blind_typing/controllers/typing_controller.dart';
-import 'package:blind_typing/models/sentence.dart';
+import 'package:blind_typing/models/typing_unit.dart';
+
+import 'support/content_fixtures.dart';
+
 import 'package:blind_typing/services/audio_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/fake_audio_service.dart';
+
+import 'package:blind_typing/services/speech_coordinator.dart';
 
 Future<void> settle() => Future<void>.delayed(Duration.zero);
 
@@ -14,8 +19,8 @@ void main() {
   setUp(() {
     audio = FakeAudioService();
     controller = TypingController(
-      sentences: sampleSentences,
-      audio: audio,
+      exercise: sampleExercise,
+      speech: SpeechCoordinator(audio),
       countdownInterval: Duration.zero,
     );
   });
@@ -24,7 +29,10 @@ void main() {
   test('reads sentence, counts down, then speaks first word', () async {
     await controller.initialize();
     expect(controller.phase, ExercisePhase.ready);
-    expect(audio.loaded, containsAll(sampleSentences.first.audioAssets));
+    expect(
+      audio.loaded,
+      containsAll(sampleSentences.first.audioAssets(readSentence: true)),
+    );
     controller.start();
     controller.typeCharacter('a');
     expect(audio.feedbackResults, isEmpty);
@@ -230,6 +238,7 @@ void main() {
     await settle();
     audio.failSpeech = true;
     controller.repeatWord();
+    await settle();
     expect(controller.phase, ExercisePhase.error);
     audio.failSpeech = false;
     controller.start();
@@ -242,8 +251,10 @@ void main() {
       controller.dispose();
       audio = FakeAudioService();
       controller = TypingController(
-        sentences: [Sentence(id: 'spelling', text: 'Pillangó árvíztűrő')],
-        audio: audio,
+        exercise: practiceExercise([
+          TypingUnit(id: 'spelling', text: 'Pillangó árvíztűrő'),
+        ]),
+        speech: SpeechCoordinator(audio),
         countdownInterval: Duration.zero,
       );
     });
@@ -384,7 +395,7 @@ void main() {
         await tester.pump(const Duration(seconds: 1));
         expect(audio.spoken, spoken);
         expect(audio.spoken.last, switch (action) {
-          'pause' => AudioCues.paused,
+          'pause' => AudioCues.letter('p'),
           'complete word' => controller.sentence.wordAudioAsset(1),
           _ => controller.sentence.wordAudioAsset(0),
         });
@@ -406,8 +417,8 @@ void main() {
     ) async {
       final otherAudio = FakeAudioService();
       final other = TypingController(
-        sentences: sampleSentences,
-        audio: otherAudio,
+        exercise: sampleExercise,
+        speech: SpeechCoordinator(otherAudio),
         countdownInterval: Duration.zero,
       );
       await other.initialize();
@@ -419,7 +430,7 @@ void main() {
       other.spellEnteredLetters();
       other.dispose();
       await tester.pump(const Duration(seconds: 1));
-      expect(otherAudio.disposed, isTrue);
+      expect(otherAudio.disposed, isFalse);
       expect(otherAudio.spoken.where((asset) => asset.contains('letter_')), [
         AudioCues.letter('a'),
       ]);
@@ -431,8 +442,8 @@ void main() {
     () async {
       final otherAudio = FakeAudioService();
       final other = TypingController(
-        sentences: sampleSentences,
-        audio: otherAudio,
+        exercise: sampleExercise,
+        speech: SpeechCoordinator(otherAudio),
         countdownInterval: Duration.zero,
       );
       await other.initialize();
@@ -440,7 +451,7 @@ void main() {
       other.start();
       other.dispose();
       await settle();
-      expect(otherAudio.disposed, isTrue);
+      expect(otherAudio.disposed, isFalse);
       expect(
         otherAudio.spoken.where((asset) => asset.contains('count_')),
         isEmpty,

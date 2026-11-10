@@ -24,14 +24,33 @@ RATE = 48000
 
 
 def speech_texts():
-    model = (ROOT / "lib" / "models" / "sentence.dart").read_text()
-    sentences = re.findall(r"Sentence\(id: '([^']+)', text: '([^']+)'\)", model)
-    if len(sentences) != 5:
-        raise ValueError("Expected five sample sentences in the sentence model")
-    for sentence_id, text in sentences:
-        yield f"{sentence_id}_sentence", text
-        for index, word in enumerate(text.split()):
-            yield f"{sentence_id}_word_{index}", word
+    catalog = json.loads((ROOT / "data" / "menu.json").read_text())
+    references = {}
+    def walk(node):
+        yield f"menu_{node['id']}", node.get("speech", node["title"])
+        if "activity" in node:
+            reference = node["activity"]
+            references[reference["content"]] = reference["type"]
+        for child in node.get("children", []):
+            yield from walk(child)
+    for menu in catalog.values():
+        yield from walk(menu)
+    for asset, activity_type in references.items():
+        content = json.loads((ROOT / asset).read_text())
+        if content["type"] != activity_type:
+            raise ValueError(f"Activity type mismatch: {asset}")
+        if activity_type == "letters":
+            for step in content["steps"]:
+                for cue in ["instruction", "retry", "success", "complete"]:
+                    yield f"step_{step['id']}_{cue}", step[cue]
+        else:
+            for unit in content["units"]:
+                if activity_type == "practice":
+                    yield f"{unit['id']}_sentence", unit["text"]
+                words = re.findall(r"[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+", unit["text"])
+                if unit.get("promptStyle", "word") == "word":
+                    for index, word in enumerate(words):
+                        yield f"{unit['id']}_word_{index}", word.lower() if activity_type == "words" else word
     yield "count_3", "három"
     yield "count_2", "kettő"
     yield "count_1", "egy"
@@ -52,10 +71,25 @@ def speech_texts():
         "Az F három vált az egyszerű és a haladó mód között. "
         "Haladó módban a hibás betűket a Backspace billentyűvel törölheted. "
         "Az Escape szüneteltet. "
-        "Az F négy kilép."
+        "Az F négy kilép. A szünet menüben visszatérhetsz a feladatválasztáshoz."
     )
     yield "paused", "Szünet. A folytatáshoz nyomd meg az Escape billentyűt."
-    yield "complete", "Ügyes vagy! Kész az öt mondat. Az Enter újrakezdi a gyakorlást."
+    yield "complete", (
+        "Ügyes vagy! Kész a feladat. Az Enter újrakezdi. "
+        "A lefelé nyíllal választhatod a visszatérést a menübe, majd nyomd meg az Entert."
+    )
+    yield "menu_welcome", (
+        "Üdvözöllek! A fel és le nyíllal választhatsz. Az Enter megnyitja a kijelölt elemet. "
+        "Az Escape visszalép. Az F egy megismétli a kijelölt elemet. "
+        "Az F három módot vált. Az F négy kilép."
+    )
+    yield "teaching_welcome", (
+        "Az Enter indítja a betűk tanulását. Kövesd a hallott útmutatót. "
+        "Az F egy megismétli az útmutatót. Az Escape megnyitja a szünet menüt."
+    )
+    yield "wrong_key_prefix", "Ez egy"
+    yield "wrong_key_suffix", "volt."
+    yield "content_error", "A feladat nem tölthető be. Az Enter újrapróbálja. Az Escape visszalép."
     yield "mode_simple", "Egyszerű mód."
     yield "mode_advanced", "Haladó mód."
     yield "unknown_character", "Ismeretlen jel."

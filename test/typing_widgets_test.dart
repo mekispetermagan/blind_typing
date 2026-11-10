@@ -2,10 +2,12 @@ import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:blind_typing/controllers/typing_controller.dart';
-import 'package:blind_typing/models/sentence.dart';
+
+import 'support/content_fixtures.dart';
+
 import 'package:blind_typing/widgets/current_word.dart';
 import 'package:blind_typing/widgets/sentence_display.dart';
-import 'package:blind_typing/widgets/typing_screen.dart';
+import 'package:blind_typing/screens/typing_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';

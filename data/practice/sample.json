@@ -1,0 +1,27 @@
+{
+  "id": "sample_practice",
+  "type": "practice",
+  "title": "Mintagyakorlás – öt mondat",
+  "units": [
+    {
+      "id": "01",
+      "text": "Anna almát tett ide"
+    },
+    {
+      "id": "02",
+      "text": "Ősszel sűrű köd száll"
+    },
+    {
+      "id": "03",
+      "text": "A fiú hűs vizet kér"
+    },
+    {
+      "id": "04",
+      "text": "Gyönyörű pillangó ül kint"
+    },
+    {
+      "id": "05",
+      "text": "Ízletes meggyet szedünk ma"
+    }
+  ]
+}

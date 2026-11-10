@@ -1,0 +1,96 @@
+{
+  "root": {
+    "id": "main",
+    "title": "Főmenü",
+    "children": [
+      {
+        "id": "lessons",
+        "title": "LECKÉK",
+        "speech": "Leckék",
+        "children": [
+          {
+            "id": "home_row",
+            "title": "A, S, D, F, J, K, L, É",
+            "speech": "aa, es, dé, ef, jé, ká, el, é",
+            "children": [
+              {
+                "id": "home_row_letters",
+                "title": "betűk",
+                "activity": {
+                  "type": "letters",
+                  "content": "data/lessons/home_row_letters.json"
+                }
+              },
+              {
+                "id": "home_row_words",
+                "title": "gyakorlatok",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/home_row_words.json"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "GYAKORLÁS",
+        "speech": "Gyakorlás",
+        "children": [
+          {
+            "id": "easy",
+            "title": "könnyű",
+            "children": [
+              {
+                "id": "sample_practice",
+                "title": "Mintagyakorlás – öt mondat",
+                "activity": {
+                  "type": "practice",
+                  "content": "data/practice/sample.json"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "pause": {
+    "id": "pause_menu",
+    "title": "Szünet",
+    "children": [
+      {
+        "id": "resume",
+        "title": "Folytatás",
+        "command": "resume"
+      },
+      {
+        "id": "pause_restart",
+        "title": "Újrakezdés",
+        "command": "restart"
+      },
+      {
+        "id": "pause_back",
+        "title": "Vissza a menübe",
+        "command": "menu"
+      }
+    ]
+  },
+  "complete": {
+    "id": "complete_menu",
+    "title": "Kész a feladat",
+    "children": [
+      {
+        "id": "complete_restart",
+        "title": "Újrakezdés",
+        "command": "restart"
+      },
+      {
+        "id": "complete_back",
+        "title": "Vissza a menübe",
+        "command": "menu"
+      }
+    ]
+  }
+}

@@ -1,78 +1,120 @@
 # Gépírás
 
-Frontend-only Hungarian audio typing prototype. Linux first; Flutter web and
-Windows remain targets. No accounts, backend, session storage, or runtime TTS.
+Audio-first Hungarian touch-typing tutor. Linux first; Flutter web and Windows
+remain targets. Menus, lesson content, practice text, and Hungarian audio are
+bundled locally. No backend, accounts, runtime TTS, or saved progress.
 
 ## Run on Linux
 
-With Flutter and its Linux desktop build dependencies installed:
+With Flutter and its Linux desktop dependencies installed:
 
 ```sh
 flutter pub get
 flutter run -d linux
 ```
 
-The Linux window starts full-screen. Audio and a Hungarian-capable monospace
-font are bundled; running the app needs no internet connection.
+The window starts full-screen. Playback works offline after installation.
 
-## Interaction
+## Menus and activities
 
-- Enter starts; after all five sentences, Enter restarts.
-- Hear the full sentence, then three, two, one, then individual words.
-- Type letters in either case. Spaces are ignored. Accents must match.
-- Correct characters play a short good tone and advance. Wrong characters play
-  a short buzz.
-- F3 toggles Simple/Advanced and announces the mode in Hungarian. Simple is the
-  default on launch; the selected mode survives exercise restarts.
-- Simple ignores wrong characters; Backspace has no effect.
-- Advanced retains mistakes and all subsequent characters. Backspace deletes
-  the last entered character, including correct characters, within the current
-  word. Clear the incorrect suffix before continuing. Mistakes appear in red.
-- Switching to Simple discards the incorrect suffix and preserves the correct
-  prefix. Changing mode during sentence reading/countdown restarts those
-  instructions after the mode announcement.
-- Words advance on the last correct character, without requiring a space.
-- Each completed word plays `correct.mp3`; sentence completion follows it with
-  `fanfare.mp3`. Celebrations finish before the next spoken prompt. Typing stays
-  active between words, and advancing again or repeating interrupts the reward.
-- Type during word speech. Completing the word interrupts its speech and starts
-  the next word. Input during the sentence reading/countdown is ignored.
-- F1 repeats the current word without resetting progress.
-- F2 spells the entered characters of the current word, including mistakes in
-  Advanced mode, with 250 ms between
-  recordings. An empty prefix is silent. Any key-down (including modifiers and
-  held-key repeats) interrupts spelling before its normal action; key releases
-  have no effect. F2 restarts spelling without changing progress.
-  Symbols outside the bundled alphabet are spoken as “Ismeretlen jel”.
-- Escape pauses/resumes. Leaving the app pauses an active exercise as well.
-  Resuming a word repeats it; resuming interrupted instructions restarts the
-  sentence reading/countdown.
-- Close, Ctrl+W, or F4 exits on Linux.
+The application starts at the spoken main menu. Up/Down selects an item;
+Enter/Right opens it; Escape/Left returns to its parent. F1 repeats the selection.
+Rapid navigation interrupts previous speech instead of building a speech queue.
+Mouse selection is also available.
+
+The initial content is:
+
+- **LECKÉK → A, S, D, F, J, K, L, É → betűk:** guided discovery of F. Three
+  successful presses complete the activity; wrong keys are named and trigger
+  coaching without resetting the success count.
+- **LECKÉK → A, S, D, F, J, K, L, É → gyakorlatok:** 24 single-word targets,
+  from AJ to FÉJAKÉDA, restricted to the eight lesson letters. Geometric patterns
+  are prompted with the approved letter recordings; words and word-like targets
+  use word recordings.
+- **GYAKORLÁS → könnyű → Mintagyakorlás – öt mondat:** the original five sample
+  sentences, with sentence narration, three-two-one, and individual word prompts.
+
+Enter starts an opened activity. Escape pauses it and opens a spoken menu with
+Continue, Restart, and Return to Menu. Escape from that menu resumes. Completion
+opens a menu offering Restart and Return to Menu. Parent-menu selection is
+preserved when returning from an activity. Ctrl+W, F4, or Close exits.
+
+## Typing behavior
+
+- Case and spaces are ignored; Hungarian accents must match. Source text keeps
+  punctuation, while current typing targets contain letters only. Strict typing
+  of spaces and punctuation is deferred.
+- Correct characters play a short good tone. Wrong characters play a buzz.
+- F3 toggles Simple/Advanced and announces the mode. Simple is the launch default;
+  the selection survives activity changes and exercise restarts.
+- Simple ignores wrong characters; Backspace does nothing.
+- Advanced retains mistakes and subsequent characters. Backspace removes the
+  last entered character, including correct characters, within the current word.
+  The incorrect suffix is shown in red and must be deleted before continuing.
+- Switching to Simple discards that suffix and preserves the correct prefix.
+- Words advance on their last correct character. Completed words stay completed.
+  The word reward is `correct.mp3`; sentence completion also plays `fanfare.mp3`.
+- F1 repeats the word. F2 spells actual entered characters, including mistakes,
+  with 250 ms between recordings. Any key-down cancels F2 before its normal
+  action; releases have no effect. Symbols outside the alphabet use a spoken
+  “Ismeretlen jel” fallback.
+- Typing stays active during word prompts and rewards. Input during sentence
+  narration/countdown is ignored. Changing mode during these instructions
+  restarts them after the announcement.
+- Leaving the application pauses the activity. Resuming interrupted sentence
+  instructions restarts narration/countdown; accepted input is preserved.
+
+Letter teaching uses its own coaching flow independently of typing correction
+modes. F1 repeats its current instruction; F3 changes the selection for subsequent
+word/practice activities.
+
+## Content
+
+`data/menu.json` contains the main menu tree and pause/completion menus. Branches
+have `children`; activity leaves have a `type` and a content asset reference.
+The supported activity identifiers are `letters`, `words`, and `practice`.
+They select application execution flows; JSON contains no executable callbacks.
+Stable IDs determine audio filenames. Titles and optional `speech` text determine
+what appears on screen and is spoken. Only available content is listed.
+
+- `data/lessons/home_row_letters.json`: ordered teaching steps with a target key,
+  required success count, instruction, retry, success, and completion phrases.
+  Anchor/movement sequences can be expressed as multiple steps.
+- `data/lessons/home_row_words.json`: allowed letters and ordered targets.
+  A target's `promptStyle` is `word` or `letters`.
+- `data/practice/sample.json`: original text divided into sentence units.
+
+Typed models validate menu shape, IDs, nonempty activities, activity types, and
+permitted letters. Adding content of an existing type requires editing JSON,
+regenerating its speech, and rebuilding the app. No source-code menu edits are
+needed. New content directories must also be declared in `pubspec.yaml`.
 
 ## Structure
 
-- `lib/models`: immutable sentence content and audio references.
-- `lib/controllers`: progression and validation; its only Flutter import is
-  `foundation`. Depends on a plain Dart audio interface.
-- `lib/services`: audio interface and SoLoud implementation. Sounds are decoded
-  into memory before starting. Beeps trigger synchronously and are not queued
-  behind speech or previous keystrokes.
-- `lib/widgets`: stateless display and keyboard event capture, receiving data
-  and callbacks. The current word has fixed letter slots to prevent shifting.
-- `lib/main.dart`: ownership, lifecycle, theme, and listenable builder wiring.
+- `lib/main.dart`: initialization and dependency wiring.
+- `lib/app.dart`: application lifecycle bridge, theme, and top-level navigation.
+- `lib/controllers`: application flow and audio orchestration; controllers notify
+  the presentation layer and delegate mechanics to managers.
+- `lib/managers`: pure Dart typing and guided-teaching rules, state transitions,
+  correction, and progression. No Flutter or audio imports.
+- `lib/models`: immutable content and state snapshots.
+- `lib/screens`: stateless screens receiving data and callbacks.
+- `lib/widgets`: reusable display, keyboard mapping, and menu scrolling. The menu
+  list owns only its scroll position; navigation decisions stay in the controller.
+- `lib/services`: bundled-content access, audio playback, and interruptible speech.
+- `lib/utils`: pure text normalization.
 
-The current mode is displayed near the bottom of the screen.
+The application owns audio initialization/disposal. Leaving an activity cancels
+its speech and pending progression while keeping audio available to menus and
+other activities. Shared cues and menu recordings load at startup; activity
+recordings load on entry and remain cached.
 
 ## Audio assets
 
-Bundled speech was generated separately for each sentence, word, and spoken cue
-using gTTS in Hungarian with its default voice and normal speed. Generation
-requires internet; playback does not. gTTS has no explicit gender/quality setting.
-The original good tone is a 28 ms mono PCM WAV. The error buzz lasts 60 ms and
-combines 600, 1800, and 3000 Hz components. Both use short fades.
-The supplied word/sentence celebration sounds are preloaded MP3 assets.
-
-To regenerate (Python, ffmpeg, and the listed Python dependency are needed):
+Speech uses Hungarian gTTS with normal speed. Generation requires internet;
+playback does not. The approved alphabet uses `aa` for a, `emm` for m, and `err`
+for r; other vowels are single letters. The original good tone is 28 ms. The
+60 ms error buzz combines 600, 1800, and 3000 Hz, with short fades.
 
 ```sh
 python3 -m venv .venv
@@ -80,17 +122,13 @@ python3 -m venv .venv
 .venv/bin/python tool/generate_audio.py
 ```
 
-The script reads sentence content from the model. Existing recordings are reused
-when their text is unchanged; `--force` regenerates all speech. The audio manifest
-records the spoken text, provider, and speech checksums.
-Letter recordings use the reviewed Hungarian names: `aa` for a, `emm` for m,
-`err` for r, and single vowels for the other vowels.
-The bundled welcome explains F2, F3, and correction with Backspace in Advanced
-mode. Mode announcements are bundled as well.
+The generator reads the menu's referenced JSON content. Existing recordings are
+reused when spoken text is unchanged; `--force` regenerates speech. The manifest
+records text, provider, and speech checksums. Approved alphabet clips are reused.
 
-SoLoud uses a 256-frame buffer at 48 kHz (5.3 ms mixing quantum). This is not a
-guarantee of end-to-end latency; measure responsiveness on the intended audio
-device. The bundled DejaVu Sans Mono font license is in `assets/fonts/LICENSE.txt`.
+SoLoud uses a 256-frame buffer at 48 kHz (5.3 ms mixing quantum), which does not
+measure total device latency. The bundled font license is in
+`assets/fonts/LICENSE.txt`.
 
 ## Checks
 
@@ -98,16 +136,9 @@ device. The bundled DejaVu Sans Mono font license is in `assets/fonts/LICENSE.tx
 flutter analyze
 flutter test
 flutter build linux
-```
-
-With a Linux desktop and an audio output device available, the native integration
-check exercises the real audio engine and all five sentences:
-
-```sh
 flutter test integration_test/linux_prototype_test.dart -d linux
 ```
 
-The web audio initialization script is included for the later web build.
-Browsers require a user gesture to enable audio, and ordinary browser tabs cannot
-reliably be closed programmatically; web startup/exit behavior needs adapting
-when web becomes the active target.
+The native check needs a desktop/audio device and exercises spoken menus, F
+teaching, all 24 word drills, correction, and the five-sentence practice flow.
+The game managers are pure Dart and can be tested independently of screens.

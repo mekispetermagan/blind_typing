@@ -2,324 +2,251 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 
-import '../models/sentence.dart';
+import '../managers/typing_session_manager.dart';
+import '../models/exercise.dart';
+import '../models/typing_state.dart';
+import '../models/typing_unit.dart';
 import '../services/audio_service.dart';
+import '../services/speech_coordinator.dart';
 
-enum ExercisePhase {
-  loading,
-  ready,
-  reading,
-  countdown,
-  typing,
-  paused,
-  complete,
-  error,
-}
+export '../models/typing_state.dart';
 
-enum TypingMode { simple, advanced }
-
+/// Coordinates speech around pure Dart typing state transitions.
 class TypingController extends ChangeNotifier {
   TypingController({
-    required List<Sentence> sentences,
-    required this._audio,
+    required TypingExercise exercise,
+    required this._speech,
+    TypingMode mode = TypingMode.simple,
     this._countdownInterval = const Duration(seconds: 1),
-  }) : assert(sentences.isNotEmpty),
-       _sentences = List.unmodifiable(sentences);
+  }) : _manager = TypingSessionManager(exercise, mode: mode);
 
-  final List<Sentence> _sentences;
-  final AudioService _audio;
+  final TypingSessionManager _manager;
+  final SpeechCoordinator _speech;
   final Duration _countdownInterval;
-  ExercisePhase _phase = ExercisePhase.loading;
-  ExercisePhase? _pausedPhase;
-  int _sentenceIndex = 0;
-  int _wordIndex = 0;
-  int _letterIndex = 0;
-  final List<String> _enteredCharacters = [];
-  TypingMode _mode = TypingMode.simple;
-  int? _countdown;
-  int _generation = 0;
-  int? _spellingGeneration;
+  int? _spellingToken;
   bool _disposed = false;
 
-  Sentence get sentence => _sentences[_sentenceIndex];
-  int get sentenceIndex => _sentenceIndex;
-  int get sentenceCount => _sentences.length;
-  int get wordIndex => _wordIndex;
-  int get letterIndex => _letterIndex;
-  List<String> get enteredCharacters => List.unmodifiable(_enteredCharacters);
-  String get enteredText => _enteredCharacters.join();
-  TypingMode get mode => _mode;
-  int? get countdown => _countdown;
-  ExercisePhase get phase => _phase;
-  bool _isCurrent(int generation) => !_disposed && generation == _generation;
+  TypingState get state => _manager.state;
+  TypingExercise get exercise => _manager.exercise;
+  TypingUnit get sentence => _manager.unit;
+  int get sentenceIndex => state.sentenceIndex;
+  int get sentenceCount => exercise.units.length;
+  int get wordIndex => state.wordIndex;
+  int get letterIndex => state.letterIndex;
+  List<String> get enteredCharacters => state.enteredCharacters;
+  String get enteredText => enteredCharacters.join();
+  TypingMode get mode => state.mode;
+  int? get countdown => state.countdown;
+  ExercisePhase get phase => state.phase;
+  bool _current(int token) => !_disposed && _speech.isCurrent(token);
 
   Future<void> initialize() async {
-    final generation = ++_generation;
-    _phase = ExercisePhase.loading;
-    notifyListeners();
+    final token = _speech.begin();
     try {
-      await _audio.initialize([
+      await _speech.audio.initialize([
         ...AudioCues.speechAssets,
-        for (final sentence in _sentences) ...sentence.audioAssets,
+        ...exercise.audioAssets,
       ]);
-      if (!_isCurrent(generation)) return;
-      _phase = ExercisePhase.ready;
+      if (!_current(token)) return;
+      _manager.ready();
       notifyListeners();
-      await _audio.speak(AudioCues.welcome);
+      await _speech.say(token, AudioCues.welcome);
     } catch (_) {
-      _fail(generation);
+      _fail(token);
     }
   }
 
   void start() {
-    if (_phase == ExercisePhase.error) {
+    if (phase == ExercisePhase.error) {
       unawaited(initialize());
       return;
     }
-    if (_phase != ExercisePhase.ready && _phase != ExercisePhase.complete) {
-      return;
-    }
-    _sentenceIndex = 0;
-    _wordIndex = 0;
-    _letterIndex = 0;
-    _enteredCharacters.clear();
-    unawaited(_beginSentence(++_generation));
+    if (!_manager.restart()) return;
+    notifyListeners();
+    unawaited(_beginUnit(_speech.begin()));
   }
 
-  Future<void> _beginSentence(
-    int generation, {
+  Future<void> _beginUnit(
+    int token, {
     bool celebrate = false,
     bool announceMode = false,
   }) async {
     try {
-      _phase = ExercisePhase.reading;
-      _countdown = null;
-      notifyListeners();
-      if (announceMode) {
-        await _audio.speak(_modeAudio);
-        if (!_isCurrent(generation)) return;
+      if (announceMode && !await _speech.say(token, _modeAudio)) return;
+      if (celebrate &&
+          !await _speech.celebrate(token, sentence: !exercise.isWordDrill)) {
+        return;
       }
-      if (celebrate) {
-        await _audio.celebrate(sentence: true);
-        if (!_isCurrent(generation)) return;
-      }
-      await _audio.speak(sentence.audioAsset);
-      if (!_isCurrent(generation)) return;
-      _phase = ExercisePhase.countdown;
-      for (var number = 3; number >= 1; number--) {
-        _countdown = number;
+      if (!exercise.isWordDrill) {
+        if (!await _speech.say(token, sentence.audioAsset)) return;
+        for (var number = 3; number >= 1; number--) {
+          _manager.countDown(number);
+          notifyListeners();
+          final clock = Stopwatch()..start();
+          if (!await _speech.say(token, AudioCues.count(number))) return;
+          if (!await _speech.wait(token, _countdownInterval - clock.elapsed)) {
+            return;
+          }
+        }
+        _manager.beginTyping();
         notifyListeners();
-        final clock = Stopwatch()..start();
-        await _audio.speak(AudioCues.count(number));
-        if (!_isCurrent(generation)) return;
-        final remaining = _countdownInterval - clock.elapsed;
-        if (remaining > Duration.zero) await Future<void>.delayed(remaining);
-        if (!_isCurrent(generation)) return;
       }
-      _countdown = null;
-      _phase = ExercisePhase.typing;
-      notifyListeners();
-      await _audio.speak(sentence.wordAudioAsset(_wordIndex));
+      await _speakWord(token);
     } catch (_) {
-      _fail(generation);
+      _fail(token);
     }
   }
 
+  Future<void> _speakWord(int token) => _speech.sequence(
+    token,
+    sentence.promptStyle == PromptStyle.letters
+        ? sentence.words[wordIndex].split('').map(AudioCues.letter)
+        : [sentence.wordAudioAsset(wordIndex)],
+    gap: const Duration(milliseconds: 250),
+  );
+
   void typeCharacter(String character) {
     cancelSpelling();
-    if (_phase != ExercisePhase.typing || character.trim().isEmpty) return;
-    final word = sentence.words[_wordIndex];
-    final correct =
-        _enteredCharacters.length == _letterIndex &&
-        character.toLowerCase() == word[_letterIndex].toLowerCase();
+    final result = _manager.typeCharacter(character);
+    if (result == TypingResult.ignored) return;
     try {
-      _audio.feedback(correct: correct);
-      if (!correct && _mode == TypingMode.simple) return;
-      _enteredCharacters.add(character);
-      if (!correct) {
-        notifyListeners();
-        return;
-      }
-      _letterIndex++;
-      if (_letterIndex < word.length) {
-        notifyListeners();
-        return;
-      }
-      if (_wordIndex + 1 < sentence.words.length) {
-        _wordIndex++;
-        _letterIndex = 0;
-        _enteredCharacters.clear();
-        notifyListeners();
-        unawaited(_celebrateThenSpeak(sentence.wordAudioAsset(_wordIndex)));
-      } else if (_sentenceIndex + 1 < _sentences.length) {
-        _sentenceIndex++;
-        _wordIndex = 0;
-        _letterIndex = 0;
-        _enteredCharacters.clear();
-        unawaited(_beginSentence(++_generation, celebrate: true));
-      } else {
-        _phase = ExercisePhase.complete;
-        notifyListeners();
-        unawaited(_celebrateThenSpeak(AudioCues.complete, sentence: true));
+      _speech.audio.feedback(correct: result != TypingResult.incorrect);
+      notifyListeners();
+      switch (result) {
+        case TypingResult.wordAdvanced:
+          unawaited(_rewardThenPrompt(_speech.begin()));
+        case TypingResult.unitAdvanced:
+          unawaited(_beginUnit(_speech.begin(), celebrate: true));
+        case TypingResult.completed:
+          unawaited(_finish(_speech.begin()));
+        default:
+          break;
       }
     } catch (_) {
-      _fail(_generation);
+      _fail(_speech.begin());
+    }
+  }
+
+  Future<void> _rewardThenPrompt(int token) async {
+    try {
+      if (await _speech.celebrate(token, sentence: false)) {
+        await _speakWord(token);
+      }
+    } catch (_) {
+      _fail(token);
+    }
+  }
+
+  Future<void> _finish(int token) async {
+    try {
+      if (await _speech.celebrate(token, sentence: !exercise.isWordDrill)) {
+        await _speech.say(token, AudioCues.complete);
+      }
+    } catch (_) {
+      _fail(token);
     }
   }
 
   void backspace() {
     cancelSpelling();
-    if (_phase != ExercisePhase.typing ||
-        _mode != TypingMode.advanced ||
-        _enteredCharacters.isEmpty) {
-      return;
-    }
-    _enteredCharacters.removeLast();
-    if (_letterIndex > _enteredCharacters.length) {
-      _letterIndex = _enteredCharacters.length;
-    }
+    _manager.backspace();
     notifyListeners();
   }
 
-  String get _modeAudio => _mode == TypingMode.simple
-      ? AudioCues.modeSimple
-      : AudioCues.modeAdvanced;
-
+  String get _modeAudio =>
+      mode == TypingMode.simple ? AudioCues.modeSimple : AudioCues.modeAdvanced;
   void toggleMode() {
     if (_disposed ||
-        _phase == ExercisePhase.loading ||
-        _phase == ExercisePhase.error) {
+        phase == ExercisePhase.loading ||
+        phase == ExercisePhase.error) {
       return;
     }
     cancelSpelling();
-    _mode = _mode == TypingMode.simple
-        ? TypingMode.advanced
-        : TypingMode.simple;
-    if (_mode == TypingMode.simple) {
-      _enteredCharacters.removeRange(_letterIndex, _enteredCharacters.length);
-    }
+    _manager.toggleMode();
     notifyListeners();
-    if (_phase == ExercisePhase.reading || _phase == ExercisePhase.countdown) {
-      // Changing modes must not leave an interrupted countdown or reading stuck.
-      unawaited(_beginSentence(++_generation, announceMode: true));
+    if (phase == ExercisePhase.reading) {
+      unawaited(_beginUnit(_speech.begin(), announceMode: true));
     } else {
-      _speak(_modeAudio);
-    }
-  }
-
-  Future<void> _celebrateThenSpeak(
-    String asset, {
-    bool sentence = false,
-  }) async {
-    final generation = ++_generation;
-    try {
-      await _audio.celebrate(sentence: sentence);
-      if (!_isCurrent(generation)) return;
-      await _audio.speak(asset);
-    } catch (_) {
-      _fail(generation);
+      _say([_modeAudio]);
     }
   }
 
   void repeatWord() {
-    if (_phase == ExercisePhase.typing) {
-      _speak(sentence.wordAudioAsset(_wordIndex));
-    }
+    if (phase != ExercisePhase.typing) return;
+    cancelSpelling();
+    final token = _speech.begin();
+    unawaited(_speakWord(token).catchError((Object _) => _fail(token)));
   }
 
   void spellEnteredLetters() {
     cancelSpelling();
-    if (_phase != ExercisePhase.typing || _enteredCharacters.isEmpty) return;
-    final characters = List<String>.of(_enteredCharacters);
-    final generation = ++_generation;
-    _spellingGeneration = generation;
-    unawaited(_spell(characters, generation));
+    if (phase != ExercisePhase.typing || enteredCharacters.isEmpty) return;
+    final token = _speech.begin();
+    _spellingToken = token;
+    unawaited(_spell(token, enteredCharacters));
   }
 
-  Future<void> _spell(List<String> characters, int generation) async {
+  Future<void> _spell(int token, List<String> characters) async {
     try {
-      for (var index = 0; index < characters.length; index++) {
-        if (!_isCurrent(generation)) return;
-        await _audio.speak(AudioCues.letter(characters[index]));
-        if (!_isCurrent(generation)) return;
-        if (index + 1 < characters.length) {
-          await Future<void>.delayed(const Duration(milliseconds: 250));
-        }
-      }
+      await _speech.sequence(
+        token,
+        characters.map(AudioCues.letter),
+        gap: const Duration(milliseconds: 250),
+      );
     } catch (_) {
-      _fail(generation);
+      _fail(token);
     } finally {
-      if (_spellingGeneration == generation) _spellingGeneration = null;
+      if (_spellingToken == token) _spellingToken = null;
     }
   }
 
   void cancelSpelling() {
-    if (_spellingGeneration == null) return;
-    _spellingGeneration = null;
-    ++_generation;
-    _audio.stopSpeech();
-  }
-
-  void togglePause() {
-    if (_phase != ExercisePhase.paused) {
-      pause();
-      return;
-    }
-    final previous = _pausedPhase;
-    _pausedPhase = null;
-    final generation = ++_generation;
-    if (previous == ExercisePhase.typing) {
-      _phase = ExercisePhase.typing;
-      notifyListeners();
-      _speak(sentence.wordAudioAsset(_wordIndex));
-    } else {
-      // Restart interrupted instructions with a full countdown.
-      unawaited(_beginSentence(generation));
-    }
+    final token = _spellingToken;
+    _spellingToken = null;
+    if (token != null && _speech.isCurrent(token)) _speech.begin();
   }
 
   void pause() {
-    if (_phase != ExercisePhase.typing &&
-        _phase != ExercisePhase.reading &&
-        _phase != ExercisePhase.countdown) {
+    if (!_manager.pause()) return;
+    _spellingToken = null;
+    _speech.begin();
+    notifyListeners();
+  }
+
+  void togglePause() {
+    if (phase != ExercisePhase.paused) {
+      pause();
       return;
     }
-    _pausedPhase = _phase;
-    _phase = ExercisePhase.paused;
-    _countdown = null;
-    ++_generation;
+    if (!_manager.resume()) return;
     notifyListeners();
-    _speak(AudioCues.paused);
-  }
-
-  void _speak(String asset) {
-    cancelSpelling();
-    final generation = ++_generation;
-    try {
-      unawaited(
-        _audio.speak(asset).catchError((Object _) => _fail(generation)),
-      );
-    } catch (_) {
-      _fail(generation);
+    if (phase == ExercisePhase.typing) {
+      repeatWord();
+    } else {
+      unawaited(_beginUnit(_speech.begin()));
     }
   }
 
-  void _fail(int generation) {
-    if (!_isCurrent(generation)) return;
-    _spellingGeneration = null;
-    ++_generation;
-    _phase = ExercisePhase.error;
-    _countdown = null;
-    _audio.stopSpeech();
+  void _say(Iterable<String> assets) {
+    cancelSpelling();
+    final token = _speech.begin();
+    unawaited(
+      _speech.sequence(token, assets).catchError((Object _) => _fail(token)),
+    );
+  }
+
+  void _fail(int token) {
+    if (!_current(token)) return;
+    _spellingToken = null;
+    _speech.begin();
+    _manager.fail();
     notifyListeners();
   }
 
   @override
   void dispose() {
     _disposed = true;
-    ++_generation;
-    _audio.stopSpeech();
-    unawaited(_audio.dispose());
+    _speech.begin();
     super.dispose();
   }
 }

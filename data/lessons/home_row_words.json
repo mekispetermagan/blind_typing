@@ -1,0 +1,128 @@
+{
+  "id": "home_row_words",
+  "type": "words",
+  "title": "A, S, D, F, J, K, L, É – gyakorlatok",
+  "allowedLetters": "ASDFJKLÉ",
+  "units": [
+    {
+      "id": "home_row_drill_01",
+      "text": "AJ",
+      "promptStyle": "letters"
+    },
+    {
+      "id": "home_row_drill_02",
+      "text": "FJ",
+      "promptStyle": "letters"
+    },
+    {
+      "id": "home_row_drill_03",
+      "text": "DK",
+      "promptStyle": "letters"
+    },
+    {
+      "id": "home_row_drill_04",
+      "text": "SL",
+      "promptStyle": "letters"
+    },
+    {
+      "id": "home_row_drill_05",
+      "text": "AÉ",
+      "promptStyle": "letters"
+    },
+    {
+      "id": "home_row_drill_06",
+      "text": "SAS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "home_row_drill_07",
+      "text": "FÉL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "home_row_drill_08",
+      "text": "ASDF",
+      "promptStyle": "letters"
+    },
+    {
+      "id": "home_row_drill_09",
+      "text": "JKLÉ",
+      "promptStyle": "letters"
+    },
+    {
+      "id": "home_row_drill_10",
+      "text": "KAKA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "home_row_drill_11",
+      "text": "SAKK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "home_row_drill_12",
+      "text": "ÉJFÉL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "home_row_drill_13",
+      "text": "SÉDÉFÉ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "home_row_drill_14",
+      "text": "SÉLADÉ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "home_row_drill_15",
+      "text": "JAKALAS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "home_row_drill_16",
+      "text": "FÉLAJÉK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "home_row_drill_17",
+      "text": "ASDFJKLÉ",
+      "promptStyle": "letters"
+    },
+    {
+      "id": "home_row_drill_18",
+      "text": "ÉLKJFDSA",
+      "promptStyle": "letters"
+    },
+    {
+      "id": "home_row_drill_19",
+      "text": "AÉSLDKFJ",
+      "promptStyle": "letters"
+    },
+    {
+      "id": "home_row_drill_20",
+      "text": "FJAÉDJSK",
+      "promptStyle": "letters"
+    },
+    {
+      "id": "home_row_drill_21",
+      "text": "FJDKSLAÉ",
+      "promptStyle": "letters"
+    },
+    {
+      "id": "home_row_drill_22",
+      "text": "AJDKFLSÉ",
+      "promptStyle": "letters"
+    },
+    {
+      "id": "home_row_drill_23",
+      "text": "SÉKAFJÉL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "home_row_drill_24",
+      "text": "FÉJAKÉDA",
+      "promptStyle": "word"
+    }
+  ]
+}

@@ -1,7 +1,10 @@
-import 'package:blind_typing/controllers/typing_controller.dart';
 import 'package:blind_typing/main.dart' as app;
-import 'package:blind_typing/models/sentence.dart';
-import 'package:blind_typing/widgets/typing_screen.dart';
+import 'package:blind_typing/models/exercise.dart';
+import 'package:blind_typing/models/typing_state.dart';
+import 'package:blind_typing/screens/menu_screen.dart';
+import 'package:blind_typing/screens/teaching_screen.dart';
+import 'package:blind_typing/screens/typing_screen.dart';
+import 'package:blind_typing/services/content_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -9,106 +12,115 @@ import 'package:integration_test/integration_test.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-
-  testWidgets('Linux audio and keyboard flow completes all five sentences', (
-    tester,
-  ) async {
-    app.main();
-
-    TypingScreen screen() =>
-        tester.widget<TypingScreen>(find.byType(TypingScreen));
-
-    Future<void> waitFor(ExercisePhase phase) async {
-      final clock = Stopwatch()..start();
-      while (find.byType(TypingScreen).evaluate().isEmpty ||
-          screen().phase != phase) {
-        await tester.pump(const Duration(milliseconds: 100));
-        if (find.byType(TypingScreen).evaluate().isNotEmpty) {
-          expect(
-            screen().phase,
-            isNot(ExercisePhase.error),
-            reason: 'Native audio initialization/playback failed',
-          );
-        }
-        if (clock.elapsed > const Duration(seconds: 30)) {
-          fail(
-            'Timed out waiting for $phase: '
-            'phase=${screen().phase}, sentence=${screen().sentenceIndex}, '
-            'word=${screen().wordIndex}, letters=${screen().letterIndex}, '
-            'input=${screen().enteredCharacters}',
-          );
+  testWidgets(
+    'spoken menus, F teaching, 24 drills, and sample practice work with native audio',
+    (tester) async {
+      app.main();
+      final repository = AssetContentRepository();
+      final catalog = await repository.loadMenu();
+      Future<TypingExercise> exercise(ActivityType type) async =>
+          await repository.loadExercise(
+            catalog.root.descendants
+                .firstWhere((node) => node.activity?.type == type)
+                .activity!,
+          ) as TypingExercise;
+      final drills = await exercise(ActivityType.words);
+      final practice = await exercise(ActivityType.practice);
+      TypingScreen typing() =>
+          tester.widget<TypingScreen>(find.byType(TypingScreen));
+      MenuScreen menu() => tester.widget<MenuScreen>(find.byType(MenuScreen));
+      Future<void> waitFor(bool Function() condition) async {
+        final clock = Stopwatch()..start();
+        while (!condition()) {
+          await tester.pump(const Duration(milliseconds: 100));
+          if (clock.elapsed > const Duration(seconds: 40)) {
+            fail(
+              'Timed out: menu=${find.byType(MenuScreen).evaluate().isNotEmpty}, '
+              'typing=${find.byType(TypingScreen).evaluate().isEmpty ? null : typing().phase}',
+            );
+          }
         }
       }
-    }
 
-    await waitFor(ExercisePhase.ready);
-    expect(screen().mode, TypingMode.simple);
-    await tester.sendKeyEvent(LogicalKeyboardKey.f3);
-    await tester.pump();
-    expect(screen().mode, TypingMode.advanced);
-    await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+      Future<void> key(LogicalKeyboardKey key, {String? character}) async {
+        await tester.sendKeyEvent(key, character: character);
+        await tester.pump();
+      }
 
-    for (var index = 0; index < sampleSentences.length; index++) {
-      await waitFor(ExercisePhase.typing);
-      expect(screen().sentenceIndex, index);
-      if (index == 0) {
-        await tester.sendKeyEvent(LogicalKeyboardKey.keyX, character: 'x');
-        await tester.pump();
-        expect(screen().letterIndex, 0);
-        await tester.sendKeyEvent(LogicalKeyboardKey.keyN, character: 'n');
-        await tester.pump();
-        expect(screen().enteredCharacters, ['x', 'n']);
-        await tester.sendKeyEvent(LogicalKeyboardKey.f2);
-        await tester.pump(const Duration(milliseconds: 100));
-        for (var count = 0; count < 2; count++) {
-          await tester.sendKeyEvent(LogicalKeyboardKey.backspace);
-          await tester.pump();
+      Future<void> waitTyping(ExercisePhase phase) => waitFor(
+        () =>
+            find.byType(TypingScreen).evaluate().isNotEmpty &&
+            typing().phase == phase,
+      );
+      Future<void> waitMenu() =>
+          waitFor(() => find.byType(MenuScreen).evaluate().isNotEmpty);
+
+      await waitMenu();
+      await key(LogicalKeyboardKey.enter); // LECKÉK
+      await key(LogicalKeyboardKey.enter); // ASDFJKLÉ
+      await key(LogicalKeyboardKey.enter); // betűk
+      await waitFor(() => find.byType(TeachingScreen).evaluate().isNotEmpty);
+      await key(LogicalKeyboardKey.enter);
+      for (final character in ['g', 'f', 'g', 'F', 'f']) {
+        await key(LogicalKeyboardKey.keyF, character: character);
+      }
+      await waitMenu();
+      expect(menu().title, 'Kész a feladat');
+      await key(LogicalKeyboardKey.arrowDown);
+      await key(LogicalKeyboardKey.enter); // Back to lesson menu
+      await key(LogicalKeyboardKey.arrowDown);
+      await key(LogicalKeyboardKey.enter); // gyakorlatok
+      await waitTyping(ExercisePhase.ready);
+      await key(LogicalKeyboardKey.f3);
+      expect(typing().mode, TypingMode.advanced);
+      await key(LogicalKeyboardKey.enter);
+      await key(LogicalKeyboardKey.keyX, character: 'x');
+      await key(LogicalKeyboardKey.keyN, character: 'n');
+      expect(typing().enteredCharacters, ['x', 'n']);
+      await key(LogicalKeyboardKey.f2);
+      await tester.pump(const Duration(milliseconds: 100));
+      await key(LogicalKeyboardKey.backspace);
+      await key(LogicalKeyboardKey.backspace);
+      await key(LogicalKeyboardKey.keyA, character: 'a');
+      await key(LogicalKeyboardKey.escape);
+      await waitMenu();
+      expect(menu().title, 'Szünet');
+      await key(LogicalKeyboardKey.enter);
+      expect(typing().enteredCharacters, ['a']);
+      await key(LogicalKeyboardKey.backspace);
+      expect(typing().enteredCharacters, isEmpty);
+      for (final unit in drills.units) {
+        for (final character in unit.text.split('')) {
+          await key(LogicalKeyboardKey.keyA, character: character);
         }
-        expect(screen().enteredCharacters, isEmpty);
-        await tester.sendKeyEvent(LogicalKeyboardKey.f1);
-        await tester.sendKeyEvent(LogicalKeyboardKey.escape);
-        await tester.pump();
-        expect(screen().phase, ExercisePhase.paused);
-        await tester.sendKeyEvent(LogicalKeyboardKey.escape);
-        await tester.pump();
-        expect(screen().phase, ExercisePhase.typing);
-        await tester.sendKeyEvent(LogicalKeyboardKey.keyA, character: 'a');
-        await tester.pump();
-        await tester.sendKeyEvent(LogicalKeyboardKey.f2);
-        await tester.pump(const Duration(milliseconds: 100));
-        expect(screen().letterIndex, 1);
-        await tester.sendKeyEvent(LogicalKeyboardKey.backspace);
-        await tester.pump();
-        expect(screen().letterIndex, 0);
-        await tester.sendKeyEvent(LogicalKeyboardKey.keyA, character: 'a');
-        await tester.pump();
-        expect(screen().letterIndex, 1);
-        expect(screen().phase, ExercisePhase.typing);
-        await tester.sendKeyEvent(LogicalKeyboardKey.shiftLeft);
-        await tester.pump();
-        expect(screen().letterIndex, 1);
       }
-      // Deliberately type much faster than the spoken words finish. Character
-      // strings include accents; physical key identity is not used for matching.
-      final text = sampleSentences[index].text.toLowerCase();
-      for (final character in (index == 0 ? text.substring(1) : text).split(
-        '',
-      )) {
-        await tester.sendKeyEvent(
-          LogicalKeyboardKey.keyA,
-          character: character,
-        );
-        await tester.pump(const Duration(milliseconds: 20));
+      await waitMenu();
+      expect(menu().title, 'Kész a feladat');
+      await key(LogicalKeyboardKey.arrowDown);
+      await key(LogicalKeyboardKey.enter);
+      await key(LogicalKeyboardKey.arrowLeft);
+      await key(LogicalKeyboardKey.arrowLeft);
+      await key(LogicalKeyboardKey.arrowDown); // GYAKORLÁS
+      await key(LogicalKeyboardKey.enter);
+      await key(LogicalKeyboardKey.enter); // könnyű
+      await key(LogicalKeyboardKey.enter); // sample
+      await waitTyping(ExercisePhase.ready);
+      expect(typing().mode, TypingMode.advanced);
+      await key(LogicalKeyboardKey.enter);
+      for (var index = 0; index < practice.units.length; index++) {
+        await waitTyping(ExercisePhase.typing);
+        expect(typing().sentenceIndex, index);
+        for (final character in practice.units[index].text.split('')) {
+          await key(LogicalKeyboardKey.keyA, character: character);
+        }
       }
-    }
-
-    await waitFor(ExercisePhase.complete);
-    await tester.sendKeyEvent(LogicalKeyboardKey.enter);
-    await tester.pump();
-    expect(screen().sentenceIndex, 0);
-    expect(screen().mode, TypingMode.advanced);
-    expect(screen().phase, ExercisePhase.reading);
-    await tester.pumpWidget(const SizedBox.shrink());
-    await tester.pump(const Duration(milliseconds: 300));
-  });
+      await waitMenu();
+      expect(menu().title, 'Kész a feladat');
+      await key(LogicalKeyboardKey.enter); // Restart retains mode
+      await waitTyping(ExercisePhase.reading);
+      expect(typing().mode, TypingMode.advanced);
+      await tester.pumpWidget(const SizedBox.shrink());
+      await tester.pump(const Duration(milliseconds: 300));
+    },
+  );
 }

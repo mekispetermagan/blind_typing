@@ -16,6 +16,11 @@ abstract interface class AudioService {
 }
 
 abstract final class AudioCues {
+  static const menuWelcome = 'assets/audio/menu_welcome.wav';
+  static const teachingWelcome = 'assets/audio/teaching_welcome.wav';
+  static const wrongKeyPrefix = 'assets/audio/wrong_key_prefix.wav';
+  static const wrongKeySuffix = 'assets/audio/wrong_key_suffix.wav';
+  static const contentError = 'assets/audio/content_error.wav';
   static const welcome = 'assets/audio/welcome.wav';
   static const paused = 'assets/audio/paused.wav';
   static const complete = 'assets/audio/complete.wav';
@@ -35,6 +40,11 @@ abstract final class AudioCues {
   }
 
   static Iterable<String> get speechAssets => [
+    menuWelcome,
+    teachingWelcome,
+    wrongKeyPrefix,
+    wrongKeySuffix,
+    contentError,
     welcome,
     paused,
     complete,

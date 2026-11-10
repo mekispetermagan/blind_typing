@@ -1,0 +1,16 @@
+{
+  "id": "home_row_letters",
+  "type": "letters",
+  "title": "A, S, D, F, J, K, L, É – betűk",
+  "steps": [
+    {
+      "id": "home_row_f",
+      "key": "F",
+      "requiredSuccesses": 3,
+      "instruction": "Helyezd a bal kezed mutatóujját a megjelölt F billentyűre a billentyűzet közepétől kicsit balra, és nyomd le.",
+      "retry": "Próbáld megtalálni a megjelölt F billentyűt.",
+      "success": "Igen, ez az F. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    }
+  ]
+}

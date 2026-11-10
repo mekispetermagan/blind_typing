@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../controllers/typing_controller.dart';
-import '../models/sentence.dart';
-import 'current_word.dart';
-import 'sentence_display.dart';
+import '../models/typing_state.dart';
+import '../models/typing_unit.dart';
+import '../widgets/current_word.dart';
+import '../widgets/app_keyboard.dart';
+import '../widgets/sentence_display.dart';
 
 class TypingScreen extends StatelessWidget {
   const TypingScreen({
     required this.sentence,
+    this.title = 'Gépírás',
+    this.showSentence = true,
     required this.sentenceIndex,
     required this.sentenceCount,
     required this.wordIndex,
@@ -29,7 +32,9 @@ class TypingScreen extends StatelessWidget {
     super.key,
   });
 
-  final Sentence sentence;
+  final TypingUnit sentence;
+  final String title;
+  final bool showSentence;
   final int sentenceIndex;
   final int sentenceCount;
   final int wordIndex;
@@ -47,57 +52,6 @@ class TypingScreen extends StatelessWidget {
   final VoidCallback onBackspace;
   final VoidCallback onPause;
   final VoidCallback onClose;
-
-  KeyEventResult _onKeyEvent(FocusNode node, KeyEvent event) {
-    if (event is KeyDownEvent || event is KeyRepeatEvent) onKeyDown();
-    if (event is KeyRepeatEvent) return KeyEventResult.handled;
-    if (event is! KeyDownEvent) return KeyEventResult.ignored;
-    final key = event.logicalKey;
-    final keyboard = HardwareKeyboard.instance;
-    if (key == LogicalKeyboardKey.f4 ||
-        (keyboard.isControlPressed && key == LogicalKeyboardKey.keyW)) {
-      onClose();
-      return KeyEventResult.handled;
-    }
-    if (key == LogicalKeyboardKey.enter ||
-        key == LogicalKeyboardKey.numpadEnter) {
-      onStart();
-      return KeyEventResult.handled;
-    }
-    if (key == LogicalKeyboardKey.f1) {
-      onRepeat();
-      return KeyEventResult.handled;
-    }
-    if (key == LogicalKeyboardKey.f2) {
-      onSpell();
-      return KeyEventResult.handled;
-    }
-    if (key == LogicalKeyboardKey.f3) {
-      onToggleMode();
-      return KeyEventResult.handled;
-    }
-    if (key == LogicalKeyboardKey.escape) {
-      onPause();
-      return KeyEventResult.handled;
-    }
-    if (keyboard.isControlPressed ||
-        keyboard.isAltPressed ||
-        keyboard.isMetaPressed) {
-      return KeyEventResult.ignored;
-    }
-    if (key == LogicalKeyboardKey.backspace) {
-      onBackspace();
-      return KeyEventResult.handled;
-    }
-    final character = event.character;
-    if (character != null &&
-        character.isNotEmpty &&
-        character.runes.every((rune) => rune >= 32)) {
-      onCharacter(character);
-      return KeyEventResult.handled;
-    }
-    return KeyEventResult.ignored;
-  }
 
   String get _status => switch (phase) {
     ExercisePhase.loading => 'Hangok betöltése…',
@@ -118,12 +72,22 @@ class TypingScreen extends StatelessWidget {
         phase == ExercisePhase.typing ||
         phase == ExercisePhase.paused ||
         completed;
-    return Focus(
-      autofocus: true,
-      onKeyEvent: _onKeyEvent,
+    return AppKeyboard(
+      onClose: onClose,
+      onKeyDown: onKeyDown,
+      onCharacter: onCharacter,
+      shortcuts: {
+        LogicalKeyboardKey.enter: onStart,
+        LogicalKeyboardKey.numpadEnter: onStart,
+        LogicalKeyboardKey.f1: onRepeat,
+        LogicalKeyboardKey.f2: onSpell,
+        LogicalKeyboardKey.f3: onToggleMode,
+        LogicalKeyboardKey.escape: onPause,
+        LogicalKeyboardKey.backspace: onBackspace,
+      },
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Gépírás'),
+          title: Text(title),
           actions: [
             IconButton(
               tooltip: 'Kilépés (Ctrl+W / F4)',
@@ -138,10 +102,13 @@ class TypingScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 24),
             child: Column(
               children: [
-                SentenceDisplay(
-                  words: sentence.words,
-                  completedWords: completed ? sentence.words.length : wordIndex,
-                ),
+                if (showSentence)
+                  SentenceDisplay(
+                    words: sentence.words,
+                    completedWords: completed
+                        ? sentence.words.length
+                        : wordIndex,
+                  ),
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,

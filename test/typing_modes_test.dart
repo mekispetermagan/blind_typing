@@ -1,9 +1,13 @@
 import 'package:blind_typing/controllers/typing_controller.dart';
-import 'package:blind_typing/models/sentence.dart';
+
+import 'support/content_fixtures.dart';
+
 import 'package:blind_typing/services/audio_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/fake_audio_service.dart';
+
+import 'package:blind_typing/services/speech_coordinator.dart';
 
 Future<void> settle() => Future<void>.delayed(Duration.zero);
 
@@ -14,8 +18,8 @@ void main() {
   setUp(() {
     audio = FakeAudioService();
     controller = TypingController(
-      sentences: sampleSentences,
-      audio: audio,
+      exercise: sampleExercise,
+      speech: SpeechCoordinator(audio),
       countdownInterval: Duration.zero,
     );
   });
