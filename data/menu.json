@@ -30,6 +30,48 @@
                 }
               }
             ]
+          },
+          {
+            "id": "upper_row_ir",
+            "title": "I, R",
+            "speech": "i, err",
+            "children": [
+              {
+                "id": "upper_row_ir_letters",
+                "title": "betűk",
+                "activity": {
+                  "type": "letters",
+                  "content": "data/lessons/upper_row_ir_letters.json"
+                }
+              },
+              {
+                "id": "upper_row_i_words",
+                "title": "gyakorlatok — I",
+                "speech": "Gyakorlatok az i betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/upper_row_i_words.json"
+                }
+              },
+              {
+                "id": "upper_row_r_words",
+                "title": "gyakorlatok — R",
+                "speech": "Gyakorlatok az err betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/upper_row_r_words.json"
+                }
+              },
+              {
+                "id": "upper_row_ir_words",
+                "title": "gyakorlatok — IR",
+                "speech": "Gyakorlatok az i és az err betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/upper_row_ir_words.json"
+                }
+              }
+            ]
           }
         ]
       },

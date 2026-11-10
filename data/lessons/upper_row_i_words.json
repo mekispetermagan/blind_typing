@@ -1,0 +1,148 @@
+{
+  "id": "upper_row_i_words",
+  "type": "words",
+  "title": "I, R — gyakorlatok — I",
+  "allowedLetters": "ASDFJKLÉI",
+  "units": [
+    {
+      "id": "upper_row_i_01",
+      "text": "IS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_02",
+      "text": "KI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_03",
+      "text": "KIS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_04",
+      "text": "KIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_05",
+      "text": "AKI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_06",
+      "text": "AKIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_07",
+      "text": "KIÉ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_08",
+      "text": "KIKÉ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_09",
+      "text": "DIA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_10",
+      "text": "FIA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_11",
+      "text": "FIAD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_12",
+      "text": "FIAI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_13",
+      "text": "FALI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_14",
+      "text": "FALAI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_15",
+      "text": "LIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_16",
+      "text": "LIKAS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_17",
+      "text": "SISAK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_18",
+      "text": "DALIA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_19",
+      "text": "ÉJI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_20",
+      "text": "ÉJFÉLI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_21",
+      "text": "ÉLI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_22",
+      "text": "ÉLIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_23",
+      "text": "FÉLI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_24",
+      "text": "FÉLIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_25",
+      "text": "ALAKI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_26",
+      "text": "KIAD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_27",
+      "text": "KIADJA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_i_28",
+      "text": "KÉKLIK",
+      "promptStyle": "word"
+    }
+  ]
+}

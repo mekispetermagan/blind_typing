@@ -1,0 +1,163 @@
+{
+  "id": "upper_row_r_words",
+  "type": "words",
+  "title": "I, R — gyakorlatok — R",
+  "allowedLetters": "ASDFJKLÉR",
+  "units": [
+    {
+      "id": "upper_row_r_01",
+      "text": "ÉR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_02",
+      "text": "ÉRJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_03",
+      "text": "ÉRÉS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_04",
+      "text": "DÉR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_05",
+      "text": "DARA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_06",
+      "text": "RAJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_07",
+      "text": "RAK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_08",
+      "text": "RAKJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_09",
+      "text": "RAKJA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_10",
+      "text": "KAR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_11",
+      "text": "KARJA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_12",
+      "text": "KARD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_13",
+      "text": "KARDJA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_14",
+      "text": "KARÉJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_15",
+      "text": "KARAJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_16",
+      "text": "KÉR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_17",
+      "text": "KÉRJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_18",
+      "text": "KÉRD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_19",
+      "text": "KÉRÉS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_20",
+      "text": "FÉR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_21",
+      "text": "FÉRJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_22",
+      "text": "FAR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_23",
+      "text": "FARA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_24",
+      "text": "FARKA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_25",
+      "text": "FARKAS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_26",
+      "text": "SARKA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_27",
+      "text": "SARKAK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_28",
+      "text": "SARJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_29",
+      "text": "SARJAD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_30",
+      "text": "ARA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_r_31",
+      "text": "ARRA",
+      "promptStyle": "word"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": "upper_row_ir_words",
+  "type": "words",
+  "title": "I, R — gyakorlatok — IR",
+  "allowedLetters": "ASDFJKLÉIR",
+  "units": [
+    {
+      "id": "upper_row_ir_01",
+      "text": "IRKA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_02",
+      "text": "FIRKA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_03",
+      "text": "RIKSA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_04",
+      "text": "RIAD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_05",
+      "text": "FRISS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_06",
+      "text": "SIKÉR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_07",
+      "text": "SARKI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_08",
+      "text": "SARKAI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_09",
+      "text": "KARJAI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_10",
+      "text": "FARKAI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_11",
+      "text": "ÉRI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_12",
+      "text": "ÉRIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_13",
+      "text": "KÉRI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_14",
+      "text": "KÉRIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_15",
+      "text": "KÉRDI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_16",
+      "text": "KÉRDIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_17",
+      "text": "KIRAK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_18",
+      "text": "KIRAKJA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_19",
+      "text": "IRDAL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_20",
+      "text": "IRDALD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "upper_row_ir_21",
+      "text": "KARDJAI",
+      "promptStyle": "word"
+    }
+  ]
+}

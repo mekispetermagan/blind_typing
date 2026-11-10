@@ -22,7 +22,7 @@ Enter/Right opens it; Escape/Left returns to its parent. F1 repeats the selectio
 Rapid navigation interrupts previous speech instead of building a speech queue.
 Mouse selection is also available.
 
-The initial content is:
+The available content is:
 
 - **LECKÉK → A, S, D, F, J, K, L, É → betűk:** guided discovery of F. Three
   successful presses complete the activity; wrong keys are named and trigger
@@ -31,6 +31,13 @@ The initial content is:
   from AJ to FÉJAKÉDA, restricted to the eight lesson letters. Geometric patterns
   are prompted with the approved letter recordings; words and word-like targets
   use word recordings.
+- **LECKÉK → I, R → betűk:** F→R and K→I reaching practice. The anchor keys
+  require one successful press each; R and I each require three total successes.
+  Incorrect keys do not reset the count. Movement and retry instructions identify
+  both the anchor key and the finger.
+- **LECKÉK → I, R → gyakorlatok — I / R / IR:** three meaningful-word sessions,
+  containing 28, 31, and 21 targets respectively, in the supplied order. The I
+  session allows ASDFJKLÉI; R allows ASDFJKLÉR; IR allows ASDFJKLÉIR.
 - **GYAKORLÁS → könnyű → Mintagyakorlás – öt mondat:** the original five sample
   sentences, with sentence narration, three-two-one, and individual word prompts.
 
@@ -82,6 +89,10 @@ what appears on screen and is spoken. Only available content is listed.
   Anchor/movement sequences can be expressed as multiple steps.
 - `data/lessons/home_row_words.json`: allowed letters and ordered targets.
   A target's `promptStyle` is `word` or `letters`.
+- `data/lessons/upper_row_ir_letters.json`: F→R and K→I teaching steps.
+- `data/lessons/upper_row_i_words.json`, `upper_row_r_words.json`, and
+  `upper_row_ir_words.json`: the three lesson-2 word lists and their permitted
+  letters.
 - `data/practice/sample.json`: original text divided into sentence units.
 
 Typed models validate menu shape, IDs, nonempty activities, activity types, and
@@ -137,8 +148,10 @@ flutter analyze
 flutter test
 flutter build linux
 flutter test integration_test/linux_prototype_test.dart -d linux
+flutter test integration_test/lesson_two_test.dart -d linux
 ```
 
 The native check needs a desktop/audio device and exercises spoken menus, F
 teaching, all 24 word drills, correction, and the five-sentence practice flow.
+The lesson-2 native check exercises the four teaching steps and all 80 words.
 The game managers are pure Dart and can be tested independently of screens.

@@ -1,0 +1,43 @@
+{
+  "id": "upper_row_ir_letters",
+  "type": "letters",
+  "title": "I, R — betűk",
+  "steps": [
+    {
+      "id": "upper_row_f_anchor",
+      "key": "F",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le az F billentyűt a bal kezed mutatóujjával.",
+      "retry": "Keresd meg az F billentyűt a bal kezed mutatóujjával.",
+      "success": "Igen, ez az F.",
+      "complete": "Nagyszerű."
+    },
+    {
+      "id": "upper_row_r",
+      "key": "R",
+      "requiredSuccesses": 3,
+      "instruction": "Most az F billentyűről csúsztasd felfelé és kicsit balra a bal kezed mutatóujját. Találd meg és nyomd le a következő sorban az R billentyűt.",
+      "retry": "Keresd meg az R billentyűt az F fölött és kicsit balra, a bal kezed mutatóujjával.",
+      "success": "Igen, ez az R. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "upper_row_k_anchor",
+      "key": "K",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le a K billentyűt a jobb kezed középső ujjával.",
+      "retry": "Keresd meg a K billentyűt a jobb kezed középső ujjával.",
+      "success": "Igen, ez a K.",
+      "complete": "Nagyszerű."
+    },
+    {
+      "id": "upper_row_i",
+      "key": "I",
+      "requiredSuccesses": 3,
+      "instruction": "Most a K billentyűről csúsztasd felfelé és kicsit balra a jobb kezed középső ujját. Találd meg és nyomd le a következő sorban az I billentyűt.",
+      "retry": "Keresd meg az I billentyűt a K fölött és kicsit balra, a jobb kezed középső ujjával.",
+      "success": "Igen, ez az I. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    }
+  ]
+}
