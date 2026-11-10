@@ -53,10 +53,20 @@ void main() {
         await tester.sendKeyEvent(LogicalKeyboardKey.escape);
         await tester.pump();
         expect(screen().phase, ExercisePhase.typing);
+        await tester.sendKeyEvent(LogicalKeyboardKey.keyA, character: 'a');
+        await tester.pump();
+        await tester.sendKeyEvent(LogicalKeyboardKey.f2);
+        await tester.pump(const Duration(milliseconds: 100));
+        expect(screen().letterIndex, 1);
+        expect(screen().phase, ExercisePhase.typing);
+        await tester.sendKeyEvent(LogicalKeyboardKey.shiftLeft);
+        await tester.pump();
+        expect(screen().letterIndex, 1);
       }
       // Deliberately type much faster than the spoken words finish. Character
       // strings include accents; physical key identity is not used for matching.
-      for (final character in sampleSentences[index].text.toLowerCase().split(
+      final text = sampleSentences[index].text.toLowerCase();
+      for (final character in (index == 0 ? text.substring(1) : text).split(
         '',
       )) {
         await tester.sendKeyEvent(

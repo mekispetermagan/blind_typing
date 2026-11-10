@@ -18,6 +18,8 @@ class TypingScreen extends StatelessWidget {
     required this.onStart,
     required this.onCharacter,
     required this.onRepeat,
+    required this.onSpell,
+    required this.onKeyDown,
     required this.onPause,
     required this.onClose,
     super.key,
@@ -33,10 +35,13 @@ class TypingScreen extends StatelessWidget {
   final VoidCallback onStart;
   final ValueChanged<String> onCharacter;
   final VoidCallback onRepeat;
+  final VoidCallback onSpell;
+  final VoidCallback onKeyDown;
   final VoidCallback onPause;
   final VoidCallback onClose;
 
   KeyEventResult _onKeyEvent(FocusNode node, KeyEvent event) {
+    if (event is KeyDownEvent || event is KeyRepeatEvent) onKeyDown();
     if (event is KeyRepeatEvent) return KeyEventResult.handled;
     if (event is! KeyDownEvent) return KeyEventResult.ignored;
     final key = event.logicalKey;
@@ -53,6 +58,10 @@ class TypingScreen extends StatelessWidget {
     }
     if (key == LogicalKeyboardKey.f1) {
       onRepeat();
+      return KeyEventResult.handled;
+    }
+    if (key == LogicalKeyboardKey.f2) {
+      onSpell();
       return KeyEventResult.handled;
     }
     if (key == LogicalKeyboardKey.escape) {
@@ -153,7 +162,7 @@ class TypingScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  'Enter: kezdés   F1: szó ismétlése   Escape: szünet   Ctrl+W / F4: kilépés',
+                  'Enter: kezdés   F1: szó ismétlése   F2: beírt betűk   Escape: szünet   Ctrl+W / F4: kilépés',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: colors.onSurfaceVariant,

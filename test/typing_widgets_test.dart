@@ -76,6 +76,9 @@ void main() {
     addTearDown(tester.view.resetDevicePixelRatio);
     var starts = 0;
     var repeats = 0;
+    var spells = 0;
+    var keyDowns = 0;
+    final spellingEvents = <String>[];
     var pauses = 0;
     var closes = 0;
     final characters = <String>[];
@@ -101,6 +104,14 @@ void main() {
             countdown: null,
             onStart: () => starts++,
             onRepeat: () => repeats++,
+            onSpell: () {
+              spells++;
+              spellingEvents.add('spell');
+            },
+            onKeyDown: () {
+              keyDowns++;
+              spellingEvents.add('cancel');
+            },
             onPause: () => pauses++,
             onClose: () => closes++,
             onCharacter: characters.add,
@@ -109,6 +120,15 @@ void main() {
       ),
     );
     await tester.pump();
+    await tester.sendKeyDownEvent(LogicalKeyboardKey.f2);
+    expect(spellingEvents, ['cancel', 'spell']);
+    await tester.sendKeyUpEvent(LogicalKeyboardKey.f2);
+    expect(spellingEvents, ['cancel', 'spell']);
+    await tester.sendKeyDownEvent(LogicalKeyboardKey.f2);
+    await tester.sendKeyRepeatEvent(LogicalKeyboardKey.f2);
+    expect(spells, 2);
+    expect(spellingEvents.last, 'cancel');
+    await tester.sendKeyUpEvent(LogicalKeyboardKey.f2);
     await tester.sendKeyEvent(LogicalKeyboardKey.enter);
     await tester.sendKeyEvent(LogicalKeyboardKey.f1);
     await tester.sendKeyEvent(LogicalKeyboardKey.escape);
@@ -121,6 +141,8 @@ void main() {
     await tester.sendKeyUpEvent(LogicalKeyboardKey.controlLeft);
     expect(starts, 1);
     expect(repeats, 1);
+    expect(spells, 2);
+    expect(keyDowns, 12);
     expect(pauses, 1);
     expect(closes, 2);
     expect(characters, ['A']);

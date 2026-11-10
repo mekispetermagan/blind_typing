@@ -29,6 +29,10 @@ font are bundled; running the app needs no internet connection.
 - Type during word speech. Completing the word interrupts its speech and starts
   the next word. Input during the sentence reading/countdown is ignored.
 - F1 repeats the current word without resetting progress.
+- F2 spells the accepted letters of the current word, with 250 ms between
+  recordings. An empty prefix is silent. Any key-down (including modifiers and
+  held-key repeats) interrupts spelling before its normal action; key releases
+  have no effect. F2 restarts spelling without changing progress.
 - Escape pauses/resumes. Leaving the app pauses an active exercise as well.
   Resuming a word repeats it; resuming interrupted instructions restarts the
   sentence reading/countdown.
@@ -67,6 +71,10 @@ python3 -m venv .venv
 The script reads sentence content from the model. Existing recordings are reused
 when their text is unchanged; `--force` regenerates all speech. The audio manifest
 records the spoken text, provider, and speech checksums.
+Letter recordings use the reviewed Hungarian names: `aa` for a, `emm` for m,
+`err` for r, and single vowels for the other vowels.
+The bundled welcome still uses the previous instructions. The generator includes
+the F2 instructions and will refresh that recording when gTTS is reachable.
 
 SoLoud uses a 256-frame buffer at 48 kHz (5.3 ms mixing quantum). This is not a
 guarantee of end-to-end latency; measure responsiveness on the intended audio

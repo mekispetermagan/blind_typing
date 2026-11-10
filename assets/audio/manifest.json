@@ -166,5 +166,180 @@
   "bad": {
     "source": "Original synthesized tone",
     "duration_ms": 28
+  },
+  "letter_0061": {
+    "text": "aa",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "937f20c5c77f6dba6756be487ee4400c20b518eac99a824eec0e3b20969264cc"
+  },
+  "letter_00e1": {
+    "text": "á",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "94b975e74ff055e18fa43e952e5c3ca1e42f462066da7b083d405f3b5c81819f"
+  },
+  "letter_0062": {
+    "text": "bé",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4e0152fc0f8eaae4f1f9afec961beaaf9abaee2598b6423c76cb07461bde5c12"
+  },
+  "letter_0063": {
+    "text": "cé",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d6dc7a70b7f784c9560d069f5c02fff78703e73a11e8f0a721114393c169d902"
+  },
+  "letter_0064": {
+    "text": "dé",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "15324f50fd1d639a6e7d96a47ae59cadf14ddd659145006f2b86ed0fc619c8e5"
+  },
+  "letter_0065": {
+    "text": "e",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "155f643c9df9f5d85f109f3ea6cafc63149adff5e2b5aa7a139b952e1359112b"
+  },
+  "letter_00e9": {
+    "text": "é",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "365d2d48b7452bdcceab0a94ced41d51c5ca539ae59c65ab91a3131c1c456c52"
+  },
+  "letter_0066": {
+    "text": "ef",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2a25a6be4911024ffaed4be7091c485aceb5be1520f6beff5c4d3749cc2084ea"
+  },
+  "letter_0067": {
+    "text": "gé",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4a97bd293484ecd775b588a8d2c2579e9fafb4cc9c4de7aad25f7044f97e7af1"
+  },
+  "letter_0068": {
+    "text": "há",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c3c8336bfe40114d5abc77a7e7e56c99b632a93063f2ef00903c6a23df669cdb"
+  },
+  "letter_0069": {
+    "text": "i",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "acf85690cd512b957a9e72f396ac486adf9901c166edda7f22cae991d20cb2a7"
+  },
+  "letter_00ed": {
+    "text": "í",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a64ca0277ad28f1d91d234d8a5c4701f139a917ef0b332ddd95cef060cc7b4e1"
+  },
+  "letter_006a": {
+    "text": "jé",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2a5ec3f90b7975f01a886d5c21b2d0c12f9c2ac26e6634b635100fdc64fe3855"
+  },
+  "letter_006b": {
+    "text": "ká",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "15d18ec33de0e03401972888f2ca39fa8f47a4bb3b571fa9a0e14259e6673724"
+  },
+  "letter_006c": {
+    "text": "el",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4a399de2bc39ef142c33c411261e9299c821b8f753980d947f72f8178ad65419"
+  },
+  "letter_006d": {
+    "text": "emm",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f43e6fecd669fd8ed88d484f397ad9e0e63881c3dc1dc13842da1ec66138d753"
+  },
+  "letter_006e": {
+    "text": "en",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "33a868b1b93e05c6c64d9ace38d0a44fce1dd61fcf269ed08694ad6edfe66feb"
+  },
+  "letter_006f": {
+    "text": "o",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "46b255ba7e9535c03382d67d6a4db4788fe7373634761bd77c5a3cfcfc119473"
+  },
+  "letter_00f3": {
+    "text": "ó",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1b5f21b5b95245b17334a50acc2f394fb3c560f797146e4c8e33d93ca50089cf"
+  },
+  "letter_00f6": {
+    "text": "ö",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c98e2bee768a9b3e52f294b19d1754752173e961e948c91f041f39c941983b23"
+  },
+  "letter_0151": {
+    "text": "ő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e6c54b1d14ac5735e667c5b26d900206dc3b3d42c7583f1350f8b208cdd2fe95"
+  },
+  "letter_0070": {
+    "text": "pé",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d1efd9aeb80fc808e492c29a2ac1a9774e340d488bc7279c285bd6415e57354f"
+  },
+  "letter_0071": {
+    "text": "kú",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "52a80eac85d502838b1f37f492ec7b01cc3c2dcb7e3f22c8b1189600bf5f02ea"
+  },
+  "letter_0072": {
+    "text": "err",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "93a4416a6e7c4a902921bf63eb774ae3761c72defa28a27a82af196825fecbfc"
+  },
+  "letter_0073": {
+    "text": "es",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "73403a65543f8072c735fd045b9ef6295b6bfc06516dd34cad378fd06660d926"
+  },
+  "letter_0074": {
+    "text": "té",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "756bb3bca827a6e86e8b02e6ca679d1fa40e8e2a7ca7c69e2df19935ba1a7b26"
+  },
+  "letter_0075": {
+    "text": "u",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a1c83219d08940d1a44b8f5c3b6247bcb39d9489f0561fc3bbe216a7b6e55512"
+  },
+  "letter_00fa": {
+    "text": "ú",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "aa7b9b86db255dbb1e4909ad8c5b4b4389f3e940a73db64f7d1544c7bc096a2b"
+  },
+  "letter_00fc": {
+    "text": "ü",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c131beb7288c549583d98a24ce5ac2a4ee144b3e25297e6bd1435f59c5ea804b"
+  },
+  "letter_0171": {
+    "text": "ű",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ea81feaa0226ea33e5813a48ff14570d94330702a13d357e0efbb55be5e90e52"
+  },
+  "letter_0076": {
+    "text": "vé",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b2613c5322da151c3f3d6af55bbb948226324e4a14381e342a6891ddf9684fbc"
+  },
+  "letter_0077": {
+    "text": "duplavé",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7591a61a8da151f4b22a9ed2defd4984201a89e9a432a598b3ad95ae7f82d165"
+  },
+  "letter_0078": {
+    "text": "iksz",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c37ed054a79fb1417c78a33422af71862d940b122a17146b49d2afabf1346153"
+  },
+  "letter_0079": {
+    "text": "ipszilon",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b754d6b13050761e698abae1bb9430909f91a1d65aa6a7cf2b30c71e8ef8c408"
+  },
+  "letter_007a": {
+    "text": "zé",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "34fc3ba92c3c126e6d09728ebbb84ddd973f7409376f62b62c2ce33ecc3dad24"
   }
 }

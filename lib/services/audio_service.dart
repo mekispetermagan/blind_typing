@@ -23,12 +23,16 @@ abstract final class AudioCues {
   static const bad = 'assets/audio/bad.wav';
   static const wordComplete = 'assets/audio/correct.mp3';
   static const sentenceComplete = 'assets/audio/fanfare.mp3';
+  static const alphabet = 'aábcdeéfghiíjklmnoóöőpqrstuúüűvwxyz';
   static String count(int number) => 'assets/audio/count_$number.wav';
+  static String letter(String character) =>
+      'assets/audio/letter_${character.toLowerCase().runes.single.toRadixString(16).padLeft(4, '0')}.wav';
 
   static Iterable<String> get speechAssets => [
     welcome,
     paused,
     complete,
     for (var number = 1; number <= 3; number++) count(number),
+    for (final character in alphabet.split('')) letter(character),
   ];
 }

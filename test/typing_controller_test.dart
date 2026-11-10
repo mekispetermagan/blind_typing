@@ -237,6 +237,195 @@ void main() {
     expect(controller.phase, ExercisePhase.ready);
   });
 
+  group('spelling the accepted prefix', () {
+    setUp(() {
+      controller.dispose();
+      audio = FakeAudioService();
+      controller = TypingController(
+        sentences: [Sentence(id: 'spelling', text: 'Pillangó árvíztűrő')],
+        audio: audio,
+        countdownInterval: Duration.zero,
+      );
+    });
+
+    Future<void> enterPrefix(WidgetTester tester, String prefix) async {
+      await controller.initialize();
+      controller.start();
+      await tester.pump();
+      for (final letter in prefix.split('')) {
+        controller.typeCharacter(letter);
+      }
+      await tester.pump();
+      audio.spoken.clear();
+    }
+
+    test('ignores an empty prefix and phases outside typing', () async {
+      await controller.initialize();
+      expect(
+        audio.loaded,
+        containsAll([
+          for (final letter in AudioCues.alphabet.split(''))
+            AudioCues.letter(letter),
+        ]),
+      );
+      final readySpeech = List<String>.of(audio.spoken);
+      controller.spellEnteredLetters();
+      expect(audio.spoken, readySpeech);
+      controller.start();
+      final readingSpeech = List<String>.of(audio.spoken);
+      controller.spellEnteredLetters();
+      expect(audio.spoken, readingSpeech);
+      await settle();
+      final typingSpeech = List<String>.of(audio.spoken);
+      controller.spellEnteredLetters();
+      expect(audio.spoken, typingSpeech);
+      controller.typeCharacter('p');
+      controller.pause();
+      final pausedSpeech = List<String>.of(audio.spoken);
+      controller.spellEnteredLetters();
+      expect(audio.spoken, pausedSpeech);
+    });
+
+    testWidgets(
+      'spells pillang in order with 250 ms gaps, preserving progress',
+      (tester) async {
+        await enterPrefix(tester, 'pillang');
+        final feedbackCount = audio.feedbackResults.length;
+        controller.spellEnteredLetters();
+        final letters = 'pillang'.split('');
+        for (var index = 0; index < letters.length; index++) {
+          expect(audio.spoken, letters.take(index + 1).map(AudioCues.letter));
+          await tester.pump();
+          if (index + 1 < letters.length) {
+            await tester.pump(const Duration(milliseconds: 249));
+            expect(audio.spoken, hasLength(index + 1));
+            await tester.pump(const Duration(milliseconds: 1));
+          }
+        }
+        expect(controller.letterIndex, 7);
+        expect(controller.wordIndex, 0);
+        expect(controller.phase, ExercisePhase.typing);
+        expect(audio.feedbackResults, hasLength(feedbackCount));
+      },
+    );
+
+    testWidgets('uses the current word and preserves accented letters', (
+      tester,
+    ) async {
+      await enterPrefix(tester, 'pillangóárvíztűr');
+      controller.spellEnteredLetters();
+      await tester.pump();
+      for (var index = 1; index < 'árvíztűr'.length; index++) {
+        await tester.pump(const Duration(milliseconds: 250));
+      }
+      expect(audio.spoken, 'árvíztűr'.split('').map(AudioCues.letter));
+      expect(controller.wordIndex, 1);
+      expect(controller.letterIndex, 8);
+    });
+
+    testWidgets(
+      'a wrong character interrupts active spelling and stays wrong',
+      (tester) async {
+        await enterPrefix(tester, 'pill');
+        audio.holdSpeech = true;
+        controller.spellEnteredLetters();
+        controller.typeCharacter('x');
+        await tester.pump(const Duration(seconds: 1));
+        expect(audio.interrupted, [AudioCues.letter('p')]);
+        expect(audio.spoken, [AudioCues.letter('p')]);
+        expect(controller.letterIndex, 4);
+        expect(audio.feedbackResults.last, isFalse);
+        expect(controller.phase, ExercisePhase.typing);
+      },
+    );
+
+    testWidgets('cancels during a gap and restarts without stale letters', (
+      tester,
+    ) async {
+      await enterPrefix(tester, 'pill');
+      controller.spellEnteredLetters();
+      await tester.pump();
+      controller.cancelSpelling();
+      await tester.pump(const Duration(seconds: 1));
+      expect(audio.spoken, [AudioCues.letter('p')]);
+      controller.spellEnteredLetters();
+      await tester.pump();
+      controller.spellEnteredLetters();
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 250));
+      expect(audio.spoken, [
+        AudioCues.letter('p'),
+        AudioCues.letter('p'),
+        AudioCues.letter('p'),
+        AudioCues.letter('i'),
+      ]);
+      controller.cancelSpelling();
+      await tester.pump(const Duration(milliseconds: 250));
+      expect(audio.spoken, hasLength(4));
+    });
+
+    for (final action in ['repeat', 'pause', 'complete word']) {
+      testWidgets('$action replaces spelling without later stale playback', (
+        tester,
+      ) async {
+        await enterPrefix(tester, 'pillang');
+        controller.spellEnteredLetters();
+        await tester.pump();
+        switch (action) {
+          case 'repeat':
+            controller.repeatWord();
+          case 'pause':
+            controller.pause();
+          case 'complete word':
+            controller.typeCharacter('ó');
+        }
+        await tester.pump();
+        final spoken = List<String>.of(audio.spoken);
+        await tester.pump(const Duration(seconds: 1));
+        expect(audio.spoken, spoken);
+        expect(audio.spoken.last, switch (action) {
+          'pause' => AudioCues.paused,
+          'complete word' => controller.sentence.wordAudioAsset(1),
+          _ => controller.sentence.wordAudioAsset(0),
+        });
+      });
+    }
+
+    testWidgets('playback failure enters the recoverable error state', (
+      tester,
+    ) async {
+      await enterPrefix(tester, 'pill');
+      audio.failSpeech = true;
+      controller.spellEnteredLetters();
+      await tester.pump();
+      expect(controller.phase, ExercisePhase.error);
+    });
+
+    testWidgets('disposing during spelling cancels remaining letters', (
+      tester,
+    ) async {
+      final otherAudio = FakeAudioService();
+      final other = TypingController(
+        sentences: sampleSentences,
+        audio: otherAudio,
+        countdownInterval: Duration.zero,
+      );
+      await other.initialize();
+      other.start();
+      await tester.pump();
+      other.typeCharacter('a');
+      other.typeCharacter('n');
+      otherAudio.holdSpeech = true;
+      other.spellEnteredLetters();
+      other.dispose();
+      await tester.pump(const Duration(seconds: 1));
+      expect(otherAudio.disposed, isTrue);
+      expect(otherAudio.spoken.where((asset) => asset.contains('letter_')), [
+        AudioCues.letter('a'),
+      ]);
+    });
+  });
+
   test(
     'disposing during pending speech invalidates pending progression',
     () async {

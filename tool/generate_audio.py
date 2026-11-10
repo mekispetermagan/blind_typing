@@ -35,10 +35,21 @@ def speech_texts():
     yield "count_3", "három"
     yield "count_2", "kettő"
     yield "count_1", "egy"
+    letters = "aábcdeéfghiíjklmnoóöőpqrstuúüűvwxyz"
+    names = [
+        "aa", "á", "bé", "cé", "dé", "e", "é", "ef", "gé", "há", "i", "í",
+        "jé", "ká", "el", "emm", "en", "o", "ó", "ö", "ő", "pé", "kú", "err",
+        "es", "té", "u", "ú", "ü", "ű", "vé", "duplavé", "iksz", "ipszilon", "zé",
+    ]
+    for letter, name in zip(letters, names, strict=True):
+        yield f"letter_{ord(letter):04x}", name
     yield "welcome", (
         "A kezdéshez nyomd meg az Enter billentyűt. "
         "Gépeld a hallott szót. A szóköz nem szükséges. "
-        "Az F egy megismétli a szót. Az Escape szüneteltet. "
+        "Az F egy megismétli a szót. "
+        "Az F kettő felolvassa a már beírt betűket. "
+        "Ezt bármelyik billentyű megnyomása megszakítja. "
+        "Az Escape szüneteltet. "
         "Az F négy kilép."
     )
     yield "paused", "Szünet. A folytatáshoz nyomd meg az Escape billentyűt."

@@ -75,6 +75,8 @@ class _TypingAppState extends State<TypingApp> with WidgetsBindingObserver {
           onStart: _controller.start,
           onCharacter: _controller.typeCharacter,
           onRepeat: _controller.repeatWord,
+          onSpell: _controller.spellEnteredLetters,
+          onKeyDown: _controller.cancelSpelling,
           onPause: _controller.togglePause,
           onClose: () => SystemNavigator.pop(),
         ),

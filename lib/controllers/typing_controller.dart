@@ -34,6 +34,7 @@ class TypingController extends ChangeNotifier {
   int _letterIndex = 0;
   int? _countdown;
   int _generation = 0;
+  int? _spellingGeneration;
   bool _disposed = false;
 
   Sentence get sentence => _sentences[_sentenceIndex];
@@ -109,6 +110,7 @@ class TypingController extends ChangeNotifier {
   }
 
   void typeCharacter(String character) {
+    cancelSpelling();
     if (_phase != ExercisePhase.typing || character.trim().isEmpty) return;
     final word = sentence.words[_wordIndex];
     final correct = character.toLowerCase() == word[_letterIndex].toLowerCase();
@@ -160,6 +162,39 @@ class TypingController extends ChangeNotifier {
     }
   }
 
+  void spellEnteredLetters() {
+    cancelSpelling();
+    if (_phase != ExercisePhase.typing || _letterIndex == 0) return;
+    final prefix = sentence.words[_wordIndex].substring(0, _letterIndex);
+    final generation = ++_generation;
+    _spellingGeneration = generation;
+    unawaited(_spell(prefix, generation));
+  }
+
+  Future<void> _spell(String prefix, int generation) async {
+    try {
+      for (var index = 0; index < prefix.length; index++) {
+        if (!_isCurrent(generation)) return;
+        await _audio.speak(AudioCues.letter(prefix[index]));
+        if (!_isCurrent(generation)) return;
+        if (index + 1 < prefix.length) {
+          await Future<void>.delayed(const Duration(milliseconds: 250));
+        }
+      }
+    } catch (_) {
+      _fail(generation);
+    } finally {
+      if (_spellingGeneration == generation) _spellingGeneration = null;
+    }
+  }
+
+  void cancelSpelling() {
+    if (_spellingGeneration == null) return;
+    _spellingGeneration = null;
+    ++_generation;
+    _audio.stopSpeech();
+  }
+
   void togglePause() {
     if (_phase != ExercisePhase.paused) {
       pause();
@@ -193,6 +228,7 @@ class TypingController extends ChangeNotifier {
   }
 
   void _speak(String asset) {
+    cancelSpelling();
     final generation = ++_generation;
     try {
       unawaited(
@@ -205,6 +241,7 @@ class TypingController extends ChangeNotifier {
 
   void _fail(int generation) {
     if (!_isCurrent(generation)) return;
+    _spellingGeneration = null;
     ++_generation;
     _phase = ExercisePhase.error;
     _countdown = null;
