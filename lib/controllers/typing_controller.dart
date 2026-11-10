@@ -16,6 +16,8 @@ enum ExercisePhase {
   error,
 }
 
+enum TypingMode { simple, advanced }
+
 class TypingController extends ChangeNotifier {
   TypingController({
     required List<Sentence> sentences,
@@ -32,6 +34,8 @@ class TypingController extends ChangeNotifier {
   int _sentenceIndex = 0;
   int _wordIndex = 0;
   int _letterIndex = 0;
+  final List<String> _enteredCharacters = [];
+  TypingMode _mode = TypingMode.simple;
   int? _countdown;
   int _generation = 0;
   int? _spellingGeneration;
@@ -42,6 +46,9 @@ class TypingController extends ChangeNotifier {
   int get sentenceCount => _sentences.length;
   int get wordIndex => _wordIndex;
   int get letterIndex => _letterIndex;
+  List<String> get enteredCharacters => List.unmodifiable(_enteredCharacters);
+  String get enteredText => _enteredCharacters.join();
+  TypingMode get mode => _mode;
   int? get countdown => _countdown;
   ExercisePhase get phase => _phase;
   bool _isCurrent(int generation) => !_disposed && generation == _generation;
@@ -75,14 +82,23 @@ class TypingController extends ChangeNotifier {
     _sentenceIndex = 0;
     _wordIndex = 0;
     _letterIndex = 0;
+    _enteredCharacters.clear();
     unawaited(_beginSentence(++_generation));
   }
 
-  Future<void> _beginSentence(int generation, {bool celebrate = false}) async {
+  Future<void> _beginSentence(
+    int generation, {
+    bool celebrate = false,
+    bool announceMode = false,
+  }) async {
     try {
       _phase = ExercisePhase.reading;
       _countdown = null;
       notifyListeners();
+      if (announceMode) {
+        await _audio.speak(_modeAudio);
+        if (!_isCurrent(generation)) return;
+      }
       if (celebrate) {
         await _audio.celebrate(sentence: true);
         if (!_isCurrent(generation)) return;
@@ -113,10 +129,17 @@ class TypingController extends ChangeNotifier {
     cancelSpelling();
     if (_phase != ExercisePhase.typing || character.trim().isEmpty) return;
     final word = sentence.words[_wordIndex];
-    final correct = character.toLowerCase() == word[_letterIndex].toLowerCase();
+    final correct =
+        _enteredCharacters.length == _letterIndex &&
+        character.toLowerCase() == word[_letterIndex].toLowerCase();
     try {
       _audio.feedback(correct: correct);
-      if (!correct) return;
+      if (!correct && _mode == TypingMode.simple) return;
+      _enteredCharacters.add(character);
+      if (!correct) {
+        notifyListeners();
+        return;
+      }
       _letterIndex++;
       if (_letterIndex < word.length) {
         notifyListeners();
@@ -125,12 +148,14 @@ class TypingController extends ChangeNotifier {
       if (_wordIndex + 1 < sentence.words.length) {
         _wordIndex++;
         _letterIndex = 0;
+        _enteredCharacters.clear();
         notifyListeners();
         unawaited(_celebrateThenSpeak(sentence.wordAudioAsset(_wordIndex)));
       } else if (_sentenceIndex + 1 < _sentences.length) {
         _sentenceIndex++;
         _wordIndex = 0;
         _letterIndex = 0;
+        _enteredCharacters.clear();
         unawaited(_beginSentence(++_generation, celebrate: true));
       } else {
         _phase = ExercisePhase.complete;
@@ -139,6 +164,46 @@ class TypingController extends ChangeNotifier {
       }
     } catch (_) {
       _fail(_generation);
+    }
+  }
+
+  void backspace() {
+    cancelSpelling();
+    if (_phase != ExercisePhase.typing ||
+        _mode != TypingMode.advanced ||
+        _enteredCharacters.isEmpty) {
+      return;
+    }
+    _enteredCharacters.removeLast();
+    if (_letterIndex > _enteredCharacters.length) {
+      _letterIndex = _enteredCharacters.length;
+    }
+    notifyListeners();
+  }
+
+  String get _modeAudio => _mode == TypingMode.simple
+      ? AudioCues.modeSimple
+      : AudioCues.modeAdvanced;
+
+  void toggleMode() {
+    if (_disposed ||
+        _phase == ExercisePhase.loading ||
+        _phase == ExercisePhase.error) {
+      return;
+    }
+    cancelSpelling();
+    _mode = _mode == TypingMode.simple
+        ? TypingMode.advanced
+        : TypingMode.simple;
+    if (_mode == TypingMode.simple) {
+      _enteredCharacters.removeRange(_letterIndex, _enteredCharacters.length);
+    }
+    notifyListeners();
+    if (_phase == ExercisePhase.reading || _phase == ExercisePhase.countdown) {
+      // Changing modes must not leave an interrupted countdown or reading stuck.
+      unawaited(_beginSentence(++_generation, announceMode: true));
+    } else {
+      _speak(_modeAudio);
     }
   }
 
@@ -164,20 +229,20 @@ class TypingController extends ChangeNotifier {
 
   void spellEnteredLetters() {
     cancelSpelling();
-    if (_phase != ExercisePhase.typing || _letterIndex == 0) return;
-    final prefix = sentence.words[_wordIndex].substring(0, _letterIndex);
+    if (_phase != ExercisePhase.typing || _enteredCharacters.isEmpty) return;
+    final characters = List<String>.of(_enteredCharacters);
     final generation = ++_generation;
     _spellingGeneration = generation;
-    unawaited(_spell(prefix, generation));
+    unawaited(_spell(characters, generation));
   }
 
-  Future<void> _spell(String prefix, int generation) async {
+  Future<void> _spell(List<String> characters, int generation) async {
     try {
-      for (var index = 0; index < prefix.length; index++) {
+      for (var index = 0; index < characters.length; index++) {
         if (!_isCurrent(generation)) return;
-        await _audio.speak(AudioCues.letter(prefix[index]));
+        await _audio.speak(AudioCues.letter(characters[index]));
         if (!_isCurrent(generation)) return;
-        if (index + 1 < prefix.length) {
+        if (index + 1 < characters.length) {
           await Future<void>.delayed(const Duration(milliseconds: 250));
         }
       }

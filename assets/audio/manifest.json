@@ -144,29 +144,6 @@
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "6a31499a547687258a037659ad019344ae3e8b8ebff88c15bf58a039daf5d782"
   },
-  "welcome": {
-    "text": "A kezdéshez nyomd meg az Enter billentyűt. Gépeld a hallott szót. A szóköz nem szükséges. Az F egy megismétli a szót. Az Escape szüneteltet. Az F négy kilép.",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "90aab326578419339e7b8f8732cd132decd621bfd7a0d281fa6ac5f2670aecc8"
-  },
-  "paused": {
-    "text": "Szünet. A folytatáshoz nyomd meg az Escape billentyűt.",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "c5d590efeb8ffa24ec666258ffa0982569d068757fe5f2135e22da802706c49b"
-  },
-  "complete": {
-    "text": "Ügyes vagy! Kész az öt mondat. Az Enter újrakezdi a gyakorlást.",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "88682f805fa46bb6d29bef33608fb9a38e29a57ab8a444365581ccacf335724d"
-  },
-  "good": {
-    "source": "Original synthesized tone",
-    "duration_ms": 28
-  },
-  "bad": {
-    "source": "Original synthesized tone",
-    "duration_ms": 28
-  },
   "letter_0061": {
     "text": "aa",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
@@ -341,5 +318,43 @@
     "text": "zé",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "34fc3ba92c3c126e6d09728ebbb84ddd973f7409376f62b62c2ce33ecc3dad24"
+  },
+  "welcome": {
+    "text": "A kezdéshez nyomd meg az Enter billentyűt. Gépeld a hallott szót. A szóköz nem szükséges. Az F egy megismétli a szót. Az F kettő felolvassa a már beírt betűket. Ezt bármelyik billentyű megnyomása megszakítja. Az F három vált az egyszerű és a haladó mód között. Haladó módban a hibás betűket a Backspace billentyűvel törölheted. Az Escape szüneteltet. Az F négy kilép.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "78ca96d1c816feaf4ed7e668af040c4e3420af6c106f97e50353a290df12ec6a"
+  },
+  "paused": {
+    "text": "Szünet. A folytatáshoz nyomd meg az Escape billentyűt.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c5d590efeb8ffa24ec666258ffa0982569d068757fe5f2135e22da802706c49b"
+  },
+  "complete": {
+    "text": "Ügyes vagy! Kész az öt mondat. Az Enter újrakezdi a gyakorlást.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "88682f805fa46bb6d29bef33608fb9a38e29a57ab8a444365581ccacf335724d"
+  },
+  "mode_simple": {
+    "text": "Egyszerű mód.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b18942db46ac9232d92130318dd43eed3d9d6798cdabac00012a1722138f139f"
+  },
+  "mode_advanced": {
+    "text": "Haladó mód.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ab95876e850c4d5059b51a64d96a0a569c84cdc468319d022c28bec150983a0b"
+  },
+  "unknown_character": {
+    "text": "Ismeretlen jel.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "72fb6945b432765b56b9583f8536be131543d6c95ce3290fc0a72b04951713bc"
+  },
+  "good": {
+    "source": "Original synthesized tone",
+    "duration_ms": 28
+  },
+  "bad": {
+    "source": "Original synthesized buzz",
+    "duration_ms": 60
   }
 }

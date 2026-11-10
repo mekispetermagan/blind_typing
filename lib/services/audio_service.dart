@@ -19,19 +19,28 @@ abstract final class AudioCues {
   static const welcome = 'assets/audio/welcome.wav';
   static const paused = 'assets/audio/paused.wav';
   static const complete = 'assets/audio/complete.wav';
+  static const modeSimple = 'assets/audio/mode_simple.wav';
+  static const modeAdvanced = 'assets/audio/mode_advanced.wav';
+  static const unknownCharacter = 'assets/audio/unknown_character.wav';
   static const good = 'assets/audio/good.wav';
   static const bad = 'assets/audio/bad.wav';
   static const wordComplete = 'assets/audio/correct.mp3';
   static const sentenceComplete = 'assets/audio/fanfare.mp3';
   static const alphabet = 'aábcdeéfghiíjklmnoóöőpqrstuúüűvwxyz';
   static String count(int number) => 'assets/audio/count_$number.wav';
-  static String letter(String character) =>
-      'assets/audio/letter_${character.toLowerCase().runes.single.toRadixString(16).padLeft(4, '0')}.wav';
+  static String letter(String character) {
+    final lower = character.toLowerCase();
+    if (lower.length != 1 || !alphabet.contains(lower)) return unknownCharacter;
+    return 'assets/audio/letter_${lower.runes.single.toRadixString(16).padLeft(4, '0')}.wav';
+  }
 
   static Iterable<String> get speechAssets => [
     welcome,
     paused,
     complete,
+    modeSimple,
+    modeAdvanced,
+    unknownCharacter,
     for (var number = 1; number <= 3; number++) count(number),
     for (final character in alphabet.split('')) letter(character),
   ];

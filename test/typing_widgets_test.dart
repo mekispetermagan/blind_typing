@@ -67,6 +67,48 @@ void main() {
     expect(spans.last.style!.color, Colors.grey.shade400);
   });
 
+  testWidgets(
+    'Advanced shows the actual error suffix, including overflow, and deletion hides future letters',
+    (tester) async {
+      final semantics = tester.ensureSemantics();
+      try {
+        Future<void> render(List<String> entered) => tester.pumpWidget(
+          MaterialApp(
+            home: Scaffold(
+              body: CurrentWord(
+                word: 'Anna',
+                acceptedLetters: 1,
+                enteredCharacters: entered,
+              ),
+            ),
+          ),
+        );
+        await render(['A', 'x', 'n', 'n', 'a']);
+        final context = tester.element(find.byType(CurrentWord));
+        final errorColor = Theme.of(context).colorScheme.error;
+        expect(find.bySemanticsLabel('Axnna'), findsOneWidget);
+        for (var index = 1; index < 5; index++) {
+          final letter = tester.widget<Text>(
+            find.byKey(ValueKey('letter-$index')),
+          );
+          expect(letter.style!.color, errorColor);
+        }
+        final cursor = tester.widget<Container>(
+          find.byKey(const ValueKey('letter-slot-5')),
+        );
+        expect((cursor.decoration! as BoxDecoration).border, isNotNull);
+        await render(['A']);
+        expect(find.bySemanticsLabel('A'), findsOneWidget);
+        expect(find.text('x'), findsNothing);
+        expect(find.text('n'), findsNothing);
+        expect(find.byKey(const ValueKey('letter-slot-4')), findsNothing);
+        expect(tester.takeException(), isNull);
+      } finally {
+        semantics.dispose();
+      }
+    },
+  );
+
   testWidgets('desktop screen routes controls and character events', (
     tester,
   ) async {
@@ -78,6 +120,8 @@ void main() {
     var repeats = 0;
     var spells = 0;
     var keyDowns = 0;
+    var modeToggles = 0;
+    var backspaces = 0;
     final spellingEvents = <String>[];
     var pauses = 0;
     var closes = 0;
@@ -100,6 +144,8 @@ void main() {
             sentenceCount: 5,
             wordIndex: 1,
             letterIndex: 3,
+            enteredCharacters: const ['a', 'l', 'm', 'x', 'x', 'x'],
+            mode: TypingMode.advanced,
             phase: ExercisePhase.typing,
             countdown: null,
             onStart: () => starts++,
@@ -112,6 +158,8 @@ void main() {
               keyDowns++;
               spellingEvents.add('cancel');
             },
+            onToggleMode: () => modeToggles++,
+            onBackspace: () => backspaces++,
             onPause: () => pauses++,
             onClose: () => closes++,
             onCharacter: characters.add,
@@ -135,6 +183,9 @@ void main() {
     await tester.sendKeyEvent(LogicalKeyboardKey.keyA, character: 'A');
     await tester.sendKeyEvent(LogicalKeyboardKey.shiftLeft);
     await tester.sendKeyEvent(LogicalKeyboardKey.backspace);
+    await tester.sendKeyDownEvent(LogicalKeyboardKey.f3);
+    await tester.sendKeyRepeatEvent(LogicalKeyboardKey.f3);
+    await tester.sendKeyUpEvent(LogicalKeyboardKey.f3);
     await tester.sendKeyEvent(LogicalKeyboardKey.f4);
     await tester.sendKeyDownEvent(LogicalKeyboardKey.controlLeft);
     await tester.sendKeyEvent(LogicalKeyboardKey.keyW);
@@ -142,7 +193,10 @@ void main() {
     expect(starts, 1);
     expect(repeats, 1);
     expect(spells, 2);
-    expect(keyDowns, 12);
+    expect(keyDowns, 14);
+    expect(modeToggles, 1);
+    expect(backspaces, 1);
+    expect(find.text('Haladó mód'), findsOneWidget);
     expect(pauses, 1);
     expect(closes, 2);
     expect(characters, ['A']);

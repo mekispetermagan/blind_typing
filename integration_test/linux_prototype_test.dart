@@ -31,12 +31,21 @@ void main() {
           );
         }
         if (clock.elapsed > const Duration(seconds: 30)) {
-          fail('Timed out waiting for $phase');
+          fail(
+            'Timed out waiting for $phase: '
+            'phase=${screen().phase}, sentence=${screen().sentenceIndex}, '
+            'word=${screen().wordIndex}, letters=${screen().letterIndex}, '
+            'input=${screen().enteredCharacters}',
+          );
         }
       }
     }
 
     await waitFor(ExercisePhase.ready);
+    expect(screen().mode, TypingMode.simple);
+    await tester.sendKeyEvent(LogicalKeyboardKey.f3);
+    await tester.pump();
+    expect(screen().mode, TypingMode.advanced);
     await tester.sendKeyEvent(LogicalKeyboardKey.enter);
 
     for (var index = 0; index < sampleSentences.length; index++) {
@@ -46,6 +55,16 @@ void main() {
         await tester.sendKeyEvent(LogicalKeyboardKey.keyX, character: 'x');
         await tester.pump();
         expect(screen().letterIndex, 0);
+        await tester.sendKeyEvent(LogicalKeyboardKey.keyN, character: 'n');
+        await tester.pump();
+        expect(screen().enteredCharacters, ['x', 'n']);
+        await tester.sendKeyEvent(LogicalKeyboardKey.f2);
+        await tester.pump(const Duration(milliseconds: 100));
+        for (var count = 0; count < 2; count++) {
+          await tester.sendKeyEvent(LogicalKeyboardKey.backspace);
+          await tester.pump();
+        }
+        expect(screen().enteredCharacters, isEmpty);
         await tester.sendKeyEvent(LogicalKeyboardKey.f1);
         await tester.sendKeyEvent(LogicalKeyboardKey.escape);
         await tester.pump();
@@ -57,6 +76,12 @@ void main() {
         await tester.pump();
         await tester.sendKeyEvent(LogicalKeyboardKey.f2);
         await tester.pump(const Duration(milliseconds: 100));
+        expect(screen().letterIndex, 1);
+        await tester.sendKeyEvent(LogicalKeyboardKey.backspace);
+        await tester.pump();
+        expect(screen().letterIndex, 0);
+        await tester.sendKeyEvent(LogicalKeyboardKey.keyA, character: 'a');
+        await tester.pump();
         expect(screen().letterIndex, 1);
         expect(screen().phase, ExercisePhase.typing);
         await tester.sendKeyEvent(LogicalKeyboardKey.shiftLeft);
@@ -81,6 +106,7 @@ void main() {
     await tester.sendKeyEvent(LogicalKeyboardKey.enter);
     await tester.pump();
     expect(screen().sentenceIndex, 0);
+    expect(screen().mode, TypingMode.advanced);
     expect(screen().phase, ExercisePhase.reading);
     await tester.pumpWidget(const SizedBox.shrink());
     await tester.pump(const Duration(milliseconds: 300));

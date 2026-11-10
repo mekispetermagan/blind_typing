@@ -13,6 +13,8 @@ class TypingScreen extends StatelessWidget {
     required this.sentenceCount,
     required this.wordIndex,
     required this.letterIndex,
+    required this.enteredCharacters,
+    required this.mode,
     required this.phase,
     required this.countdown,
     required this.onStart,
@@ -20,6 +22,8 @@ class TypingScreen extends StatelessWidget {
     required this.onRepeat,
     required this.onSpell,
     required this.onKeyDown,
+    required this.onToggleMode,
+    required this.onBackspace,
     required this.onPause,
     required this.onClose,
     super.key,
@@ -30,6 +34,8 @@ class TypingScreen extends StatelessWidget {
   final int sentenceCount;
   final int wordIndex;
   final int letterIndex;
+  final List<String> enteredCharacters;
+  final TypingMode mode;
   final ExercisePhase phase;
   final int? countdown;
   final VoidCallback onStart;
@@ -37,6 +43,8 @@ class TypingScreen extends StatelessWidget {
   final VoidCallback onRepeat;
   final VoidCallback onSpell;
   final VoidCallback onKeyDown;
+  final VoidCallback onToggleMode;
+  final VoidCallback onBackspace;
   final VoidCallback onPause;
   final VoidCallback onClose;
 
@@ -64,6 +72,10 @@ class TypingScreen extends StatelessWidget {
       onSpell();
       return KeyEventResult.handled;
     }
+    if (key == LogicalKeyboardKey.f3) {
+      onToggleMode();
+      return KeyEventResult.handled;
+    }
     if (key == LogicalKeyboardKey.escape) {
       onPause();
       return KeyEventResult.handled;
@@ -72,6 +84,10 @@ class TypingScreen extends StatelessWidget {
         keyboard.isAltPressed ||
         keyboard.isMetaPressed) {
       return KeyEventResult.ignored;
+    }
+    if (key == LogicalKeyboardKey.backspace) {
+      onBackspace();
+      return KeyEventResult.handled;
     }
     final character = event.character;
     if (character != null &&
@@ -134,6 +150,9 @@ class TypingScreen extends StatelessWidget {
                         CurrentWord(
                           word: sentence.words[wordIndex],
                           acceptedLetters: letterIndex,
+                          enteredCharacters: mode == TypingMode.advanced
+                              ? enteredCharacters
+                              : null,
                         ),
                       const SizedBox(height: 32),
                       SizedBox(
@@ -154,15 +173,23 @@ class TypingScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                // Reserved for later visual scoring and rewards.
-                const SizedBox(height: 64),
+                SizedBox(
+                  height: 64,
+                  child: Center(
+                    child: Text(
+                      mode == TypingMode.simple ? 'Egyszerű mód' : 'Haladó mód',
+                      style: TextStyle(color: colors.onSurfaceVariant),
+                    ),
+                  ),
+                ),
                 Text(
                   '${sentenceIndex + 1} / $sentenceCount',
                   style: TextStyle(color: colors.onSurfaceVariant),
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  'Enter: kezdés   F1: szó ismétlése   F2: beírt betűk   Escape: szünet   Ctrl+W / F4: kilépés',
+                  'Enter: kezdés   F1: szó ismétlése   F2: beírt betűk   F3: módváltás\n'
+                  'Backspace: törlés haladó módban   Escape: szünet   Ctrl+W / F4: kilépés',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: colors.onSurfaceVariant,

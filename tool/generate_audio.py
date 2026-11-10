@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate bundled Hungarian gTTS speech and original 28 ms feedback sounds.
+"""Generate bundled Hungarian gTTS speech and original feedback sounds.
 
 Requires Python, gTTS, and ffmpeg. Network access is used only by this tool.
 Sentence and word recordings are requested independently, never sliced.
@@ -49,28 +49,35 @@ def speech_texts():
         "Az F egy megismétli a szót. "
         "Az F kettő felolvassa a már beírt betűket. "
         "Ezt bármelyik billentyű megnyomása megszakítja. "
+        "Az F három vált az egyszerű és a haladó mód között. "
+        "Haladó módban a hibás betűket a Backspace billentyűvel törölheted. "
         "Az Escape szüneteltet. "
         "Az F négy kilép."
     )
     yield "paused", "Szünet. A folytatáshoz nyomd meg az Escape billentyűt."
     yield "complete", "Ügyes vagy! Kész az öt mondat. Az Enter újrakezdi a gyakorlást."
+    yield "mode_simple", "Egyszerű mód."
+    yield "mode_advanced", "Haladó mód."
+    yield "unknown_character", "Ismeretlen jel."
 
 
 def generate_beep(name, correct):
-    duration = 0.028
+    duration = 0.028 if correct else 0.060
     frames = round(RATE * duration)
     samples = array.array("h")
     for frame in range(frames):
         t = frame / RATE
-        # Short attack/release avoids clicks. Bad feedback has a lower,
-        # rougher timbre as well as a different pitch.
+        # Short attack/release avoids clicks. The error buzz uses stronger
+        # midrange harmonics so it remains distinct on small speakers.
         envelope = min(1, t / 0.002, (duration - t) / 0.005)
         if correct:
             signal = math.sin(2 * math.pi * 1050 * t)
         else:
-            signal = (math.sin(2 * math.pi * 220 * t)
-                      + 0.4 * math.sin(2 * math.pi * 330 * t)) / 1.4
-        samples.append(round(32767 * 0.32 * envelope * signal))
+            signal = (math.sin(2 * math.pi * 600 * t)
+                      + 0.5 * math.sin(2 * math.pi * 1800 * t)
+                      + 0.25 * math.sin(2 * math.pi * 3000 * t)) / 1.75
+        amplitude = 0.32 if correct else 0.45
+        samples.append(round(32767 * amplitude * envelope * signal))
     import sys
     if sys.byteorder != "little":
         samples.byteswap()
@@ -111,7 +118,10 @@ def main():
         manifest_path.write_text(json.dumps({**previous, **entries}, ensure_ascii=False, indent=2) + "\n")
     for name, correct in [("good", True), ("bad", False)]:
         generate_beep(name, correct)
-        entries[name] = {"source": "Original synthesized tone", "duration_ms": 28}
+        entries[name] = {
+            "source": "Original synthesized tone" if correct else "Original synthesized buzz",
+            "duration_ms": 28 if correct else 60,
+        }
     manifest_path.write_text(json.dumps(entries, ensure_ascii=False, indent=2) + "\n")
     print(f"Ready: {len(entries)} audio assets in {AUDIO}")
 
