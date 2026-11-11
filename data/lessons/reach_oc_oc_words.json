@@ -1,0 +1,128 @@
+{
+  "id": "reach_oc_oc_words",
+  "type": "words",
+  "title": "Ő, C — gyakorlatok — ŐC",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPYNTŐC",
+  "units": [
+    {
+      "id": "reach_oc_oc_01",
+      "text": "CSŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_02",
+      "text": "CIPŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_03",
+      "text": "CSŐD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_04",
+      "text": "CSŐR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_05",
+      "text": "CIPŐK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_06",
+      "text": "CIPŐJE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_07",
+      "text": "CSENGŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_08",
+      "text": "GÁZCSŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_09",
+      "text": "LÉPCSŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_10",
+      "text": "CSEPEGŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_11",
+      "text": "CSENGŐK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_12",
+      "text": "LÉPCSŐK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_13",
+      "text": "LÉPCSŐN",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_14",
+      "text": "CIPŐKRÉM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_15",
+      "text": "CIPŐTALP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_16",
+      "text": "CSECSEMŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_17",
+      "text": "ESŐCSEPP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_18",
+      "text": "NYOLCFŐS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_19",
+      "text": "CIPŐKANÁL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_20",
+      "text": "LÉPCSŐFOK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_21",
+      "text": "LÉPCSŐSOR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_22",
+      "text": "LÉPCSŐZIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_23",
+      "text": "CSŐVEZETÉK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_oc_24",
+      "text": "CSŐDELJÁRÁS",
+      "promptStyle": "word"
+    }
+  ]
+}

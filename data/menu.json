@@ -324,6 +324,48 @@
                 }
               }
             ]
+          },
+          {
+            "id": "reach_oc",
+            "title": "Ő, C",
+            "speech": "ő, cé",
+            "children": [
+              {
+                "id": "reach_oc_letters",
+                "title": "betűk",
+                "activity": {
+                  "type": "letters",
+                  "content": "data/lessons/reach_oc_letters.json"
+                }
+              },
+              {
+                "id": "reach_oc_o_words",
+                "title": "gyakorlatok — Ő",
+                "speech": "Gyakorlatok az ő betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_oc_o_words.json"
+                }
+              },
+              {
+                "id": "reach_oc_c_words",
+                "title": "gyakorlatok — C",
+                "speech": "Gyakorlatok a cé betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_oc_c_words.json"
+                }
+              },
+              {
+                "id": "reach_oc_oc_words",
+                "title": "gyakorlatok — ŐC",
+                "speech": "Gyakorlatok az ő és a cé betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_oc_oc_words.json"
+                }
+              }
+            ]
           }
         ]
       },

@@ -1,0 +1,43 @@
+{
+  "id": "reach_oc_letters",
+  "type": "letters",
+  "title": "Ő, C — betűk",
+  "steps": [
+    {
+      "id": "reach_oc_e_anchor",
+      "key": "É",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le az É billentyűt a jobb kezed kisujjával. Az É közvetlenül az L-től jobbra van.",
+      "retry": "Keresd meg az É billentyűt az L-től jobbra, a jobb kezed kisujjával.",
+      "success": "Igen, ez az É.",
+      "complete": "Igen, ez az É. Nagyszerű."
+    },
+    {
+      "id": "reach_oc_o",
+      "key": "Ő",
+      "requiredSuccesses": 3,
+      "instruction": "Az É billentyűről csúsztasd a jobb kezed kisujját egy sorral feljebb és kicsit jobbra. Az Ő közvetlenül a P-től jobbra van. Nyomd le az Ő billentyűt.",
+      "retry": "Keresd meg az Ő billentyűt közvetlenül a P-től jobbra, a jobb kezed kisujjával.",
+      "success": "Igen, ez az Ő. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "reach_oc_d_anchor",
+      "key": "D",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le a D billentyűt a bal kezed középső ujjával. A D közvetlenül az F-től balra van.",
+      "retry": "Keresd meg a D billentyűt az F-től balra, a bal kezed középső ujjával.",
+      "success": "Igen, ez a D.",
+      "complete": "Igen, ez a D. Nagyszerű."
+    },
+    {
+      "id": "reach_oc_c",
+      "key": "C",
+      "requiredSuccesses": 3,
+      "instruction": "A D billentyűről csúsztasd a bal kezed középső ujját egy sorral lejjebb és kicsit jobbra. A C közvetlenül a V-től balra van. Nyomd le a C billentyűt.",
+      "retry": "Keresd meg a C billentyűt közvetlenül a V-től balra, a bal kezed középső ujjával.",
+      "success": "Igen, ez a C. Nyomd le még egyszer.",
+      "complete": "Nagyszerű, megvan a C is."
+    }
+  ]
+}

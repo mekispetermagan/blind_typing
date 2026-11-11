@@ -1,0 +1,128 @@
+{
+  "id": "reach_oc_o_words",
+  "type": "words",
+  "title": "Ő, C — gyakorlatok — Ő",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPYNTŐ",
+  "units": [
+    {
+      "id": "reach_oc_o_01",
+      "text": "Ő",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_02",
+      "text": "FŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_03",
+      "text": "KŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_04",
+      "text": "LŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_05",
+      "text": "NŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_06",
+      "text": "ŐR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_07",
+      "text": "ŐZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_08",
+      "text": "ERŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_09",
+      "text": "ESŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_10",
+      "text": "FŐZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_11",
+      "text": "IDŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_12",
+      "text": "ŐSZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_13",
+      "text": "ELSŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_14",
+      "text": "ERŐS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_15",
+      "text": "KÉSŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_16",
+      "text": "MEZŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_17",
+      "text": "ŐRIZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_18",
+      "text": "TETŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_19",
+      "text": "ELŐRE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_20",
+      "text": "NŐVÉR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_21",
+      "text": "SZŐLŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_22",
+      "text": "LEVEGŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_23",
+      "text": "SZŐNYEG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_o_24",
+      "text": "IDŐJÁRÁS",
+      "promptStyle": "word"
+    }
+  ]
+}

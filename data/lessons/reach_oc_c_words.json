@@ -1,0 +1,128 @@
+{
+  "id": "reach_oc_c_words",
+  "type": "words",
+  "title": "Ő, C — gyakorlatok — C",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPYNTC",
+  "units": [
+    {
+      "id": "reach_oc_c_01",
+      "text": "ARC",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_02",
+      "text": "CÉG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_03",
+      "text": "CÉL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_04",
+      "text": "CICA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_05",
+      "text": "CSAK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_06",
+      "text": "CSAP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_07",
+      "text": "LÁNC",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_08",
+      "text": "PERC",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_09",
+      "text": "PIAC",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_10",
+      "text": "POLC",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_11",
+      "text": "TÁNC",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_12",
+      "text": "CSEND",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_13",
+      "text": "CSIGA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_14",
+      "text": "CSODA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_15",
+      "text": "CSOKI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_16",
+      "text": "CUKOR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_17",
+      "text": "KACSA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_18",
+      "text": "KOCSI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_19",
+      "text": "KULCS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_20",
+      "text": "NYOLC",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_21",
+      "text": "TÁLCA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_22",
+      "text": "CSALÁD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_23",
+      "text": "MACSKA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oc_c_24",
+      "text": "CSERESZNYE",
+      "promptStyle": "word"
+    }
+  ]
+}
