@@ -1,0 +1,128 @@
+{
+  "id": "reach_oz_oz_words",
+  "type": "words",
+  "title": "O, Z — gyakorlatok — OZ",
+  "allowedLetters": "ASDFJKLÉIREMUVOZ",
+  "units": [
+    {
+      "id": "reach_oz_oz_01",
+      "text": "ROZS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_02",
+      "text": "ZAJOK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_03",
+      "text": "ZAJOS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_04",
+      "text": "ZAJOM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_05",
+      "text": "ZAJOD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_06",
+      "text": "SZOKJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_07",
+      "text": "SZOKIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_08",
+      "text": "ROZSOS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_09",
+      "text": "SZOROS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_10",
+      "text": "SZOROZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_11",
+      "text": "SZORUL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_12",
+      "text": "MOZDUL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_13",
+      "text": "KOZMOSZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_14",
+      "text": "ZAVAROM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_15",
+      "text": "ZAVAROD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_16",
+      "text": "ZAVAROS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_17",
+      "text": "SZOROZD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_18",
+      "text": "SZOROZZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_19",
+      "text": "SZORULJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_20",
+      "text": "MOZDULJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_21",
+      "text": "KOZMIKUS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_22",
+      "text": "SZOROZZA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_23",
+      "text": "ELSZOKIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_oz_24",
+      "text": "ZAVARODIK",
+      "promptStyle": "word"
+    }
+  ]
+}

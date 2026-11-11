@@ -156,6 +156,48 @@
                 }
               }
             ]
+          },
+          {
+            "id": "reach_oz",
+            "title": "O, Z",
+            "speech": "o, zé",
+            "children": [
+              {
+                "id": "reach_oz_letters",
+                "title": "betűk",
+                "activity": {
+                  "type": "letters",
+                  "content": "data/lessons/reach_oz_letters.json"
+                }
+              },
+              {
+                "id": "reach_oz_o_words",
+                "title": "gyakorlatok — O",
+                "speech": "Gyakorlatok az o betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_oz_o_words.json"
+                }
+              },
+              {
+                "id": "reach_oz_z_words",
+                "title": "gyakorlatok — Z",
+                "speech": "Gyakorlatok a zé betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_oz_z_words.json"
+                }
+              },
+              {
+                "id": "reach_oz_oz_words",
+                "title": "gyakorlatok — OZ",
+                "speech": "Gyakorlatok az o és a zé betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_oz_oz_words.json"
+                }
+              }
+            ]
           }
         ]
       },

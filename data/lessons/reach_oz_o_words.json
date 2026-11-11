@@ -1,0 +1,128 @@
+{
+  "id": "reach_oz_o_words",
+  "type": "words",
+  "title": "O, Z — gyakorlatok — O",
+  "allowedLetters": "ASDFJKLÉIREMUVO",
+  "units": [
+    {
+      "id": "reach_oz_o_01",
+      "text": "KOR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_02",
+      "text": "KOS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_03",
+      "text": "LOM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_04",
+      "text": "MOS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_05",
+      "text": "ORR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_06",
+      "text": "SOK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_07",
+      "text": "SOR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_08",
+      "text": "DOKI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_09",
+      "text": "OLAJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_10",
+      "text": "ORRA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_11",
+      "text": "MOSD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_12",
+      "text": "MOSS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_13",
+      "text": "LOMOK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_14",
+      "text": "MODOR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_15",
+      "text": "MOSOM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_16",
+      "text": "ORVOS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_17",
+      "text": "ROVAR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_18",
+      "text": "SOROL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_19",
+      "text": "OLDAL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_20",
+      "text": "MODELL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_21",
+      "text": "MOSODA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_22",
+      "text": "ORVOSI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_23",
+      "text": "ROVAROK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_o_24",
+      "text": "MODELLEK",
+      "promptStyle": "word"
+    }
+  ]
+}

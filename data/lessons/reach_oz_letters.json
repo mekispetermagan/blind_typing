@@ -1,0 +1,43 @@
+{
+  "id": "reach_oz_letters",
+  "type": "letters",
+  "title": "O, Z — betűk",
+  "steps": [
+    {
+      "id": "reach_oz_l_anchor",
+      "key": "L",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le az L billentyűt a jobb kezed gyűrűsujjával.",
+      "retry": "Keresd meg az L billentyűt a jobb kezed gyűrűsujjával.",
+      "success": "Igen, ez az L.",
+      "complete": "Nagyszerű."
+    },
+    {
+      "id": "reach_oz_o",
+      "key": "O",
+      "requiredSuccesses": 3,
+      "instruction": "Az L billentyűről csúsztasd felfelé és kicsit balra a jobb kezed gyűrűsujját. Keresd meg és nyomd le az O billentyűt a felső betűsorban.",
+      "retry": "Keresd meg az O billentyűt az L fölött és kicsit balra, a jobb kezed gyűrűsujjával.",
+      "success": "Igen, ez az O. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "reach_oz_j_anchor",
+      "key": "J",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le a J billentyűt a jobb kezed mutatóujjával.",
+      "retry": "Keresd meg a J billentyűt a jobb kezed mutatóujjával.",
+      "success": "Igen, ez a J.",
+      "complete": "Nagyszerű."
+    },
+    {
+      "id": "reach_oz_z",
+      "key": "Z",
+      "requiredSuccesses": 3,
+      "instruction": "A J billentyűről csúsztasd felfelé és balra a jobb kezed mutatóujját. Keresd meg és nyomd le a Z billentyűt a felső betűsorban, közvetlenül az U-tól balra.",
+      "retry": "Keresd meg a Z billentyűt közvetlenül az U-tól balra, a jobb kezed mutatóujjával.",
+      "success": "Igen, ez a Z. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    }
+  ]
+}

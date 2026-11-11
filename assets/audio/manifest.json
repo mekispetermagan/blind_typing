@@ -99,6 +99,31 @@
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "adcea1a5e4e8fae9c6fc725686c55fe949d6c007f99430f53284bda79dad976f"
   },
+  "menu_reach_oz": {
+    "text": "o, zé",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "20d0581cbbcbc46a83a943717616a8036f8f80052b76855a9b66d87a15598578"
+  },
+  "menu_reach_oz_letters": {
+    "text": "betűk",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "69544afa9e0488d962958be6717dce46eb5d1ea26851531a6ba0f13500ea7172"
+  },
+  "menu_reach_oz_o_words": {
+    "text": "Gyakorlatok az o betűvel.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4e11f9f89cb5fcc1855f5194fe81bff6f50ef5ea44c4b6607c37afd8a14508b3"
+  },
+  "menu_reach_oz_z_words": {
+    "text": "Gyakorlatok a zé betűvel.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e84aa94231ab42124f270277128c6af1fa72b8612caa041143de9354094f99e0"
+  },
+  "menu_reach_oz_oz_words": {
+    "text": "Gyakorlatok az o és a zé betűvel.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5da33d333eb7bcbb7fe99cf46f2cf6d5c2e5861a15236ee1352c4e70dfb302db"
+  },
   "menu_practice": {
     "text": "Gyakorlás",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
@@ -1583,6 +1608,446 @@
     "text": "udvaraid",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "2c5f6abd14cbff5ffe1fa83057730c154dac802d0e57f849ff4dafc8c5ed707e"
+  },
+  "step_reach_oz_l_anchor_instruction": {
+    "text": "Nyomd le az L billentyűt a jobb kezed gyűrűsujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e887aad345876677c2b5a2ec2272a236625d9160121aa1a04078d8696d48ae94"
+  },
+  "step_reach_oz_l_anchor_retry": {
+    "text": "Keresd meg az L billentyűt a jobb kezed gyűrűsujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b74234e101a30351715e2a3e1d5667d30a58e02b04e3c771b651f9e6742ca2ee"
+  },
+  "step_reach_oz_l_anchor_success": {
+    "text": "Igen, ez az L.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ead05b670f0945595d91b4a1931bde826c525944e2293f5e048d5a95b41dc701"
+  },
+  "step_reach_oz_l_anchor_complete": {
+    "text": "Nagyszerű.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "17e60d8f62fa4daf21d98e911ca23b06351524d0010050f2c2a0601c1d91b081"
+  },
+  "step_reach_oz_o_instruction": {
+    "text": "Az L billentyűről csúsztasd felfelé és kicsit balra a jobb kezed gyűrűsujját. Keresd meg és nyomd le az O billentyűt a felső betűsorban.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "567dadd9f4b29b27ea4f79771567598c5acefcd29eab87f806719ef5b7b04f34"
+  },
+  "step_reach_oz_o_retry": {
+    "text": "Keresd meg az O billentyűt az L fölött és kicsit balra, a jobb kezed gyűrűsujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1ed7abeae2229e11b9d46a5500455504adae871b4722e6ffce9088a96df0b983"
+  },
+  "step_reach_oz_o_success": {
+    "text": "Igen, ez az O. Nyomd le még egyszer.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "de2630fea5c9e00a32f74f8381ca046e1c9ba2a55b6ff97b08baa6baf914e5bf"
+  },
+  "step_reach_oz_o_complete": {
+    "text": "Nagyszerű. Továbblépünk.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4024dfbf4ff713826672eb58eff99989cff937a11aa28f9777344f149a24a8c8"
+  },
+  "step_reach_oz_j_anchor_instruction": {
+    "text": "Nyomd le a J billentyűt a jobb kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "67486d9e3a6f63f166073042f5efe4090388a7438588d3a919e7d29b8d062826"
+  },
+  "step_reach_oz_j_anchor_retry": {
+    "text": "Keresd meg a J billentyűt a jobb kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9d4a140e42897f791d151f936cff27e5f26b1cb59e68eedc7408c4a5084987e4"
+  },
+  "step_reach_oz_j_anchor_success": {
+    "text": "Igen, ez a J.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1fdce91b844c43d5efd0f5221826ba8396b5d86f4db2940a02306b9dc6fe5fe6"
+  },
+  "step_reach_oz_j_anchor_complete": {
+    "text": "Nagyszerű.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "17e60d8f62fa4daf21d98e911ca23b06351524d0010050f2c2a0601c1d91b081"
+  },
+  "step_reach_oz_z_instruction": {
+    "text": "A J billentyűről csúsztasd felfelé és balra a jobb kezed mutatóujját. Keresd meg és nyomd le a Z billentyűt a felső betűsorban, közvetlenül az U-tól balra.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e34f29f372d97520e0bb3b5f1a9daa4d1ae60253d12e3f8cc29b390e4d9031ad"
+  },
+  "step_reach_oz_z_retry": {
+    "text": "Keresd meg a Z billentyűt közvetlenül az U-tól balra, a jobb kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fe7a948a917050034bebc73c85ae44a8ee814b42af282d8d8b017b269531eac0"
+  },
+  "step_reach_oz_z_success": {
+    "text": "Igen, ez a Z. Nyomd le még egyszer.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "834902109d4855273b567bf9942d58dd31d556e58c796170d473500cb5218b9c"
+  },
+  "step_reach_oz_z_complete": {
+    "text": "Nagyszerű. Továbblépünk.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4024dfbf4ff713826672eb58eff99989cff937a11aa28f9777344f149a24a8c8"
+  },
+  "reach_oz_o_01_word_0": {
+    "text": "kor",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "15dd02a1b3b0af6426486af91ac76f24b7d9f44cd83258dd785cb587ae40f13e"
+  },
+  "reach_oz_o_02_word_0": {
+    "text": "kos",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "8a82b0cfcc2f8666da634d11638143e69dbf35cac74efb62ba2630db797888b6"
+  },
+  "reach_oz_o_03_word_0": {
+    "text": "lom",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "86ff93722c6ed8fd93795b7d8e81b00e4ebb294f8132e5323c3ead32aedb7f7d"
+  },
+  "reach_oz_o_04_word_0": {
+    "text": "mos",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0c031fe9739c114906d11e9d1385616e7220513376a1181c200e2cf920ab8657"
+  },
+  "reach_oz_o_05_word_0": {
+    "text": "orr",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fdcd292e43b90550f01fdd6eacaa2ae3ac031ff1207e5ac9e7e62ae234376fd9"
+  },
+  "reach_oz_o_06_word_0": {
+    "text": "sok",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2d22633a4d263fb142b665039c8f4ffbd456fa2c0a4626b174dfaa5f9ded9110"
+  },
+  "reach_oz_o_07_word_0": {
+    "text": "sor",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0937eb5e7371a9811943365b1f5e50013c64194abc493c8db5e715e78d3b74ba"
+  },
+  "reach_oz_o_08_word_0": {
+    "text": "doki",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d75b3e5eb0bd36983cd51be14ed83afaad8e5a7c9a2dfbf0d3d791504903a1f0"
+  },
+  "reach_oz_o_09_word_0": {
+    "text": "olaj",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9e1591200e942210c37742990b7b87c15170be65f5363f8cc3763e0b7c539a67"
+  },
+  "reach_oz_o_10_word_0": {
+    "text": "orra",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "52fefc0c1923e0e2bb5b572d19cf80901e18f167a8f52635559a4702b0c8bf61"
+  },
+  "reach_oz_o_11_word_0": {
+    "text": "mosd",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "95874e53a93db293cb422015c41ad56eb411ecc0af553c564fb3bca36636879f"
+  },
+  "reach_oz_o_12_word_0": {
+    "text": "moss",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "57becfddebefba0b3c93b1bb47171fe9d58f0955de54fa40df03ba4f4e9ab2d6"
+  },
+  "reach_oz_o_13_word_0": {
+    "text": "lomok",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "60d19cc464b1783732c6d8ae5b38c10d34fbe266b4a2b9c84d125a5847580f0a"
+  },
+  "reach_oz_o_14_word_0": {
+    "text": "modor",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "32f3ce3ded4037d7374c1d2b255c86fe1f6f8c0e561ffc3a9f1db56f1a2a41d0"
+  },
+  "reach_oz_o_15_word_0": {
+    "text": "mosom",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4ea7db6f633578ca0be783f183da92e7330e2cb542457cac3613dc61576fdd70"
+  },
+  "reach_oz_o_16_word_0": {
+    "text": "orvos",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "132e81596e613858bc35250707cd85619f0c36b1fc45e0ef37af8e9f99e04984"
+  },
+  "reach_oz_o_17_word_0": {
+    "text": "rovar",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fd679813e8dba51e5bf6eb486cc16aa5890aa5005224e8c2f167e4511a6522c3"
+  },
+  "reach_oz_o_18_word_0": {
+    "text": "sorol",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d5d7e9cd5796bc97891547bd4a88e341639587583ca5a21051d166b38bba95d1"
+  },
+  "reach_oz_o_19_word_0": {
+    "text": "oldal",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7fb7c720e07900b5d211142f9fe0ded3567caeb479bc80e9550a4e5ea72de97c"
+  },
+  "reach_oz_o_20_word_0": {
+    "text": "modell",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0a118fec16f6174187868c18fb3845f5abb535f836c57c324b2736fa2957b88e"
+  },
+  "reach_oz_o_21_word_0": {
+    "text": "mosoda",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "eb837d5074c6446d7d18af046dec79f2400943f85a183d785ed3795ff7f0b51e"
+  },
+  "reach_oz_o_22_word_0": {
+    "text": "orvosi",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3b07c514f13aeaaadc6798d11a03d44fd3fa9b93dfd7194a5b22453b74c1303b"
+  },
+  "reach_oz_o_23_word_0": {
+    "text": "rovarok",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2d67975772d47d1cb0adb2530b9e000618dde3fa95652c14856ff4f7dc0afcb8"
+  },
+  "reach_oz_o_24_word_0": {
+    "text": "modellek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1f8757ee6d225fc38c824882f2998dd04f5841294b19595511b033961488e8dd"
+  },
+  "reach_oz_z_01_word_0": {
+    "text": "az",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9a30660b6bae11b74d22a06614095216f53eba1589f807c9fbeed02cec9b7e14"
+  },
+  "reach_oz_z_02_word_0": {
+    "text": "ez",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "11c3db78bc7707d31ad9395edbb293afa248d58849f3072e8e24ca76053cd53d"
+  },
+  "reach_oz_z_03_word_0": {
+    "text": "zaj",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fc0d64eb6d8e4307e195f529894935dc821f4ef210be1d34db60b45e2c228732"
+  },
+  "reach_oz_z_04_word_0": {
+    "text": "kéz",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0960420f991b5c47863b5505984efe8dd887cfac3dd088c91bdf2d3bf61f67b1"
+  },
+  "reach_oz_z_05_word_0": {
+    "text": "szem",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0edde3626456f6450a9e0a42ae9ea00d97ad4e452c98b257a2c8e6c93e180c21"
+  },
+  "reach_oz_z_06_word_0": {
+    "text": "szék",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3bd3f68ccf3859a4b6863470ff51568529542cbdce81a7c52f8b26c36c39912e"
+  },
+  "reach_oz_z_07_word_0": {
+    "text": "szél",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ea155f1a57baaba2cd6f55a594b6ec1fac7d9d999b0018f4b5c033145451352f"
+  },
+  "reach_oz_z_08_word_0": {
+    "text": "ezer",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6ed31a86f354bfecae5c75e069d52662636a92bed9a581c69cba91cb48df5377"
+  },
+  "reach_oz_z_09_word_0": {
+    "text": "zaja",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2d83a8b6cfe5418b018abb77d4ea7054df949cb916504c0df7df7fb6b951c55b"
+  },
+  "reach_oz_z_10_word_0": {
+    "text": "kezek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "63474a6cb0a01e47df5cdcb2b16409bf4cdf3cdb7e41c53a35cd7c50c8e90963"
+  },
+  "reach_oz_z_11_word_0": {
+    "text": "kezel",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "34fdd873c3853ae52665962037af2174b05ee671e581546c9c35d2bd6668e098"
+  },
+  "reach_oz_z_12_word_0": {
+    "text": "érzés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7f6ff1ca88562f0225574f2eb5debee11b94f79fb820c26f744e86ae804880fa"
+  },
+  "reach_oz_z_13_word_0": {
+    "text": "érzék",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "67dc74c1185300a806475a75233153dc762bc0f34a2b23ebc251a33bcfb4d259"
+  },
+  "reach_oz_z_14_word_0": {
+    "text": "vizes",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "17463e5b998df32cae09f8305943ffae00df2fb9c1a84e29fa445a2ec9b16a51"
+  },
+  "reach_oz_z_15_word_0": {
+    "text": "vezér",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "21165386e51d39d764cc3f6b0ec231b400aa0c9af2eb351677904f7beda03c17"
+  },
+  "reach_oz_z_16_word_0": {
+    "text": "szalad",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0019338e2ad1d7d58bb06701ec369fbd8795ee988a6bd178ebf6d5fcfe4bcb8c"
+  },
+  "reach_oz_z_17_word_0": {
+    "text": "szalma",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "96ac33db2162dc2d223c44e3870456547aa398d53be3926f15a104f80d3454e1"
+  },
+  "reach_oz_z_18_word_0": {
+    "text": "szilva",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5fb618553ed5d9d3a40413d1880fc55e300aa777795d565aca6a14d085a83f59"
+  },
+  "reach_oz_z_19_word_0": {
+    "text": "szerek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5f1337c92656bb3620d235ed976a17ef4b16f1fd93a7e538679cf4adcdcfcfbb"
+  },
+  "reach_oz_z_20_word_0": {
+    "text": "szerves",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b81b38923f66605547a7eb87b6c2e3b2cb9f20ff8cd55b96c163242c8509c3d3"
+  },
+  "reach_oz_z_21_word_0": {
+    "text": "érzelem",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "25d2375ab7d2991e250fe81581f771dc6011d51a0ac6881450f291c4aa9c913b"
+  },
+  "reach_oz_z_22_word_0": {
+    "text": "vezérel",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1d60629204822a928e8df0126af259364f2bd0e7f585bf1a2fd38efe231ae71f"
+  },
+  "reach_oz_z_23_word_0": {
+    "text": "kezelés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "16e3342836ecd72bd2593a98a78299bc3b3d5b117cb3c82cf34cb116de0cfa13"
+  },
+  "reach_oz_z_24_word_0": {
+    "text": "szerelés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f2f4f072f14104198acfc608c99934214eb2567141050ac38de1a07bf984c4e7"
+  },
+  "reach_oz_oz_01_word_0": {
+    "text": "rozs",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "509819b6e0f2232f0d7ab348ff583cbf94976ccff2eb6d0aa3855b255ff651d5"
+  },
+  "reach_oz_oz_02_word_0": {
+    "text": "zajok",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1d29c9362f58d27766116e37c36df23683203d0262155917e13166e8a1cb096c"
+  },
+  "reach_oz_oz_03_word_0": {
+    "text": "zajos",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "167cb567018a0d4d9e00d5565020df23df94532f14c4fd4ca4bbb73a7f945620"
+  },
+  "reach_oz_oz_04_word_0": {
+    "text": "zajom",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7ce149930ff2d9bfb0dee9d53511510642ecd5f320a9a3091dd505697a36f677"
+  },
+  "reach_oz_oz_05_word_0": {
+    "text": "zajod",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4e8696dec621f8b31ff90794060b7ea921e616240c6a08f5ef3660f154d05f4c"
+  },
+  "reach_oz_oz_06_word_0": {
+    "text": "szokj",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3d0900a137ec0deb9904387e0d37c343a5106f6ba550eb9cf3c2f17fde247fc5"
+  },
+  "reach_oz_oz_07_word_0": {
+    "text": "szokik",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fb1bc96227f45af030866618a852e9bbb3fa3d8d4bc1bb41b26713e30338d64d"
+  },
+  "reach_oz_oz_08_word_0": {
+    "text": "rozsos",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "702a492e53698a1f8c547048aec72227c91a25c7596aad674756f3adc600154f"
+  },
+  "reach_oz_oz_09_word_0": {
+    "text": "szoros",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e159537ff71f04cf2bfb7682cbf80de4ee31fa768c95be74e77dd30ede030b15"
+  },
+  "reach_oz_oz_10_word_0": {
+    "text": "szoroz",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "8c3d2a93aa6c10299519ee441e86701748e52b7be0654a11e925a8ed55e9d671"
+  },
+  "reach_oz_oz_11_word_0": {
+    "text": "szorul",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6fdd09cef86778b3889880230bfdf608c22e22b3092785c2821af05e7424eb56"
+  },
+  "reach_oz_oz_12_word_0": {
+    "text": "mozdul",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7ce97abf3c06bcba10be82efdf8c41133886d5320399e5a4facca7afe8800f6b"
+  },
+  "reach_oz_oz_13_word_0": {
+    "text": "kozmosz",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2966b7aec5913472163b908a08acd094d4f5a026e68e65baa686ee2002cd4144"
+  },
+  "reach_oz_oz_14_word_0": {
+    "text": "zavarom",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "061df9114f33d5f9d4abd2cea7555f4ff92f46609366d589644fea400acebde1"
+  },
+  "reach_oz_oz_15_word_0": {
+    "text": "zavarod",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3d3e4521dc30ae294060b4d836e8d238a2e429f6a4aa65b7eba471ac6d318cd9"
+  },
+  "reach_oz_oz_16_word_0": {
+    "text": "zavaros",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ad60283417c95ba864a2d4a9860b26a8266282ebc4af7448a45e4034002c6258"
+  },
+  "reach_oz_oz_17_word_0": {
+    "text": "szorozd",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "14c1f9dd93fce5085f46b1dad14beae06d1bc574c87a96e4551f1de20cccd685"
+  },
+  "reach_oz_oz_18_word_0": {
+    "text": "szorozz",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d1c88fc3b2a56e306302ce01e55afdacfa81c69bc968e6a15a2f6c69cb83b173"
+  },
+  "reach_oz_oz_19_word_0": {
+    "text": "szorulj",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ac78dff24ddec02f8ff8f68f879217a420a6408133a0df3295497c14ee4256ca"
+  },
+  "reach_oz_oz_20_word_0": {
+    "text": "mozdulj",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ff4e89014b3c821bddd59e99b3abe76bee3203b7fb87ab511289f3856fa34f63"
+  },
+  "reach_oz_oz_21_word_0": {
+    "text": "kozmikus",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e6145e8c46e333fa90c980b82da55a1a2ee765cf46a78ff33838387c97229359"
+  },
+  "reach_oz_oz_22_word_0": {
+    "text": "szorozza",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a5c05b7b4e0e448b81ee5d0447fb2df8cc74000a8b069142098ed0e875b38f42"
+  },
+  "reach_oz_oz_23_word_0": {
+    "text": "elszokik",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "cae6d6ff734b08847178ff57221a6699da23c94bd879bc523ae5679caffe5667"
+  },
+  "reach_oz_oz_24_word_0": {
+    "text": "zavarodik",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "95e2d90430469f29e94ee3c10d552534049efeb628f2bbff421525d22131fb32"
   },
   "01_sentence": {
     "text": "Anna almát tett ide",

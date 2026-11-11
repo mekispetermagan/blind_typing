@@ -1,0 +1,128 @@
+{
+  "id": "reach_oz_z_words",
+  "type": "words",
+  "title": "O, Z — gyakorlatok — Z",
+  "allowedLetters": "ASDFJKLÉIREMUVZ",
+  "units": [
+    {
+      "id": "reach_oz_z_01",
+      "text": "AZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_02",
+      "text": "EZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_03",
+      "text": "ZAJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_04",
+      "text": "KÉZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_05",
+      "text": "SZEM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_06",
+      "text": "SZÉK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_07",
+      "text": "SZÉL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_08",
+      "text": "EZER",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_09",
+      "text": "ZAJA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_10",
+      "text": "KEZEK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_11",
+      "text": "KEZEL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_12",
+      "text": "ÉRZÉS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_13",
+      "text": "ÉRZÉK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_14",
+      "text": "VIZES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_15",
+      "text": "VEZÉR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_16",
+      "text": "SZALAD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_17",
+      "text": "SZALMA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_18",
+      "text": "SZILVA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_19",
+      "text": "SZEREK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_20",
+      "text": "SZERVES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_21",
+      "text": "ÉRZELEM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_22",
+      "text": "VEZÉREL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_23",
+      "text": "KEZELÉS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_oz_z_24",
+      "text": "SZERELÉS",
+      "promptStyle": "word"
+    }
+  ]
+}

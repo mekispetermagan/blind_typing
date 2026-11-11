@@ -48,6 +48,11 @@ The available content is:
   three successful presses total.
 - **LECKÉK → U, V → gyakorlatok — U / V / UV:** 24 words per session. Each
   word includes the session’s new key or both new keys in UV.
+- **LECKÉK → O, Z → betűk:** L→O with the right ring finger and J→Z with the
+  right index finger on Hungarian QWERTZ. Each anchor takes one correct press.
+  Each new key takes three successful presses total.
+- **LECKÉK → O, Z → gyakorlatok — O / Z / OZ:** 24 words per session. Each
+  word includes the session’s new key or both new keys in OZ.
 - **GYAKORLÁS → könnyű → Mintagyakorlás – öt mondat:** the original five sample
   sentences, with sentence narration, three-two-one, and individual word prompts.
 
@@ -107,6 +112,8 @@ what appears on screen and is spoken. Only available content is listed.
   the lesson-3 teaching steps and three word lists.
 - `data/lessons/reach_uv_letters.json` and `data/lessons/reach_uv_*_words.json`:
   the lesson-4 teaching steps and three word lists.
+- `data/lessons/reach_oz_letters.json` and `data/lessons/reach_oz_*_words.json`:
+  the lesson-5 teaching steps and three word lists.
 - `data/practice/sample.json`: original text divided into sentence units.
 
 Typed models validate menu shape, IDs, nonempty activities, activity types, and
