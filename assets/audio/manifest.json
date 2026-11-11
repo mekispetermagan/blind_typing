@@ -2434,6 +2434,596 @@
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "72fb6945b432765b56b9583f8536be131543d6c95ce3290fc0a72b04951713bc"
   },
+  "result_time": {
+    "text": "Az időd",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "97e1421c78ef7c1ed6abf1eb38cb27935f672ddcd138f3f3f38b8c9056917879"
+  },
+  "result_minute": {
+    "text": "perc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "8763e334f0392a08e3dbd1d63859f17cf8da764daf2aae8dc7f82a8ef1115316"
+  },
+  "result_second": {
+    "text": "másodperc.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "718f7daf63c3b90b699d9160e0c9355574c6c80785455e1328332bd2aba10d4a"
+  },
+  "result_errors": {
+    "text": "A hibás leütések száma",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e94bd6770e2c55d2d677ec98219b0253918fc75e0ac0e92ac789d8f6c5b17318"
+  },
+  "result_best_time": {
+    "text": "Ez eddig a legjobb időd.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "318170721da7c1b1877b008b743f421bcfb850debaf59a8dc6bbb7672989fb9f"
+  },
+  "result_fewest_errors": {
+    "text": "Ez eddig a legkevesebb hibád.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "10111d3e669a1d8b9a475259fd7246ab4ad4057ef842bcceb7d08c58d3b65d62"
+  },
+  "result_mixed_mode": {
+    "text": "A feladat közben módot váltottál.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "79e70eece602ce4e079c5871772ae940b80042fd920fe3a8cd7608147cace76b"
+  },
+  "result_hundred": {
+    "text": "száz",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a955ccf56b3d70054a8cff67563e1da09a548838131962a82d286fd7be4a7353"
+  },
+  "result_thousand": {
+    "text": "ezer",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b8379bc004892ff2e54f539f6cc75e145bfb5fff843a7361f0447279502f4474"
+  },
+  "result_million": {
+    "text": "millió",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "20c8b8190cce8dc6ff2d1c3f4081f572f93d898b194908bcabe8a0d61576e2c0"
+  },
+  "result_billion": {
+    "text": "milliárd",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5483dcc96eae9f758ef0ced76ee4e4e6e89a75332c9791dfcd19f233e19ab7f1"
+  },
+  "result_number_0": {
+    "text": "nulla",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "cbdb8dbe334b4dc4697ca486b3695f0ac5f3ba4052f8f5813091e8f97efcc14b"
+  },
+  "result_number_2_before_unit": {
+    "text": "két",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4b113f5d3971995ea7cf63738c06966d20f1e8c12ac752da012e16ad56d6470a"
+  },
+  "result_number_4": {
+    "text": "négy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5a1f49b88413a53eb4e7093ac7e41ba9480dfede6e9744eb158306ceebffb363"
+  },
+  "result_number_5": {
+    "text": "öt",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2451c9b206e3c12b2b5eb5b301cc4027e981053c42382f171e1dee1aa07b2143"
+  },
+  "result_number_6": {
+    "text": "hat",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "704700aaf2bf166dc3cada3363ba077fb8cca5f6b15194896ee8e63fb60f05e7"
+  },
+  "result_number_7": {
+    "text": "hét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f6fdb900035373422af4fcfeccc21b567eef2c83b462937af06a378304cd042c"
+  },
+  "result_number_8": {
+    "text": "nyolc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c58edb5042b68055ff247a00e6528b8be23884b9745ae54bfc7c5da890df7674"
+  },
+  "result_number_9": {
+    "text": "kilenc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "025b10ede2973031e88ad4e452a9c263e3bb28846d79891ad2a04f789350f498"
+  },
+  "result_number_10": {
+    "text": "tíz",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5bee09918a1807913397cb9beae419aab1aeb40d259182ee51a7d9cc37c7396b"
+  },
+  "result_number_11": {
+    "text": "tizenegy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "802e0f782b28dc56e40364234e8eb1ff915e19b50853a2ec63ed17859e9fb496"
+  },
+  "result_number_12": {
+    "text": "tizenkettő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2480fc311ca5a50956ab2efd836b83fa39dc4006525549af13875dedec7ece2a"
+  },
+  "result_number_12_before_unit": {
+    "text": "tizenkét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "45196e6d27a8394bb00f27c54407b28f5f9dbfe80888d364434e71e841a9e9d3"
+  },
+  "result_number_13": {
+    "text": "tizenhárom",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9acfec2b447188956a7c8e3b1c9855b313955e898f0e612c0d34fb0dd8b250a5"
+  },
+  "result_number_14": {
+    "text": "tizennégy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1eac7251bf838eea95c81ae9b9ac20d4c0414a859ceebab2ef2e7935177716fb"
+  },
+  "result_number_15": {
+    "text": "tizenöt",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fa2d6d141a7d5ab19393d7520e62e8345eafd2448bd75322f245488a0ae442a0"
+  },
+  "result_number_16": {
+    "text": "tizenhat",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c7b9e66806982d33170abdcf3c097604ba412a3ae1826b964fabe86376d8c2cf"
+  },
+  "result_number_17": {
+    "text": "tizenhét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "baa36df9f964b62a899d38872745815ce7938fd08f29db37ce322a47300e2e98"
+  },
+  "result_number_18": {
+    "text": "tizennyolc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7521b920d6f36b848f629c8652a82e2eef1e93fe0a4778bd128023b615a26ff0"
+  },
+  "result_number_19": {
+    "text": "tizenkilenc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f4f5d766281384dd246de342ed96c37843ebdba504e6730363d8c7abe0bb35f1"
+  },
+  "result_number_20": {
+    "text": "húsz",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0b18ca5cf67316ba2923fda0b0e775f05796f66501ed16a4b285b6f9f2d4404d"
+  },
+  "result_number_21": {
+    "text": "huszonegy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5b7496b6c8c9daf239f21d6d22b8fdae50ed5a3712f2da2e45b49f646951a2e2"
+  },
+  "result_number_22": {
+    "text": "huszonkettő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e3ef9de99f432f7840a9ec8b5894bfd55455f5ab2417015f7cbcfb49a3bc2e9f"
+  },
+  "result_number_22_before_unit": {
+    "text": "huszonkét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1367b64f6266783f608e8b8fb93a1b19ccebb8503c11257294c9ac24b5ade755"
+  },
+  "result_number_23": {
+    "text": "huszonhárom",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ea31bdee7752e3d03a922f80214d79f846a83a156b9d2514806ca98afc718872"
+  },
+  "result_number_24": {
+    "text": "huszonnégy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7c1e82041da434bbff1d6b89037d3a76c1787dcf8e16f2b594817d09884d22dc"
+  },
+  "result_number_25": {
+    "text": "huszonöt",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "220733655b563682b5d3b66d3b10984e1d096c6f67df88e52ddee32655c8f063"
+  },
+  "result_number_26": {
+    "text": "huszonhat",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "af56b5ee5a2834b97b004d6a5e184a2c59bd89bb04888d29c7507af51b7b9596"
+  },
+  "result_number_27": {
+    "text": "huszonhét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "165ce0469eaa336877b36e33a12e4cb57c4ba3fb094a177b65b48a9c9b957700"
+  },
+  "result_number_28": {
+    "text": "huszonnyolc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "17aec0325faacd8cbe1ae0f5dcacbb1d41dfe4b3dba9e40809826ca448bc2cf7"
+  },
+  "result_number_29": {
+    "text": "huszonkilenc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "cf8b41ae49453ba8ceb8e295674d516e854e439d666cc25c3fc00ead7c2d3db7"
+  },
+  "result_number_30": {
+    "text": "harminc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a3d1293d80a8b2d0c7d07e6c267d2feaec4dbfc8f35ff4ec38e9baa657b7f08e"
+  },
+  "result_number_31": {
+    "text": "harmincegy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9a57fcde11e0f622a0b7b8e0c61db5fccc75a35467963f40c16cd0df8834aef2"
+  },
+  "result_number_32": {
+    "text": "harminckettő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6dfc03d613579aac388be84f961d335aee7ced30bf6d2629b2e18928fead8ff9"
+  },
+  "result_number_32_before_unit": {
+    "text": "harminckét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9ae1d7d74258cd5aae90bff922e72a3209a07d9ad65b922244065d56b8774f5c"
+  },
+  "result_number_33": {
+    "text": "harminchárom",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2f73201537bbbbdeb84519ad16399248a7d96b5d8e55cfad1fffbdf13c122162"
+  },
+  "result_number_34": {
+    "text": "harmincnégy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2da486d9178d402421906c925bb08dfe0bbbe61d0d186d566462b49cb3fcdf65"
+  },
+  "result_number_35": {
+    "text": "harmincöt",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f821b17d93ddd5b5048a2780fba91749023b73d0df14332cf14c156c501504ce"
+  },
+  "result_number_36": {
+    "text": "harminchat",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e6e8e750cf43991017b582fccbbb79659e74579d1d4049742005fd2589031963"
+  },
+  "result_number_37": {
+    "text": "harminchét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0b2bcb5bbf7de2eb4e34eff0e9d6172fffe44ed284a189d97de345066e09e2ac"
+  },
+  "result_number_38": {
+    "text": "harmincnyolc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "00cf4ccb0af340f893d37673c22c98706401ce634e707cb1ee3a3dfaf17e5eb5"
+  },
+  "result_number_39": {
+    "text": "harminckilenc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9d2d35fc72ea284da66858f12c92001bd9f5e4d9bd37ef81000e4aed93c19fef"
+  },
+  "result_number_40": {
+    "text": "negyven",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3c686e4634aa7146e31e2fc28a2c116e715deb819064405eff0d9a9b571d3e4a"
+  },
+  "result_number_41": {
+    "text": "negyvenegy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fe18699d899f40371775c27964db54d22066af144eed193174ddd4fd1fb13659"
+  },
+  "result_number_42": {
+    "text": "negyvenkettő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1e642d8afcdae30f0e6f32086a43d827f06e8037351c473e6f91adc8a772c020"
+  },
+  "result_number_42_before_unit": {
+    "text": "negyvenkét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "dcd540bd9d6e4d7d552e1ad00290ef1695450a79db314061354b78d397f3ac08"
+  },
+  "result_number_43": {
+    "text": "negyvenhárom",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "08bcf3c5ecafc757c59f697898115a647a41ffb3f521ccc48502b12ed2eef9b3"
+  },
+  "result_number_44": {
+    "text": "negyvennégy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ed11ba2622882460a4537662c7b6a26485db25730375c81e0c74fa42f4180273"
+  },
+  "result_number_45": {
+    "text": "negyvenöt",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9115b1af23249afa2a5bbb645d8d9cb226ad6f6cd44d4307f252b657a9a05a7c"
+  },
+  "result_number_46": {
+    "text": "negyvenhat",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "742df62dade72685178aff633b07f531b20d40fcf43a685f83d8fa7e1eba5cfe"
+  },
+  "result_number_47": {
+    "text": "negyvenhét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5a72129313d746ba03d8ab706c27197c37e169dc3f034ad3543572ea3f2e8ed3"
+  },
+  "result_number_48": {
+    "text": "negyvennyolc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bdb861b8ec5d32bfce4d5f138b3aa8b21cfeecf6be81c14e247981649c42c2ba"
+  },
+  "result_number_49": {
+    "text": "negyvenkilenc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "686401014de8f293da36246f605544ca931e98c15094a4ebfa4f90165e3ec9de"
+  },
+  "result_number_50": {
+    "text": "ötven",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "96cb89abccd5662271263c75a1d0fd0ead8fa266f5350f5f9ce209c7a3b33b61"
+  },
+  "result_number_51": {
+    "text": "ötvenegy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e84039530ede1ebcb5ffd40352ce440d8521989edd9c577ba0d9602d721dde1e"
+  },
+  "result_number_52": {
+    "text": "ötvenkettő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d2da4d66e73ceb8efd1f215ff6aaa097db537ac54b38c9b9da3b4c1570853f32"
+  },
+  "result_number_52_before_unit": {
+    "text": "ötvenkét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c60b21958a15ba5811559ed4c9963e587bbe5df872d82fe5b958559390944b52"
+  },
+  "result_number_53": {
+    "text": "ötvenhárom",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ad1affedc4172d5eb05de925452b3ce070387dc773241987ac55b6dc98fe102c"
+  },
+  "result_number_54": {
+    "text": "ötvennégy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5b028e9af43ef52e467d292575eaae8c4e029c16cbd691b62ef79d9b14ec9e59"
+  },
+  "result_number_55": {
+    "text": "ötvenöt",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "de0bc91edc7c1de0e961683efbee3ab1596cad47755f488e8aadb89cd7639d4b"
+  },
+  "result_number_56": {
+    "text": "ötvenhat",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a1df8876c09d65e023dfaa6e37846fce305a869e48fb8cd18718a9194facd08a"
+  },
+  "result_number_57": {
+    "text": "ötvenhét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b62a89f4f72a0403add10df92b01b8b16653df2ca277bb1a11873de36b815962"
+  },
+  "result_number_58": {
+    "text": "ötvennyolc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c0496a4bc8b2e63bc1eeedc5301278719e245b8ba300f7e9fb226dcce0b59774"
+  },
+  "result_number_59": {
+    "text": "ötvenkilenc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "94f59da6cee56ca377cf96bec844ccc9b2a42e7adbe6b203ce16f48147794941"
+  },
+  "result_number_60": {
+    "text": "hatvan",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "721f5382f4f572457d7fc3b8711185382c7e22fc3c20e0b33cc0d68ef32a87cd"
+  },
+  "result_number_61": {
+    "text": "hatvanegy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2f9dcb95ed2cd84a05a7e521c90f1bb1ba53f6657ab42ed18052c0753a093757"
+  },
+  "result_number_62": {
+    "text": "hatvankettő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2bc84e8133e5972ed01a908fa5ac96b33c8c1ca569c8c6b1732f88883458f66d"
+  },
+  "result_number_62_before_unit": {
+    "text": "hatvankét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2a758401d7749ad3ff365eed46f42b933910fa89c0739595892a581e1d7b2de3"
+  },
+  "result_number_63": {
+    "text": "hatvanhárom",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "730cd95d1cb2956b550aeefaa1690e1bb4839951143ddcc006d161c7d725711b"
+  },
+  "result_number_64": {
+    "text": "hatvannégy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "08d7b00506b69996063b9a5d1f57aa24b4ef57b9e7e4e4d83de1ae170748cda5"
+  },
+  "result_number_65": {
+    "text": "hatvanöt",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "05c077df8170841a38423e4971e70d8a2ffa7a5a75dae04bda0fad32b64cb807"
+  },
+  "result_number_66": {
+    "text": "hatvanhat",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "44053aa8f752f0d8a8711783f1319ae5bdf7f56aab6ebc03c9f32c20389508ce"
+  },
+  "result_number_67": {
+    "text": "hatvanhét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c678c537d777b5fa496b61f6f564c555a72027f5701b916429b72d188703ff64"
+  },
+  "result_number_68": {
+    "text": "hatvannyolc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2629887d56d220ba0c3be9fa820721409d93b9688e5464200ced8c2e8e90b762"
+  },
+  "result_number_69": {
+    "text": "hatvankilenc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e19b1370a75271146b8b94265d9a37da39527397d0a07ec6f53fee74dcf8951b"
+  },
+  "result_number_70": {
+    "text": "hetven",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bc2c8cabb3e7f04793cefc0f2c355639bfee7bfc7b92969f16370e9dae148587"
+  },
+  "result_number_71": {
+    "text": "hetvenegy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e821dc1fa77b090bd7bbf1e57525377e7cb465d5843bdfaef8a8898ba768c0fa"
+  },
+  "result_number_72": {
+    "text": "hetvenkettő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "53b806bb8b4ab413c0c6200ea4fcecdf5f5ae542e9e2740b18b61dfc636f475a"
+  },
+  "result_number_72_before_unit": {
+    "text": "hetvenkét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3608dc99b5220e35005539c4839af6bd2beddf39e91d3b732d2801d49cef4ddd"
+  },
+  "result_number_73": {
+    "text": "hetvenhárom",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "362fe2eba5ace997fecd16f3e78aaa228b5db283bf1d6701c0b9868abce402a5"
+  },
+  "result_number_74": {
+    "text": "hetvennégy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "822af83faae273ac28266a596a64c949a8cef395cef498f36678c1904af534cd"
+  },
+  "result_number_75": {
+    "text": "hetvenöt",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0c3da6a685bb7884eb2212ef59eb9c96ea408daecfde5dcb66ab34d2cd516f68"
+  },
+  "result_number_76": {
+    "text": "hetvenhat",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "468005a94f96722e74349332ecfb40ce4dc29d848902b4bdfda638138a4c92b5"
+  },
+  "result_number_77": {
+    "text": "hetvenhét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "171b5967f4f23e9f44e140bf21bd536ac63a6f6b4e513257fdbf0101efef3cef"
+  },
+  "result_number_78": {
+    "text": "hetvennyolc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "af06b29c82c055f2a9f7e34472448e1b45f4b609957876c8708dd61c166d9da0"
+  },
+  "result_number_79": {
+    "text": "hetvenkilenc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "25c99b9d17104f28e3672ce92a60a092a01c1065b293cb825f3824ba37c1eef4"
+  },
+  "result_number_80": {
+    "text": "nyolcvan",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7c181906463b907a5965d32faf5cdc127ada37f3da35b9ef22547451874afd1f"
+  },
+  "result_number_81": {
+    "text": "nyolcvanegy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a37817a9bf7d1311e6add0cad88691326048a38db954ab66a80627ab1cdb41e1"
+  },
+  "result_number_82": {
+    "text": "nyolcvankettő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "30db08ab6c8b328c23a513409ed0da9580cfa5d3b9f1654705a240d1648188fd"
+  },
+  "result_number_82_before_unit": {
+    "text": "nyolcvankét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1ab893663bb8aacd0f24c74fc29fe0660ebfadacbf5d8fb3d004b182e0c0ffa9"
+  },
+  "result_number_83": {
+    "text": "nyolcvanhárom",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "015292291640e83bfafafe21fee675755b996a0a0fb416e9362686a9de1192e4"
+  },
+  "result_number_84": {
+    "text": "nyolcvannégy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e070c2110decf26a4512ab1d43b75af31f4975bf2449dbf957efe713c391c498"
+  },
+  "result_number_85": {
+    "text": "nyolcvanöt",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e02ca9361f4864b6caca32456be327cb98d5d770f1713853b6e52fea49122635"
+  },
+  "result_number_86": {
+    "text": "nyolcvanhat",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9fd32f77105921d46ec7400af0c7ad9b3fd26157474b9ad6704239d99c902c64"
+  },
+  "result_number_87": {
+    "text": "nyolcvanhét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ae405ec3b522e9e2e025947a4877b3f518edae8028e26e02bab55d9a25061fee"
+  },
+  "result_number_88": {
+    "text": "nyolcvannyolc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "da3d1d30dd3950dcd5d4f1c945078b2543e75fb9835ed9267a3dcd6774a2d859"
+  },
+  "result_number_89": {
+    "text": "nyolcvankilenc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a7f79ad66d868ed05a17b22d93fefd1ebef790fcfd62edfc8c80ab6cc32de183"
+  },
+  "result_number_90": {
+    "text": "kilencven",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "88efaaac08067234ae07ecdc085b1c297b1832823a9cee7f0463b6576f14256d"
+  },
+  "result_number_91": {
+    "text": "kilencvenegy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "8830a2f5bd81f527341a0d28d2b209eaca48e7bb6aa7e4fe6bdd3452597306f6"
+  },
+  "result_number_92": {
+    "text": "kilencvenkettő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b73c8608ccb8abf949c064db352ae44a37c08dedf5c59272e2857791f9efe428"
+  },
+  "result_number_92_before_unit": {
+    "text": "kilencvenkét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "deb32047c5052e359d159635cf3f13e217449d6b1296e244800696be3699de2d"
+  },
+  "result_number_93": {
+    "text": "kilencvenhárom",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b6457c36304101b4e3636f85336324ebbe3b78a4648b278b2ebb5dac8042e176"
+  },
+  "result_number_94": {
+    "text": "kilencvennégy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "13cd873e0fa8b2c1da2779c37560b62ff7bfcb8ec375feb7155a9936b1dcbdb3"
+  },
+  "result_number_95": {
+    "text": "kilencvenöt",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3452d3ab31db2ec0402bf0d7477cc25d1e1adb3ef2da4d6b2fa4dcccf1a75e57"
+  },
+  "result_number_96": {
+    "text": "kilencvenhat",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "66c1f92511da5168b150893399078127f0d02503f4a9e049dc23f76bad02afd5"
+  },
+  "result_number_97": {
+    "text": "kilencvenhét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "dfdbe148a169426522dc45842e3e2fe0adaeea4c3903ac9784ab0d62cf534ba0"
+  },
+  "result_number_98": {
+    "text": "kilencvennyolc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "35b0d2759525fd45a8d1d3388753ed958a6ba1f29cbcbbba246b23f4a7e0493b"
+  },
+  "result_number_99": {
+    "text": "kilencvenkilenc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c9e7d0f8d3e0bea216faad2e9db97cb476e4c9137f36482a18b2b3869afbe1fd"
+  },
   "good": {
     "source": "Original synthesized tone",
     "duration_ms": 28

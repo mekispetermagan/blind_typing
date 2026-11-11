@@ -81,6 +81,7 @@ class _ApplicationView extends StatelessWidget {
         return MenuScreen(
           title: controller.menu.title,
           breadcrumb: controller.breadcrumb,
+          summary: controller.completionSummary,
           items: controller.menu.children,
           selectedIndex: controller.selectedIndex,
           mode: controller.mode,

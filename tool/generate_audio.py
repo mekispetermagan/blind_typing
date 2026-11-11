@@ -95,6 +95,31 @@ def speech_texts():
     yield "mode_advanced", "Haladó mód."
     yield "unknown_character", "Ismeretlen jel."
 
+    yield "result_time", "Az időd"
+    yield "result_minute", "perc"
+    yield "result_second", "másodperc."
+    yield "result_errors", "A hibás leütések száma"
+    yield "result_best_time", "Ez eddig a legjobb időd."
+    yield "result_fewest_errors", "Ez eddig a legkevesebb hibád."
+    yield "result_mixed_mode", "A feladat közben módot váltottál."
+    for name, text in [
+        ("hundred", "száz"),
+        ("thousand", "ezer"),
+        ("million", "millió"),
+        ("billion", "milliárd"),
+    ]:
+        yield f"result_{name}", text
+    digits = ["nulla", "egy", "kettő", "három", "négy", "öt", "hat", "hét", "nyolc", "kilenc"]
+    tens = ["", "tíz", "húsz", "harminc", "negyven", "ötven", "hatvan", "hetven", "nyolcvan", "kilencven"]
+    for number in range(100):
+        decade, digit = divmod(number, 10)
+        stem = {1: "tizen", 2: "huszon"}.get(decade, tens[decade]) if digit else tens[decade]
+        if number not in (1, 2, 3):
+            text = digits[number] if not decade else stem + (digits[digit] if digit else "")
+            yield f"result_number_{number}", text
+        if digit == 2:
+            yield f"result_number_{number}_before_unit", stem + "két"
+
 
 def generate_beep(name, correct):
     duration = 0.028 if correct else 0.060

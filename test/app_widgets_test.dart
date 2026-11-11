@@ -82,6 +82,7 @@ void main() {
         await key(LogicalKeyboardKey.keyF, character: character);
       }
       expect(app.menu.id, 'complete_menu');
+      expect(find.textContaining('A hibás leütések száma 2.'), findsOneWidget);
       expect(find.text('Következő gyakorlat'), findsOneWidget);
       await key(LogicalKeyboardKey.arrowDown);
       await key(LogicalKeyboardKey.enter);

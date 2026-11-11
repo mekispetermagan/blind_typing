@@ -6,6 +6,8 @@ import '../models/exercise.dart';
 import '../models/menu.dart';
 import '../services/audio_service.dart';
 import '../services/content_repository.dart';
+import '../services/practice_feedback.dart';
+import '../services/practice_records.dart';
 import '../services/speech_coordinator.dart';
 import 'letter_teaching_controller.dart';
 import 'typing_controller.dart';
@@ -18,10 +20,12 @@ class AppController extends ChangeNotifier {
     required this._content,
     required this._speech,
     this.countdownInterval = const Duration(seconds: 1),
-  });
+    PracticeRecords? records,
+  }) : _records = records ?? PracticeRecords();
 
   final ContentRepository _content;
   final SpeechCoordinator _speech;
+  final PracticeRecords _records;
   final Duration countdownInterval;
   MenuCatalog? _catalog;
   final List<MenuNode> _path = [];
@@ -101,6 +105,12 @@ class AppController extends ChangeNotifier {
   int get selectedIndex =>
       _activityMenu != null ? _sessionSelection : _selections.last;
   String get breadcrumb => _path.map((node) => node.title).join(' › ');
+  String? get completionSummary {
+    if (activityPhase != ExercisePhase.complete) return null;
+    final result = _typing?.practiceResult ?? _teaching?.practiceResult;
+    return result == null ? null : PracticeFeedback.describe(result);
+  }
+
   String get errorMessage =>
       _failure ?? 'A hang nem indítható. Az Enter újrapróbálja.';
 
@@ -113,6 +123,7 @@ class AppController extends ChangeNotifier {
     try {
       await _speech.audio.initialize(AudioCues.speechAssets);
       final catalog = await _content.loadMenu();
+      await _records.load();
       await _speech.audio.initialize(
         catalog.allNodes.map((node) => node.audioAsset),
       );
@@ -234,6 +245,7 @@ class AppController extends ChangeNotifier {
             exercise: exercise,
             speech: _speech,
             mode: _mode,
+            records: _records,
             countdownInterval: countdownInterval,
           )..addListener(_activityChanged);
           await _typing!.initialize();
@@ -241,6 +253,7 @@ class AppController extends ChangeNotifier {
           _teaching = LetterTeachingController(
             exercise: exercise,
             speech: _speech,
+            records: _records,
           )..addListener(_activityChanged);
           await _teaching!.initialize();
       }

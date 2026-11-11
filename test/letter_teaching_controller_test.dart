@@ -85,8 +85,11 @@ void main() {
       expect(controller.state.phase, ExercisePhase.complete);
       expect(controller.state.successes, 3);
       expect(audio.spoken.last, controller.step.audio('complete'));
+      expect(controller.practiceResult?.errors, 1);
+      audio.holdSpeech = false;
       audio.finishSpeech();
       await settle();
+      expect(audio.spoken, contains('assets/audio/result_errors.wav'));
       expect(audio.spoken.last, AudioCues.complete);
       expect(
         audio.spoken.where((asset) => asset == controller.step.audio('retry')),

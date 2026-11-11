@@ -10,6 +10,7 @@ class MenuScreen extends StatelessWidget {
   const MenuScreen({
     required this.title,
     required this.breadcrumb,
+    this.summary,
     required this.items,
     required this.selectedIndex,
     required this.mode,
@@ -24,6 +25,7 @@ class MenuScreen extends StatelessWidget {
   });
   final String title;
   final String breadcrumb;
+  final String? summary;
   final List<MenuNode> items;
   final int selectedIndex;
   final TypingMode mode;
@@ -65,6 +67,10 @@ class MenuScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(breadcrumb, style: Theme.of(context).textTheme.bodyLarge),
+            if (summary case final text?) ...[
+              const SizedBox(height: 16),
+              Text(text),
+            ],
             const SizedBox(height: 32),
             Expanded(
               child: MenuList(

@@ -2,7 +2,7 @@
 
 Audio-first Hungarian touch-typing tutor. Linux first; Flutter web and Windows
 remain targets. Menus, lesson content, practice text, and Hungarian audio are
-bundled locally. No backend, accounts, runtime TTS, or saved progress.
+bundled locally. Practice records are saved on the device.
 
 ## Run on Linux
 
@@ -92,6 +92,11 @@ F4, or Close exits.
 Letter teaching uses its own coaching flow independently of typing correction
 modes. F1 repeats its current instruction; F3 changes the selection for subsequent
 word/practice activities.
+
+Letter teaching and word drills report active typing time and incorrect keystrokes
+on completion. Each activity saves its fastest time and fewest errors locally.
+Word drills keep separate records for Simple and Advanced. An attempt with a
+mode change still reports the results and leaves both records intact.
 
 ## Content
 

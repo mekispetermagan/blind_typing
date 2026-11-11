@@ -2,11 +2,15 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 
+import '../managers/practice_attempt.dart';
 import '../managers/typing_session_manager.dart';
 import '../models/exercise.dart';
+import '../models/practice_result.dart';
 import '../models/typing_state.dart';
 import '../models/typing_unit.dart';
 import '../services/audio_service.dart';
+import '../services/practice_feedback.dart';
+import '../services/practice_records.dart';
 import '../services/speech_coordinator.dart';
 
 export '../models/typing_state.dart';
@@ -17,15 +21,21 @@ class TypingController extends ChangeNotifier {
     required TypingExercise exercise,
     required this._speech,
     TypingMode mode = TypingMode.simple,
+    PracticeRecords? records,
     this._countdownInterval = const Duration(seconds: 1),
-  }) : _manager = TypingSessionManager(exercise, mode: mode);
+  }) : _manager = TypingSessionManager(exercise, mode: mode),
+       _records = records ?? PracticeRecords();
 
   final TypingSessionManager _manager;
   final SpeechCoordinator _speech;
   final Duration _countdownInterval;
+  final PracticeRecords _records;
+  PracticeAttempt? _attempt;
+  PracticeResult? _practiceResult;
   int? _spellingToken;
   bool _disposed = false;
 
+  PracticeResult? get practiceResult => _practiceResult;
   TypingState get state => _manager.state;
   TypingExercise get exercise => _manager.exercise;
   TypingUnit get sentence => _manager.unit;
@@ -46,9 +56,12 @@ class TypingController extends ChangeNotifier {
       await _speech.audio.initialize([
         ...AudioCues.speechAssets,
         ...exercise.audioAssets,
+        if (exercise.isWordDrill) ...PracticeFeedback.audioAssets,
       ]);
       if (!_current(token)) return;
       _manager.ready();
+      _attempt = null;
+      _practiceResult = null;
       notifyListeners();
       await _speech.say(token, AudioCues.welcome);
     } catch (_) {
@@ -62,6 +75,10 @@ class TypingController extends ChangeNotifier {
       return;
     }
     if (!_manager.restart()) return;
+    _practiceResult = null;
+    if (exercise.isWordDrill) {
+      _attempt = PracticeAttempt(mode: mode)..setAcceptingInput(true);
+    }
     notifyListeners();
     unawaited(_beginUnit(_speech.begin()));
   }
@@ -109,6 +126,12 @@ class TypingController extends ChangeNotifier {
     cancelSpelling();
     final result = _manager.typeCharacter(character);
     if (result == TypingResult.ignored) return;
+    if (result == TypingResult.incorrect) _attempt?.recordError();
+    final attempt = _attempt;
+    if (result == TypingResult.completed && attempt != null) {
+      _practiceResult = _records.finish(exercise.id, attempt.finish());
+      _attempt = null;
+    }
     try {
       _speech.audio.feedback(correct: result != TypingResult.incorrect);
       notifyListeners();
@@ -140,7 +163,11 @@ class TypingController extends ChangeNotifier {
   Future<void> _finish(int token) async {
     try {
       if (await _speech.celebrate(token, sentence: !exercise.isWordDrill)) {
-        await _speech.say(token, AudioCues.complete);
+        await _speech.sequence(token, [
+          if (_practiceResult case final result?)
+            ...PracticeFeedback.speech(result),
+          AudioCues.complete,
+        ]);
       }
     } catch (_) {
       _fail(token);
@@ -163,6 +190,7 @@ class TypingController extends ChangeNotifier {
     }
     cancelSpelling();
     _manager.toggleMode();
+    _attempt?.recordModeChange();
     notifyListeners();
     if (phase == ExercisePhase.reading) {
       unawaited(_beginUnit(_speech.begin(), announceMode: true));
@@ -208,6 +236,7 @@ class TypingController extends ChangeNotifier {
 
   void pause() {
     if (!_manager.pause()) return;
+    _attempt?.setAcceptingInput(false);
     _spellingToken = null;
     _speech.begin();
     notifyListeners();
@@ -219,6 +248,7 @@ class TypingController extends ChangeNotifier {
       return;
     }
     if (!_manager.resume()) return;
+    _attempt?.setAcceptingInput(phase == ExercisePhase.typing);
     notifyListeners();
     if (phase == ExercisePhase.typing) {
       repeatWord();
@@ -240,6 +270,7 @@ class TypingController extends ChangeNotifier {
     _spellingToken = null;
     _speech.begin();
     _manager.fail();
+    _attempt?.setAcceptingInput(false);
     notifyListeners();
   }
 
