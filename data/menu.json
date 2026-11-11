@@ -72,6 +72,90 @@
                 }
               }
             ]
+          },
+          {
+            "id": "reach_em",
+            "title": "E, M",
+            "speech": "e, emm",
+            "children": [
+              {
+                "id": "reach_em_letters",
+                "title": "betűk",
+                "activity": {
+                  "type": "letters",
+                  "content": "data/lessons/reach_em_letters.json"
+                }
+              },
+              {
+                "id": "reach_em_e_words",
+                "title": "gyakorlatok — E",
+                "speech": "Gyakorlatok az e betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_em_e_words.json"
+                }
+              },
+              {
+                "id": "reach_em_m_words",
+                "title": "gyakorlatok — M",
+                "speech": "Gyakorlatok az emm betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_em_m_words.json"
+                }
+              },
+              {
+                "id": "reach_em_em_words",
+                "title": "gyakorlatok — EM",
+                "speech": "Gyakorlatok az e és az emm betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_em_em_words.json"
+                }
+              }
+            ]
+          },
+          {
+            "id": "reach_uv",
+            "title": "U, V",
+            "speech": "u, vé",
+            "children": [
+              {
+                "id": "reach_uv_letters",
+                "title": "betűk",
+                "activity": {
+                  "type": "letters",
+                  "content": "data/lessons/reach_uv_letters.json"
+                }
+              },
+              {
+                "id": "reach_uv_u_words",
+                "title": "gyakorlatok — U",
+                "speech": "Gyakorlatok az u betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_uv_u_words.json"
+                }
+              },
+              {
+                "id": "reach_uv_v_words",
+                "title": "gyakorlatok — V",
+                "speech": "Gyakorlatok a vé betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_uv_v_words.json"
+                }
+              },
+              {
+                "id": "reach_uv_uv_words",
+                "title": "gyakorlatok — UV",
+                "speech": "Gyakorlatok az u és a vé betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_uv_uv_words.json"
+                }
+              }
+            ]
           }
         ]
       },

@@ -1,0 +1,128 @@
+{
+  "id": "reach_uv_uv_words",
+  "type": "words",
+  "title": "U, V — gyakorlatok — UV",
+  "allowedLetters": "ASDFJKLÉIREMUV",
+  "units": [
+    {
+      "id": "reach_uv_uv_01",
+      "text": "AVUL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_02",
+      "text": "DURVA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_03",
+      "text": "UDVAR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_04",
+      "text": "VADUL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_05",
+      "text": "VIRUL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_06",
+      "text": "UDVARA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_07",
+      "text": "UDVARI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_08",
+      "text": "DURVUL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_09",
+      "text": "VADULJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_10",
+      "text": "VIRULJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_11",
+      "text": "ELAVUL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_12",
+      "text": "UDVARAM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_13",
+      "text": "UDVARAD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_14",
+      "text": "UDVARAI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_15",
+      "text": "DURVULJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_16",
+      "text": "ELVADUL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_17",
+      "text": "KIVIRUL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_18",
+      "text": "FELVIRUL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_19",
+      "text": "VADULJAK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_20",
+      "text": "DURVULJAK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_21",
+      "text": "ELDURVUL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_22",
+      "text": "UDVARIAS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_23",
+      "text": "UDVARAIM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_uv_24",
+      "text": "UDVARAID",
+      "promptStyle": "word"
+    }
+  ]
+}

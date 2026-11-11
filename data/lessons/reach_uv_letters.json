@@ -1,0 +1,43 @@
+{
+  "id": "reach_uv_letters",
+  "type": "letters",
+  "title": "U, V — betűk",
+  "steps": [
+    {
+      "id": "reach_uv_j_anchor",
+      "key": "J",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le a J billentyűt a jobb kezed mutatóujjával.",
+      "retry": "Keresd meg a J billentyűt a jobb kezed mutatóujjával.",
+      "success": "Igen, ez a J.",
+      "complete": "Nagyszerű."
+    },
+    {
+      "id": "reach_uv_u",
+      "key": "U",
+      "requiredSuccesses": 3,
+      "instruction": "A J billentyűről csúsztasd felfelé a jobb kezed mutatóujját. Keresd meg és nyomd le az U billentyűt a felső betűsorban.",
+      "retry": "Keresd meg az U billentyűt a J fölött, a jobb kezed mutatóujjával.",
+      "success": "Igen, ez az U. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "reach_uv_f_anchor",
+      "key": "F",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le az F billentyűt a bal kezed mutatóujjával.",
+      "retry": "Keresd meg az F billentyűt a bal kezed mutatóujjával.",
+      "success": "Igen, ez az F.",
+      "complete": "Nagyszerű."
+    },
+    {
+      "id": "reach_uv_v",
+      "key": "V",
+      "requiredSuccesses": 3,
+      "instruction": "Az F billentyűről csúsztasd lefelé a bal kezed mutatóujját. Keresd meg és nyomd le a V billentyűt az alsó betűsorban.",
+      "retry": "Keresd meg a V billentyűt az F alatt, a bal kezed mutatóujjával.",
+      "success": "Igen, ez a V. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    }
+  ]
+}

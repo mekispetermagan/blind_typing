@@ -49,6 +49,56 @@
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "ac31ec7273def8db4123537615bcda2edf5922034871529706bf236dd2f6e77d"
   },
+  "menu_reach_em": {
+    "text": "e, emm",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5d29dc4a07a704bd2958c64b570ffd66fcc92476d14f549d2e146705a6fee60a"
+  },
+  "menu_reach_em_letters": {
+    "text": "betűk",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0b41edafc9e8740702248509a3c4748459551fba5f9c8bfe485ab7b4d126b60a"
+  },
+  "menu_reach_em_e_words": {
+    "text": "Gyakorlatok az e betűvel.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6772577aa550bd602006b90a1054979af022c077450f144084443a61f8decef5"
+  },
+  "menu_reach_em_m_words": {
+    "text": "Gyakorlatok az emm betűvel.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bd3eef42d4075b0e633ec96102138c41e5f025c80ab7a947426f6e2f31bc7286"
+  },
+  "menu_reach_em_em_words": {
+    "text": "Gyakorlatok az e és az emm betűvel.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2980c076aa76787030da9fec24fa71b4ce852a5035d4ee9427ea4503f16812de"
+  },
+  "menu_reach_uv": {
+    "text": "u, vé",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d1fcc4e23fd0419b153049e29a4ba07b79c70e3bf4c130456531f1d469f851be"
+  },
+  "menu_reach_uv_letters": {
+    "text": "betűk",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "69544afa9e0488d962958be6717dce46eb5d1ea26851531a6ba0f13500ea7172"
+  },
+  "menu_reach_uv_u_words": {
+    "text": "Gyakorlatok az u betűvel.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a53166920783f4edcc52af616138e7242747a13092b8051e316760599042356d"
+  },
+  "menu_reach_uv_v_words": {
+    "text": "Gyakorlatok a vé betűvel.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a5e648aa16400b0d11630e3b4946c845290d944325760dbee7b76ced485acd72"
+  },
+  "menu_reach_uv_uv_words": {
+    "text": "Gyakorlatok az u és a vé betűvel.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "adcea1a5e4e8fae9c6fc725686c55fe949d6c007f99430f53284bda79dad976f"
+  },
   "menu_practice": {
     "text": "Gyakorlás",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
@@ -653,6 +703,886 @@
     "text": "kardjai",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "aec10f5a963deb03ed8d53240f97a86ec720679c899236c881cf9c34ba8833a8"
+  },
+  "step_reach_em_d_anchor_instruction": {
+    "text": "Nyomd le a D billentyűt a bal kezed középső ujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c080699695d3243a1c28a88130e41c6200b7a7a8bfbcb14386d278fb13487897"
+  },
+  "step_reach_em_d_anchor_retry": {
+    "text": "Keresd meg a D billentyűt a bal kezed középső ujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "58d7b343c8a66f6300e9c0f473252094c40f4417eb22f42cc0c5f45f9ab00fe7"
+  },
+  "step_reach_em_d_anchor_success": {
+    "text": "Igen, ez a D.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b2f6f07b1fec6ac2fb3b996964edd3cad4a79f0a4cf0f8d550d157739195a6e3"
+  },
+  "step_reach_em_d_anchor_complete": {
+    "text": "Nagyszerű.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "17e60d8f62fa4daf21d98e911ca23b06351524d0010050f2c2a0601c1d91b081"
+  },
+  "step_reach_em_e_instruction": {
+    "text": "A D billentyűről csúsztasd felfelé és kicsit balra a bal kezed középső ujját. Keresd meg és nyomd le az E billentyűt a felső betűsorban.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e6848b32eaeb4a3793d17ee095444ff951791475fdcebf3f66eaa36f8bbba9e7"
+  },
+  "step_reach_em_e_retry": {
+    "text": "Keresd meg az E billentyűt a D fölött és kicsit balra, a bal kezed középső ujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a110d22a249af86efbae965916204a8cbbae193d26c78897ebabd964a3b3c696"
+  },
+  "step_reach_em_e_success": {
+    "text": "Igen, ez az E. Nyomd le még egyszer.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9ab6b34013933d9d8e0cebca9ba6ac34f0b7c55edc1ee4ae214079719dfc7c04"
+  },
+  "step_reach_em_e_complete": {
+    "text": "Nagyszerű. Továbblépünk.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "66c0b4543fa8c2e1f7c810066fdb8ec51660ce8f76a5ebf6496659a94093e408"
+  },
+  "step_reach_em_j_anchor_instruction": {
+    "text": "Nyomd le a J billentyűt a jobb kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "67486d9e3a6f63f166073042f5efe4090388a7438588d3a919e7d29b8d062826"
+  },
+  "step_reach_em_j_anchor_retry": {
+    "text": "Keresd meg a J billentyűt a jobb kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9d4a140e42897f791d151f936cff27e5f26b1cb59e68eedc7408c4a5084987e4"
+  },
+  "step_reach_em_j_anchor_success": {
+    "text": "Igen, ez a J.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1fdce91b844c43d5efd0f5221826ba8396b5d86f4db2940a02306b9dc6fe5fe6"
+  },
+  "step_reach_em_j_anchor_complete": {
+    "text": "Nagyszerű.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c45cadc4e68cc2838778ec357a19826029df2f9396e25791421cdb2993a733f8"
+  },
+  "step_reach_em_m_instruction": {
+    "text": "A J billentyűről csúsztasd lefelé és kicsit jobbra a jobb kezed mutatóujját. Keresd meg és nyomd le az M billentyűt az alsó betűsorban.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2ca8cebc9a36a19f1d93497f39ec0ee5d25660f975ef29a22c0144b2d219f9b8"
+  },
+  "step_reach_em_m_retry": {
+    "text": "Keresd meg az M billentyűt a J alatt és kicsit jobbra, a jobb kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d1caae40767ab68792227b02de16b882a6c403806e4e6c4bf1168fd756b42fe1"
+  },
+  "step_reach_em_m_success": {
+    "text": "Igen, ez az M. Nyomd le még egyszer.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a22066df470a1c9b723e402d9465a1062cc67ca197050a2f32aff059802d6349"
+  },
+  "step_reach_em_m_complete": {
+    "text": "Nagyszerű. Továbblépünk.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "66c0b4543fa8c2e1f7c810066fdb8ec51660ce8f76a5ebf6496659a94093e408"
+  },
+  "reach_em_e_01_word_0": {
+    "text": "le",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "29210ea203be858aaf847792caeea909966bf45a0c7eb730e224ab099e914942"
+  },
+  "reach_em_e_02_word_0": {
+    "text": "fej",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b442dcb6fdf6438581ad6e78e93cf4c621ce24eccd74622a6d036cbf21e127e1"
+  },
+  "reach_em_e_03_word_0": {
+    "text": "édes",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "900b97eb122ffe908c474fd05920ea7bb929e9f2200e800250efee354d465ded"
+  },
+  "reach_em_e_04_word_0": {
+    "text": "esik",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7e11801e55fe3c24c910ae65d98472f3c1f75d4093fdd981b8be2c433718865b"
+  },
+  "reach_em_e_05_word_0": {
+    "text": "kerek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "85b8cfd77221a7cde104863d1f6dc366f5aa0cfa4323ec3d6ca8f01841b53a9d"
+  },
+  "reach_em_e_06_word_0": {
+    "text": "kerék",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2d54c3bae33638e1c6d29ddefa88d1b0a8d82958437a15122d96556dc0e1e480"
+  },
+  "reach_em_e_07_word_0": {
+    "text": "keres",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "515988ba6131df4fabc4df494baac99880ec42de3593bf1d979fab0074d333d3"
+  },
+  "reach_em_e_08_word_0": {
+    "text": "kérek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b810c90249017c0add9e039135b1e4a3b7f1b2a633bf9dede328f69e7caa4309"
+  },
+  "reach_em_e_09_word_0": {
+    "text": "derék",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7c08ae5d7f3f1ae15d82aa8390c1ed5ad41b1cfa879ede49599e29ff34a2d74e"
+  },
+  "reach_em_e_10_word_0": {
+    "text": "ferde",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "37070d286752565a954559d10df33bef5a81be6b032ba39c89d4236518b0d072"
+  },
+  "reach_em_e_11_word_0": {
+    "text": "elad",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "95e82d340572aeec78a64263d6e0b72cdd03a34adce45754d6a3de06bb39a362"
+  },
+  "reach_em_e_12_word_0": {
+    "text": "elér",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f0726b5df37bf6e114f1fad810c84891d2f36ae7b76d5eb998afbda885c1be08"
+  },
+  "reach_em_e_13_word_0": {
+    "text": "felel",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4b96417c2d5caba094e99381a6f8158108ec0ffa251eab977d4dd5da0e77fdb7"
+  },
+  "reach_em_e_14_word_0": {
+    "text": "siker",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "828c28b852fa6e0af6066e47e1a8c31829c40d6b4558357bffd8c6da6673463f"
+  },
+  "reach_em_e_15_word_0": {
+    "text": "sikeres",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "80e91699c432c389dedf7836edee7edca1468203d7d67467955d1ce17b207a91"
+  },
+  "reach_em_e_16_word_0": {
+    "text": "erdei",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a09baea5533d1bed81fdeb17fc0b78cca30d297e013e31b9296f4a9d65bf303f"
+  },
+  "reach_em_e_17_word_0": {
+    "text": "jel",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bc6a7e914b8541d9933ade4f9fa7167ed23949f59d325b0789a7a8f9b54c45df"
+  },
+  "reach_em_e_18_word_0": {
+    "text": "kel",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "04e3baecb8c6959ee1e8c60f1a4989fabe96453fe616c0d6e6cae93b0a25e7d5"
+  },
+  "reach_em_e_19_word_0": {
+    "text": "kell",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1e3ce834f7313cbba0ba58fb6b82b82a5643647066a4002c1334791dc27b4493"
+  },
+  "reach_em_e_20_word_0": {
+    "text": "éles",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3da092554770edc0b6d436deffa247099f45fb20b37160f6c3c1b5b593887256"
+  },
+  "reach_em_e_21_word_0": {
+    "text": "élek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b3c7bbc39db75e41838cacd38d44560d73036664de148446e2e4438a7ae610f4"
+  },
+  "reach_em_e_22_word_0": {
+    "text": "félre",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "8ae98c361daa5dca7d566550cb6bf3f5e00ba21befc33c9d3a0e2aaae8ce6109"
+  },
+  "reach_em_e_23_word_0": {
+    "text": "érdek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "13d474906c71eaf580c9564b584c51109709c555f771c3ffaa703a35ea8e3b9a"
+  },
+  "reach_em_e_24_word_0": {
+    "text": "érdekes",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "74809cc933a7d641c7dffe51159bc3dbd12c3b984950582c76d92a67973c4350"
+  },
+  "reach_em_m_01_word_0": {
+    "text": "ma",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3986a0512931eccaaf71cf215ac6bf1f19c3c1a58ce3450eada68c8d9e51ef6f"
+  },
+  "reach_em_m_02_word_0": {
+    "text": "mi",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3f2dc710b59488e84fe0cbc0a2a671d351f1e0554fbd375f247d8c5bea4ae88b"
+  },
+  "reach_em_m_03_word_0": {
+    "text": "mama",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "dff5844beccecb588756e94b337bf017620a7dd795a99d3fb0710c17fc35c8d0"
+  },
+  "reach_em_m_04_word_0": {
+    "text": "mami",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "636ec5e88a2c798d0ac7d85f3b835851e6aefb16e3c78c8e61cddfb7dbcb474e"
+  },
+  "reach_em_m_05_word_0": {
+    "text": "sima",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "204522c56a9f6a47f81bd462bdbeacbaf3d83561c37fc65499526581f8021f12"
+  },
+  "reach_em_m_06_word_0": {
+    "text": "maki",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2b8facb460a88ea70087a1064cb3b54a42bf27bce4e20d50d8367f7992dec535"
+  },
+  "reach_em_m_07_word_0": {
+    "text": "mar",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e28ab5c90f984a13909b47adee1ad6655652ada127daa03a58fad5ddd5fa09c1"
+  },
+  "reach_em_m_08_word_0": {
+    "text": "marad",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4747c854afa9d0c8e3387a7824f84287722560e66acfc2a4c040739f48f95d99"
+  },
+  "reach_em_m_09_word_0": {
+    "text": "maradék",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "516a713bfbe57536ddbb7e69f06396a9b43a403b43bd23886b66b7eaa67e820f"
+  },
+  "reach_em_m_10_word_0": {
+    "text": "marék",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ec05cf413f4bae4c63ec1bf1325dde5310587711c06d33fb5b148ea411250b0c"
+  },
+  "reach_em_m_11_word_0": {
+    "text": "fém",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9fb004d022c46eb7c1f614d36da62abdb130f926adde77aaae59e72ff7ccd42a"
+  },
+  "reach_em_m_12_word_0": {
+    "text": "mér",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f4b235d0332a3af9afa49b5f345a6af98119e346bb0fac2b68c9002bf8b58273"
+  },
+  "reach_em_m_13_word_0": {
+    "text": "mérés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ccacaa22294763a540fa0a7141c990ef21a16e0b779f909fffb99d3281b2bfc1"
+  },
+  "reach_em_m_14_word_0": {
+    "text": "séma",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "715d2d02eaad8c7789c8f5cd057e46209cd077e8d884126258d75eb30367afc9"
+  },
+  "reach_em_m_15_word_0": {
+    "text": "média",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e868b1fc3380834f719866106149ca6ceea20736f93d2792b6fe635853c3eb5e"
+  },
+  "reach_em_m_16_word_0": {
+    "text": "kimér",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4ba54caa70b81fcfc02ec62518b513f172f26b385bed27f5a6c537a985e270c0"
+  },
+  "reach_em_m_17_word_0": {
+    "text": "kimarad",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "653228749ebc33ee5a2f4bb289c5bef1f07f3848ce53d2e89cf377ea45ad65e9"
+  },
+  "reach_em_m_18_word_0": {
+    "text": "méri",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "08b30252e37ebad185666ed1138c3d09498b3897d46f527df843eb7ba3be47e3"
+  },
+  "reach_em_m_19_word_0": {
+    "text": "film",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "48a2157dbb70071e5bceff294d106b528b771eb7b346c27d827461b61b8539f3"
+  },
+  "reach_em_m_20_word_0": {
+    "text": "damil",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "da19a1acc0201e1841ab529a6db314e8a109b23633b9180bf224a62da6ff3193"
+  },
+  "reach_em_m_21_word_0": {
+    "text": "kamra",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b0e88d5ade774c1e4fa44e0caf8893314ec339ad62bf090477befe4af455cc80"
+  },
+  "reach_em_m_22_word_0": {
+    "text": "kém",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "296eae7fd8f1653ad65338a608b10cfb50cc132f9ccd61448110c07f87f0cfa0"
+  },
+  "reach_em_m_23_word_0": {
+    "text": "kémia",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6e1edb825e31572b03710d2479d2db696ba83bc25a8dbea12e6b155697a16f58"
+  },
+  "reach_em_m_24_word_0": {
+    "text": "rém",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "85e5efc7f7443bcdba134bf42b89f9830b4c649e7d481bde85c45e55b9fc6a41"
+  },
+  "reach_em_em_01_word_0": {
+    "text": "sem",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "476eb806636c43f70534136897d37da4e1f97c1c93243e6d34779bff2aaecc17"
+  },
+  "reach_em_em_02_word_0": {
+    "text": "semmi",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "155b29f1dde9d322fc97894882efd6a6c225deaafafbf695cfa83ef336ef1db4"
+  },
+  "reach_em_em_03_word_0": {
+    "text": "mese",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2a769b9954aa44966bb7bc6cc4a3e948ddcaa69cfc9a4b04c20266c7daea2c8e"
+  },
+  "reach_em_em_04_word_0": {
+    "text": "mesél",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "07e6cb7206413da83e16650a65ba4a8f6c6d829026f27a4845e876a8443a1361"
+  },
+  "reach_em_em_05_word_0": {
+    "text": "elem",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5aef1155a920ed780de0b9de444d3652908e9f0349c8562421980ab9b244780b"
+  },
+  "reach_em_em_06_word_0": {
+    "text": "elme",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "8d4a7592add0d759c7159551dda40fcacded98e3bcf07297f3102a2c025497ad"
+  },
+  "reach_em_em_07_word_0": {
+    "text": "emel",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bb29b1f0ea6029e6d1b8bfa81c41b6180e9c05108b562323394c975737d7c78a"
+  },
+  "reach_em_em_08_word_0": {
+    "text": "ismer",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ad140b41cd9699728f3e8ec67add332fda78fc48d9033ecfc38d18346046e382"
+  },
+  "reach_em_em_09_word_0": {
+    "text": "remek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "280e9246cbb8efdee8297697b5852f7f0d0a28a8fffee7c1ac24f126a6d522fa"
+  },
+  "reach_em_em_10_word_0": {
+    "text": "remél",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3a94d66dce8104eeb4f6a236dd94def9de0358839999c9801443ec09e2e2130d"
+  },
+  "reach_em_em_11_word_0": {
+    "text": "remélem",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2ac989d864244426db9ab10bd0f22c8674e151693fd363154538355775333f68"
+  },
+  "reach_em_em_12_word_0": {
+    "text": "kérem",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "8908496acac0d5f816cafc8dfc5d792c6490404aae6360a6e94447766b52fa7b"
+  },
+  "reach_em_em_13_word_0": {
+    "text": "merre",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b60d9e23fcd997a2e03acc5ec8e22c7ee4a2d01e9227674251ac214ee94b7a30"
+  },
+  "reach_em_em_14_word_0": {
+    "text": "mire",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5d01b84e783bd581d5e87682298c48c3783e70d9e09ea29440a4db6d55a9acac"
+  },
+  "reach_em_em_15_word_0": {
+    "text": "mellé",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7a8cd7bcf52f0054ba5924e113369245e94b2b7e87409ff688b25f3047a475d6"
+  },
+  "reach_em_em_16_word_0": {
+    "text": "mérek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d830ea71f887dbc01a7b13c3dafffed26458cc93c660d220bab46db844ec4d67"
+  },
+  "reach_em_em_17_word_0": {
+    "text": "emlék",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c14826772fd59bc7a87b723691d3f8b871c75c37700e64f06793f24b03d4655a"
+  },
+  "reach_em_em_18_word_0": {
+    "text": "emeli",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9fcbbd4a00ad0e850469d94ec3a57b6a4c585df8f43b974960aa78171369289f"
+  },
+  "reach_em_em_19_word_0": {
+    "text": "merek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a28d32d3324cca62fdad10d95aba3fb11ad03cfa3d4996ec9b4ec61c3bc4b1dd"
+  },
+  "reach_em_em_20_word_0": {
+    "text": "meredek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d624db745297d8a96539ad4cf30137ff3c4372c884031b981d675bf6488c4fb7"
+  },
+  "reach_em_em_21_word_0": {
+    "text": "érme",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bd80f52dfc1d7cb497b418d6a1294891fbde2973938b86faa987d89fe90e9701"
+  },
+  "reach_em_em_22_word_0": {
+    "text": "érdem",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3a7107dd4c7c363cbfb73b3766dbdcb62da29659a950c0cd4fd348ab24e086fa"
+  },
+  "reach_em_em_23_word_0": {
+    "text": "érdemes",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a13696fbb78578594cadbc3d877bf061ed79a6f7eecfbf7a59b73e5094387694"
+  },
+  "reach_em_em_24_word_0": {
+    "text": "félelem",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5b7cb0e6336008a0e42ae836c122dbde43323d3e2dee09a25bb193158a6a6c14"
+  },
+  "step_reach_uv_j_anchor_instruction": {
+    "text": "Nyomd le a J billentyűt a jobb kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1281ed1fc1446eb2d7c55d563c69064269eb6da4a459102fac8abafbc76f8f47"
+  },
+  "step_reach_uv_j_anchor_retry": {
+    "text": "Keresd meg a J billentyűt a jobb kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9d4a140e42897f791d151f936cff27e5f26b1cb59e68eedc7408c4a5084987e4"
+  },
+  "step_reach_uv_j_anchor_success": {
+    "text": "Igen, ez a J.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1fdce91b844c43d5efd0f5221826ba8396b5d86f4db2940a02306b9dc6fe5fe6"
+  },
+  "step_reach_uv_j_anchor_complete": {
+    "text": "Nagyszerű.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "17e60d8f62fa4daf21d98e911ca23b06351524d0010050f2c2a0601c1d91b081"
+  },
+  "step_reach_uv_u_instruction": {
+    "text": "A J billentyűről csúsztasd felfelé a jobb kezed mutatóujját. Keresd meg és nyomd le az U billentyűt a felső betűsorban.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f8899d0f0c5f4b145f74946851f1ee2dfb195ddc4acff264e1b493c053882e12"
+  },
+  "step_reach_uv_u_retry": {
+    "text": "Keresd meg az U billentyűt a J fölött, a jobb kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6c1f562938cb9b1dbd1c77e646482731b51bd8480c4edd3ff3caf60764285a5e"
+  },
+  "step_reach_uv_u_success": {
+    "text": "Igen, ez az U. Nyomd le még egyszer.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "97d9866c12b584a159138bda00380b96d85e3298be8d1f8ab575c6dd4559c1c8"
+  },
+  "step_reach_uv_u_complete": {
+    "text": "Nagyszerű. Továbblépünk.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4024dfbf4ff713826672eb58eff99989cff937a11aa28f9777344f149a24a8c8"
+  },
+  "step_reach_uv_f_anchor_instruction": {
+    "text": "Nyomd le az F billentyűt a bal kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a3f6a3a0b36c1bc5c514090c56760e13370c7b7257eea690532b90da71f3b637"
+  },
+  "step_reach_uv_f_anchor_retry": {
+    "text": "Keresd meg az F billentyűt a bal kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6c77d9c9f4b9268e491001fb55893082ee19d59430e9083da15ad10dfb550af5"
+  },
+  "step_reach_uv_f_anchor_success": {
+    "text": "Igen, ez az F.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "dfe5db630f1b3cfb394834d7eb9d7cda705682936c1b4efa9f7f9e3c0900bf55"
+  },
+  "step_reach_uv_f_anchor_complete": {
+    "text": "Nagyszerű.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "17e60d8f62fa4daf21d98e911ca23b06351524d0010050f2c2a0601c1d91b081"
+  },
+  "step_reach_uv_v_instruction": {
+    "text": "Az F billentyűről csúsztasd lefelé a bal kezed mutatóujját. Keresd meg és nyomd le a V billentyűt az alsó betűsorban.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f91df6a12587282e4e16bfc693c06b190bed0fc6790b79d5d434830927d28687"
+  },
+  "step_reach_uv_v_retry": {
+    "text": "Keresd meg a V billentyűt az F alatt, a bal kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "544b2e4dd8f84cbe8377caf9c7cc685ecd4debaa1ed20aa3b1b8ad72d44c8c42"
+  },
+  "step_reach_uv_v_success": {
+    "text": "Igen, ez a V. Nyomd le még egyszer.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ed8f6af37969dac1f21c315de10ed948a2dde1679af4985d152925fa9b635d48"
+  },
+  "step_reach_uv_v_complete": {
+    "text": "Nagyszerű. Továbblépünk.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "66c0b4543fa8c2e1f7c810066fdb8ec51660ce8f76a5ebf6496659a94093e408"
+  },
+  "reach_uv_u_01_word_0": {
+    "text": "kuka",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "cd696f167f1340fd3948e3d19832643c649201d604bd14cd5dd938baadc796cc"
+  },
+  "reach_uv_u_02_word_0": {
+    "text": "duda",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "83f7a63c32a2fc96bae1348b7682143d44639f35ebe8661d69324c34b5ea1104"
+  },
+  "reach_uv_u_03_word_0": {
+    "text": "duma",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "632aa75adb94803ba541c4fa9007a92a0ae419253f0ef6071d3d27aa6b8f5b02"
+  },
+  "reach_uv_u_04_word_0": {
+    "text": "fura",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "baceaa5e087ce99cb6605c4c2af4cca82599165d736673689f2f9d292bdfb073"
+  },
+  "reach_uv_u_05_word_0": {
+    "text": "kuss",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3bb82fbf8423c113372b6a85977d6f05357abe81c27a82a79b59c18626344a8f"
+  },
+  "reach_uv_u_06_word_0": {
+    "text": "kurd",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ec40d875d1690705d0e8ec3382a42815fec6166a54dae1e8f06992f4ab11e38b"
+  },
+  "reach_uv_u_07_word_0": {
+    "text": "muki",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1f8419660c1e0ae26cfe9bd2de4fb3912ffc3d1310c392dc77b0b4c131c22057"
+  },
+  "reach_uv_u_08_word_0": {
+    "text": "suli",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e2dfeda8099b372b2ecfdc9696370da47ae73d107569b0a85cc27168c92ccd8f"
+  },
+  "reach_uv_u_09_word_0": {
+    "text": "urak",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5af3b1a8b70b03dabb6b4ad021e0c21f18d2729e575628259516cc85eb2c9854"
+  },
+  "reach_uv_u_10_word_0": {
+    "text": "uram",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a0b9f7de8c84071a2aefd6b8c689edd4ddd9465f0186d7c3641c36dd53609ce2"
+  },
+  "reach_uv_u_11_word_0": {
+    "text": "urad",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "cf8f6eca7b4a99982648676c9efea294f00b9216bd14518931539e780bab7cc3"
+  },
+  "reach_uv_u_12_word_0": {
+    "text": "ural",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1cd8035451e3c23ef68762b1603d18bf2ddb20ebfc8a9365bc213f25dd818ab0"
+  },
+  "reach_uv_u_13_word_0": {
+    "text": "ludak",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f602eb8a72ca86892d852bb6743dec2660ad20dd6417f4e0241df93b3fcd294c"
+  },
+  "reach_uv_u_14_word_0": {
+    "text": "ludas",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5619c8e0c112df1ea5b52793db559e965ce6b58e07b96ee1998db7cb2b0ebaa2"
+  },
+  "reach_uv_u_15_word_0": {
+    "text": "rudak",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d189ed2104dead2345e33f4d25dda087bfbe779634ac0ef9a90620c585d52750"
+  },
+  "reach_uv_u_16_word_0": {
+    "text": "rudam",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "117f53c0a45a8ce9d91b057674d0615fe9a96fc0b539652cfe432a6a596b07a5"
+  },
+  "reach_uv_u_17_word_0": {
+    "text": "rudad",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7a0dc33fcc6130345dd7c4008fcda2ed3de5cee652327d2640286fb14873893d"
+  },
+  "reach_uv_u_18_word_0": {
+    "text": "mukik",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9e122c0b5821409e7996dd1e62e470d07a964ce0c73c12060b63c89c5c994e2c"
+  },
+  "reach_uv_u_19_word_0": {
+    "text": "sulik",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "15d4a06cb3a04d5ad68c777ee7474c509119d2f9d58bc7999b6c490bf1d7b93b"
+  },
+  "reach_uv_u_20_word_0": {
+    "text": "furdal",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1021d60aa730a3828784461f8d8fd4267d46df33f7d87592cf1f484f1d64e592"
+  },
+  "reach_uv_u_21_word_0": {
+    "text": "furdalj",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "37c8b74a402af08ae11e5884e09fd185abcd61e37a7d34fd140bac69baaa5b87"
+  },
+  "reach_uv_u_22_word_0": {
+    "text": "furdalja",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "074d94638bcebdde01ea8bd9e00c5e97ccae99df1f39d4551fdebe5ca72e23ed"
+  },
+  "reach_uv_u_23_word_0": {
+    "text": "kurkuma",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "160eb9b637fdc75074ad9d4a5f09234b0283d3de28f16e71c83571acde88a61c"
+  },
+  "reach_uv_u_24_word_0": {
+    "text": "uralmi",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fa44b93c6130d5d2a16c8d1a0ded194a95dc754d69b95f3da3aef2817553919f"
+  },
+  "reach_uv_v_01_word_0": {
+    "text": "vad",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7925c6ca4d12741454ced195e20eeb00cce064bc2cf6b20b45403fec0b510e6b"
+  },
+  "reach_uv_v_02_word_0": {
+    "text": "vaj",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "77af7b52ef8d646971a3a77994af46b999e52ab542adacc7418bdc0a3ac49988"
+  },
+  "reach_uv_v_03_word_0": {
+    "text": "vas",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3537fe87936e71a52fda8c54edcd0bc896dec9b247213d1acb7986dfa8e23e0a"
+  },
+  "reach_uv_v_04_word_0": {
+    "text": "véd",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ebe9a0540036f536af09b82a4d7f457d23ba2111918235781349b2c14887ae58"
+  },
+  "reach_uv_v_05_word_0": {
+    "text": "vér",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "62cc1be9123c3f9a3ad4764459a8a56b964061dd76c2cd4892f56a115326d4d9"
+  },
+  "reach_uv_v_06_word_0": {
+    "text": "vall",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "8e9f2bda152e1f332ba6e1e45d2c26057be1ec575b256becdb7fd426e4eb7aea"
+  },
+  "reach_uv_v_07_word_0": {
+    "text": "varr",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7bdb4dcc6e2a15bce67b4b67a7a27ac9f6c35688599503f8d9e0862191c0ae17"
+  },
+  "reach_uv_v_08_word_0": {
+    "text": "villa",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "875d855e507a89a19da7b1aac2520e7646527ce8fcc175bd6182cddfe4ea83f0"
+  },
+  "reach_uv_v_09_word_0": {
+    "text": "vele",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "23f585e0198d4ecfc54631ef85ef16ddfb2aabb03f12d7c5eb4b719cbcd1f023"
+  },
+  "reach_uv_v_10_word_0": {
+    "text": "veled",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ad46a0c1b5bf0be50e319d5a0920f0d70714f560546c62cd5fc1353d43a401a8"
+  },
+  "reach_uv_v_11_word_0": {
+    "text": "velem",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b300e979777552fd4fedba23abf2c1591106b55e72d725e1c9e49ae750abcd64"
+  },
+  "reach_uv_v_12_word_0": {
+    "text": "évek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "41031e7095e6e56c7ddb38bbdeb45cabdfc819595a7cd5a5429c45b50bce3752"
+  },
+  "reach_uv_v_13_word_0": {
+    "text": "éves",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0ce6b1eecf2f07da37a5e654436cf496ab92f3f1c2c61554426be7a12fa63601"
+  },
+  "reach_uv_v_14_word_0": {
+    "text": "vasal",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "eed559609e6bd1840c920eb1dfeabb6b0583a6b5c5dac382fa74da05b28234ec"
+  },
+  "reach_uv_v_15_word_0": {
+    "text": "visel",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "afc8d2b24d857a53b1336271bbe6875696608e4c3b70fe373924cf842c951c68"
+  },
+  "reach_uv_v_16_word_0": {
+    "text": "vidék",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "cba4957f66eba2e4db080eaf7995f7026002c78ea001e74081c003ab50646d5a"
+  },
+  "reach_uv_v_17_word_0": {
+    "text": "vidéki",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ca14a7a2e34fc33ac896c3e8da767edae79e053ae27c517690a85267f9db8e3b"
+  },
+  "reach_uv_v_18_word_0": {
+    "text": "leves",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a5c8d6d9a33701e8641cd48d028bbab2b1ed965117b09ff0a36a4d52d7290f3d"
+  },
+  "reach_uv_v_19_word_0": {
+    "text": "levél",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1d1dcccb838f8b49c3320d861a4cc110da41be26c88e364bb7018866c11bd163"
+  },
+  "reach_uv_v_20_word_0": {
+    "text": "kedves",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3f0ceeaefcf265332034f6195768a5c1cbb813674b0497959cd37ddd22b2aa9c"
+  },
+  "reach_uv_v_21_word_0": {
+    "text": "kedvel",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4e00e0d9c46142054d8e5b8837255e1a5100e72c90e98a8e915404c6092608cb"
+  },
+  "reach_uv_v_22_word_0": {
+    "text": "véres",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "46fd0068a74dc814e183ad49ece680b49c7eaf21d072e8297c813683fefac97a"
+  },
+  "reach_uv_v_23_word_0": {
+    "text": "védelem",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0cac5dbf70a88e14acda94cdd1a833261fc4e7707165c5f2262d4df0f26700b9"
+  },
+  "reach_uv_v_24_word_0": {
+    "text": "valaki",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "df8eca4b4f9756cd763b8240bcd9eb22c7db1ce41792e3d5a920e424d6dfdde7"
+  },
+  "reach_uv_uv_01_word_0": {
+    "text": "avul",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9e1a34975a771345640d9095ede50626090e6fff59efdf6663310d9b6c07193a"
+  },
+  "reach_uv_uv_02_word_0": {
+    "text": "durva",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "944bfbcb6e20a0e14e8e11481bf17716ec2e79873a191758411d5411c35068b6"
+  },
+  "reach_uv_uv_03_word_0": {
+    "text": "udvar",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d681aa0a4b3b440de32d49db1ff8d184928d911a5972472b83ce0fb27d6756bc"
+  },
+  "reach_uv_uv_04_word_0": {
+    "text": "vadul",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a8951b44ffa00878cec9719ee57cce1cce6ed2ddcf020740bcb518a25480e93a"
+  },
+  "reach_uv_uv_05_word_0": {
+    "text": "virul",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "373c6ac3f6f84ff208700008c32d1f470631e990c212305090146cb0864c549a"
+  },
+  "reach_uv_uv_06_word_0": {
+    "text": "udvara",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "975d09a0fec69f62c9435f8d2f219c8add24d30fe9974145e4d6e864c7f9a842"
+  },
+  "reach_uv_uv_07_word_0": {
+    "text": "udvari",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e502ab6b4185393feb84360e0287d1a4a62aadd23a9076bf581589e9e559bd89"
+  },
+  "reach_uv_uv_08_word_0": {
+    "text": "durvul",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2480a590e61b78c1892ed04fc4595fdf14624502c5fd1d627c4f142885e46a50"
+  },
+  "reach_uv_uv_09_word_0": {
+    "text": "vadulj",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "58f20f9f5ea400b66f24ac4d4bd8cf8ae09b3eac8e2dcd9e12a8fe9f20821f5c"
+  },
+  "reach_uv_uv_10_word_0": {
+    "text": "virulj",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "34eabbc09556d8f61d40c2f8bd3612099cd365e7283c752d7c0203eebc80b7d0"
+  },
+  "reach_uv_uv_11_word_0": {
+    "text": "elavul",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "691d2517b2162c485bf4dd5e8842802f2eed48952a0b83bc97651159c4ea07d8"
+  },
+  "reach_uv_uv_12_word_0": {
+    "text": "udvaram",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "791390a7fc337ebdaf1e46082e9691eb388c4b9e1f5dd39ef9496ece1f212d22"
+  },
+  "reach_uv_uv_13_word_0": {
+    "text": "udvarad",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ecfcb5e4f71b9564aded0e65f0d9e35ae60c66a13940f182a4118e710b61075f"
+  },
+  "reach_uv_uv_14_word_0": {
+    "text": "udvarai",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "849aeb8cb8fed3578528780946e3840f902e952aaf23578f0dcb19a896e4a42e"
+  },
+  "reach_uv_uv_15_word_0": {
+    "text": "durvulj",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b6338f77c84987424221c97ab9afd724b6edc6570a640466943ecc423c3a530f"
+  },
+  "reach_uv_uv_16_word_0": {
+    "text": "elvadul",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "87c8624f3433eb2aa99dc8ceae5737c6ef5df199ecdd1b860797e461409f4489"
+  },
+  "reach_uv_uv_17_word_0": {
+    "text": "kivirul",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ef6c1f209c07fea8fa8887086e3d12110de4ecfa4ed1e49d95e6e4b7968a831c"
+  },
+  "reach_uv_uv_18_word_0": {
+    "text": "felvirul",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f85d86cbaa0f39e950892f9c4981f39c388e55099627b938f412e40de6478422"
+  },
+  "reach_uv_uv_19_word_0": {
+    "text": "vaduljak",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0ebca30dd78249e6e6910f352dab3809b772aafcadaeccac0abac4650a2c6f24"
+  },
+  "reach_uv_uv_20_word_0": {
+    "text": "durvuljak",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3d39b054ed20aebb10d9866c2580c5bf73186ff12571ef85f8eadd88559d4325"
+  },
+  "reach_uv_uv_21_word_0": {
+    "text": "eldurvul",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c683a621621b221086a8bc0e02498b1271b382f2f3a602ed3f0e48ddc68b8291"
+  },
+  "reach_uv_uv_22_word_0": {
+    "text": "udvarias",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "17b67bee41422edd200cf76cdfc33e71f177ba03714db47e8c39738d2aee129e"
+  },
+  "reach_uv_uv_23_word_0": {
+    "text": "udvaraim",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0ac0d405266a3fb4b1365e38ab17d6ab2482e0ccf1116ab3beb41ad4dc555732"
+  },
+  "reach_uv_uv_24_word_0": {
+    "text": "udvaraid",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2c5f6abd14cbff5ffe1fa83057730c154dac802d0e57f849ff4dafc8c5ed707e"
   },
   "01_sentence": {
     "text": "Anna almát tett ide",

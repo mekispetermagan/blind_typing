@@ -38,6 +38,16 @@ The available content is:
 - **LECKÉK → I, R → gyakorlatok — I / R / IR:** three meaningful-word sessions,
   containing 28, 31, and 21 targets respectively, in the supplied order. The I
   session allows ASDFJKLÉI; R allows ASDFJKLÉR; IR allows ASDFJKLÉIR.
+- **LECKÉK → E, M → betűk:** D→E with the left middle finger and J→M with the
+  right index finger. Each anchor takes one correct press. Each new key takes
+  three successful presses total.
+- **LECKÉK → E, M → gyakorlatok — E / M / EM:** 24 words per session. The
+  sessions add E, M, or both to the letters from the first two lessons.
+- **LECKÉK → U, V → betűk:** J→U with the right index finger and F→V with the
+  left index finger. Each anchor takes one correct press. Each new key takes
+  three successful presses total.
+- **LECKÉK → U, V → gyakorlatok — U / V / UV:** 24 words per session. Each
+  word includes the session’s new key or both new keys in UV.
 - **GYAKORLÁS → könnyű → Mintagyakorlás – öt mondat:** the original five sample
   sentences, with sentence narration, three-two-one, and individual word prompts.
 
@@ -93,6 +103,10 @@ what appears on screen and is spoken. Only available content is listed.
 - `data/lessons/upper_row_i_words.json`, `upper_row_r_words.json`, and
   `upper_row_ir_words.json`: the three lesson-2 word lists and their permitted
   letters.
+- `data/lessons/reach_em_letters.json` and `data/lessons/reach_em_*_words.json`:
+  the lesson-3 teaching steps and three word lists.
+- `data/lessons/reach_uv_letters.json` and `data/lessons/reach_uv_*_words.json`:
+  the lesson-4 teaching steps and three word lists.
 - `data/practice/sample.json`: original text divided into sentence units.
 
 Typed models validate menu shape, IDs, nonempty activities, activity types, and

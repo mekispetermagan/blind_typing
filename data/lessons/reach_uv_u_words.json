@@ -1,0 +1,128 @@
+{
+  "id": "reach_uv_u_words",
+  "type": "words",
+  "title": "U, V — gyakorlatok — U",
+  "allowedLetters": "ASDFJKLÉIREMU",
+  "units": [
+    {
+      "id": "reach_uv_u_01",
+      "text": "KUKA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_02",
+      "text": "DUDA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_03",
+      "text": "DUMA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_04",
+      "text": "FURA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_05",
+      "text": "KUSS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_06",
+      "text": "KURD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_07",
+      "text": "MUKI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_08",
+      "text": "SULI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_09",
+      "text": "URAK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_10",
+      "text": "URAM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_11",
+      "text": "URAD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_12",
+      "text": "URAL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_13",
+      "text": "LUDAK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_14",
+      "text": "LUDAS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_15",
+      "text": "RUDAK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_16",
+      "text": "RUDAM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_17",
+      "text": "RUDAD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_18",
+      "text": "MUKIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_19",
+      "text": "SULIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_20",
+      "text": "FURDAL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_21",
+      "text": "FURDALJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_22",
+      "text": "FURDALJA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_23",
+      "text": "KURKUMA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_u_24",
+      "text": "URALMI",
+      "promptStyle": "word"
+    }
+  ]
+}

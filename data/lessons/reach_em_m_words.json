@@ -1,0 +1,128 @@
+{
+  "id": "reach_em_m_words",
+  "type": "words",
+  "title": "E, M — gyakorlatok — M",
+  "allowedLetters": "ASDFJKLÉIRM",
+  "units": [
+    {
+      "id": "reach_em_m_01",
+      "text": "MA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_02",
+      "text": "MI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_03",
+      "text": "MAMA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_04",
+      "text": "MAMI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_05",
+      "text": "SIMA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_06",
+      "text": "MAKI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_07",
+      "text": "MAR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_08",
+      "text": "MARAD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_09",
+      "text": "MARADÉK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_10",
+      "text": "MARÉK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_11",
+      "text": "FÉM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_12",
+      "text": "MÉR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_13",
+      "text": "MÉRÉS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_14",
+      "text": "SÉMA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_15",
+      "text": "MÉDIA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_16",
+      "text": "KIMÉR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_17",
+      "text": "KIMARAD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_18",
+      "text": "MÉRI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_19",
+      "text": "FILM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_20",
+      "text": "DAMIL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_21",
+      "text": "KAMRA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_22",
+      "text": "KÉM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_23",
+      "text": "KÉMIA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_m_24",
+      "text": "RÉM",
+      "promptStyle": "word"
+    }
+  ]
+}

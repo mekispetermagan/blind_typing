@@ -1,0 +1,43 @@
+{
+  "id": "reach_em_letters",
+  "type": "letters",
+  "title": "E, M — betűk",
+  "steps": [
+    {
+      "id": "reach_em_d_anchor",
+      "key": "D",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le a D billentyűt a bal kezed középső ujjával.",
+      "retry": "Keresd meg a D billentyűt a bal kezed középső ujjával.",
+      "success": "Igen, ez a D.",
+      "complete": "Nagyszerű."
+    },
+    {
+      "id": "reach_em_e",
+      "key": "E",
+      "requiredSuccesses": 3,
+      "instruction": "A D billentyűről csúsztasd felfelé és kicsit balra a bal kezed középső ujját. Keresd meg és nyomd le az E billentyűt a felső betűsorban.",
+      "retry": "Keresd meg az E billentyűt a D fölött és kicsit balra, a bal kezed középső ujjával.",
+      "success": "Igen, ez az E. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "reach_em_j_anchor",
+      "key": "J",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le a J billentyűt a jobb kezed mutatóujjával.",
+      "retry": "Keresd meg a J billentyűt a jobb kezed mutatóujjával.",
+      "success": "Igen, ez a J.",
+      "complete": "Nagyszerű."
+    },
+    {
+      "id": "reach_em_m",
+      "key": "M",
+      "requiredSuccesses": 3,
+      "instruction": "A J billentyűről csúsztasd lefelé és kicsit jobbra a jobb kezed mutatóujját. Keresd meg és nyomd le az M billentyűt az alsó betűsorban.",
+      "retry": "Keresd meg az M billentyűt a J alatt és kicsit jobbra, a jobb kezed mutatóujjával.",
+      "success": "Igen, ez az M. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    }
+  ]
+}

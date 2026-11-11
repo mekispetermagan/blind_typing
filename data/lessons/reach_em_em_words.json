@@ -1,0 +1,128 @@
+{
+  "id": "reach_em_em_words",
+  "type": "words",
+  "title": "E, M — gyakorlatok — EM",
+  "allowedLetters": "ASDFJKLÉIREM",
+  "units": [
+    {
+      "id": "reach_em_em_01",
+      "text": "SEM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_02",
+      "text": "SEMMI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_03",
+      "text": "MESE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_04",
+      "text": "MESÉL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_05",
+      "text": "ELEM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_06",
+      "text": "ELME",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_07",
+      "text": "EMEL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_08",
+      "text": "ISMER",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_09",
+      "text": "REMEK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_10",
+      "text": "REMÉL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_11",
+      "text": "REMÉLEM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_12",
+      "text": "KÉREM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_13",
+      "text": "MERRE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_14",
+      "text": "MIRE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_15",
+      "text": "MELLÉ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_16",
+      "text": "MÉREK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_17",
+      "text": "EMLÉK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_18",
+      "text": "EMELI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_19",
+      "text": "MEREK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_20",
+      "text": "MEREDEK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_21",
+      "text": "ÉRME",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_22",
+      "text": "ÉRDEM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_23",
+      "text": "ÉRDEMES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_em_24",
+      "text": "FÉLELEM",
+      "promptStyle": "word"
+    }
+  ]
+}

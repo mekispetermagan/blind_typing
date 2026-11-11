@@ -1,0 +1,128 @@
+{
+  "id": "reach_uv_v_words",
+  "type": "words",
+  "title": "U, V — gyakorlatok — V",
+  "allowedLetters": "ASDFJKLÉIREMV",
+  "units": [
+    {
+      "id": "reach_uv_v_01",
+      "text": "VAD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_02",
+      "text": "VAJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_03",
+      "text": "VAS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_04",
+      "text": "VÉD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_05",
+      "text": "VÉR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_06",
+      "text": "VALL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_07",
+      "text": "VARR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_08",
+      "text": "VILLA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_09",
+      "text": "VELE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_10",
+      "text": "VELED",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_11",
+      "text": "VELEM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_12",
+      "text": "ÉVEK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_13",
+      "text": "ÉVES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_14",
+      "text": "VASAL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_15",
+      "text": "VISEL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_16",
+      "text": "VIDÉK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_17",
+      "text": "VIDÉKI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_18",
+      "text": "LEVES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_19",
+      "text": "LEVÉL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_20",
+      "text": "KEDVES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_21",
+      "text": "KEDVEL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_22",
+      "text": "VÉRES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_23",
+      "text": "VÉDELEM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_uv_v_24",
+      "text": "VALAKI",
+      "promptStyle": "word"
+    }
+  ]
+}

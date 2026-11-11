@@ -1,0 +1,128 @@
+{
+  "id": "reach_em_e_words",
+  "type": "words",
+  "title": "E, M — gyakorlatok — E",
+  "allowedLetters": "ASDFJKLÉIRE",
+  "units": [
+    {
+      "id": "reach_em_e_01",
+      "text": "LE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_02",
+      "text": "FEJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_03",
+      "text": "ÉDES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_04",
+      "text": "ESIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_05",
+      "text": "KEREK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_06",
+      "text": "KERÉK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_07",
+      "text": "KERES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_08",
+      "text": "KÉREK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_09",
+      "text": "DERÉK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_10",
+      "text": "FERDE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_11",
+      "text": "ELAD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_12",
+      "text": "ELÉR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_13",
+      "text": "FELEL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_14",
+      "text": "SIKER",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_15",
+      "text": "SIKERES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_16",
+      "text": "ERDEI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_17",
+      "text": "JEL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_18",
+      "text": "KEL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_19",
+      "text": "KELL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_20",
+      "text": "ÉLES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_21",
+      "text": "ÉLEK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_22",
+      "text": "FÉLRE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_23",
+      "text": "ÉRDEK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_em_e_24",
+      "text": "ÉRDEKES",
+      "promptStyle": "word"
+    }
+  ]
+}
