@@ -180,9 +180,9 @@
     "sha256": "9b77afe0a02148e584301b6659a60c7201e1051a1edbe21d908203c80b29d1a1"
   },
   "home_row_drill_10_word_0": {
-    "text": "kaka",
+    "text": "adja",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "a827fa5c51f7ed97c21fc6bfc0b4edf704fc6f28102f303ce4791931f3ab57fc"
+    "sha256": "6c665f334d20990b3f1173669306b1713756b193d2de5009269d8e9bf3abc248"
   },
   "home_row_drill_11_word_0": {
     "text": "sakk",
@@ -1245,9 +1245,9 @@
     "sha256": "baceaa5e087ce99cb6605c4c2af4cca82599165d736673689f2f9d292bdfb073"
   },
   "reach_uv_u_05_word_0": {
-    "text": "kuss",
+    "text": "urai",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "3bb82fbf8423c113372b6a85977d6f05357abe81c27a82a79b59c18626344a8f"
+    "sha256": "7cbc9c56fdcd15afd0b04f8f808e6742a1ae02d8f41060a386b33b487c8c33cd"
   },
   "reach_uv_u_06_word_0": {
     "text": "kurd",
@@ -1520,14 +1520,14 @@
     "sha256": "691d2517b2162c485bf4dd5e8842802f2eed48952a0b83bc97651159c4ea07d8"
   },
   "reach_uv_uv_12_word_0": {
-    "text": "udvaram",
+    "text": "elvadulj",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "791390a7fc337ebdaf1e46082e9691eb388c4b9e1f5dd39ef9496ece1f212d22"
+    "sha256": "b6cccf0fb4ec9a9916c9dbf35578398083f4b8dcb8ca68955c20aa1f71cf8b62"
   },
   "reach_uv_uv_13_word_0": {
-    "text": "udvarad",
+    "text": "viruljak",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "ecfcb5e4f71b9564aded0e65f0d9e35ae60c66a13940f182a4118e710b61075f"
+    "sha256": "37f2125824a5de55ba580a1224cee479b4e0d47d840bea9938115001d9307a4a"
   },
   "reach_uv_uv_14_word_0": {
     "text": "udvarai",
