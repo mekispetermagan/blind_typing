@@ -282,6 +282,48 @@
                 }
               }
             ]
+          },
+          {
+            "id": "reach_nt",
+            "title": "N, T",
+            "speech": "en, té",
+            "children": [
+              {
+                "id": "reach_nt_letters",
+                "title": "betűk",
+                "activity": {
+                  "type": "letters",
+                  "content": "data/lessons/reach_nt_letters.json"
+                }
+              },
+              {
+                "id": "reach_nt_n_words",
+                "title": "gyakorlatok — N",
+                "speech": "Gyakorlatok az en betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_nt_n_words.json"
+                }
+              },
+              {
+                "id": "reach_nt_t_words",
+                "title": "gyakorlatok — T",
+                "speech": "Gyakorlatok a té betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_nt_t_words.json"
+                }
+              },
+              {
+                "id": "reach_nt_nt_words",
+                "title": "gyakorlatok — NT",
+                "speech": "Gyakorlatok az en és a té betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_nt_nt_words.json"
+                }
+              }
+            ]
           }
         ]
       },

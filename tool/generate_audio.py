@@ -50,7 +50,8 @@ def speech_texts():
                 words = re.findall(r"[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+", unit["text"])
                 if unit.get("promptStyle", "word") == "word":
                     for index, word in enumerate(words):
-                        yield f"{unit['id']}_word_{index}", word.lower() if activity_type == "words" else word
+                        speech = unit.get("speech", word.lower()) if activity_type == "words" else word
+                        yield f"{unit['id']}_word_{index}", speech
     yield "count_3", "három"
     yield "count_2", "kettő"
     yield "count_1", "egy"

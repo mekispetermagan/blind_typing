@@ -1,0 +1,128 @@
+{
+  "id": "reach_nt_t_words",
+  "type": "words",
+  "title": "N, T — gyakorlatok — T",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPYT",
+  "units": [
+    {
+      "id": "reach_nt_t_01",
+      "text": "TE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_02",
+      "text": "TÁJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_03",
+      "text": "TÁL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_04",
+      "text": "TEA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_05",
+      "text": "TEJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_06",
+      "text": "TÉL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_07",
+      "text": "TÉR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_08",
+      "text": "ESTE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_09",
+      "text": "ÉLET",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_10",
+      "text": "ÉTEL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_11",
+      "text": "MOST",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_12",
+      "text": "SÉTA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_13",
+      "text": "TALP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_14",
+      "text": "TOLL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_15",
+      "text": "VITA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_16",
+      "text": "ÁLLAT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_17",
+      "text": "ÉTLAP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_18",
+      "text": "JÁTÉK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_19",
+      "text": "KUTYA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_20",
+      "text": "TORTA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_21",
+      "text": "ASZTAL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_22",
+      "text": "KÁRTYA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_23",
+      "text": "TAVASZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_t_24",
+      "text": "TESTVÉR",
+      "promptStyle": "word"
+    }
+  ]
+}

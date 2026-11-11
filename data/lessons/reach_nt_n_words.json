@@ -1,0 +1,128 @@
+{
+  "id": "reach_nt_n_words",
+  "type": "words",
+  "title": "N, T — gyakorlatok — N",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPYN",
+  "units": [
+    {
+      "id": "reach_nt_n_01",
+      "text": "NAP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_02",
+      "text": "NEM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_03",
+      "text": "NÉP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_04",
+      "text": "NÉV",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_05",
+      "text": "NÉZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_06",
+      "text": "VAN",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_07",
+      "text": "ANYA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_08",
+      "text": "LÁNY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_09",
+      "text": "NAGY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_10",
+      "text": "NÉNI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_11",
+      "text": "NYÁR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_12",
+      "text": "NYER",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_13",
+      "text": "NYOM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_14",
+      "text": "ANYAG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_15",
+      "text": "ENGED",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_16",
+      "text": "FINOM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_17",
+      "text": "KANÁL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_18",
+      "text": "NYELV",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_19",
+      "text": "KANAPÉ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_20",
+      "text": "KENYÉR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_21",
+      "text": "NAGYON",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_22",
+      "text": "EGYENES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_23",
+      "text": "SZAPPAN",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_n_24",
+      "text": "VÉLEMÉNY",
+      "promptStyle": "word"
+    }
+  ]
+}

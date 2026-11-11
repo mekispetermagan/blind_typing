@@ -1,0 +1,129 @@
+{
+  "id": "reach_nt_nt_words",
+  "type": "words",
+  "title": "N, T — gyakorlatok — NT",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPYNT",
+  "units": [
+    {
+      "id": "reach_nt_nt_01",
+      "text": "INT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_02",
+      "text": "FENT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_03",
+      "text": "KINT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_04",
+      "text": "LENT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_05",
+      "text": "MENT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_06",
+      "text": "MINT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_07",
+      "text": "NYIT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_08",
+      "text": "PONT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_09",
+      "text": "TÉNY",
+      "promptStyle": "word",
+      "speech": "téény"
+    },
+    {
+      "id": "reach_nt_nt_10",
+      "text": "MINTA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_11",
+      "text": "NÉMET",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_12",
+      "text": "TANÁR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_13",
+      "text": "TANUL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_14",
+      "text": "FONTOS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_15",
+      "text": "PONTOS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_16",
+      "text": "SZINTE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_17",
+      "text": "TENGER",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_18",
+      "text": "TENISZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_19",
+      "text": "TENYÉR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_20",
+      "text": "SZERINT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_21",
+      "text": "TÉNYLEG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_22",
+      "text": "TISZTÁN",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_23",
+      "text": "INTERNET",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_nt_nt_24",
+      "text": "NYOMTATÁS",
+      "promptStyle": "word"
+    }
+  ]
+}

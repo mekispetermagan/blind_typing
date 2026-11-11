@@ -1,0 +1,43 @@
+{
+  "id": "reach_nt_letters",
+  "type": "letters",
+  "title": "N, T — betűk",
+  "steps": [
+    {
+      "id": "reach_nt_j_anchor",
+      "key": "J",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le a megjelölt J billentyűt a jobb kezed mutatóujjával.",
+      "retry": "Keresd meg a kis jelölést a J billentyűn, és nyomd le a jobb kezed mutatóujjával.",
+      "success": "Igen, ez a J.",
+      "complete": "Igen, ez a J. Nagyszerű."
+    },
+    {
+      "id": "reach_nt_n",
+      "key": "N",
+      "requiredSuccesses": 3,
+      "instruction": "A J billentyűről csúsztasd a jobb kezed mutatóujját egy sorral lejjebb és kicsit balra. Az N közvetlenül az M-től balra van. Nyomd le az N billentyűt.",
+      "retry": "Keresd meg az N billentyűt közvetlenül az M-től balra, a jobb kezed mutatóujjával.",
+      "success": "Igen, ez az N. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "reach_nt_f_anchor",
+      "key": "F",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le a megjelölt F billentyűt a bal kezed mutatóujjával.",
+      "retry": "Keresd meg a kis jelölést az F billentyűn, és nyomd le a bal kezed mutatóujjával.",
+      "success": "Igen, ez az F.",
+      "complete": "Igen, ez az F. Nagyszerű."
+    },
+    {
+      "id": "reach_nt_t",
+      "key": "T",
+      "requiredSuccesses": 3,
+      "instruction": "Az F billentyűről csúsztasd a bal kezed mutatóujját egy sorral feljebb és kicsit jobbra. A T közvetlenül az R-től jobbra van. Nyomd le a T billentyűt.",
+      "retry": "Keresd meg a T billentyűt közvetlenül az R-től jobbra, a bal kezed mutatóujjával.",
+      "success": "Igen, ez a T. Nyomd le még egyszer.",
+      "complete": "Nagyszerű, megvan a T is."
+    }
+  ]
+}
