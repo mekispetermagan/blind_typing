@@ -198,6 +198,48 @@
                 }
               }
             ]
+          },
+          {
+            "id": "reach_ag",
+            "title": "Á, G",
+            "speech": "á, gé",
+            "children": [
+              {
+                "id": "reach_ag_letters",
+                "title": "betűk",
+                "activity": {
+                  "type": "letters",
+                  "content": "data/lessons/reach_ag_letters.json"
+                }
+              },
+              {
+                "id": "reach_ag_a_words",
+                "title": "gyakorlatok — Á",
+                "speech": "Gyakorlatok az á betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_ag_a_words.json"
+                }
+              },
+              {
+                "id": "reach_ag_g_words",
+                "title": "gyakorlatok — G",
+                "speech": "Gyakorlatok a gé betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_ag_g_words.json"
+                }
+              },
+              {
+                "id": "reach_ag_ag_words",
+                "title": "gyakorlatok — ÁG",
+                "speech": "Gyakorlatok az á és a gé betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_ag_ag_words.json"
+                }
+              }
+            ]
           }
         ]
       },

@@ -1,0 +1,128 @@
+{
+  "id": "reach_ag_ag_words",
+  "type": "words",
+  "title": "Á, G — gyakorlatok — ÁG",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁG",
+  "units": [
+    {
+      "id": "reach_ag_ag_01",
+      "text": "ÁG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_02",
+      "text": "GÁZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_03",
+      "text": "RÁG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_04",
+      "text": "VÁG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_05",
+      "text": "ÁGAK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_06",
+      "text": "GÁLA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_07",
+      "text": "DRÁGA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_08",
+      "text": "KIVÁG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_09",
+      "text": "MÁGIA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_10",
+      "text": "SÁRGA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_11",
+      "text": "SUGÁR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_12",
+      "text": "VÁGÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_13",
+      "text": "VILÁG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_14",
+      "text": "VIRÁG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_15",
+      "text": "DRÁGUL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_16",
+      "text": "JOGÁSZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_17",
+      "text": "SÁRGÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_18",
+      "text": "VÁLSÁG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_19",
+      "text": "GÁZOLAJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_20",
+      "text": "IGAZSÁG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_21",
+      "text": "MAGÁVAL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_22",
+      "text": "VILÁGOS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_23",
+      "text": "ELÁGAZÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_ag_24",
+      "text": "MAGASSÁG",
+      "promptStyle": "word"
+    }
+  ]
+}

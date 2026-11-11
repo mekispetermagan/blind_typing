@@ -1,0 +1,128 @@
+{
+  "id": "reach_ag_a_words",
+  "type": "words",
+  "title": "Á, G — gyakorlatok — Á",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁ",
+  "units": [
+    {
+      "id": "reach_ag_a_01",
+      "text": "ÁR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_02",
+      "text": "ÁLL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_03",
+      "text": "FÁJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_04",
+      "text": "JÁR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_05",
+      "text": "KÁR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_06",
+      "text": "LÁZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_07",
+      "text": "MÁR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_08",
+      "text": "MÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_09",
+      "text": "SÁL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_10",
+      "text": "SÁR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_11",
+      "text": "VÁR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_12",
+      "text": "ZÁR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_13",
+      "text": "ÁRAM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_14",
+      "text": "DIÁK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_15",
+      "text": "KÁVÉ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_16",
+      "text": "LÁDA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_17",
+      "text": "SZÁJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_18",
+      "text": "SZÁM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_19",
+      "text": "FÁRAD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_20",
+      "text": "FÁZIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_21",
+      "text": "JÁRDA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_22",
+      "text": "VÁROS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_23",
+      "text": "SZÁRAZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_a_24",
+      "text": "FÁJDALOM",
+      "promptStyle": "word"
+    }
+  ]
+}

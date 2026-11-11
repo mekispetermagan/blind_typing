@@ -53,6 +53,11 @@ The available content is:
   Each new key takes three successful presses total.
 - **LECKÉK → O, Z → gyakorlatok — O / Z / OZ:** 24 words per session. Each
   word includes the session’s new key or both new keys in OZ.
+- **LECKÉK → Á, G → betűk:** É→Á with the right little finger and F→G with the
+  left index finger. Both new keys are one key to the right of their anchors
+  on the home row.
+- **LECKÉK → Á, G → gyakorlatok — Á / G / ÁG:** 24 words per session. Each
+  word includes the session’s new key or both new keys in ÁG.
 - **GYAKORLÁS → könnyű → Mintagyakorlás – öt mondat:** the original five sample
   sentences, with sentence narration, three-two-one, and individual word prompts.
 
@@ -122,6 +127,8 @@ what appears on screen and is spoken. Only available content is listed.
   the lesson-4 teaching steps and three word lists.
 - `data/lessons/reach_oz_letters.json` and `data/lessons/reach_oz_*_words.json`:
   the lesson-5 teaching steps and three word lists.
+- `data/lessons/reach_ag_letters.json` and `data/lessons/reach_ag_*_words.json`:
+  É→Á and F→G teaching steps and three word drills.
 - `data/practice/sample.json`: original text divided into sentence units.
 
 Typed models validate menu shape, IDs, nonempty activities, activity types, and

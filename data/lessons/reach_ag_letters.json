@@ -1,0 +1,43 @@
+{
+  "id": "reach_ag_letters",
+  "type": "letters",
+  "title": "Á, G — betűk",
+  "steps": [
+    {
+      "id": "reach_ag_e_anchor",
+      "key": "É",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le az É billentyűt a jobb kezed kisujjával. Az É közvetlenül az L-től jobbra van.",
+      "retry": "Keresd meg az É billentyűt közvetlenül az L-től jobbra, a jobb kezed kisujjával.",
+      "success": "Igen, ez az É.",
+      "complete": "Nagyszerű."
+    },
+    {
+      "id": "reach_ag_a",
+      "key": "Á",
+      "requiredSuccesses": 3,
+      "instruction": "Most csúsztasd a jobb kezed kisujját egy billentyűvel jobbra. Az Á közvetlenül az É mellett van, ugyanabban a sorban. Nyomd le az Á billentyűt.",
+      "retry": "Keresd meg az Á billentyűt közvetlenül az É-től jobbra, a jobb kezed kisujjával.",
+      "success": "Igen, ez az Á. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "reach_ag_f_anchor",
+      "key": "F",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le az F billentyűt a bal kezed mutatóujjával.",
+      "retry": "Keresd meg a megjelölt F billentyűt a bal kezed mutatóujjával.",
+      "success": "Igen, ez az F.",
+      "complete": "Nagyszerű."
+    },
+    {
+      "id": "reach_ag_g",
+      "key": "G",
+      "requiredSuccesses": 3,
+      "instruction": "Most csúsztasd a bal kezed mutatóujját egy billentyűvel jobbra. A G közvetlenül az F mellett van, ugyanabban a sorban. Nyomd le a G billentyűt.",
+      "retry": "Keresd meg a G billentyűt közvetlenül az F-től jobbra, a bal kezed mutatóujjával.",
+      "success": "Igen, ez a G. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    }
+  ]
+}

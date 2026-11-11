@@ -1,0 +1,128 @@
+{
+  "id": "reach_ag_g_words",
+  "type": "words",
+  "title": "Á, G — gyakorlatok — G",
+  "allowedLetters": "ASDFJKLÉIREMUVOZG",
+  "units": [
+    {
+      "id": "reach_ag_g_01",
+      "text": "ÉG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_02",
+      "text": "FOG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_03",
+      "text": "IGE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_04",
+      "text": "JÉG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_05",
+      "text": "JOG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_06",
+      "text": "MAG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_07",
+      "text": "MEG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_08",
+      "text": "RÉG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_09",
+      "text": "ELÉG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_10",
+      "text": "EGÉR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_11",
+      "text": "GOLF",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_12",
+      "text": "GUMI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_13",
+      "text": "IGAZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_14",
+      "text": "DAGAD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_15",
+      "text": "EGÉSZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_16",
+      "text": "GURUL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_17",
+      "text": "MAGAS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_18",
+      "text": "RAGAD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_19",
+      "text": "GALLÉR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_20",
+      "text": "MEGOLD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_21",
+      "text": "REGGEL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_22",
+      "text": "GALÉRIA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_23",
+      "text": "GALUSKA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ag_g_24",
+      "text": "EGÉSZSÉG",
+      "promptStyle": "word"
+    }
+  ]
+}
