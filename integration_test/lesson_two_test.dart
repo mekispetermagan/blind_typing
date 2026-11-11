@@ -87,13 +87,11 @@ void main() {
       await key(LogicalKeyboardKey.keyI, character: 'i');
       await waitMenu();
       expect(menu().title, 'Kész a feladat');
+      await key(LogicalKeyboardKey.f3);
       await key(LogicalKeyboardKey.arrowDown);
       await key(LogicalKeyboardKey.enter);
-      await key(LogicalKeyboardKey.f3);
 
       for (var session = 0; session < exercises.length; session++) {
-        await key(LogicalKeyboardKey.arrowDown);
-        await key(LogicalKeyboardKey.enter);
         await waitFor(
           () =>
               find.byType(TypingScreen).evaluate().isNotEmpty &&
@@ -109,10 +107,21 @@ void main() {
         }
         await waitMenu();
         expect(menu().title, 'Kész a feladat');
+        expect(
+          menu().items[1].title,
+          session == exercises.length - 1
+              ? 'Következő lecke'
+              : 'Következő gyakorlat',
+        );
         await key(LogicalKeyboardKey.arrowDown);
         await key(LogicalKeyboardKey.enter);
-        expect(menu().title, 'I, R');
       }
+      await waitFor(
+        () =>
+            find.byType(TeachingScreen).evaluate().isNotEmpty &&
+            teaching().state.phase == ExercisePhase.ready,
+      );
+      expect(teaching().step.key, 'D');
       await tester.pumpWidget(const SizedBox.shrink());
       await tester.pump(const Duration(milliseconds: 300));
     },

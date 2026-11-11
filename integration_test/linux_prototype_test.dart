@@ -67,9 +67,7 @@ void main() {
       await waitMenu();
       expect(menu().title, 'Kész a feladat');
       await key(LogicalKeyboardKey.arrowDown);
-      await key(LogicalKeyboardKey.enter); // Back to lesson menu
-      await key(LogicalKeyboardKey.arrowDown);
-      await key(LogicalKeyboardKey.enter); // gyakorlatok
+      await key(LogicalKeyboardKey.enter); // Következő gyakorlat
       await waitTyping(ExercisePhase.ready);
       await key(LogicalKeyboardKey.f3);
       expect(typing().mode, TypingMode.advanced);
@@ -97,6 +95,7 @@ void main() {
       await waitMenu();
       expect(menu().title, 'Kész a feladat');
       await key(LogicalKeyboardKey.arrowDown);
+      await key(LogicalKeyboardKey.arrowDown);
       await key(LogicalKeyboardKey.enter);
       await key(LogicalKeyboardKey.arrowLeft);
       await key(LogicalKeyboardKey.arrowLeft);
@@ -116,6 +115,7 @@ void main() {
       }
       await waitMenu();
       expect(menu().title, 'Kész a feladat');
+      expect(menu().items, hasLength(2));
       await key(LogicalKeyboardKey.enter); // Restart retains mode
       await waitTyping(ExercisePhase.reading);
       expect(typing().mode, TypingMode.advanced);

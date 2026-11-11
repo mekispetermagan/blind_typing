@@ -63,6 +63,17 @@ void main() {
     await settle();
   }
 
+  void finishWordDrill() {
+    final typing = app.typing!;
+    typing.start();
+    for (final unit in typing.exercise.units) {
+      for (final character in unit.text.split('')) {
+        typing.typeCharacter(character);
+      }
+    }
+    expect(app.activityPhase, ExercisePhase.complete);
+  }
+
   test('navigation speaks selection, cancels previous speech, and retains parent selection', () async {
     await app.initialize();
     expect(content.loaded, isEmpty); // Exercise recordings load on entry.
@@ -80,7 +91,7 @@ void main() {
   });
 
   test(
-    'F lesson, completion menu, and return reuse the same live audio service',
+    'completion menu advances within and across lessons using shared audio',
     () async {
       await lessonMenu();
       app.activate();
@@ -92,17 +103,58 @@ void main() {
       }
       expect(app.page, AppPage.menu);
       expect(app.menu.id, 'complete_menu');
+      expect(app.menu.children.map((entry) => entry.command), [
+        MenuCommand.restart,
+        MenuCommand.nextExercise,
+        MenuCommand.menu,
+      ]);
       app.moveSelection(1);
-      app.activate();
-      expect(app.menu.id, 'home_row');
-      expect(audio.disposed, isFalse);
-      app.moveSelection(1);
+      expect(audio.spoken.last, 'assets/audio/menu_complete_next_exercise.wav');
       app.activate();
       await settle();
       expect(app.page, AppPage.typing);
-      expect(app.typing!.exercise.units, hasLength(24));
+      expect(app.teaching, isNull);
+      expect(app.typing!.exercise.id, 'home_row_words');
+      app.toggleMode();
+      finishWordDrill();
+      expect(app.menu.children.map((entry) => entry.command), [
+        MenuCommand.restart,
+        MenuCommand.nextLesson,
+        MenuCommand.menu,
+      ]);
+      app.moveSelection(1);
+      expect(audio.spoken.last, 'assets/audio/menu_complete_next_lesson.wav');
+      app.activate();
+      await settle();
+      expect(app.page, AppPage.teaching);
+      expect(app.typing, isNull);
+      expect(app.teaching!.exercise.id, 'upper_row_ir_letters');
+      expect(app.mode, TypingMode.advanced);
+      expect(audio.disposed, isFalse);
+      app.returnToMenu();
+      expect(app.menu.id, 'upper_row_ir');
+      expect(app.selectedIndex, 0);
     },
   );
+
+  test('the final lesson activity offers restart and return', () async {
+    await app.initialize();
+    app.activate(); // LECKÉK
+    app.activateIndex(app.menu.children.length - 1);
+    final lessonId = app.menu.id;
+    final lastIndex = app.menu.children.length - 1;
+    app.activateIndex(lastIndex);
+    await settle();
+    finishWordDrill();
+    expect(app.menu.children.map((entry) => entry.command), [
+      MenuCommand.restart,
+      MenuCommand.menu,
+    ]);
+    app.moveSelection(1);
+    app.activate();
+    expect(app.menu.id, lessonId);
+    expect(app.selectedIndex, lastIndex);
+  });
 
   test(
     'mode and input survive pause, restart, and navigating to another activity',

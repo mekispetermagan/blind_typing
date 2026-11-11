@@ -169,6 +169,16 @@
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "99a797ddf9043bfcd64184658b6a8afc0cd1cee6978c216bae5dc47c88dbac66"
   },
+  "menu_complete_next_exercise": {
+    "text": "Következő gyakorlat",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f4678788be16c7a6b4b91e468253d081b4538cd21ffc828aded490c63aa5f0e0"
+  },
+  "menu_complete_next_lesson": {
+    "text": "Következő lecke",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6eb97cc6cc46521b7cd83996167ba533c373fd0425eba76206764383fdb2abc6"
+  },
   "menu_complete_back": {
     "text": "Vissza a menübe",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
@@ -2380,9 +2390,9 @@
     "sha256": "c5d590efeb8ffa24ec666258ffa0982569d068757fe5f2135e22da802706c49b"
   },
   "complete": {
-    "text": "Ügyes vagy! Kész a feladat. Az Enter újrakezdi. A lefelé nyíllal választhatod a visszatérést a menübe, majd nyomd meg az Entert.",
+    "text": "Ügyes vagy! Kész a feladat. Az Enter újrakezdi. A többi lehetőséghez használd a lefelé nyilat. A kiválasztott lehetőséget az Enterrel nyithatod meg.",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "9bf04d0be7eeb47ecb43688c88d7ca8f2467b3f965acea2137dc46e6f15f4b81"
+    "sha256": "93809b281005e1eb7d5f61da4650b2a5b840a26d8077983615ce71bef8f3e332"
   },
   "menu_welcome": {
     "text": "Üdvözöllek! A fel és le nyíllal választhatsz. Az Enter megnyitja a kijelölt elemet. Az Escape visszalép. Az F egy megismétli a kijelölt elemet. Az F három módot vált. Az F négy kilép.",

@@ -255,6 +255,16 @@
         "command": "restart"
       },
       {
+        "id": "complete_next_exercise",
+        "title": "Következő gyakorlat",
+        "command": "nextExercise"
+      },
+      {
+        "id": "complete_next_lesson",
+        "title": "Következő lecke",
+        "command": "nextLesson"
+      },
+      {
         "id": "complete_back",
         "title": "Vissza a menübe",
         "command": "menu"

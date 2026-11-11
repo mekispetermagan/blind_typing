@@ -58,8 +58,11 @@ The available content is:
 
 Enter starts an opened activity. Escape pauses it and opens a spoken menu with
 Continue, Restart, and Return to Menu. Escape from that menu resumes. Completion
-opens a menu offering Restart and Return to Menu. Parent-menu selection is
-preserved when returning from an activity. Ctrl+W, F4, or Close exits.
+opens a menu with Restart, Next Exercise or Next Lesson when available, and
+Return to Menu, in that order. Next Exercise opens the next activity in the
+current lesson. Next Lesson opens the first activity of the following lesson.
+Parent-menu selection is preserved when returning from an activity. Ctrl+W,
+F4, or Close exits.
 
 ## Typing behavior
 

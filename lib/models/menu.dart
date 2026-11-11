@@ -1,6 +1,14 @@
 import 'exercise.dart';
 
-enum MenuCommand { resume, restart, menu }
+enum MenuCommand {
+  resume,
+  restart,
+  menu,
+  nextExercise,
+  nextLesson;
+
+  bool get isProgression => this == nextExercise || this == nextLesson;
+}
 
 class ActivityReference {
   ActivityReference({required this.type, required this.content}) {
@@ -75,9 +83,12 @@ class MenuCatalog {
     if (nodes.map((node) => node.id).toSet().length != nodes.length ||
         [root, pause, complete].any((node) => node.children.isEmpty) ||
         root.descendants.any((node) => node.command != null) ||
-        pause.children.any((node) => node.command == null) ||
+        pause.children.any((node) => node.command?.isProgression ?? true) ||
         complete.children.any(
           (node) => node.command == null || node.command == MenuCommand.resume,
+        ) ||
+        !complete.children.any(
+          (node) => node.command?.isProgression == false,
         )) {
       throw const FormatException('Invalid menu catalog');
     }

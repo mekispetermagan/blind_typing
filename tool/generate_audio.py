@@ -76,7 +76,8 @@ def speech_texts():
     yield "paused", "Szünet. A folytatáshoz nyomd meg az Escape billentyűt."
     yield "complete", (
         "Ügyes vagy! Kész a feladat. Az Enter újrakezdi. "
-        "A lefelé nyíllal választhatod a visszatérést a menübe, majd nyomd meg az Entert."
+        "A többi lehetőséghez használd a lefelé nyilat. "
+        "A kiválasztott lehetőséget az Enterrel nyithatod meg."
     )
     yield "menu_welcome", (
         "Üdvözöllek! A fel és le nyíllal választhatsz. Az Enter megnyitja a kijelölt elemet. "

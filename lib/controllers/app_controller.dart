@@ -56,7 +56,48 @@ class AppController extends ChangeNotifier {
     return _typing != null ? AppPage.typing : AppPage.teaching;
   }
 
-  MenuNode get menu => _activityMenu ?? _path.last;
+  MenuNode get menu {
+    final activityMenu = _activityMenu;
+    if (activityMenu == null) return _path.last;
+    if (activityPhase != ExercisePhase.complete) return activityMenu;
+
+    final next = _nextLessonActivity;
+    final command = next == null
+        ? null
+        : next[1] == _selections[1]
+        ? MenuCommand.nextExercise
+        : MenuCommand.nextLesson;
+    return MenuNode(
+      id: activityMenu.id,
+      title: activityMenu.title,
+      children: [
+        for (final child in activityMenu.children)
+          if (child.command?.isProgression != true || child.command == command)
+            child,
+      ],
+    );
+  }
+
+  List<int>? get _nextLessonActivity {
+    if (_path.length < 3 || _path[1].id != 'lessons') return null;
+
+    // Find the next sibling within LECKÉK, then descend to its first activity.
+    for (var depth = _path.length - 1; depth >= 1; depth--) {
+      final siblings = _path[depth].children;
+      final next = _selections[depth] + 1;
+      if (next >= siblings.length) continue;
+
+      final route = [..._selections.take(depth), next];
+      var node = siblings[next];
+      while (node.children.isNotEmpty) {
+        route.add(0);
+        node = node.children.first;
+      }
+      return route;
+    }
+    return null;
+  }
+
   int get selectedIndex =>
       _activityMenu != null ? _sessionSelection : _selections.last;
   String get breadcrumb => _path.map((node) => node.title).join(' › ');
@@ -139,6 +180,20 @@ class AppController extends ChangeNotifier {
           _teaching?.start();
         case MenuCommand.menu:
           returnToMenu();
+        case MenuCommand.nextExercise:
+        case MenuCommand.nextLesson:
+          final route = _nextLessonActivity;
+          if (route == null) return;
+          _path.clear();
+          _selections
+            ..clear()
+            ..addAll(route);
+          var node = _catalog!.root;
+          for (final selection in route) {
+            _path.add(node);
+            node = node.children[selection];
+          }
+          unawaited(_openActivity(node.activity!));
       }
     }
   }
@@ -165,6 +220,7 @@ class AppController extends ChangeNotifier {
 
   Future<void> _openActivity(ActivityReference reference) async {
     final generation = ++_generation;
+    _disposeActivity();
     _speech.begin();
     _loading = true;
     _failure = null;
