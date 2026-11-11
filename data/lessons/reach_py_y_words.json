@@ -1,0 +1,128 @@
+{
+  "id": "reach_py_y_words",
+  "type": "words",
+  "title": "P, Y — gyakorlatok — Y",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGY",
+  "units": [
+    {
+      "id": "reach_py_y_01",
+      "text": "AGY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_02",
+      "text": "ÁGY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_03",
+      "text": "EGY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_04",
+      "text": "GYÁR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_05",
+      "text": "LYUK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_06",
+      "text": "MEGY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_07",
+      "text": "MÉLY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_08",
+      "text": "VAGY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_09",
+      "text": "VÁGY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_10",
+      "text": "AGYAG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_11",
+      "text": "FAGYI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_12",
+      "text": "GYERE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_13",
+      "text": "GYORS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_14",
+      "text": "MEGGY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_15",
+      "text": "FIGYEL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_16",
+      "text": "FOLYIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_17",
+      "text": "GYEREK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_18",
+      "text": "KIRÁLY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_19",
+      "text": "MAGYAR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_20",
+      "text": "MOSOLY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_21",
+      "text": "SIRÁLY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_22",
+      "text": "SZEMÉLY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_23",
+      "text": "VESZÉLY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_y_24",
+      "text": "MAGYARÁZ",
+      "promptStyle": "word"
+    }
+  ]
+}

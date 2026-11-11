@@ -58,6 +58,10 @@ The available content is:
   on the home row.
 - **LECKÉK → Á, G → gyakorlatok — Á / G / ÁG:** 24 words per session. Each
   word includes the session’s new key or both new keys in ÁG.
+- **LECKÉK → P, Y → betűk:** É→P with the right little finger and A→Y with the
+  left little finger on Hungarian QWERTZ.
+- **LECKÉK → P, Y → gyakorlatok — P / Y / PY:** 24 words per session. Each
+  word includes the session’s new key or both new keys in PY.
 - **GYAKORLÁS → könnyű → Mintagyakorlás – öt mondat:** the original five sample
   sentences, with sentence narration, three-two-one, and individual word prompts.
 
@@ -129,6 +133,8 @@ what appears on screen and is spoken. Only available content is listed.
   the lesson-5 teaching steps and three word lists.
 - `data/lessons/reach_ag_letters.json` and `data/lessons/reach_ag_*_words.json`:
   É→Á and F→G teaching steps and three word drills.
+- `data/lessons/reach_py_letters.json` and `data/lessons/reach_py_*_words.json`:
+  É→P and A→Y teaching steps and three word drills.
 - `data/practice/sample.json`: original text divided into sentence units.
 
 Typed models validate menu shape, IDs, nonempty activities, activity types, and

@@ -1,0 +1,128 @@
+{
+  "id": "reach_py_p_words",
+  "type": "words",
+  "title": "P, Y — gyakorlatok — P",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGP",
+  "units": [
+    {
+      "id": "reach_py_p_01",
+      "text": "ÉP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_02",
+      "text": "APA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_03",
+      "text": "GÉP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_04",
+      "text": "KAP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_05",
+      "text": "KÉP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_06",
+      "text": "LAP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_07",
+      "text": "LÉP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_08",
+      "text": "PAP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_09",
+      "text": "PÁR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_10",
+      "text": "PÉK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_11",
+      "text": "POR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_12",
+      "text": "KAPU",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_13",
+      "text": "PARK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_14",
+      "text": "PIPA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_15",
+      "text": "SZÉP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_16",
+      "text": "KALAP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_17",
+      "text": "LÉPÉS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_18",
+      "text": "PÉLDA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_19",
+      "text": "PIROS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_20",
+      "text": "PUMPA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_21",
+      "text": "GÉPELÉS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_22",
+      "text": "PAPAGÁJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_23",
+      "text": "PAPRIKA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_p_24",
+      "text": "PARKOLÁS",
+      "promptStyle": "word"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "reach_py_letters",
+  "type": "letters",
+  "title": "P, Y — betűk",
+  "steps": [
+    {
+      "id": "reach_py_e_anchor",
+      "key": "É",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le az É billentyűt a jobb kezed kisujjával. Az É közvetlenül az L-től jobbra van.",
+      "retry": "Keresd meg az É billentyűt közvetlenül az L-től jobbra, a jobb kezed kisujjával.",
+      "success": "Igen, ez az É.",
+      "complete": "Igen, ez az É. Nagyszerű."
+    },
+    {
+      "id": "reach_py_p",
+      "key": "P",
+      "requiredSuccesses": 3,
+      "instruction": "Az É-ről csúsztasd a jobb kezed kisujját egy sorral feljebb és kicsit balra. Nyomd le a P billentyűt.",
+      "retry": "Keresd meg a P billentyűt az É fölött és kicsit balra, a jobb kezed kisujjával.",
+      "success": "Igen, ez a P. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "reach_py_a_anchor",
+      "key": "A",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le az A billentyűt a bal kezed kisujjával. Az A az alapsor bal szélső betűje.",
+      "retry": "Keresd meg az A billentyűt közvetlenül az S-től balra, a bal kezed kisujjával.",
+      "success": "Igen, ez az A.",
+      "complete": "Igen, ez az A. Nagyszerű."
+    },
+    {
+      "id": "reach_py_y",
+      "key": "Y",
+      "requiredSuccesses": 3,
+      "instruction": "Az A-ról csúsztasd a bal kezed kisujját egy sorral lejjebb és kicsit jobbra. Nyomd le az ipszilon billentyűt.",
+      "retry": "Keresd meg az ipszilon billentyűt az A alatt és kicsit jobbra, a bal kezed kisujjával.",
+      "success": "Igen, ez az ipszilon. Nyomd le még egyszer.",
+      "complete": "Nagyszerű, megvan az ipszilon is."
+    }
+  ]
+}

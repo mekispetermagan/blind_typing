@@ -240,6 +240,48 @@
                 }
               }
             ]
+          },
+          {
+            "id": "reach_py",
+            "title": "P, Y",
+            "speech": "pé, ipszilon",
+            "children": [
+              {
+                "id": "reach_py_letters",
+                "title": "betűk",
+                "activity": {
+                  "type": "letters",
+                  "content": "data/lessons/reach_py_letters.json"
+                }
+              },
+              {
+                "id": "reach_py_p_words",
+                "title": "gyakorlatok — P",
+                "speech": "Gyakorlatok a pé betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_py_p_words.json"
+                }
+              },
+              {
+                "id": "reach_py_y_words",
+                "title": "gyakorlatok — Y",
+                "speech": "Gyakorlatok az ipszilon betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_py_y_words.json"
+                }
+              },
+              {
+                "id": "reach_py_py_words",
+                "title": "gyakorlatok — PY",
+                "speech": "Gyakorlatok a pé és az ipszilon betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_py_py_words.json"
+                }
+              }
+            ]
           }
         ]
       },

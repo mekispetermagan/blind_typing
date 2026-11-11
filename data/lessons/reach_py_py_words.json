@@ -1,0 +1,128 @@
+{
+  "id": "reach_py_py_words",
+  "type": "words",
+  "title": "P, Y — gyakorlatok — PY",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPY",
+  "units": [
+    {
+      "id": "reach_py_py_01",
+      "text": "GYEP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_02",
+      "text": "APÁLY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_03",
+      "text": "PÁLYA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_04",
+      "text": "GYEPEK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_05",
+      "text": "GYEPES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_06",
+      "text": "GYEPRE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_07",
+      "text": "PÁLYÁK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_08",
+      "text": "PÁLYÁM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_09",
+      "text": "PULYKA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_10",
+      "text": "GÉPGYÁR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_11",
+      "text": "GYEPPEL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_12",
+      "text": "PÁLYÁJA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_13",
+      "text": "PÁLYÁRA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_14",
+      "text": "PULYKÁK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_15",
+      "text": "APÁLYKOR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_16",
+      "text": "JÉGPÁLYA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_17",
+      "text": "PÁLYÁZIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_18",
+      "text": "KIRÁLYPÁR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_19",
+      "text": "MEGPÁLYÁZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_20",
+      "text": "PÁLYAUDVAR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_21",
+      "text": "PULYKAMELL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_22",
+      "text": "GYORSPROGRAM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_23",
+      "text": "PÁLYASZAKASZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_py_py_24",
+      "text": "GYEREKPROGRAM",
+      "promptStyle": "word"
+    }
+  ]
+}
