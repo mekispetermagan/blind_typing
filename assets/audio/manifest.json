@@ -339,6 +339,21 @@
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "0dc5f2697d26bb302a5aa1d1dd117ec76e0beeba696b0db5dfd6d89c958de690"
   },
+  "menu_numbers": {
+    "text": "Számok egytől nulláig",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c7d8ce79f2a53861f237d1ef8e5b537ad9cd46c0ff3632f9343fa1975dcd8b7f"
+  },
+  "menu_numbers_letters": {
+    "text": "Számok tanulása",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c97a10a8748a193a7f1086450a1a8ca4e4b613cee01a1c811742bf1c4df7be07"
+  },
+  "menu_numbers_words": {
+    "text": "Számgyakorlatok",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6b4b18a8ca117886f9b1ba5b023ed084d5c37655d7b11469b9bed6e1e4d489c4"
+  },
   "menu_practice": {
     "text": "Gyakorlás",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
@@ -6033,6 +6048,526 @@
     "text": "extrém",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "8485221752e1385f29271f435c358458b40f3a88cdc40c5c9e4693cef8be640f"
+  },
+  "step_numbers_1_anchor_instruction": {
+    "text": "Nyomd le a kú billentyűt a bal kezed kisujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "31a5a8f32c450ff6f66d2cb33e904db5ac8546f04237dfe26b3b8838c33352c6"
+  },
+  "step_numbers_1_anchor_retry": {
+    "text": "Keresd meg a kú billentyűt a bal kezed kisujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "812c0017957aa04b1a217817550862af72a82d2a07f12f61b756b5499489c10b"
+  },
+  "step_numbers_1_anchor_success": {
+    "text": "Igen, ez a kú.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "19bf7c6ec38957a86887f8e82d2543741cd877b36a664a37b5ac1dbb6adba043"
+  },
+  "step_numbers_1_anchor_complete": {
+    "text": "Igen, ez a kú. Nagyszerű.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a2a304cc0d079f6144d21f2cfc8553078358ce76576239a9dcabf034bf259f77"
+  },
+  "step_numbers_1_instruction": {
+    "text": "Az egyes a számsorban van, a kú fölött és kicsit balra. Keresd meg és nyomd le az egyes billentyűt a bal kezed ugyanazzal az ujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2acc2b1f1a7bf3353bcdd8a53bb8834f655bedcfb91d777ba8961d80f770e2be"
+  },
+  "step_numbers_1_retry": {
+    "text": "Keresd meg az egyes billentyűt a számsorban.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "28962cc61e5343b66e286e4e17ce42f78ec363e0e39880ec9472fc2e9f34a637"
+  },
+  "step_numbers_1_success": {
+    "text": "Igen, ez az egyes. Nyomd le még egyszer.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e98ce0834b54661201cc417a4e252e032bc23f7b0c4853bd977863ff054e810a"
+  },
+  "step_numbers_1_complete": {
+    "text": "Nagyszerű. Továbblépünk.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "129aecfcf5f6514e750fda75b1bdf3202d422970edeccb807297ede8cf6c260b"
+  },
+  "step_numbers_2_anchor_instruction": {
+    "text": "Nyomd le a dupla vé billentyűt a bal kezed gyűrűsujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "348a278b3800330ef37bad5dd42eddddb0f013a102ae0f2836388956904af8c6"
+  },
+  "step_numbers_2_anchor_retry": {
+    "text": "Keresd meg a dupla vé billentyűt a bal kezed gyűrűsujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "99606f6c888288f5c940dba946da23c46a93f0d832a9745458a089a7b15065ab"
+  },
+  "step_numbers_2_anchor_success": {
+    "text": "Igen, ez a dupla vé.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1c0ee5220d318258c75e2102e4e17109aa5439b9636da3bd98764b08ca4f58ce"
+  },
+  "step_numbers_2_anchor_complete": {
+    "text": "Igen, ez a dupla vé. Nagyszerű.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "205f377be8b074e87cbefb8e0ce5c09ff041d686f33ac8bfb8f4d35e977a7ae1"
+  },
+  "step_numbers_2_instruction": {
+    "text": "A kettes a számsorban van, a dupla vé fölött és kicsit balra. Keresd meg és nyomd le a kettes billentyűt a bal kezed ugyanazzal az ujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "dfaa0fffa6b0f47e560a13f874e4c2c239bf276f1de0410d76cca2680c37cfc1"
+  },
+  "step_numbers_2_retry": {
+    "text": "Keresd meg a kettes billentyűt a számsorban.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0ace2ba6d427dc002bc7475112f920023685eca6f195937df86615c992c40488"
+  },
+  "step_numbers_2_success": {
+    "text": "Igen, ez a kettes. Nyomd le még egyszer.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "26c68bf5fab898752860811ce419ed61f2af6d86e031c47f7d4fba4324448a8a"
+  },
+  "step_numbers_2_complete": {
+    "text": "Nagyszerű. Továbblépünk.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "129aecfcf5f6514e750fda75b1bdf3202d422970edeccb807297ede8cf6c260b"
+  },
+  "step_numbers_3_anchor_instruction": {
+    "text": "Nyomd le az e billentyűt a bal kezed középső ujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ff6d22101e25c3d58b929c727cd47c2d0be36de39e2c2f2903ecc80a059b53df"
+  },
+  "step_numbers_3_anchor_retry": {
+    "text": "Keresd meg az e billentyűt a bal kezed középső ujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fd652abaa4c4345de5440f662b5f6665492568d79a54ec19fc20a661c22b585d"
+  },
+  "step_numbers_3_anchor_success": {
+    "text": "Igen, ez az e.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9ecb137de73a6abde5b0b91fa00ab2172fe5a82895f8b4a6c5396b2f53016157"
+  },
+  "step_numbers_3_anchor_complete": {
+    "text": "Igen, ez az e. Nagyszerű.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6791b0b25fa3cc3060cc9d9ffd736d5e13d7e4af3e3986ab3a6a0aee550916c4"
+  },
+  "step_numbers_3_instruction": {
+    "text": "A hármas a számsorban van, az e fölött és kicsit balra. Keresd meg és nyomd le a hármas billentyűt a bal kezed ugyanazzal az ujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "16815db692dc77430e6108918456f85f79fa069f535db240934132320a1db5b6"
+  },
+  "step_numbers_3_retry": {
+    "text": "Keresd meg a hármas billentyűt a számsorban.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "86484abdd594d47000f4cbe53d7262a0a9aadb2cff546dcda7db12383500f5b9"
+  },
+  "step_numbers_3_success": {
+    "text": "Igen, ez a hármas. Nyomd le még egyszer.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4ac99951e1e3ec108ebdde0049c42c260d0e6211b04009fdb687c2220f9e648d"
+  },
+  "step_numbers_3_complete": {
+    "text": "Nagyszerű. Továbblépünk.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "129aecfcf5f6514e750fda75b1bdf3202d422970edeccb807297ede8cf6c260b"
+  },
+  "step_numbers_4_anchor_instruction": {
+    "text": "Nyomd le a megjelölt F billentyűt a bal kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "062613fd55531fb30f032c7c13ea139b859b7561c00836e92fc43bcab56b0c66"
+  },
+  "step_numbers_4_anchor_retry": {
+    "text": "Keresd meg a megjelölt F billentyűt a bal kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "50489368aa55ad485304e1e3fbdff8a54e099a1053ce7fca5a143529ca124a8c"
+  },
+  "step_numbers_4_anchor_success": {
+    "text": "Igen, ez az F.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "29bf82f4a354194667dccfab6034237003a9096a3f3778e054e4f2d0cda1f3cf"
+  },
+  "step_numbers_4_anchor_complete": {
+    "text": "Igen, ez az F. Nagyszerű.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "23e828a3c83a239c18ad1eeced13b0ec379b727c09b46aa027c88d89b8f63070"
+  },
+  "step_numbers_4_instruction": {
+    "text": "A négyes a számsorban van, az F fölött és balra. Keresd meg és nyomd le a négyes billentyűt a bal kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c58bc7f82891be763473dc59582c6e51add3d0a1eea6a23ea9a7d783e4ee78df"
+  },
+  "step_numbers_4_retry": {
+    "text": "Keresd meg a négyes billentyűt a számsorban.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "81a988b1b6805ab3242742bd1083da01a7f978b83c457d4bd605b68e1f2279a1"
+  },
+  "step_numbers_4_success": {
+    "text": "Igen, ez a négyes. Nyomd le még egyszer.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0f021d132d0ea50af244bdca1e46cb2008f2907b15010d4ca679f352b3d760e8"
+  },
+  "step_numbers_4_complete": {
+    "text": "Nagyszerű. Továbblépünk.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "129aecfcf5f6514e750fda75b1bdf3202d422970edeccb807297ede8cf6c260b"
+  },
+  "step_numbers_5_anchor_instruction": {
+    "text": "Nyomd le a té billentyűt a bal kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "08e10998cf4532382f6475852fbfa8717a0ec632ffd6a8fcb4e265e7af725c34"
+  },
+  "step_numbers_5_anchor_retry": {
+    "text": "Keresd meg a té billentyűt a bal kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "079e63296242fee40403c59955fc896b3952009b6061c8a8145ad275b7783c77"
+  },
+  "step_numbers_5_anchor_success": {
+    "text": "Igen, ez a té.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "05c04f7a204a1ff5168882e54dc7a8b642695d17e70e23c5e1bb823833410d7f"
+  },
+  "step_numbers_5_anchor_complete": {
+    "text": "Igen, ez a té. Nagyszerű.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3b7aa1a82d84e8a5cad3df1e483f4ec56b99feb9bafe3b94162a728737e91188"
+  },
+  "step_numbers_5_instruction": {
+    "text": "Az ötös a számsorban van, a té fölött és kicsit balra. Keresd meg és nyomd le az ötös billentyűt a bal kezed ugyanazzal az ujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0c0d8e34303de403601c962fe386a5d092bc5eb892ec7bdf0f244718f3fcda0a"
+  },
+  "step_numbers_5_retry": {
+    "text": "Keresd meg az ötös billentyűt a számsorban.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "15c199dabf7bff6e870dc0a170227aea0a441115e24dd5254dcf9cc42abdc733"
+  },
+  "step_numbers_5_success": {
+    "text": "Igen, ez az ötös. Nyomd le még egyszer.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "8c3c3d184ad3bff1c40a844a7823447e98ff81eb250d3f10238151ab0c509087"
+  },
+  "step_numbers_5_complete": {
+    "text": "Nagyszerű. Továbblépünk.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "129aecfcf5f6514e750fda75b1bdf3202d422970edeccb807297ede8cf6c260b"
+  },
+  "step_numbers_6_anchor_instruction": {
+    "text": "Nyomd le a zé billentyűt a jobb kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "feca3af6d637a03bb0d126418b2afdef4f925ae14df31a9a45758a32353ff8a2"
+  },
+  "step_numbers_6_anchor_retry": {
+    "text": "Keresd meg a zé billentyűt a jobb kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4c1788c2088a49fbbfeec6e1aeca7fa1ffc56dba492b3074577f9c0585a87502"
+  },
+  "step_numbers_6_anchor_success": {
+    "text": "Igen, ez a zé.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "94dee1ea051147c12926bd52d0339c1649895b7d67bde7665cbcbd6996a36e14"
+  },
+  "step_numbers_6_anchor_complete": {
+    "text": "Igen, ez a zé. Nagyszerű.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "02340c6aa24ea882ab82550ca5a31d474c90c35dbbabded9df4474534e90d53c"
+  },
+  "step_numbers_6_instruction": {
+    "text": "A hatos a számsorban van, a zé fölött és kicsit balra. Keresd meg és nyomd le a hatos billentyűt a jobb kezed ugyanazzal az ujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "43b8d65b5a8ed8a8f335373b2602098c89fdf84ebfa4c4a44de4a176998e5c92"
+  },
+  "step_numbers_6_retry": {
+    "text": "Keresd meg a hatos billentyűt a számsorban.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "92466a61a4b28076645deaef64eda18f8d06d6982a04b15294f00cc9dad1d28a"
+  },
+  "step_numbers_6_success": {
+    "text": "Igen, ez a hatos. Nyomd le még egyszer.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bbfb07f65bad47104b133e8de8fc02b5677622293f85f12edcf05e88af65c5d8"
+  },
+  "step_numbers_6_complete": {
+    "text": "Nagyszerű. Továbblépünk.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "129aecfcf5f6514e750fda75b1bdf3202d422970edeccb807297ede8cf6c260b"
+  },
+  "step_numbers_7_anchor_instruction": {
+    "text": "Nyomd le az u billentyűt a jobb kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "94097ba304b0eab66ca31393e3733eefe07897a43db825dc3fee72248c0603a9"
+  },
+  "step_numbers_7_anchor_retry": {
+    "text": "Keresd meg az u billentyűt a jobb kezed mutatóujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ca9113c793ef255cb2ffe85bf8f3cea73f630fb69e93ea95cb4886895f51640f"
+  },
+  "step_numbers_7_anchor_success": {
+    "text": "Igen, ez az u.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "57087c0c71a058bea569229c0ee035286ec7a3c438ac9e91dcae37f247b3e2c3"
+  },
+  "step_numbers_7_anchor_complete": {
+    "text": "Igen, ez az u. Nagyszerű.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "57231ca8d975457b07059ff604d1fc638f34515ac18e2818c43ea015c43e4c3e"
+  },
+  "step_numbers_7_instruction": {
+    "text": "A hetes a számsorban van, az u fölött és kicsit balra. Keresd meg és nyomd le a hetes billentyűt a jobb kezed ugyanazzal az ujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "99cf38c73dabc3de9c59fe360ce6eb5f3498d14c3404a3d294ad9791d3ffe3b4"
+  },
+  "step_numbers_7_retry": {
+    "text": "Keresd meg a hetes billentyűt a számsorban.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c6b469eb563ccae1d4385814e64fbfab220152ad805ad53dfaa940384e7ac03a"
+  },
+  "step_numbers_7_success": {
+    "text": "Igen, ez a hetes. Nyomd le még egyszer.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "368b74eedcd009e2eee44fcea3e16e859a551a5e37d9e25a801b50b81f037bc9"
+  },
+  "step_numbers_7_complete": {
+    "text": "Nagyszerű. Továbblépünk.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c2b826102a0bb81706c2e1cf1b19af36854730d5cf60fd8bc4bf11d1606faaf5"
+  },
+  "step_numbers_8_anchor_instruction": {
+    "text": "Nyomd le az i billentyűt a jobb kezed középső ujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c14f2ede993e9b32532ebc0cdfbb29ed77df21df57064bee752b78da80a169c9"
+  },
+  "step_numbers_8_anchor_retry": {
+    "text": "Keresd meg az i billentyűt a jobb kezed középső ujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "03e0dab5c9cdc8292d4cebcf6708f2a417321f70ce4e79d7460f26e6025ca571"
+  },
+  "step_numbers_8_anchor_success": {
+    "text": "Igen, ez az i.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "8ffd06845d1bc2af2eecd11e0d3a27d45e7bcf4d9392fe9e8918e2254a2d0e4d"
+  },
+  "step_numbers_8_anchor_complete": {
+    "text": "Igen, ez az i. Nagyszerű.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b4614be02a66792ff2eefcb6fe4bffb03ee43c62af5e7de828de35482bc124b6"
+  },
+  "step_numbers_8_instruction": {
+    "text": "A nyolcas a számsorban van, az i fölött és kicsit balra. Keresd meg és nyomd le a nyolcas billentyűt a jobb kezed ugyanazzal az ujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a5c2fed85447fec72dac366a3615435b76891eac47918730fe46b507897f4fe6"
+  },
+  "step_numbers_8_retry": {
+    "text": "Keresd meg a nyolcas billentyűt a számsorban.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2496b0f76f0adf19290af862890bfb9d7a41c39546a1c8d3b424869f7de32075"
+  },
+  "step_numbers_8_success": {
+    "text": "Igen, ez a nyolcas. Nyomd le még egyszer.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c7c5e300ecb2d62d4ddafbc6f172c9c250d42d7cb8eabc225a02647ee4b58d95"
+  },
+  "step_numbers_8_complete": {
+    "text": "Nagyszerű. Továbblépünk.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "129aecfcf5f6514e750fda75b1bdf3202d422970edeccb807297ede8cf6c260b"
+  },
+  "step_numbers_9_anchor_instruction": {
+    "text": "Nyomd le az o billentyűt a jobb kezed gyűrűsujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4ac484012f2656c7d82fadd4b97572dc0ac7f5b52403763d358368b3f26b4430"
+  },
+  "step_numbers_9_anchor_retry": {
+    "text": "Keresd meg az o billentyűt a jobb kezed gyűrűsujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "33d1346c7f5e68717fc82c2e695fff18f61c841986ca0e1b07d09acad5cda3e8"
+  },
+  "step_numbers_9_anchor_success": {
+    "text": "Igen, ez az o.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bfe984fc9ba2b07ea3876639503cbc6c650cde9622a62b0f96778c6c98b423ed"
+  },
+  "step_numbers_9_anchor_complete": {
+    "text": "Igen, ez az o. Nagyszerű.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f1108b8cbb9985f2e6c9badc6af75ee1d884492d97443b077aecd4d423d45d19"
+  },
+  "step_numbers_9_instruction": {
+    "text": "A kilences a számsorban van, az o fölött és kicsit balra. Keresd meg és nyomd le a kilences billentyűt a jobb kezed ugyanazzal az ujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fbec736829a42f0acda2fb847e2f54bad22e0a55589f7492988aa23022234fca"
+  },
+  "step_numbers_9_retry": {
+    "text": "Keresd meg a kilences billentyűt a számsorban.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d4fd1fca7098b86b808eda5e96f8a5220993974af4f5365710d144bbdd710105"
+  },
+  "step_numbers_9_success": {
+    "text": "Igen, ez a kilences. Nyomd le még egyszer.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9f9e82692cd1631a3e435e7e17c40c6cade1c2c70f561aa899b745dd92092bac"
+  },
+  "step_numbers_9_complete": {
+    "text": "Nagyszerű. Továbblépünk.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c2b826102a0bb81706c2e1cf1b19af36854730d5cf60fd8bc4bf11d1606faaf5"
+  },
+  "step_numbers_0_anchor_instruction": {
+    "text": "Nyomd le a kú billentyűt a bal kezed kisujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1b021ffdbb872f9eda99342bf8f4655c40bbb7881f0af1bde119a1026fb7b647"
+  },
+  "step_numbers_0_anchor_retry": {
+    "text": "Keresd meg a kú billentyűt a bal kezed kisujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "121e80479e99b36090d723799107b0bb4aa7cb061f40a440b1cfd73af490bd61"
+  },
+  "step_numbers_0_anchor_success": {
+    "text": "Igen, ez a kú.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e331dd64d4e8888981db2f2e61af8e164024ccc2700606aed91ee5399f9afb5a"
+  },
+  "step_numbers_0_anchor_complete": {
+    "text": "Igen, ez a kú. Nagyszerű.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "09055ff25eb9b6a7226bfb7c200a0370ddcb06bb434f87c832ccd055ba1d0949"
+  },
+  "step_numbers_0_instruction": {
+    "text": "A nulla a számsor bal szélén, az egyestől közvetlenül balra van. Keresd meg és nyomd le a nullás billentyűt a bal kezed ugyanazzal az ujjával.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "13fe2dce02cb5ea1571b5729ecf2b9d160ee36c47eb94caa1130dc597ff5eb24"
+  },
+  "step_numbers_0_retry": {
+    "text": "Keresd meg a nullás billentyűt a számsorban.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3bf31b7b421da8ae5100bfd6682dd8e2de9a31301ba71ea65e8cd9f735d750a4"
+  },
+  "step_numbers_0_success": {
+    "text": "Igen, ez a nullás. Nyomd le még egyszer.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fe412f2f22536d82f0014897c7677f2ade822f80f8a3d03c72f14e3a2b8cd09c"
+  },
+  "step_numbers_0_complete": {
+    "text": "Nagyszerű, megvan a nulla is.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "36c519a14909c1a977357b41efd933b3f1a6a3b36c520adc2b49df5111c2176e"
+  },
+  "numbers_01_word_0": {
+    "text": "egy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "16f1aa49ae960d815d5932ab2b12fd5169e6fe5fd9403282862a53ebb76cc6bf"
+  },
+  "numbers_02_word_0": {
+    "text": "nulla",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bc32c82b73aa4bffb6d9ea8084500bbe40045528c0e749b7f51c90330a0a3bec"
+  },
+  "numbers_03_word_0": {
+    "text": "tizenkettő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "dc36e020bb9a6d1dc8235a9ee7131d322b4555c8f2beff3597b9dbb2d7c94774"
+  },
+  "numbers_04_word_0": {
+    "text": "száztizenkettő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "81f5e48b103974b4eaea1509ce801efa5e039885154e43d8a116f42d19ca984c"
+  },
+  "numbers_05_word_0": {
+    "text": "1234",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4a1e503c849f58ab0a56681b49e1169f3a05e646a7a5605ba735739dad4e99e3"
+  },
+  "numbers_06_word_0": {
+    "text": "4321",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7a52f35d663f711c28abcb9455474d97b18a61973fce15c2b377c7a4eb448183"
+  },
+  "numbers_07_word_0": {
+    "text": "5678",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f15d2b8465b01a7d28cafff8083bf2a90c5b5c81441a39e879c5ccc1aef336aa"
+  },
+  "numbers_08_word_0": {
+    "text": "1222",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3c75e182a4fa2ea1a6f56ab0b8f1345a3fb4409c27ea408f38884e2a45d08f9f"
+  },
+  "numbers_09_word_0": {
+    "text": "1241",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "324b4ecb12d9ea626594c951a2c930383d123544403313c9295edd7877722284"
+  },
+  "numbers_10_word_0": {
+    "text": "1456",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "10e1f6b7b719966b443c48ce6c2219ecb30bfc76dea7283591fd0db66ac31e2c"
+  },
+  "numbers_11_word_0": {
+    "text": "1492",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bc2601499707e806a275062f8d1aa71f723c5e79a5c36a1ca85648eaae9188e8"
+  },
+  "numbers_12_word_0": {
+    "text": "1526",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "073539e12238e00d6b645c91d677c8fb8718e2b14dc16c4493740c5bc3a7c3a2"
+  },
+  "numbers_13_word_0": {
+    "text": "1546",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "36165011d739b6edfe528db8c1da4423393b16ee986d4dff55566ad16d628080"
+  },
+  "numbers_14_word_0": {
+    "text": "1703",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "142aa5c9cb4e86af4713742a6398b603037987e63aed50efc0231a891870fcca"
+  },
+  "numbers_15_word_0": {
+    "text": "1848",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "533dc1226e3e9a569d887abe5d01bb5165f1e1bbf9ee251eab68caf16376c3d8"
+  },
+  "numbers_16_word_0": {
+    "text": "1867",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3bacce109230059f7b5c8b25f99d95bfc2d2c87e561e0344e869076930b8a350"
+  },
+  "numbers_17_word_0": {
+    "text": "1914",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "87b91dc9aaef63fe2d0cb595e2ae1aa13587f5d5e3aaaafe5f69999cc86a8c3f"
+  },
+  "numbers_18_word_0": {
+    "text": "1956",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0b416b682b7be837fabaf4c6d3d1266ac8b2af075f1fa082be3016facbc32f59"
+  },
+  "numbers_19_word_0": {
+    "text": "1989",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b51450df6ddca6a3410a04ec12d67219828a056aff0a1b15b0b1aef12e2e344e"
+  },
+  "numbers_20_word_0": {
+    "text": "2004",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "eb72ce7b991fb544c5c766f0898e7e298893b915ab78d167020430e4e99eec29"
+  },
+  "numbers_21_word_0": {
+    "text": "nulla, hat, negyven, negyvenkilenc, negyvenkilenc, negyvenkilenc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4c862e8eaa21385f957c7f971ef979d3ac90ff8558b29d7f9dd9ee9b9f1c10d0"
+  },
+  "numbers_22_word_0": {
+    "text": "nulla, hat, nyolcvan, nyolcszáztíz, hatszáz",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3462b18d58963a7b5df45b31d9b83dbc40c28cc94fabd575c242c4c5314bf364"
+  },
+  "numbers_23_word_0": {
+    "text": "nulla, hat, egy, nyolcszázhetvenkettő, kilencvenöt, kilencven",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ce1a925b1b96a86d7133c1785affac6d5e94aa0121cac55bc5f1fbbd46f05223"
+  },
+  "numbers_24_word_0": {
+    "text": "nulla, hat, egy, három, kettő, ötvenöt, kettő, ötvenöt",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9d627bdc634177c27b29e730957cc21b85405fb28b992a4e2b97f2265e8d82fd"
   },
   "01_sentence": {
     "text": "Anna almát tett ide",

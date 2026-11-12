@@ -47,7 +47,11 @@ def speech_texts():
             for unit in content["units"]:
                 if activity_type == "practice":
                     yield f"{unit['id']}_sentence", unit["text"]
-                words = re.findall(r"[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+", unit["text"])
+                words = (
+                    [unit["text"]]
+                    if activity_type == "words" and re.fullmatch(r"[0-9]+", unit["text"])
+                    else re.findall(r"[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+", unit["text"])
+                )
                 if unit.get("promptStyle", "word") == "word":
                     for index, word in enumerate(words):
                         speech = unit.get("speech", word.lower()) if activity_type == "words" else word

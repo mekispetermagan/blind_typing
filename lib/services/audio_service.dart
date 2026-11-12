@@ -34,6 +34,11 @@ abstract final class AudioCues {
   static const alphabet = 'aábcdeéfghiíjklmnoóöőpqrstuúüűvwxyz';
   static String count(int number) => 'assets/audio/count_$number.wav';
   static String letter(String character) {
+    final digit = int.tryParse(character);
+    if (digit != null && character.length == 1) {
+      if (digit >= 1 && digit <= 3) return count(digit);
+      return 'assets/audio/result_number_$digit.wav';
+    }
     final lower = character.toLowerCase();
     if (lower.length != 1 || !alphabet.contains(lower)) return unknownCharacter;
     return 'assets/audio/letter_${lower.runes.single.toRadixString(16).padLeft(4, '0')}.wav';
@@ -52,6 +57,8 @@ abstract final class AudioCues {
     modeAdvanced,
     unknownCharacter,
     for (var number = 1; number <= 3; number++) count(number),
+    for (final number in [0, 4, 5, 6, 7, 8, 9])
+      'assets/audio/result_number_$number.wav',
     for (final character in alphabet.split('')) letter(character),
   ];
 }

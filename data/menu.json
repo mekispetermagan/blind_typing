@@ -558,6 +558,31 @@
                 }
               }
             ]
+          },
+          {
+            "id": "numbers",
+            "title": "1, 2, 3, 4, 5, 6, 7, 8, 9, 0",
+            "speech": "Számok egytől nulláig",
+            "children": [
+              {
+                "id": "numbers_letters",
+                "title": "betűk",
+                "speech": "Számok tanulása",
+                "activity": {
+                  "type": "letters",
+                  "content": "data/lessons/numbers_letters.json"
+                }
+              },
+              {
+                "id": "numbers_words",
+                "title": "gyakorlatok",
+                "speech": "Számgyakorlatok",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/numbers_words.json"
+                }
+              }
+            ]
           }
         ]
       },

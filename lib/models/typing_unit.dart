@@ -8,7 +8,9 @@ class TypingUnit {
     required this.id,
     required this.text,
     this.promptStyle = PromptStyle.word,
-  }) : words = typingWords(text) {
+  }) : words = RegExp(r'^[0-9]+$').hasMatch(text)
+           ? List.unmodifiable([text])
+           : typingWords(text) {
     if (!RegExp(r'^[a-zA-Z0-9_]+$').hasMatch(id) || words.isEmpty) {
       throw FormatException('Invalid typing unit: $id');
     }

@@ -90,6 +90,8 @@ The available content is:
   with the left ring finger on Hungarian QWERTZ.
 - **LECKÉK → Q, X, W → gyakorlatok:** 24 targets containing at least one of
   the three new keys.
+- **LECKÉK → számok:** guided practice for 1–9 and 0, followed by a 24-number
+  drill including years and telephone numbers. Leading zeroes are preserved.
 - **GYAKORLÁS → könnyű → Mintagyakorlás – öt mondat:** the original five sample
   sentences, with sentence narration, three-two-one, and individual word prompts.
 
@@ -104,7 +106,7 @@ F4, or Close exits.
 ## Typing behavior
 
 - Case and spaces are ignored; Hungarian accents must match. Source text keeps
-  punctuation, while current typing targets contain letters only. Strict typing
+  punctuation, while typing targets contain letters or whole numbers. Strict typing
   of spaces and punctuation is deferred.
 - Correct characters play a short good tone. Wrong characters play a buzz.
 - F3 toggles Simple/Advanced and announces the mode. Simple is the launch default;
@@ -177,6 +179,8 @@ what appears on screen and is spoken. Only available content is listed.
   Ü→Ó and Á→Ű teaching steps and three word drills.
 - `data/lessons/reach_qxw_letters.json` and `data/lessons/reach_qxw_words.json`:
   A→Q and S→X/W teaching steps and the final word drill.
+- `data/lessons/numbers_letters.json` and `data/lessons/numbers_words.json`:
+  number-key teaching steps and the number drill.
 - `data/practice/sample.json`: original text divided into sentence units.
 
 Typed models validate menu shape, IDs, nonempty activities, activity types, and

@@ -1,0 +1,136 @@
+{
+  "id": "numbers_words",
+  "type": "words",
+  "title": "Számok — gyakorlatok",
+  "allowedLetters": "0123456789",
+  "units": [
+    {
+      "id": "numbers_01",
+      "text": "1",
+      "promptStyle": "word",
+      "speech": "egy"
+    },
+    {
+      "id": "numbers_02",
+      "text": "0",
+      "promptStyle": "word",
+      "speech": "nulla"
+    },
+    {
+      "id": "numbers_03",
+      "text": "12",
+      "promptStyle": "word",
+      "speech": "tizenkettő"
+    },
+    {
+      "id": "numbers_04",
+      "text": "112",
+      "promptStyle": "word",
+      "speech": "száztizenkettő"
+    },
+    {
+      "id": "numbers_05",
+      "text": "1234",
+      "promptStyle": "word"
+    },
+    {
+      "id": "numbers_06",
+      "text": "4321",
+      "promptStyle": "word"
+    },
+    {
+      "id": "numbers_07",
+      "text": "5678",
+      "promptStyle": "word"
+    },
+    {
+      "id": "numbers_08",
+      "text": "1222",
+      "promptStyle": "word"
+    },
+    {
+      "id": "numbers_09",
+      "text": "1241",
+      "promptStyle": "word"
+    },
+    {
+      "id": "numbers_10",
+      "text": "1456",
+      "promptStyle": "word"
+    },
+    {
+      "id": "numbers_11",
+      "text": "1492",
+      "promptStyle": "word"
+    },
+    {
+      "id": "numbers_12",
+      "text": "1526",
+      "promptStyle": "word"
+    },
+    {
+      "id": "numbers_13",
+      "text": "1546",
+      "promptStyle": "word"
+    },
+    {
+      "id": "numbers_14",
+      "text": "1703",
+      "promptStyle": "word"
+    },
+    {
+      "id": "numbers_15",
+      "text": "1848",
+      "promptStyle": "word"
+    },
+    {
+      "id": "numbers_16",
+      "text": "1867",
+      "promptStyle": "word"
+    },
+    {
+      "id": "numbers_17",
+      "text": "1914",
+      "promptStyle": "word"
+    },
+    {
+      "id": "numbers_18",
+      "text": "1956",
+      "promptStyle": "word"
+    },
+    {
+      "id": "numbers_19",
+      "text": "1989",
+      "promptStyle": "word"
+    },
+    {
+      "id": "numbers_20",
+      "text": "2004",
+      "promptStyle": "word"
+    },
+    {
+      "id": "numbers_21",
+      "text": "0640494949",
+      "promptStyle": "word",
+      "speech": "nulla, hat, negyven, negyvenkilenc, negyvenkilenc, negyvenkilenc"
+    },
+    {
+      "id": "numbers_22",
+      "text": "0680810600",
+      "promptStyle": "word",
+      "speech": "nulla, hat, nyolcvan, nyolcszáztíz, hatszáz"
+    },
+    {
+      "id": "numbers_23",
+      "text": "0618729590",
+      "promptStyle": "word",
+      "speech": "nulla, hat, egy, nyolcszázhetvenkettő, kilencvenöt, kilencven"
+    },
+    {
+      "id": "numbers_24",
+      "text": "0613255255",
+      "promptStyle": "word",
+      "speech": "nulla, hat, egy, három, kettő, ötvenöt, kettő, ötvenöt"
+    }
+  ]
+}

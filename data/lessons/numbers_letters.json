@@ -1,0 +1,187 @@
+{
+  "id": "numbers_letters",
+  "type": "letters",
+  "title": "Számok — billentyűk",
+  "steps": [
+    {
+      "id": "numbers_1_anchor",
+      "key": "Q",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le a kú billentyűt a bal kezed kisujjával.",
+      "retry": "Keresd meg a kú billentyűt a bal kezed kisujjával.",
+      "success": "Igen, ez a kú.",
+      "complete": "Igen, ez a kú. Nagyszerű."
+    },
+    {
+      "id": "numbers_1",
+      "key": "1",
+      "requiredSuccesses": 3,
+      "instruction": "Az egyes a számsorban van, a kú fölött és kicsit balra. Keresd meg és nyomd le az egyes billentyűt a bal kezed ugyanazzal az ujjával.",
+      "retry": "Keresd meg az egyes billentyűt a számsorban.",
+      "success": "Igen, ez az egyes. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "numbers_2_anchor",
+      "key": "W",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le a dupla vé billentyűt a bal kezed gyűrűsujjával.",
+      "retry": "Keresd meg a dupla vé billentyűt a bal kezed gyűrűsujjával.",
+      "success": "Igen, ez a dupla vé.",
+      "complete": "Igen, ez a dupla vé. Nagyszerű."
+    },
+    {
+      "id": "numbers_2",
+      "key": "2",
+      "requiredSuccesses": 3,
+      "instruction": "A kettes a számsorban van, a dupla vé fölött és kicsit balra. Keresd meg és nyomd le a kettes billentyűt a bal kezed ugyanazzal az ujjával.",
+      "retry": "Keresd meg a kettes billentyűt a számsorban.",
+      "success": "Igen, ez a kettes. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "numbers_3_anchor",
+      "key": "E",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le az e billentyűt a bal kezed középső ujjával.",
+      "retry": "Keresd meg az e billentyűt a bal kezed középső ujjával.",
+      "success": "Igen, ez az e.",
+      "complete": "Igen, ez az e. Nagyszerű."
+    },
+    {
+      "id": "numbers_3",
+      "key": "3",
+      "requiredSuccesses": 3,
+      "instruction": "A hármas a számsorban van, az e fölött és kicsit balra. Keresd meg és nyomd le a hármas billentyűt a bal kezed ugyanazzal az ujjával.",
+      "retry": "Keresd meg a hármas billentyűt a számsorban.",
+      "success": "Igen, ez a hármas. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "numbers_4_anchor",
+      "key": "F",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le a megjelölt F billentyűt a bal kezed mutatóujjával.",
+      "retry": "Keresd meg a megjelölt F billentyűt a bal kezed mutatóujjával.",
+      "success": "Igen, ez az F.",
+      "complete": "Igen, ez az F. Nagyszerű."
+    },
+    {
+      "id": "numbers_4",
+      "key": "4",
+      "requiredSuccesses": 3,
+      "instruction": "A négyes a számsorban van, az F fölött és balra. Keresd meg és nyomd le a négyes billentyűt a bal kezed mutatóujjával.",
+      "retry": "Keresd meg a négyes billentyűt a számsorban.",
+      "success": "Igen, ez a négyes. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "numbers_5_anchor",
+      "key": "T",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le a té billentyűt a bal kezed mutatóujjával.",
+      "retry": "Keresd meg a té billentyűt a bal kezed mutatóujjával.",
+      "success": "Igen, ez a té.",
+      "complete": "Igen, ez a té. Nagyszerű."
+    },
+    {
+      "id": "numbers_5",
+      "key": "5",
+      "requiredSuccesses": 3,
+      "instruction": "Az ötös a számsorban van, a té fölött és kicsit balra. Keresd meg és nyomd le az ötös billentyűt a bal kezed ugyanazzal az ujjával.",
+      "retry": "Keresd meg az ötös billentyűt a számsorban.",
+      "success": "Igen, ez az ötös. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "numbers_6_anchor",
+      "key": "Z",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le a zé billentyűt a jobb kezed mutatóujjával.",
+      "retry": "Keresd meg a zé billentyűt a jobb kezed mutatóujjával.",
+      "success": "Igen, ez a zé.",
+      "complete": "Igen, ez a zé. Nagyszerű."
+    },
+    {
+      "id": "numbers_6",
+      "key": "6",
+      "requiredSuccesses": 3,
+      "instruction": "A hatos a számsorban van, a zé fölött és kicsit balra. Keresd meg és nyomd le a hatos billentyűt a jobb kezed ugyanazzal az ujjával.",
+      "retry": "Keresd meg a hatos billentyűt a számsorban.",
+      "success": "Igen, ez a hatos. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "numbers_7_anchor",
+      "key": "U",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le az u billentyűt a jobb kezed mutatóujjával.",
+      "retry": "Keresd meg az u billentyűt a jobb kezed mutatóujjával.",
+      "success": "Igen, ez az u.",
+      "complete": "Igen, ez az u. Nagyszerű."
+    },
+    {
+      "id": "numbers_7",
+      "key": "7",
+      "requiredSuccesses": 3,
+      "instruction": "A hetes a számsorban van, az u fölött és kicsit balra. Keresd meg és nyomd le a hetes billentyűt a jobb kezed ugyanazzal az ujjával.",
+      "retry": "Keresd meg a hetes billentyűt a számsorban.",
+      "success": "Igen, ez a hetes. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "numbers_8_anchor",
+      "key": "I",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le az i billentyűt a jobb kezed középső ujjával.",
+      "retry": "Keresd meg az i billentyűt a jobb kezed középső ujjával.",
+      "success": "Igen, ez az i.",
+      "complete": "Igen, ez az i. Nagyszerű."
+    },
+    {
+      "id": "numbers_8",
+      "key": "8",
+      "requiredSuccesses": 3,
+      "instruction": "A nyolcas a számsorban van, az i fölött és kicsit balra. Keresd meg és nyomd le a nyolcas billentyűt a jobb kezed ugyanazzal az ujjával.",
+      "retry": "Keresd meg a nyolcas billentyűt a számsorban.",
+      "success": "Igen, ez a nyolcas. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "numbers_9_anchor",
+      "key": "O",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le az o billentyűt a jobb kezed gyűrűsujjával.",
+      "retry": "Keresd meg az o billentyűt a jobb kezed gyűrűsujjával.",
+      "success": "Igen, ez az o.",
+      "complete": "Igen, ez az o. Nagyszerű."
+    },
+    {
+      "id": "numbers_9",
+      "key": "9",
+      "requiredSuccesses": 3,
+      "instruction": "A kilences a számsorban van, az o fölött és kicsit balra. Keresd meg és nyomd le a kilences billentyűt a jobb kezed ugyanazzal az ujjával.",
+      "retry": "Keresd meg a kilences billentyűt a számsorban.",
+      "success": "Igen, ez a kilences. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "numbers_0_anchor",
+      "key": "Q",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le a kú billentyűt a bal kezed kisujjával.",
+      "retry": "Keresd meg a kú billentyűt a bal kezed kisujjával.",
+      "success": "Igen, ez a kú.",
+      "complete": "Igen, ez a kú. Nagyszerű."
+    },
+    {
+      "id": "numbers_0",
+      "key": "0",
+      "requiredSuccesses": 3,
+      "instruction": "A nulla a számsor bal szélén, az egyestől közvetlenül balra van. Keresd meg és nyomd le a nullás billentyűt a bal kezed ugyanazzal az ujjával.",
+      "retry": "Keresd meg a nullás billentyűt a számsorban.",
+      "success": "Igen, ez a nullás. Nyomd le még egyszer.",
+      "complete": "Nagyszerű, megvan a nulla is."
+    }
+  ]
+}
