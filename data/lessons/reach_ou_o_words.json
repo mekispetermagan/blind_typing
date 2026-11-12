@@ -1,0 +1,128 @@
+{
+  "id": "reach_ou_o_words",
+  "type": "words",
+  "title": "Ö, Ü — gyakorlatok — Ö",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPYNTŐCHÍÚBÖ",
+  "units": [
+    {
+      "id": "reach_ou_o_01",
+      "text": "ÖT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_02",
+      "text": "ÖL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_03",
+      "text": "ÖN",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_04",
+      "text": "ÖV",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_05",
+      "text": "KÖR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_06",
+      "text": "KÖZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_07",
+      "text": "TÖK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_08",
+      "text": "ÖTÖS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_09",
+      "text": "ÖREG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_10",
+      "text": "ÖRÖM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_11",
+      "text": "ÖRÖK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_12",
+      "text": "FÖLD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_13",
+      "text": "ÖSSZE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_14",
+      "text": "KÖRTE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_15",
+      "text": "KÖRÖM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_16",
+      "text": "KÖZEL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_17",
+      "text": "KÖZÖS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_18",
+      "text": "KÖNYV",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_19",
+      "text": "TÖRÉS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_20",
+      "text": "VÖRÖS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_21",
+      "text": "SÖTÉT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_22",
+      "text": "ÖTLET",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_23",
+      "text": "ÖSSZEG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_o_24",
+      "text": "KÖSZÖN",
+      "promptStyle": "word"
+    }
+  ]
+}

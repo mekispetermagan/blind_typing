@@ -1,0 +1,128 @@
+{
+  "id": "reach_ub_b_words",
+  "type": "words",
+  "title": "Ú, B — gyakorlatok — B",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPYNTŐCHÍB",
+  "units": [
+    {
+      "id": "reach_ub_b_01",
+      "text": "BE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_02",
+      "text": "BAB",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_03",
+      "text": "BAJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_04",
+      "text": "BAL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_05",
+      "text": "BAK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_06",
+      "text": "BÁR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_07",
+      "text": "BOR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_08",
+      "text": "BÉKE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_09",
+      "text": "BENT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_10",
+      "text": "BETEG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_11",
+      "text": "BARÁT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_12",
+      "text": "BÁTOR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_13",
+      "text": "BESZÉL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_14",
+      "text": "BIZTOS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_15",
+      "text": "BIZONY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_16",
+      "text": "BOLDOG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_17",
+      "text": "BAGOLY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_18",
+      "text": "BARACK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_19",
+      "text": "BARLANG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_20",
+      "text": "BIZALOM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_21",
+      "text": "BICIKLI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_22",
+      "text": "BIZTONSÁG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_23",
+      "text": "BABAKOCSI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_b_24",
+      "text": "BOLDOGSÁG",
+      "promptStyle": "word"
+    }
+  ]
+}

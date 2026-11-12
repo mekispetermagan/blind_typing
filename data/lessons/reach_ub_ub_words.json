@@ -1,0 +1,128 @@
+{
+  "id": "reach_ub_ub_words",
+  "type": "words",
+  "title": "Ú, B — gyakorlatok — ÚB",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPYNTŐCHÍÚB",
+  "units": [
+    {
+      "id": "reach_ub_ub_01",
+      "text": "BÚ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_02",
+      "text": "BÚJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_03",
+      "text": "BÚZA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_04",
+      "text": "BÚJIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_05",
+      "text": "ELBÚJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_06",
+      "text": "BÚTOR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_07",
+      "text": "BÚVÁR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_08",
+      "text": "BÚCSÚ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_09",
+      "text": "BÚCSÚT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_10",
+      "text": "HÁBORÚ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_11",
+      "text": "ELBÚJIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_12",
+      "text": "BÚCSÚJA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_13",
+      "text": "BÚTOROK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_14",
+      "text": "BÚTORAI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_15",
+      "text": "BÚTOROZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_16",
+      "text": "BÚVÁROK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_17",
+      "text": "HÁBORÚS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_18",
+      "text": "BÚCSÚZIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_19",
+      "text": "BÚCSÚZÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_20",
+      "text": "BÚTOROZÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_21",
+      "text": "BÚZALISZT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_22",
+      "text": "BÚZAVIRÁG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_23",
+      "text": "BÚVÁRKODIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_ub_24",
+      "text": "BÚZAKALÁSZ",
+      "promptStyle": "word"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "reach_ou_letters",
+  "type": "letters",
+  "title": "Ö, Ü — betűk",
+  "steps": [
+    {
+      "id": "reach_ou_p_anchor",
+      "key": "P",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le a P billentyűt a jobb kezed kisujjával.",
+      "retry": "Keresd meg a P billentyűt a jobb kezed kisujjával.",
+      "success": "Igen, ez a P.",
+      "complete": "Igen, ez a P. Nagyszerű."
+    },
+    {
+      "id": "reach_ou_o",
+      "key": "Ö",
+      "requiredSuccesses": 3,
+      "instruction": "A P billentyűről csúsztasd a jobb kezed kisujját egy sorral feljebb és kicsit balra. Keresd meg és nyomd le a rövid ö billentyűt a számsorban.",
+      "retry": "Keresd meg a rövid ö billentyűt a P fölött és kicsit balra, a jobb kezed kisujjával.",
+      "success": "Igen, ez a rövid ö. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "reach_ou_oo_anchor",
+      "key": "Ő",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le az Ő billentyűt a jobb kezed kisujjával. Az Ő közvetlenül a P-től jobbra van.",
+      "retry": "Keresd meg az Ő billentyűt a P-től jobbra, a jobb kezed kisujjával.",
+      "success": "Igen, ez az Ő.",
+      "complete": "Igen, ez az Ő. Nagyszerű."
+    },
+    {
+      "id": "reach_ou_u",
+      "key": "Ü",
+      "requiredSuccesses": 3,
+      "instruction": "Az Ő billentyűről csúsztasd a jobb kezed kisujját egy sorral feljebb és kicsit balra. A rövid ü a rövid ö mellett, attól jobbra van a számsorban. Nyomd le a rövid ü billentyűt.",
+      "retry": "Keresd meg a rövid ü billentyűt közvetlenül a rövid ö-től jobbra, a jobb kezed kisujjával.",
+      "success": "Igen, ez a rövid ü. Nyomd le még egyszer.",
+      "complete": "Nagyszerű, megvan a rövid ü is."
+    }
+  ]
+}

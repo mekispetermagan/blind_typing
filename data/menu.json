@@ -408,6 +408,90 @@
                 }
               }
             ]
+          },
+          {
+            "id": "reach_ub",
+            "title": "Ú, B",
+            "speech": "hosszú ú, bé",
+            "children": [
+              {
+                "id": "reach_ub_letters",
+                "title": "betűk",
+                "activity": {
+                  "type": "letters",
+                  "content": "data/lessons/reach_ub_letters.json"
+                }
+              },
+              {
+                "id": "reach_ub_u_words",
+                "title": "gyakorlatok — Ú",
+                "speech": "Gyakorlatok a hosszú ú betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_ub_u_words.json"
+                }
+              },
+              {
+                "id": "reach_ub_b_words",
+                "title": "gyakorlatok — B",
+                "speech": "Gyakorlatok a bé betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_ub_b_words.json"
+                }
+              },
+              {
+                "id": "reach_ub_ub_words",
+                "title": "gyakorlatok — ÚB",
+                "speech": "Gyakorlatok a hosszú ú és a bé betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_ub_ub_words.json"
+                }
+              }
+            ]
+          },
+          {
+            "id": "reach_ou",
+            "title": "Ö, Ü",
+            "speech": "rövid ö, rövid ü",
+            "children": [
+              {
+                "id": "reach_ou_letters",
+                "title": "betűk",
+                "activity": {
+                  "type": "letters",
+                  "content": "data/lessons/reach_ou_letters.json"
+                }
+              },
+              {
+                "id": "reach_ou_o_words",
+                "title": "gyakorlatok — Ö",
+                "speech": "Gyakorlatok az ö betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_ou_o_words.json"
+                }
+              },
+              {
+                "id": "reach_ou_u_words",
+                "title": "gyakorlatok — Ü",
+                "speech": "Gyakorlatok az ü betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_ou_u_words.json"
+                }
+              },
+              {
+                "id": "reach_ou_ou_words",
+                "title": "gyakorlatok — ÖÜ",
+                "speech": "Gyakorlatok az ö és az ü betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_ou_ou_words.json"
+                }
+              }
+            ]
           }
         ]
       },

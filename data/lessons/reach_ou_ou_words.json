@@ -1,0 +1,128 @@
+{
+  "id": "reach_ou_ou_words",
+  "type": "words",
+  "title": "Ö, Ü — gyakorlatok — ÖÜ",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPYNTŐCHÍÚBÖÜ",
+  "units": [
+    {
+      "id": "reach_ou_ou_01",
+      "text": "ÖRÜL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_02",
+      "text": "KÖRÜL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_03",
+      "text": "TÖRÜL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_04",
+      "text": "ÖRÜLT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_05",
+      "text": "ÖRÜLÖK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_06",
+      "text": "ÖRÜLÜNK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_07",
+      "text": "KÖRÜLÍR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_08",
+      "text": "TÖRÜLÉS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_09",
+      "text": "ÖSSZEÜL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_10",
+      "text": "TÖLTÜNK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_11",
+      "text": "KÖRÜLNÉZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_12",
+      "text": "KÖVETÜNK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_13",
+      "text": "KÖVETJÜK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_14",
+      "text": "KÖRÜLÍRÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_15",
+      "text": "KÖRÜLMÉNY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_16",
+      "text": "KÖRÜLVESZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_17",
+      "text": "ÖSSZEÜLÉS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_18",
+      "text": "ÖSSZEFÜGG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_19",
+      "text": "KÖSZÖNJÜK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_20",
+      "text": "KÖLTÖZÜNK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_21",
+      "text": "ÖSSZEFÜGGŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_22",
+      "text": "FELTÖLTÜNK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_23",
+      "text": "NÖVEKSZÜNK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_ou_24",
+      "text": "ÖSSZEFÜGGÉS",
+      "promptStyle": "word"
+    }
+  ]
+}

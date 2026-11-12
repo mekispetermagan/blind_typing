@@ -1,0 +1,128 @@
+{
+  "id": "reach_ou_u_words",
+  "type": "words",
+  "title": "Ö, Ü — gyakorlatok — Ü",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPYNTŐCHÍÚBÜ",
+  "units": [
+    {
+      "id": "reach_ou_u_01",
+      "text": "ÜL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_02",
+      "text": "ÜT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_03",
+      "text": "ÜGY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_04",
+      "text": "SÜT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_05",
+      "text": "SÜN",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_06",
+      "text": "ÜZEN",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_07",
+      "text": "ÜZEM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_08",
+      "text": "ÜREG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_09",
+      "text": "ÜRES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_10",
+      "text": "ÜVEG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_11",
+      "text": "ÜLÉS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_12",
+      "text": "ÜTÉS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_13",
+      "text": "SÜTI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_14",
+      "text": "KÜLD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_15",
+      "text": "ÜGYES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_16",
+      "text": "ÜNNEP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_17",
+      "text": "SZÜLŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_18",
+      "text": "ÜZENET",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_19",
+      "text": "SZÜNET",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_20",
+      "text": "KÜLDÉS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_21",
+      "text": "TÜRELEM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_22",
+      "text": "SZÜKSÉG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_23",
+      "text": "SZÜLETÉS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ou_u_24",
+      "text": "SÜTEMÉNY",
+      "promptStyle": "word"
+    }
+  ]
+}

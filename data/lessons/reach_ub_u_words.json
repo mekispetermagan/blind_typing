@@ -1,0 +1,128 @@
+{
+  "id": "reach_ub_u_words",
+  "type": "words",
+  "title": "Ú, B — gyakorlatok — Ú",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPYNTŐCHÍÚ",
+  "units": [
+    {
+      "id": "reach_ub_u_01",
+      "text": "ÚR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_02",
+      "text": "ÚT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_03",
+      "text": "ÚJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_04",
+      "text": "HÚS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_05",
+      "text": "HÚZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_06",
+      "text": "KÚT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_07",
+      "text": "KÚP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_08",
+      "text": "LÚD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_09",
+      "text": "TÚL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_10",
+      "text": "MÚLT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_11",
+      "text": "NYÚL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_12",
+      "text": "TÚRA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_13",
+      "text": "ÚJRA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_14",
+      "text": "MÚLIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_15",
+      "text": "NYÚJT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_16",
+      "text": "TÚRÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_17",
+      "text": "ÚSZIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_18",
+      "text": "ÚSZÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_19",
+      "text": "ÚJSÁG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_20",
+      "text": "NYÚLIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_21",
+      "text": "ÚJRAÍR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_22",
+      "text": "ÚJDONSÁG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_23",
+      "text": "ÚJRAÍRÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ub_u_24",
+      "text": "ÚJRATERVEZ",
+      "promptStyle": "word"
+    }
+  ]
+}

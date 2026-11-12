@@ -1,0 +1,43 @@
+{
+  "id": "reach_ub_letters",
+  "type": "letters",
+  "title": "Ú, B — betűk",
+  "steps": [
+    {
+      "id": "reach_ub_o_anchor",
+      "key": "Ő",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le az Ő billentyűt a jobb kezed kisujjával. Az Ő közvetlenül a P-től jobbra van.",
+      "retry": "Keresd meg az Ő billentyűt közvetlenül a P-től jobbra a jobb kezed kisujjával.",
+      "success": "Igen, ez az Ő.",
+      "complete": "Igen, ez az Ő. Nagyszerű."
+    },
+    {
+      "id": "reach_ub_u",
+      "key": "Ú",
+      "requiredSuccesses": 3,
+      "instruction": "Az Ő billentyűről csúsztasd a jobb kezed kisujját egy billentyűvel jobbra. A hosszú ú ugyanabban a sorban, közvetlenül az Ő mellett van. Nyomd le a hosszú ú billentyűt.",
+      "retry": "Keresd meg a hosszú ú billentyűt közvetlenül az Ő-től jobbra a jobb kezed kisujjával.",
+      "success": "Igen, ez a hosszú ú. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "reach_ub_f_anchor",
+      "key": "F",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le a megjelölt F billentyűt a bal kezed mutatóujjával.",
+      "retry": "Keresd meg a megjelölt F billentyűt a bal kezed mutatóujjával.",
+      "success": "Igen, ez az F.",
+      "complete": "Igen, ez az F. Nagyszerű."
+    },
+    {
+      "id": "reach_ub_b",
+      "key": "B",
+      "requiredSuccesses": 3,
+      "instruction": "Az F billentyűről csúsztasd a bal kezed mutatóujját egy sorral lejjebb és jobbra. A B közvetlenül a V-től jobbra van. Nyomd le a B billentyűt.",
+      "retry": "Keresd meg a B billentyűt közvetlenül a V-től jobbra a bal kezed mutatóujjával.",
+      "success": "Igen, ez a B. Nyomd le még egyszer.",
+      "complete": "Nagyszerű, megvan a B is."
+    }
+  ]
+}
