@@ -1,0 +1,43 @@
+{
+  "id": "reach_hi_letters",
+  "type": "letters",
+  "title": "H, Í — betűk",
+  "steps": [
+    {
+      "id": "reach_hi_j_anchor",
+      "key": "J",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le a megjelölt J billentyűt a jobb kezed mutatóujjával.",
+      "retry": "Keresd meg a J billentyűt a jobb kezed mutatóujjával.",
+      "success": "Igen, ez a J.",
+      "complete": "Igen, ez a J. Nagyszerű."
+    },
+    {
+      "id": "reach_hi_h",
+      "key": "H",
+      "requiredSuccesses": 3,
+      "instruction": "A J billentyűről csúsztasd a jobb kezed mutatóujját egy billentyűvel balra. A H ugyanabban a sorban, közvetlenül a J-től balra van. Nyomd le a H billentyűt.",
+      "retry": "Keresd meg a H billentyűt közvetlenül a J-től balra, a jobb kezed mutatóujjával.",
+      "success": "Igen, ez a H. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "reach_hi_a_anchor",
+      "key": "A",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le az A billentyűt a bal kezed kisujjával. Az A az alapsor bal szélső betűje.",
+      "retry": "Keresd meg az A billentyűt közvetlenül az S-től balra, a bal kezed kisujjával.",
+      "success": "Igen, ez az A.",
+      "complete": "Igen, ez az A. Nagyszerű."
+    },
+    {
+      "id": "reach_hi_i",
+      "key": "Í",
+      "requiredSuccesses": 3,
+      "instruction": "Az A billentyűről csúsztasd a bal kezed kisujját egy sorral lejjebb és kicsit balra. Az Í közvetlenül az Y-tól balra van. Nyomd le a hosszú í billentyűt.",
+      "retry": "Keresd meg a hosszú í billentyűt közvetlenül az ipszilontól balra, a bal kezed kisujjával.",
+      "success": "Igen, ez a hosszú í. Nyomd le még egyszer.",
+      "complete": "Nagyszerű, megvan a hosszú í is."
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "id": "reach_hi_hi_words",
+  "type": "words",
+  "title": "H, Í — gyakorlatok — HÍ",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPYNTŐCHÍ",
+  "units": [
+    {
+      "id": "reach_hi_hi_01",
+      "text": "HÍD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_02",
+      "text": "HÍG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_03",
+      "text": "HÍM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_04",
+      "text": "HÍR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_05",
+      "text": "HÍV",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_06",
+      "text": "HÍRES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_07",
+      "text": "HÍMEZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_08",
+      "text": "HÍMES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_09",
+      "text": "HÍVÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_10",
+      "text": "HÍZÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_11",
+      "text": "HÍZIK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_12",
+      "text": "ELHÍV",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_13",
+      "text": "HÍGÍT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_14",
+      "text": "HÍMZÉS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_15",
+      "text": "HÍRNÉV",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_16",
+      "text": "FELHÍV",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_17",
+      "text": "MEGHÍV",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_18",
+      "text": "HÍRADÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_19",
+      "text": "KIHÍVÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_20",
+      "text": "FEHÉRÍT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_21",
+      "text": "HÍRESSÉG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_22",
+      "text": "MEGHÍVÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_23",
+      "text": "FELHÍVÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_hi_24",
+      "text": "HÍDÉPÍTÉS",
+      "promptStyle": "word"
+    }
+  ]
+}

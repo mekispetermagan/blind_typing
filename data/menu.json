@@ -366,6 +366,48 @@
                 }
               }
             ]
+          },
+          {
+            "id": "reach_hi",
+            "title": "H, Í",
+            "speech": "há, hosszú í",
+            "children": [
+              {
+                "id": "reach_hi_letters",
+                "title": "betűk",
+                "activity": {
+                  "type": "letters",
+                  "content": "data/lessons/reach_hi_letters.json"
+                }
+              },
+              {
+                "id": "reach_hi_h_words",
+                "title": "gyakorlatok — H",
+                "speech": "Gyakorlatok a há betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_hi_h_words.json"
+                }
+              },
+              {
+                "id": "reach_hi_i_words",
+                "title": "gyakorlatok — Í",
+                "speech": "Gyakorlatok az í betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_hi_i_words.json"
+                }
+              },
+              {
+                "id": "reach_hi_hi_words",
+                "title": "gyakorlatok — HÍ",
+                "speech": "Gyakorlatok a há és az í betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_hi_hi_words.json"
+                }
+              }
+            ]
           }
         ]
       },

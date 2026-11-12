@@ -1,0 +1,128 @@
+{
+  "id": "reach_hi_i_words",
+  "type": "words",
+  "title": "H, Í — gyakorlatok — Í",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPYNTŐCÍ",
+  "units": [
+    {
+      "id": "reach_hi_i_01",
+      "text": "ÍR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_02",
+      "text": "ÍV",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_03",
+      "text": "ÍZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_04",
+      "text": "SÍ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_05",
+      "text": "CÍM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_06",
+      "text": "DÍJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_07",
+      "text": "SÍK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_08",
+      "text": "SÍR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_09",
+      "text": "SZÍN",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_10",
+      "text": "SZÍV",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_11",
+      "text": "TÍZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_12",
+      "text": "VÍZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_13",
+      "text": "ÍRÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_14",
+      "text": "ÍZES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_15",
+      "text": "SÍEL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_16",
+      "text": "VÍZI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_17",
+      "text": "KÍSÉR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_18",
+      "text": "KÍVÁN",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_19",
+      "text": "SZÍNES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_20",
+      "text": "SZÍVES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_21",
+      "text": "VÍZES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_22",
+      "text": "SÍELÉS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_23",
+      "text": "KÍSÉRLET",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_i_24",
+      "text": "KÍVÁNCSI",
+      "promptStyle": "word"
+    }
+  ]
+}

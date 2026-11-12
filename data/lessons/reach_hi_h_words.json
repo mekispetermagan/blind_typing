@@ -1,0 +1,128 @@
+{
+  "id": "reach_hi_h_words",
+  "type": "words",
+  "title": "H, Í — gyakorlatok — H",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPYNTŐCH",
+  "units": [
+    {
+      "id": "reach_hi_h_01",
+      "text": "HA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_02",
+      "text": "HAJ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_03",
+      "text": "HAL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_04",
+      "text": "HAT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_05",
+      "text": "HÁZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_06",
+      "text": "HÉT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_07",
+      "text": "HŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_08",
+      "text": "HOL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_09",
+      "text": "HALL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_10",
+      "text": "HANG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_11",
+      "text": "HAZA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_12",
+      "text": "HELY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_13",
+      "text": "HOLD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_14",
+      "text": "HAZAI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_15",
+      "text": "HATÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_16",
+      "text": "HATOS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_17",
+      "text": "HÁZAS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_18",
+      "text": "HIDEG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_19",
+      "text": "HARAG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_20",
+      "text": "HELYES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_21",
+      "text": "HANGOS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_22",
+      "text": "HALLÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_23",
+      "text": "HOSSZAS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_hi_h_24",
+      "text": "HÁZIORVOS",
+      "promptStyle": "word"
+    }
+  ]
+}
