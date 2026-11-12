@@ -1,0 +1,128 @@
+{
+  "id": "reach_ow_ou_words",
+  "type": "words",
+  "title": "Ó, Ű — gyakorlatok — ÓŰ",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPYNTŐCHÍÚBÖÜÓŰ",
+  "units": [
+    {
+      "id": "reach_ow_ou_01",
+      "text": "JÓÍZŰ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_02",
+      "text": "TŰZOLTÓ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_03",
+      "text": "FŰNYÍRÓ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_04",
+      "text": "JÓKEDVŰ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_05",
+      "text": "JÓLELKŰ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_06",
+      "text": "JÓSZÍVŰ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_07",
+      "text": "JÓÍZŰEN",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_08",
+      "text": "TŰZOLTÓK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_09",
+      "text": "FŰNYÍRÓK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_10",
+      "text": "HŰTŐAUTÓ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_11",
+      "text": "HŰTŐAUTÓK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_12",
+      "text": "JÓKEDVŰEN",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_13",
+      "text": "JÓKEDVŰEK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_14",
+      "text": "JÓHISZEMŰ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_15",
+      "text": "JÓLELKŰEK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_16",
+      "text": "TŰZOLTÓSÁG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_17",
+      "text": "FŰNYÍRÓVAL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_18",
+      "text": "TŰZOLTÓAUTÓ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_19",
+      "text": "TŰZOLTÓRUHA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_20",
+      "text": "JÓHISZEMŰEN",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_21",
+      "text": "TŰZOLTÓSISAK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_22",
+      "text": "TŰZOLTÓTÖMLŐ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_23",
+      "text": "JÓHISZEMŰSÉG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_ou_24",
+      "text": "SZŰKLÁTÓKÖRŰ",
+      "promptStyle": "word"
+    }
+  ]
+}

@@ -492,6 +492,72 @@
                 }
               }
             ]
+          },
+          {
+            "id": "reach_ow",
+            "title": "Ó, Ű",
+            "speech": "hosszú ó, hosszú ű",
+            "children": [
+              {
+                "id": "reach_ow_letters",
+                "title": "betűk",
+                "activity": {
+                  "type": "letters",
+                  "content": "data/lessons/reach_ow_letters.json"
+                }
+              },
+              {
+                "id": "reach_ow_o_words",
+                "title": "gyakorlatok — Ó",
+                "speech": "Gyakorlatok a hosszú ó betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_ow_o_words.json"
+                }
+              },
+              {
+                "id": "reach_ow_u_words",
+                "title": "gyakorlatok — Ű",
+                "speech": "Gyakorlatok a hosszú ű betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_ow_u_words.json"
+                }
+              },
+              {
+                "id": "reach_ow_ou_words",
+                "title": "gyakorlatok — ÓŰ",
+                "speech": "Gyakorlatok a hosszú ó és a hosszú ű betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_ow_ou_words.json"
+                }
+              }
+            ]
+          },
+          {
+            "id": "reach_qxw",
+            "title": "Q, X, W",
+            "speech": "kú, iksz, dupla vé",
+            "children": [
+              {
+                "id": "reach_qxw_letters",
+                "title": "betűk",
+                "activity": {
+                  "type": "letters",
+                  "content": "data/lessons/reach_qxw_letters.json"
+                }
+              },
+              {
+                "id": "reach_qxw_words",
+                "title": "gyakorlatok",
+                "speech": "Gyakorlatok a kú, az iksz és a dupla vé betűvel.",
+                "activity": {
+                  "type": "words",
+                  "content": "data/lessons/reach_qxw_words.json"
+                }
+              }
+            ]
           }
         ]
       },

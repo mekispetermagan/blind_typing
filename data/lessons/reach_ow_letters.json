@@ -1,0 +1,43 @@
+{
+  "id": "reach_ow_letters",
+  "type": "letters",
+  "title": "Ó, Ű — betűk",
+  "steps": [
+    {
+      "id": "reach_ow_u_anchor",
+      "key": "Ü",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le a rövid ü billentyűt a jobb kezed kisujjával. Az ü a számsorban, az ö-től közvetlenül jobbra van.",
+      "retry": "Keresd meg a rövid ü billentyűt közvetlenül az ö-től jobbra a jobb kezed kisujjával.",
+      "success": "Igen, ez a rövid ü.",
+      "complete": "Igen, ez a rövid ü. Nagyszerű."
+    },
+    {
+      "id": "reach_ow_o",
+      "key": "Ó",
+      "requiredSuccesses": 3,
+      "instruction": "Az ü billentyűről csúsztasd a jobb kezed kisujját egy billentyűvel jobbra. A hosszú ó ugyanabban a sorban, közvetlenül az ü mellett van. Nyomd le a hosszú ó billentyűt.",
+      "retry": "Keresd meg a hosszú ó billentyűt közvetlenül az ü-től jobbra a jobb kezed kisujjával.",
+      "success": "Igen, ez a hosszú ó. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "reach_ow_a_anchor",
+      "key": "Á",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le az Á billentyűt a jobb kezed kisujjával. Az Á közvetlenül az É-től jobbra van.",
+      "retry": "Keresd meg az Á billentyűt az É-től jobbra a jobb kezed kisujjával.",
+      "success": "Igen, ez az Á.",
+      "complete": "Igen, ez az Á. Nagyszerű."
+    },
+    {
+      "id": "reach_ow_w",
+      "key": "Ű",
+      "requiredSuccesses": 3,
+      "instruction": "Az Á billentyűről csúsztasd a jobb kezed kisujját egy billentyűvel jobbra. A hosszú ű közvetlenül az Á mellett van. Nyomd le a hosszú ű billentyűt.",
+      "retry": "Keresd meg a hosszú ű billentyűt közvetlenül az Á-tól jobbra a jobb kezed kisujjával.",
+      "success": "Igen, ez a hosszú ű. Nyomd le még egyszer.",
+      "complete": "Nagyszerű, megvan a hosszú ű is."
+    }
+  ]
+}

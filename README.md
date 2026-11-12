@@ -82,6 +82,14 @@ The available content is:
   Hungarian QWERTZ.
 - **LECKÉK → Ö, Ü → gyakorlatok — Ö / Ü / ÖÜ:** 24 words per session. Each
   word includes the session’s new key or both new keys in ÖÜ.
+- **LECKÉK → Ó, Ű → betűk:** Ü→Ó and Á→Ű with the right little finger on
+  Hungarian QWERTZ.
+- **LECKÉK → Ó, Ű → gyakorlatok — Ó / Ű / ÓŰ:** 24 words per session. Each
+  word includes the session’s new key or both new keys in ÓŰ.
+- **LECKÉK → Q, X, W → betűk:** A→Q with the left little finger and S→X/W
+  with the left ring finger on Hungarian QWERTZ.
+- **LECKÉK → Q, X, W → gyakorlatok:** 24 targets containing at least one of
+  the three new keys.
 - **GYAKORLÁS → könnyű → Mintagyakorlás – öt mondat:** the original five sample
   sentences, with sentence narration, three-two-one, and individual word prompts.
 
@@ -165,6 +173,10 @@ what appears on screen and is spoken. Only available content is listed.
   Ő→Ú and F→B teaching steps and three word drills.
 - `data/lessons/reach_ou_letters.json` and `data/lessons/reach_ou_*_words.json`:
   P→Ö and Ő→Ü teaching steps and three word drills.
+- `data/lessons/reach_ow_letters.json` and `data/lessons/reach_ow_*_words.json`:
+  Ü→Ó and Á→Ű teaching steps and three word drills.
+- `data/lessons/reach_qxw_letters.json` and `data/lessons/reach_qxw_words.json`:
+  A→Q and S→X/W teaching steps and the final word drill.
 - `data/practice/sample.json`: original text divided into sentence units.
 
 Typed models validate menu shape, IDs, nonempty activities, activity types, and

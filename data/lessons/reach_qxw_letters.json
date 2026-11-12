@@ -1,0 +1,61 @@
+{
+  "id": "reach_qxw_letters",
+  "type": "letters",
+  "title": "Q, X, W — betűk",
+  "steps": [
+    {
+      "id": "reach_qxw_a_anchor",
+      "key": "A",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le az A billentyűt a bal kezed kisujjával. Az A az alapsor bal szélső betűje.",
+      "retry": "Keresd meg az A billentyűt közvetlenül az S-től balra, a bal kezed kisujjával.",
+      "success": "Igen, ez az A.",
+      "complete": "Igen, ez az A. Nagyszerű."
+    },
+    {
+      "id": "reach_qxw_q",
+      "key": "Q",
+      "requiredSuccesses": 3,
+      "instruction": "Az A billentyűről csúsztasd a bal kezed kisujját egy sorral feljebb és kicsit balra. Nyomd le a Q billentyűt.",
+      "retry": "Keresd meg a Q billentyűt az A fölött és kicsit balra, a bal kezed kisujjával.",
+      "success": "Igen, ez a Q. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "reach_qxw_s_x_anchor",
+      "key": "S",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le az S billentyűt a bal kezed gyűrűsujjával. Az S közvetlenül az A-tól jobbra van.",
+      "retry": "Keresd meg az S billentyűt közvetlenül az A-tól jobbra, a bal kezed gyűrűsujjával.",
+      "success": "Igen, ez az S.",
+      "complete": "Igen, ez az S. Nagyszerű."
+    },
+    {
+      "id": "reach_qxw_x",
+      "key": "X",
+      "requiredSuccesses": 3,
+      "instruction": "Az S billentyűről csúsztasd a bal kezed gyűrűsujját egy sorral lejjebb és kicsit jobbra. Az X közvetlenül az Y-tól jobbra van. Nyomd le az iksz billentyűt.",
+      "retry": "Keresd meg az iksz billentyűt közvetlenül az ipszilontól jobbra, a bal kezed gyűrűsujjával.",
+      "success": "Igen, ez az iksz. Nyomd le még egyszer.",
+      "complete": "Nagyszerű. Továbblépünk."
+    },
+    {
+      "id": "reach_qxw_s_w_anchor",
+      "key": "S",
+      "requiredSuccesses": 1,
+      "instruction": "Nyomd le újra az S billentyűt a bal kezed gyűrűsujjával.",
+      "retry": "Keresd meg az S billentyűt a bal kezed gyűrűsujjával.",
+      "success": "Igen, ez az S.",
+      "complete": "Igen, ez az S. Nagyszerű."
+    },
+    {
+      "id": "reach_qxw_w",
+      "key": "W",
+      "requiredSuccesses": 3,
+      "instruction": "Az S billentyűről csúsztasd a bal kezed gyűrűsujját egy sorral feljebb és kicsit balra. A dupla vé közvetlenül a Q-tól jobbra van. Nyomd le a dupla vé billentyűt.",
+      "retry": "Keresd meg a dupla vé billentyűt közvetlenül a Q-tól jobbra, a bal kezed gyűrűsujjával.",
+      "success": "Igen, ez a dupla vé. Nyomd le még egyszer.",
+      "complete": "Nagyszerű, megvan a dupla vé is."
+    }
+  ]
+}

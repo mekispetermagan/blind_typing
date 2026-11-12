@@ -1,0 +1,128 @@
+{
+  "id": "reach_ow_o_words",
+  "type": "words",
+  "title": "Ó, Ű — gyakorlatok — Ó",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPYNTŐCHÍÚBÖÜÓ",
+  "units": [
+    {
+      "id": "reach_ow_o_01",
+      "text": "Ó",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_02",
+      "text": "JÓ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_03",
+      "text": "HÓ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_04",
+      "text": "TÓ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_05",
+      "text": "LÓ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_06",
+      "text": "SÓ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_07",
+      "text": "ÓV",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_08",
+      "text": "ÓRA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_09",
+      "text": "SÓS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_10",
+      "text": "JÓL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_11",
+      "text": "LÓG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_12",
+      "text": "HAJÓ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_13",
+      "text": "AUTÓ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_14",
+      "text": "JÓSÁG",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_15",
+      "text": "ÓVODA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_16",
+      "text": "ÓRIÁS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_17",
+      "text": "JÓLÉT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_18",
+      "text": "FOLYÓ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_19",
+      "text": "HAJÓS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_20",
+      "text": "ÓVATOS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_21",
+      "text": "HÓESÉS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_22",
+      "text": "HÓGOLYÓ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_23",
+      "text": "AUTÓBUSZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_o_24",
+      "text": "FOLYÓIRAT",
+      "promptStyle": "word"
+    }
+  ]
+}

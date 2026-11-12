@@ -1,0 +1,128 @@
+{
+  "id": "reach_ow_u_words",
+  "type": "words",
+  "title": "Ó, Ű — gyakorlatok — Ű",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPYNTŐCHÍÚBÖÜŰ",
+  "units": [
+    {
+      "id": "reach_ow_u_01",
+      "text": "ŰR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_02",
+      "text": "ŰZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_03",
+      "text": "TŰ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_04",
+      "text": "FŰ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_05",
+      "text": "MŰ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_06",
+      "text": "HŰ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_07",
+      "text": "TŰZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_08",
+      "text": "HŰS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_09",
+      "text": "HŰT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_10",
+      "text": "FŰT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_11",
+      "text": "BETŰ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_12",
+      "text": "SZŰK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_13",
+      "text": "BETŰZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_14",
+      "text": "TŰZES",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_15",
+      "text": "FŰTÉS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_16",
+      "text": "GYŰRŰ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_17",
+      "text": "GYŰJT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_18",
+      "text": "MŰTÉT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_19",
+      "text": "MŰSOR",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_20",
+      "text": "TŰZIFA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_21",
+      "text": "FŰRÉSZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_22",
+      "text": "MŰSZAK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_23",
+      "text": "SZŰRÉS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_ow_u_24",
+      "text": "GYŰJTÉS",
+      "promptStyle": "word"
+    }
+  ]
+}

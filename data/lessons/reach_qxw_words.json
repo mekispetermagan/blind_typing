@@ -1,0 +1,128 @@
+{
+  "id": "reach_qxw_words",
+  "type": "words",
+  "title": "Q, X, W — gyakorlatok",
+  "allowedLetters": "ASDFJKLÉIREMUVOZÁGPYNTŐCHÍÚBÖÜÓŰQXW",
+  "units": [
+    {
+      "id": "reach_qxw_01",
+      "text": "WEB",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_02",
+      "text": "WOK",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_03",
+      "text": "BOX",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_04",
+      "text": "MULTIPLEX",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_05",
+      "text": "WATT",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_06",
+      "text": "WIFI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_07",
+      "text": "TAXI",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_08",
+      "text": "PIXEL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_09",
+      "text": "EXTRA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_10",
+      "text": "EXCEL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_11",
+      "text": "QUAD",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_12",
+      "text": "QUIZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_13",
+      "text": "MIXER",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_14",
+      "text": "OXIGÉN",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_15",
+      "text": "QUINOA",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_16",
+      "text": "QUICHE",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_17",
+      "text": "QWERTZ",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_18",
+      "text": "QWERTY",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_19",
+      "text": "WEBCÍM",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_20",
+      "text": "WEBLAP",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_21",
+      "text": "WINDOWS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_22",
+      "text": "WELLNESS",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_23",
+      "text": "WEBOLDAL",
+      "promptStyle": "word"
+    },
+    {
+      "id": "reach_qxw_24",
+      "text": "EXTRÉM",
+      "promptStyle": "word"
+    }
+  ]
+}
