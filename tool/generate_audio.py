@@ -16,11 +16,16 @@ import subprocess
 import tempfile
 import wave
 
-from gtts import gTTS
 
 ROOT = Path(__file__).resolve().parents[1]
 AUDIO = ROOT / "assets" / "audio"
 RATE = 48000
+
+
+def typing_words(text):
+    if re.fullmatch(r"[0-9]+", text):
+        return [text]
+    return re.findall(r"[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+", text)
 
 
 def speech_texts():
@@ -33,7 +38,7 @@ def speech_texts():
             references[reference["content"]] = reference["type"]
         for child in node.get("children", []):
             yield from walk(child)
-    for menu in catalog.values():
+    for menu in (catalog["root"], catalog["pause"], catalog["complete"]):
         yield from walk(menu)
     for asset, activity_type in references.items():
         content = json.loads((ROOT / asset).read_text())
@@ -47,11 +52,7 @@ def speech_texts():
             for unit in content["units"]:
                 if activity_type == "practice":
                     yield f"{unit['id']}_sentence", unit["text"]
-                words = (
-                    [unit["text"]]
-                    if activity_type == "words" and re.fullmatch(r"[0-9]+", unit["text"])
-                    else re.findall(r"[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+", unit["text"])
-                )
+                words = typing_words(unit["text"])
                 if unit.get("promptStyle", "word") == "word":
                     for index, word in enumerate(words):
                         speech = unit.get("speech", word.lower()) if activity_type == "words" else word
@@ -156,6 +157,8 @@ def generate_beep(name, correct):
 
 
 def main():
+    from gtts import gTTS
+
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--force", action="store_true", help="Regenerate existing speech")
     args = parser.parse_args()

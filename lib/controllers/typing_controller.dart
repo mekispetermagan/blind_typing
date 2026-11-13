@@ -54,7 +54,7 @@ class TypingController extends ChangeNotifier {
   Future<void> initialize() async {
     final token = _speech.begin();
     try {
-      await _speech.audio.initialize([
+      await _speech.audio.setActivityAssets([
         ...AudioCues.speechAssets,
         ...exercise.audioAssets,
         if (exercise.isWordDrill) ...PracticeFeedback.audioAssets,

@@ -2,6 +2,9 @@
 abstract interface class AudioService {
   Future<void> initialize(Iterable<String> speechAssets);
 
+  /// Replaces activity-specific sources, keeping shared sources.
+  Future<void> setActivityAssets(Iterable<String> speechAssets);
+
   /// Replaces current speech. Completes when finished or interrupted.
   Future<void> speak(String asset);
   void stopSpeech();

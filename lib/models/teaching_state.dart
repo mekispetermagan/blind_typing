@@ -1,4 +1,4 @@
-import 'typing_state.dart';
+import 'exercise_phase.dart';
 
 enum TeachingResult { ignored, incorrect, accepted, stepAdvanced, completed }
 

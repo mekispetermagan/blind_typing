@@ -156,6 +156,8 @@ See the [exercise scoring formula](docs/scoring.md) and the proposed
 have `children`; activity leaves have a `type` and a content asset reference.
 The supported activity identifiers are `letters`, `words`, and `practice`.
 They select application execution flows; JSON contains no executable callbacks.
+The `progression` array in `data/menu.json` explicitly orders lessons and their activity IDs; omitted activities do not participate in progression. References must be unique and point to menu activities.
+
 Stable IDs determine audio filenames. Titles and optional `speech` text determine
 what appears on screen and is spoken. Only available content is listed.
 
@@ -219,7 +221,7 @@ needed. New content directories must also be declared in `pubspec.yaml`.
 The application owns audio initialization/disposal. Leaving an activity cancels
 its speech and pending progression while keeping audio available to menus and
 other activities. Shared cues and menu recordings load at startup; activity
-recordings load on entry and remain cached.
+recordings load on entry and are released when leaving the activity.
 
 ## Audio assets
 

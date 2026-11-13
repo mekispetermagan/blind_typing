@@ -39,6 +39,7 @@ class AppController extends ChangeNotifier {
   bool _disposed = false;
   String? _failure;
   int _generation = 0;
+  ActivityReference? _failedActivity;
 
   TypingController? get typing => _typing;
   LetterTeachingController? get teaching => _teaching;
@@ -65,12 +66,7 @@ class AppController extends ChangeNotifier {
     if (activityMenu == null) return _path.last;
     if (activityPhase != ExercisePhase.complete) return activityMenu;
 
-    final next = _nextLessonActivity;
-    final command = next == null
-        ? null
-        : next[1] == _selections[1]
-        ? MenuCommand.nextExercise
-        : MenuCommand.nextLesson;
+    final command = _nextLessonActivity?.command;
     return MenuNode(
       id: activityMenu.id,
       title: activityMenu.title,
@@ -82,24 +78,12 @@ class AppController extends ChangeNotifier {
     );
   }
 
-  List<int>? get _nextLessonActivity {
-    if (_path.length < 3 || _path[1].id != 'lessons') return null;
-
-    // Find the next sibling within LECKÉK, then descend to its first activity.
-    for (var depth = _path.length - 1; depth >= 1; depth--) {
-      final siblings = _path[depth].children;
-      final next = _selections[depth] + 1;
-      if (next >= siblings.length) continue;
-
-      final route = [..._selections.take(depth), next];
-      var node = siblings[next];
-      while (node.children.isNotEmpty) {
-        route.add(0);
-        node = node.children.first;
-      }
-      return route;
-    }
-    return null;
+  ({String id, MenuCommand command})? get _nextLessonActivity {
+    if (_path.isEmpty || _selections.isEmpty) return null;
+    final children = _path.last.children;
+    final selection = _selections.last;
+    if (selection >= children.length) return null;
+    return _catalog?.nextActivity(children[selection].id);
   }
 
   int get selectedIndex =>
@@ -193,8 +177,9 @@ class AppController extends ChangeNotifier {
           returnToMenu();
         case MenuCommand.nextExercise:
         case MenuCommand.nextLesson:
-          final route = _nextLessonActivity;
-          if (route == null) return;
+          final next = _nextLessonActivity;
+          if (next == null) return;
+          final route = _catalog!.routeTo(next.id)!;
           _path.clear();
           _selections
             ..clear()
@@ -231,12 +216,15 @@ class AppController extends ChangeNotifier {
 
   Future<void> _openActivity(ActivityReference reference) async {
     final generation = ++_generation;
+    _failedActivity = reference;
     _disposeActivity();
     _speech.begin();
     _loading = true;
     _failure = null;
     notifyListeners();
     try {
+      await _speech.audio.setActivityAssets(const []);
+      if (_disposed || generation != _generation) return;
       final exercise = await _content.loadExercise(reference);
       if (_disposed || generation != _generation) return;
       switch (exercise) {
@@ -258,6 +246,7 @@ class AppController extends ChangeNotifier {
           await _teaching!.initialize();
       }
       if (_disposed || generation != _generation) return;
+      _failedActivity = null;
       _loading = false;
       notifyListeners();
     } catch (error) {
@@ -320,6 +309,8 @@ class AppController extends ChangeNotifier {
   void returnToMenu() {
     ++_generation;
     _disposeActivity();
+    _failedActivity = null;
+    unawaited(_speech.audio.setActivityAssets(const []));
     _loading = false;
     _failure = null;
     notifyListeners();
@@ -338,7 +329,12 @@ class AppController extends ChangeNotifier {
 
   Future<void> retry() async {
     if (_typing == null && _teaching == null) {
-      await initialize();
+      final failed = _failedActivity;
+      if (failed != null) {
+        await _openActivity(failed);
+      } else {
+        await initialize();
+      }
       return;
     }
     _loading = true;

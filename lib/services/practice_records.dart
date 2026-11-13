@@ -16,7 +16,10 @@ class PracticeRecords {
   Future<void> _pendingWrite = Future.value();
   bool _loaded = false;
 
-  Future<void> load() => _loading ??= _load();
+  Future<void> load() {
+    if (_loaded) return Future.value();
+    return _loading ??= _load().whenComplete(() => _loading = null);
+  }
 
   Future<void> _load() async {
     try {
@@ -52,6 +55,7 @@ class PracticeRecords {
       if (removedLegacy) _persist();
     } catch (error) {
       developer.log('Could not load practice records', error: error);
+      rethrow;
     }
   }
 

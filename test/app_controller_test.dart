@@ -4,6 +4,7 @@ import 'package:blind_typing/models/menu.dart';
 import 'package:blind_typing/models/typing_state.dart';
 import 'package:blind_typing/services/audio_service.dart';
 import 'package:blind_typing/services/speech_coordinator.dart';
+import 'package:blind_typing/services/practice_records.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/content_fixtures.dart';
@@ -214,4 +215,50 @@ void main() {
     app.teaching!.typeCharacter('f');
     expect(app.teaching!.state.successes, 1);
   });
+  test('retry reloads the failed activity at the same menu location', () async {
+    await lessonMenu();
+    content.failExercise = true;
+    app.activate();
+    await settle();
+    content.failExercise = false;
+    await app.retry();
+    expect(app.page, AppPage.teaching);
+    expect(app.menu.id, 'home_row');
+  });
+
+  test(
+    'record loading failure offers retry without starting an activity',
+    () async {
+      var calls = 0;
+      final retryApp = AppController(
+        content: content,
+        speech: SpeechCoordinator(audio),
+        records: PracticeRecords(
+          read: () async {
+            if (++calls == 1) throw StateError('temporary failure');
+            return null;
+          },
+        ),
+      );
+      addTearDown(retryApp.dispose);
+      await retryApp.initialize();
+      expect(retryApp.page, AppPage.error);
+      await retryApp.retry();
+      expect(calls, 2);
+      expect(retryApp.page, AppPage.menu);
+    },
+  );
+
+  test(
+    'activity-specific assets are released when returning to menu',
+    () async {
+      await lessonMenu();
+      app.activate();
+      await settle();
+      expect(audio.activityAssets, isNotEmpty);
+      app.returnToMenu();
+      await settle();
+      expect(audio.activityAssets, isEmpty);
+    },
+  );
 }

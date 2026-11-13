@@ -253,4 +253,22 @@ void main() {
       'assets/audio/result_best_time.wav',
     ]);
   });
+  test('failed read can retry and never overwrites existing records', () async {
+    var reads = 0;
+    final writes = <String>[];
+    const existing = '{"letters:other":[12,2,100]}';
+    final records = PracticeRecords(
+      read: () async {
+        if (++reads == 1) throw StateError('temporary failure');
+        return existing;
+      },
+      write: (value) async => writes.add(value),
+    );
+    await expectLater(records.load(), throwsStateError);
+    expect(writes, isEmpty);
+    await records.load();
+    records.finish('new', const PracticeResult(seconds: 20, errors: 1));
+    await Future<void>.delayed(Duration.zero);
+    expect(jsonDecode(writes.single), contains('letters:other'));
+  });
 }

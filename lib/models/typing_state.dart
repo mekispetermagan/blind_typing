@@ -1,15 +1,5 @@
-enum ExercisePhase {
-  loading,
-  ready,
-  reading,
-  countdown,
-  typing,
-  paused,
-  complete,
-  error,
-}
-
-enum TypingMode { simple, advanced }
+import 'exercise_phase.dart';
+export 'exercise_phase.dart';
 
 enum TypingResult {
   ignored,

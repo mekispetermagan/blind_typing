@@ -1,5 +1,5 @@
 import '../models/practice_result.dart';
-import '../models/typing_state.dart';
+import '../models/exercise_phase.dart';
 import 'audio_service.dart';
 
 class PracticeFeedback {

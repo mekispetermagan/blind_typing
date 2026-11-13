@@ -1,4 +1,4 @@
-import 'typing_state.dart';
+import 'exercise_phase.dart';
 
 class PracticeResult {
   const PracticeResult({

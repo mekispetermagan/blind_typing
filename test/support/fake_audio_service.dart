@@ -8,6 +8,7 @@ class FakeAudioService implements AudioService {
   final List<bool> celebrations = [];
   final List<String> interrupted = [];
   final List<String> loaded = [];
+  Set<String> activityAssets = {};
   bool holdSpeech = false;
   bool failSpeech = false;
   bool disposed = false;
@@ -16,6 +17,12 @@ class FakeAudioService implements AudioService {
   @override
   Future<void> initialize(Iterable<String> speechAssets) async {
     loaded.addAll(speechAssets);
+  }
+
+  @override
+  Future<void> setActivityAssets(Iterable<String> assets) async {
+    activityAssets = assets.toSet();
+    loaded.addAll(assets);
   }
 
   @override

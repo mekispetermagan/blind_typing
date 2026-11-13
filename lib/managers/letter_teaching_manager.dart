@@ -1,6 +1,6 @@
 import '../models/exercise.dart';
 import '../models/teaching_state.dart';
-import '../models/typing_state.dart';
+import '../models/exercise_phase.dart';
 
 class LetterTeachingManager {
   LetterTeachingManager(this.exercise);

@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:convert';
 
 import 'package:blind_typing/managers/letter_teaching_manager.dart';
 import 'package:blind_typing/managers/typing_session_manager.dart';
@@ -142,4 +143,66 @@ void main() {
       throwsFormatException,
     );
   });
+  test('explicit progression validates references and is independent of menu nesting', () {
+    final catalog = MenuCatalog.fromJson(readData('data/menu.json'));
+    expect(catalog.nextActivity('home_row_letters')?.id, 'home_row_words');
+    expect(
+      catalog.nextActivity('home_row_words')?.command,
+      MenuCommand.nextLesson,
+    );
+    expect(catalog.nextActivity('challenge_easy'), isNull);
+    expect(catalog.routeTo('home_row_words'), isNotNull);
+    final json = readData('data/menu.json');
+    json['progression'] = [
+      ['missing'],
+    ];
+    expect(() => MenuCatalog.fromJson(json), throwsFormatException);
+    json['progression'] = [
+      ['home_row_letters', 'home_row_letters'],
+    ];
+    expect(() => MenuCatalog.fromJson(json), throwsFormatException);
+  });
+
+  test(
+    'audio generator and Dart agree on targets and generated word asset names',
+    () async {
+      final texts = [
+        '123',
+        'Anna 123 almát',
+        '0640494949',
+        '„Anna”, almát! 123',
+      ];
+      final process = await Process.run('python3', [
+        '-c',
+        'import json,sys; from tool.generate_audio import typing_words; print(json.dumps([typing_words(t) for t in json.loads(sys.argv[1])]))',
+        jsonEncode(texts),
+      ]);
+      expect(process.exitCode, 0, reason: process.stderr.toString());
+      final generated = (jsonDecode(process.stdout as String) as List)
+          .map((words) => (words as List).cast<String>())
+          .toList();
+      for (var i = 0; i < texts.length; i++) {
+        expect(TypingUnit(id: 'test', text: texts[i]).words, generated[i]);
+      }
+      final generatedAssets = await Process.run('python3', [
+        '-c',
+        'import json; from tool.generate_audio import speech_texts; print(json.dumps(["assets/audio/"+n+".wav" for n,_ in speech_texts()]))',
+      ]);
+      expect(
+        generatedAssets.exitCode,
+        0,
+        reason: generatedAssets.stderr.toString(),
+      );
+      final assets = (jsonDecode(generatedAssets.stdout as String) as List)
+          .cast<String>()
+          .toSet();
+      final catalog = MenuCatalog.fromJson(readData('data/menu.json'));
+      for (final node in catalog.root.descendants) {
+        if (node.activity case final ref?) {
+          final exercise = ExerciseDefinition.fromJson(readData(ref.content));
+          expect(assets, containsAll(exercise.audioAssets));
+        }
+      }
+    },
+  );
 }

@@ -7,7 +7,7 @@ import '../managers/practice_attempt.dart';
 import '../models/exercise.dart';
 import '../models/teaching_state.dart';
 import '../models/practice_result.dart';
-import '../models/typing_state.dart';
+import '../models/exercise_phase.dart';
 import '../services/audio_service.dart';
 import '../services/practice_feedback.dart';
 import '../services/practice_records.dart';
@@ -34,7 +34,7 @@ class LetterTeachingController extends ChangeNotifier {
   Future<void> initialize() async {
     final token = _speech.begin();
     try {
-      await _speech.audio.initialize([
+      await _speech.audio.setActivityAssets([
         ...AudioCues.speechAssets,
         ...exercise.audioAssets,
         ...PracticeFeedback.audioAssets,

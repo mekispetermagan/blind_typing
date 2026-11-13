@@ -1,5 +1,5 @@
 import '../models/practice_result.dart';
-import '../models/typing_state.dart';
+import '../models/exercise_phase.dart';
 
 /// Measures only the parts of an attempt where the exercise accepts input.
 class PracticeAttempt {

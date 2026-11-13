@@ -78,9 +78,20 @@ class MenuCatalog {
     required this.root,
     required this.pause,
     required this.complete,
-  }) {
+    List<List<String>> progression = const [],
+  }) : progression = List.unmodifiable(
+         progression.map((lesson) => List<String>.unmodifiable(lesson)),
+       ) {
     final nodes = allNodes.toList();
-    if (nodes.map((node) => node.id).toSet().length != nodes.length ||
+    final activities = root.descendants
+        .where((node) => node.activity != null)
+        .map((node) => node.id)
+        .toSet();
+    final ordered = progression.expand((lesson) => lesson).toList();
+    if (progression.any((lesson) => lesson.isEmpty) ||
+        ordered.toSet().length != ordered.length ||
+        ordered.any((id) => !activities.contains(id)) ||
+        nodes.map((node) => node.id).toSet().length != nodes.length ||
         [root, pause, complete].any((node) => node.children.isEmpty) ||
         root.descendants.any((node) => node.command != null) ||
         pause.children.any((node) => node.command?.isProgression ?? true) ||
@@ -98,10 +109,48 @@ class MenuCatalog {
     root: MenuNode.fromJson(json['root'] as Map<String, dynamic>),
     pause: MenuNode.fromJson(json['pause'] as Map<String, dynamic>),
     complete: MenuNode.fromJson(json['complete'] as Map<String, dynamic>),
+    progression: (json['progression'] as List? ?? [])
+        .map((lesson) => (lesson as List).cast<String>())
+        .toList(),
   );
+  final List<List<String>> progression;
   final MenuNode root;
   final MenuNode pause;
   final MenuNode complete;
+  ({String id, MenuCommand command})? nextActivity(String id) {
+    for (var lesson = 0; lesson < progression.length; lesson++) {
+      final index = progression[lesson].indexOf(id);
+      if (index < 0) continue;
+      if (index + 1 < progression[lesson].length) {
+        return (
+          id: progression[lesson][index + 1],
+          command: MenuCommand.nextExercise,
+        );
+      }
+      if (lesson + 1 < progression.length) {
+        return (
+          id: progression[lesson + 1].first,
+          command: MenuCommand.nextLesson,
+        );
+      }
+      return null;
+    }
+    return null;
+  }
+
+  List<int>? routeTo(String id) {
+    List<int>? visit(MenuNode node, List<int> route) {
+      if (node.id == id && node.activity != null) return route;
+      for (var i = 0; i < node.children.length; i++) {
+        final found = visit(node.children[i], [...route, i]);
+        if (found != null) return found;
+      }
+      return null;
+    }
+
+    return visit(root, []);
+  }
+
   Iterable<MenuNode> get allNodes =>
       [root, pause, complete].expand((node) => node.descendants);
 }

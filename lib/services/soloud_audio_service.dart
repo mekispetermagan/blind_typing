@@ -7,42 +7,73 @@ import 'audio_service.dart';
 class SoloudAudioService implements AudioService {
   final SoLoud _engine = SoLoud.instance;
   final Map<String, AudioSource> _sources = {};
-  final List<StreamSubscription<StreamSoundEvent>> _subscriptions = [];
+  final Map<String, StreamSubscription<StreamSoundEvent>> _subscriptions = {};
+  final Set<String> _shared = {};
+  Set<String> _activity = {};
+  Future<void> _pending = Future.value();
   SoundHandle? _speechHandle;
   Completer<void>? _speechFinished;
   int _speechGeneration = 0;
   bool _disposed = false;
 
+  Future<void> _serialize(Future<void> Function() action) {
+    final result = _pending.then((_) => action());
+    _pending = result.catchError((Object _) {});
+    return result;
+  }
+
   @override
-  Future<void> initialize(Iterable<String> speechAssets) async {
-    if (_disposed) return;
-    if (!_engine.isInitialized) {
-      // 256 frames at 48 kHz: 5.3 ms mixing quantum, not end-to-end latency.
-      await _engine.init(sampleRate: 48000, bufferSize: 256);
-    }
-    if (_disposed) {
-      await _engine.deinitAsync();
-      return;
-    }
-    for (final asset in {
+  Future<void> initialize(Iterable<String> speechAssets) {
+    final assets = {
       ...speechAssets,
       AudioCues.good,
       AudioCues.bad,
       AudioCues.wordComplete,
       AudioCues.sentenceComplete,
-    }) {
+    };
+    return _serialize(() async {
+      if (_disposed) return;
+      _shared.addAll(assets);
+      await _load(assets);
+    });
+  }
+
+  @override
+  Future<void> setActivityAssets(Iterable<String> speechAssets) {
+    final assets = speechAssets.toSet();
+    return _serialize(() async {
+      if (_disposed) return;
+      final removed = _activity.difference(assets).difference(_shared);
+      for (final asset in removed) {
+        final subscription = _subscriptions.remove(asset);
+        await subscription?.cancel();
+        final source = _sources.remove(asset);
+        if (source != null && _engine.isInitialized) {
+          await _engine.disposeSource(source);
+        }
+      }
+      _activity = assets;
+      if (assets.isNotEmpty) await _load(assets);
+    });
+  }
+
+  Future<void> _load(Set<String> assets) async {
+    if (_disposed) return;
+    if (!_engine.isInitialized) {
+      await _engine.init(sampleRate: 48000, bufferSize: 256);
+    }
+    if (_disposed) return;
+    for (final asset in assets) {
       if (_disposed) return;
       if (_sources.containsKey(asset)) continue;
       final source = await _engine.loadAsset(asset, mode: LoadMode.memory);
-      if (_disposed) return;
+      // Keep track of a source even if disposal began during the await.
       _sources[asset] = source;
-      _subscriptions.add(
-        source.soundEvents.listen((event) {
-          if (event.handle == _speechHandle) _finishSpeech();
-        }),
-      );
+      if (_disposed) return;
+      _subscriptions[asset] = source.soundEvents.listen((event) {
+        if (event.handle == _speechHandle) _finishSpeech();
+      });
     }
-    // Keep the device warm even when the learner pauses between keystrokes.
     if (!_disposed) {
       _engine.setAudioDeviceIdleTimeout(null);
       await _engine.startAudioDevice();
@@ -101,14 +132,16 @@ class SoloudAudioService implements AudioService {
   }
 
   @override
-  Future<void> dispose() async {
+  Future<void> dispose() {
     _disposed = true;
     stopSpeech();
-    for (final subscription in _subscriptions) {
-      await subscription.cancel();
-    }
-    _subscriptions.clear();
-    _sources.clear();
-    if (_engine.isInitialized) await _engine.deinitAsync();
+    return _serialize(() async {
+      for (final subscription in _subscriptions.values) {
+        await subscription.cancel();
+      }
+      _subscriptions.clear();
+      _sources.clear();
+      if (_engine.isInitialized) await _engine.deinitAsync();
+    });
   }
 }
