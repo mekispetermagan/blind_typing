@@ -1,0 +1,105 @@
+{
+  "id": "challenge_hard",
+  "type": "words",
+  "title": "Nehéz",
+  "baselineSeconds": 180,
+  "allowedLetters": "AÁBCDEÉFGHIÍJKLMNOÓÖŐPQRSTUÚÜŰVWXYZ",
+  "units": [
+    {
+      "id": "challenge_hard_01",
+      "text": "SZÁMOLÓGÉP"
+    },
+    {
+      "id": "challenge_hard_02",
+      "text": "MOBILTELEFON"
+    },
+    {
+      "id": "challenge_hard_03",
+      "text": "FÉNYKÉPEZŐGÉP"
+    },
+    {
+      "id": "challenge_hard_04",
+      "text": "FÉNYKÉPALBUM"
+    },
+    {
+      "id": "challenge_hard_05",
+      "text": "VILLANYKÖRTE"
+    },
+    {
+      "id": "challenge_hard_06",
+      "text": "VÍZVEZETÉK"
+    },
+    {
+      "id": "challenge_hard_07",
+      "text": "MOSOGATÓSZER"
+    },
+    {
+      "id": "challenge_hard_08",
+      "text": "SZÁRÍTÓGÉP"
+    },
+    {
+      "id": "challenge_hard_09",
+      "text": "PORSZÍVÓZÁS"
+    },
+    {
+      "id": "challenge_hard_10",
+      "text": "RUHÁSSZEKRÉNY"
+    },
+    {
+      "id": "challenge_hard_11",
+      "text": "GYÜMÖLCSLEVES"
+    },
+    {
+      "id": "challenge_hard_12",
+      "text": "NARANCSFACSARÓ"
+    },
+    {
+      "id": "challenge_hard_13",
+      "text": "PARADICSOMLEVES"
+    },
+    {
+      "id": "challenge_hard_14",
+      "text": "KRUMPLIPÜRÉ"
+    },
+    {
+      "id": "challenge_hard_15",
+      "text": "KRUMPLISALÁTA"
+    },
+    {
+      "id": "challenge_hard_16",
+      "text": "BUSZMEGÁLLÓ"
+    },
+    {
+      "id": "challenge_hard_17",
+      "text": "VILLAMOSMEGÁLLÓ"
+    },
+    {
+      "id": "challenge_hard_18",
+      "text": "SZÁLLODASZOBA"
+    },
+    {
+      "id": "challenge_hard_19",
+      "text": "ZENEHALLGATÁS"
+    },
+    {
+      "id": "challenge_hard_20",
+      "text": "KÖNYVESPOLC"
+    },
+    {
+      "id": "challenge_hard_21",
+      "text": "GYERMEKORVOS"
+    },
+    {
+      "id": "challenge_hard_22",
+      "text": "SZÜLETÉSNAPI"
+    },
+    {
+      "id": "challenge_hard_23",
+      "text": "NAPSZEMÜVEG"
+    },
+    {
+      "id": "challenge_hard_24",
+      "text": "LOCSOLÓKANNA"
+    }
+  ]
+}

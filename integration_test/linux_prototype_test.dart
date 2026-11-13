@@ -13,7 +13,7 @@ import 'package:integration_test/integration_test.dart';
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   testWidgets(
-    'spoken menus, F teaching, 24 drills, and sample practice work with native audio',
+    'spoken menus, F teaching, 24 drills, and challenges work with native audio',
     (tester) async {
       app.main();
       final repository = AssetContentRepository();
@@ -25,7 +25,11 @@ void main() {
                 .activity!,
           ) as TypingExercise;
       final drills = await exercise(ActivityType.words);
-      final practice = await exercise(ActivityType.practice);
+      final challenge = await repository.loadExercise(
+        catalog.root.descendants
+            .firstWhere((node) => node.id == 'challenge_easy')
+            .activity!,
+      ) as TypingExercise;
       TypingScreen typing() =>
           tester.widget<TypingScreen>(find.byType(TypingScreen));
       MenuScreen menu() => tester.widget<MenuScreen>(find.byType(MenuScreen));
@@ -99,17 +103,16 @@ void main() {
       await key(LogicalKeyboardKey.enter);
       await key(LogicalKeyboardKey.arrowLeft);
       await key(LogicalKeyboardKey.arrowLeft);
-      await key(LogicalKeyboardKey.arrowDown); // GYAKORLÁS
+      await key(LogicalKeyboardKey.arrowDown); // KIHÍVÁSOK
       await key(LogicalKeyboardKey.enter);
-      await key(LogicalKeyboardKey.enter); // könnyű
-      await key(LogicalKeyboardKey.enter); // sample
+      await key(LogicalKeyboardKey.enter); // Könnyű
       await waitTyping(ExercisePhase.ready);
       expect(typing().mode, TypingMode.advanced);
       await key(LogicalKeyboardKey.enter);
-      for (var index = 0; index < practice.units.length; index++) {
+      for (var index = 0; index < challenge.units.length; index++) {
         await waitTyping(ExercisePhase.typing);
         expect(typing().sentenceIndex, index);
-        for (final character in practice.units[index].text.split('')) {
+        for (final character in challenge.units[index].text.split('')) {
           await key(LogicalKeyboardKey.keyA, character: character);
         }
       }
@@ -117,7 +120,7 @@ void main() {
       expect(menu().title, 'Kész a feladat');
       expect(menu().items, hasLength(2));
       await key(LogicalKeyboardKey.enter); // Restart retains mode
-      await waitTyping(ExercisePhase.reading);
+      await waitTyping(ExercisePhase.typing);
       expect(typing().mode, TypingMode.advanced);
       await tester.pumpWidget(const SizedBox.shrink());
       await tester.pump(const Duration(milliseconds: 300));

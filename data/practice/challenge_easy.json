@@ -1,0 +1,105 @@
+{
+  "id": "challenge_easy",
+  "type": "words",
+  "title": "Könnyű",
+  "baselineSeconds": 120,
+  "allowedLetters": "AÁBCDEÉFGHIÍJKLMNOÓÖŐPQRSTUÚÜŰVWXYZ",
+  "units": [
+    {
+      "id": "challenge_easy_01",
+      "text": "ABLAK"
+    },
+    {
+      "id": "challenge_easy_02",
+      "text": "AJTÓ"
+    },
+    {
+      "id": "challenge_easy_03",
+      "text": "HÁZ"
+    },
+    {
+      "id": "challenge_easy_04",
+      "text": "TEJ"
+    },
+    {
+      "id": "challenge_easy_05",
+      "text": "VÍZ"
+    },
+    {
+      "id": "challenge_easy_06",
+      "text": "CUKOR"
+    },
+    {
+      "id": "challenge_easy_07",
+      "text": "EPER"
+    },
+    {
+      "id": "challenge_easy_08",
+      "text": "MÁLNA"
+    },
+    {
+      "id": "challenge_easy_09",
+      "text": "DIÓ"
+    },
+    {
+      "id": "challenge_easy_10",
+      "text": "CSALÁD"
+    },
+    {
+      "id": "challenge_easy_11",
+      "text": "ANYA"
+    },
+    {
+      "id": "challenge_easy_12",
+      "text": "ISKOLA"
+    },
+    {
+      "id": "challenge_easy_13",
+      "text": "OLVAS"
+    },
+    {
+      "id": "challenge_easy_14",
+      "text": "SÉTÁL"
+    },
+    {
+      "id": "challenge_easy_15",
+      "text": "ESTE"
+    },
+    {
+      "id": "challenge_easy_16",
+      "text": "VIHAR"
+    },
+    {
+      "id": "challenge_easy_17",
+      "text": "FELHŐ"
+    },
+    {
+      "id": "challenge_easy_18",
+      "text": "HOLD"
+    },
+    {
+      "id": "challenge_easy_19",
+      "text": "ERDŐ"
+    },
+    {
+      "id": "challenge_easy_20",
+      "text": "HEGY"
+    },
+    {
+      "id": "challenge_easy_21",
+      "text": "PATAK"
+    },
+    {
+      "id": "challenge_easy_22",
+      "text": "MADÁR"
+    },
+    {
+      "id": "challenge_easy_23",
+      "text": "MACSKA"
+    },
+    {
+      "id": "challenge_easy_24",
+      "text": "LÁMPA"
+    }
+  ]
+}

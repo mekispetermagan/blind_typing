@@ -587,23 +587,41 @@
         ]
       },
       {
-        "id": "practice",
-        "title": "GYAKORLÁS",
-        "speech": "Gyakorlás",
+        "id": "challenges",
+        "title": "KIHÍVÁSOK",
+        "speech": "Kihívások",
         "children": [
           {
-            "id": "easy",
-            "title": "könnyű",
-            "children": [
-              {
-                "id": "sample_practice",
-                "title": "Mintagyakorlás – öt mondat",
-                "activity": {
-                  "type": "practice",
-                  "content": "data/practice/sample.json"
-                }
-              }
-            ]
+            "id": "challenge_easy",
+            "title": "Könnyű",
+            "activity": {
+              "type": "words",
+              "content": "data/practice/challenge_easy.json"
+            }
+          },
+          {
+            "id": "challenge_medium",
+            "title": "Közepes",
+            "activity": {
+              "type": "words",
+              "content": "data/practice/challenge_medium.json"
+            }
+          },
+          {
+            "id": "challenge_hard",
+            "title": "Nehéz",
+            "activity": {
+              "type": "words",
+              "content": "data/practice/challenge_hard.json"
+            }
+          },
+          {
+            "id": "challenge_insane",
+            "title": "Szupernehéz",
+            "activity": {
+              "type": "words",
+              "content": "data/practice/challenge_insane.json"
+            }
           }
         ]
       }

@@ -1,0 +1,105 @@
+{
+  "id": "challenge_insane",
+  "type": "words",
+  "title": "Szupernehéz",
+  "baselineSeconds": 240,
+  "allowedLetters": "AÁBCDEÉFGHIÍJKLMNOÓÖŐPQRSTUÚÜŰVWXYZ",
+  "units": [
+    {
+      "id": "challenge_insane_01",
+      "text": "TÁVIRÁNYÍTÓ"
+    },
+    {
+      "id": "challenge_insane_02",
+      "text": "INTERNETKAPCSOLAT"
+    },
+    {
+      "id": "challenge_insane_03",
+      "text": "VILLANYTŰZHELY"
+    },
+    {
+      "id": "challenge_insane_04",
+      "text": "MOSOGATÓSZIVACS"
+    },
+    {
+      "id": "challenge_insane_05",
+      "text": "FAGYASZTÓSZEKRÉNY"
+    },
+    {
+      "id": "challenge_insane_06",
+      "text": "ÉLELMISZERBOLT"
+    },
+    {
+      "id": "challenge_insane_07",
+      "text": "GYÜMÖLCSFAGYLALT"
+    },
+    {
+      "id": "challenge_insane_08",
+      "text": "GYÜMÖLCSTORTA"
+    },
+    {
+      "id": "challenge_insane_09",
+      "text": "CSOKOLÁDÉÖNTET"
+    },
+    {
+      "id": "challenge_insane_10",
+      "text": "SÜTEMÉNYESDOBOZ"
+    },
+    {
+      "id": "challenge_insane_11",
+      "text": "GYÓGYSZERTÁROS"
+    },
+    {
+      "id": "challenge_insane_12",
+      "text": "GYÓGYSZERESÜVEG"
+    },
+    {
+      "id": "challenge_insane_13",
+      "text": "EGÉSZSÉGKÖZPONT"
+    },
+    {
+      "id": "challenge_insane_14",
+      "text": "RENDELŐINTÉZET"
+    },
+    {
+      "id": "challenge_insane_15",
+      "text": "MENTŐSZOLGÁLAT"
+    },
+    {
+      "id": "challenge_insane_16",
+      "text": "MENTŐHELIKOPTER"
+    },
+    {
+      "id": "challenge_insane_17",
+      "text": "TŰZOLTÓAUTÓ"
+    },
+    {
+      "id": "challenge_insane_18",
+      "text": "TŰZOLTÓÁLLOMÁS"
+    },
+    {
+      "id": "challenge_insane_19",
+      "text": "ÚTKERESZTEZŐDÉS"
+    },
+    {
+      "id": "challenge_insane_20",
+      "text": "GYALOGÁTKELŐHELY"
+    },
+    {
+      "id": "challenge_insane_21",
+      "text": "KERÉKPÁRTÁROLÓ"
+    },
+    {
+      "id": "challenge_insane_22",
+      "text": "GÉPJÁRMŰVEZETŐ"
+    },
+    {
+      "id": "challenge_insane_23",
+      "text": "CERUZAHEGYEZŐ"
+    },
+    {
+      "id": "challenge_insane_24",
+      "text": "ÚJRAHASZNOSÍTÁS"
+    }
+  ]
+}

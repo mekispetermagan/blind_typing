@@ -83,7 +83,7 @@ void main() {
     await settle();
     expect(app.selectedIndex, 1);
     expect(audio.interrupted, isNotEmpty);
-    expect(audio.spoken.last, 'assets/audio/menu_practice.wav');
+    expect(audio.spoken.last, 'assets/audio/menu_challenges.wav');
     app.activate();
     app.back();
     expect(app.menu.id, 'main');
@@ -182,9 +182,8 @@ void main() {
       app.moveSelection(1);
       app.activate();
       app.activate();
-      app.activate();
       await settle();
-      expect(app.typing!.exercise.id, 'sample_practice');
+      expect(app.typing!.exercise.id, 'challenge_easy');
       expect(app.typing!.mode, TypingMode.advanced);
     },
   );

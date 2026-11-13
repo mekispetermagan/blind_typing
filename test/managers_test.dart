@@ -129,7 +129,7 @@ void main() {
         expect(File(audio).existsSync(), isTrue, reason: audio);
       }
     }
-    expect(types, ActivityType.values.toSet());
+    expect(types, {ActivityType.letters, ActivityType.words});
     expect(wordExercise.units, hasLength(24));
     expect(wordExercise.units.first.text, 'AJ');
     expect(wordExercise.units.last.text, 'FÉJAKÉDA');

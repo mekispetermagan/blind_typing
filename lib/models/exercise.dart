@@ -29,8 +29,10 @@ class TypingExercise extends ExerciseDefinition {
     required super.type,
     required List<TypingUnit> units,
     this.allowedLetters,
+    this.baselineSeconds = 180,
   }) : units = List.unmodifiable(units) {
-    if (type == ActivityType.letters ||
+    if (baselineSeconds <= 0 ||
+        type == ActivityType.letters ||
         units.isEmpty ||
         units.map((unit) => unit.id).toSet().length != units.length) {
       throw FormatException('Invalid typing exercise: $id');
@@ -57,6 +59,7 @@ class TypingExercise extends ExerciseDefinition {
     title: json['title'] as String,
     type: ActivityType.values.byName(json['type'] as String),
     allowedLetters: json['allowedLetters'] as String?,
+    baselineSeconds: json['baselineSeconds'] as int? ?? 180,
     units: (json['units'] as List)
         .map((unit) => TypingUnit.fromJson(unit as Map<String, dynamic>))
         .toList(),
@@ -64,6 +67,7 @@ class TypingExercise extends ExerciseDefinition {
 
   final List<TypingUnit> units;
   final String? allowedLetters;
+  final int baselineSeconds;
   bool get isWordDrill => type == ActivityType.words;
   @override
   Iterable<String> get audioAssets =>

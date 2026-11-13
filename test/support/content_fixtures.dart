@@ -8,8 +8,13 @@ import 'package:blind_typing/services/content_repository.dart';
 
 Map<String, dynamic> readData(String path) =>
     jsonDecode(File(path).readAsStringSync()) as Map<String, dynamic>;
-TypingExercise get sampleExercise =>
-    TypingExercise.fromJson(readData('data/practice/sample.json'));
+TypingExercise get sampleExercise => practiceExercise([
+  TypingUnit(id: 'test_sentence_01', text: 'Anna almát kér ma'),
+  TypingUnit(id: 'test_sentence_02', text: 'Esik az eső'),
+  TypingUnit(id: 'test_sentence_03', text: 'A fiú vizet kér'),
+  TypingUnit(id: 'test_sentence_04', text: 'Pillangó ül itt'),
+  TypingUnit(id: 'test_sentence_05', text: 'Ma süt a nap'),
+]);
 List<TypingUnit> get sampleSentences => sampleExercise.units;
 TypingExercise practiceExercise(List<TypingUnit> units) => TypingExercise(
   id: 'test',

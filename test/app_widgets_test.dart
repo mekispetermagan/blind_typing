@@ -109,8 +109,7 @@ void main() {
       await key(LogicalKeyboardKey.arrowDown);
       await key(LogicalKeyboardKey.enter);
       await key(LogicalKeyboardKey.enter);
-      await key(LogicalKeyboardKey.enter);
-      expect(app.typing!.exercise.id, 'sample_practice');
+      expect(app.typing!.exercise.id, 'challenge_easy');
       expect(app.typing!.mode, TypingMode.advanced);
       await key(LogicalKeyboardKey.f4);
       expect(closes, 1);

@@ -92,8 +92,9 @@ The available content is:
   the three new keys.
 - **LECKÉK → számok:** guided practice for 1–9 and 0, followed by a 24-number
   drill including years and telephone numbers. Leading zeroes are preserved.
-- **GYAKORLÁS → könnyű → Mintagyakorlás – öt mondat:** the original five sample
-  sentences, with sentence narration, three-two-one, and individual word prompts.
+- **KIHÍVÁSOK → Könnyű / Közepes / Nehéz / Szupernehéz:** four ordered
+  24-word challenges, with respective scoring baselines of 120, 180, 180, and
+  240 seconds. Each challenge keeps separate Simple and Advanced records.
 
 Enter starts an opened activity. Escape pauses it and opens a spoken menu with
 Continue, Restart, and Return to Menu. Escape from that menu resumes. Completion
@@ -138,12 +139,16 @@ word/practice activities.
 
 Letter teaching and word drills report active typing time and incorrect keystrokes
 on completion. They also report the score and highest score, using
-`round(100 × 180 / max(1, seconds) × 0.95^(errors − 10))`. Each activity
+`round(100 × baseline seconds / max(1, seconds) × 0.95^(errors − 10))`.
+The default baseline is 180 seconds; challenges use the baselines above. Each activity
 saves its fastest time, fewest errors, and highest score locally. Word drills
 keep separate records for Simple and Advanced. An attempt with a mode change
 reports time and errors but no score, and leaves all records intact. Older
 records retain their time and error values; the next eligible attempt establishes
 the first high score.
+
+See the [exercise scoring formula](docs/scoring.md) and the proposed
+[word difficulty rules](docs/word_difficulty.md) for details.
 
 ## Content
 
@@ -189,7 +194,7 @@ what appears on screen and is spoken. Only available content is listed.
   A→Q and S→X/W teaching steps and the final word drill.
 - `data/lessons/numbers_letters.json` and `data/lessons/numbers_words.json`:
   number-key teaching steps and the number drill.
-- `data/practice/sample.json`: original text divided into sentence units.
+- `data/practice/challenge_*.json`: the four ordered word challenges and their scoring baselines.
 
 Typed models validate menu shape, IDs, nonempty activities, activity types, and
 permitted letters. Adding content of an existing type requires editing JSON,
@@ -248,6 +253,6 @@ flutter test integration_test/lesson_two_test.dart -d linux
 ```
 
 The native check needs a desktop/audio device and exercises spoken menus, F
-teaching, all 24 word drills, correction, and the five-sentence practice flow.
+teaching, all 24 word drills, correction, and the easy challenge.
 The lesson-2 native check exercises the four teaching steps and all 80 words.
 The game managers are pure Dart and can be tested independently of screens.

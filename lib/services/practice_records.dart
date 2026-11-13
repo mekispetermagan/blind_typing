@@ -4,6 +4,7 @@ import 'dart:developer' as developer;
 import 'dart:math';
 
 import '../models/practice_result.dart';
+import 'exercise_scoring.dart';
 
 class PracticeRecords {
   PracticeRecords({this._read, this._write});
@@ -20,9 +21,15 @@ class PracticeRecords {
   Future<void> _load() async {
     try {
       final saved = await _read?.call();
+      var removedLegacy = false;
       if (saved != null) {
         final entries = jsonDecode(saved) as Map<String, dynamic>;
         for (final MapEntry(:key, :value) in entries.entries) {
+          if (key == 'words:sample_practice:simple' ||
+              key == 'words:sample_practice:advanced') {
+            removedLegacy = true;
+            continue;
+          }
           if (value is List && (value.length == 2 || value.length == 3)) {
             final seconds = value[0];
             final errors = value[1];
@@ -42,21 +49,27 @@ class PracticeRecords {
         }
       }
       _loaded = true;
+      if (removedLegacy) _persist();
     } catch (error) {
       developer.log('Could not load practice records', error: error);
     }
   }
 
-  PracticeResult finish(String exerciseId, PracticeResult attempt) {
+  PracticeResult finish(
+    String exerciseId,
+    PracticeResult attempt, {
+    ExerciseScoring scoring = const ExerciseScoring(),
+  }) {
     if (attempt.changedMode) return attempt;
 
     final mode = attempt.mode;
     final key = mode == null
         ? 'letters:$exerciseId'
         : 'words:$exerciseId:${mode.name}';
-    final score =
-        (100 * 180 / max(1, attempt.seconds) * pow(0.95, attempt.errors - 10))
-            .round();
+    final score = scoring.score(
+      seconds: attempt.seconds,
+      mistakes: attempt.errors,
+    );
     final previous = _records[key];
     final highScore = max(score, previous?.highScore ?? score);
     final bestTime = previous != null && attempt.seconds < previous.seconds;

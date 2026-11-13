@@ -11,6 +11,7 @@ import '../models/typing_unit.dart';
 import '../services/audio_service.dart';
 import '../services/practice_feedback.dart';
 import '../services/practice_records.dart';
+import '../services/exercise_scoring.dart';
 import '../services/speech_coordinator.dart';
 
 export '../models/typing_state.dart';
@@ -147,7 +148,11 @@ class TypingController extends ChangeNotifier {
     if (result == TypingResult.incorrect) _attempt?.recordError();
     final attempt = _attempt;
     if (result == TypingResult.completed && attempt != null) {
-      _practiceResult = _records.finish(exercise.id, attempt.finish());
+      _practiceResult = _records.finish(
+        exercise.id,
+        attempt.finish(),
+        scoring: ExerciseScoring(baselineSeconds: exercise.baselineSeconds),
+      );
       _attempt = null;
     }
     try {

@@ -1,0 +1,105 @@
+{
+  "id": "challenge_medium",
+  "type": "words",
+  "title": "Közepes",
+  "baselineSeconds": 180,
+  "allowedLetters": "AÁBCDEÉFGHIÍJKLMNOÓÖŐPQRSTUÚÜŰVWXYZ",
+  "units": [
+    {
+      "id": "challenge_medium_01",
+      "text": "MOGYORÓ"
+    },
+    {
+      "id": "challenge_medium_02",
+      "text": "TESTVÉR"
+    },
+    {
+      "id": "challenge_medium_03",
+      "text": "CITROM"
+    },
+    {
+      "id": "challenge_medium_04",
+      "text": "CERUZA"
+    },
+    {
+      "id": "challenge_medium_05",
+      "text": "TÁNCOL"
+    },
+    {
+      "id": "challenge_medium_06",
+      "text": "JÁTSZIK"
+    },
+    {
+      "id": "challenge_medium_07",
+      "text": "DOLGOZIK"
+    },
+    {
+      "id": "challenge_medium_08",
+      "text": "SZOMBAT"
+    },
+    {
+      "id": "challenge_medium_09",
+      "text": "FEBRUÁR"
+    },
+    {
+      "id": "challenge_medium_10",
+      "text": "ÁPRILIS"
+    },
+    {
+      "id": "challenge_medium_11",
+      "text": "AUGUSZTUS"
+    },
+    {
+      "id": "challenge_medium_12",
+      "text": "OKTÓBER"
+    },
+    {
+      "id": "challenge_medium_13",
+      "text": "NOVEMBER"
+    },
+    {
+      "id": "challenge_medium_14",
+      "text": "NAPSÜTÉS"
+    },
+    {
+      "id": "challenge_medium_15",
+      "text": "PILLANGÓ"
+    },
+    {
+      "id": "challenge_medium_16",
+      "text": "MÉHECSKE"
+    },
+    {
+      "id": "challenge_medium_17",
+      "text": "SZÚNYOG"
+    },
+    {
+      "id": "challenge_medium_18",
+      "text": "KESZTYŰ"
+    },
+    {
+      "id": "challenge_medium_19",
+      "text": "PULÓVER"
+    },
+    {
+      "id": "challenge_medium_20",
+      "text": "SZŐNYEG"
+    },
+    {
+      "id": "challenge_medium_21",
+      "text": "PARADICSOM"
+    },
+    {
+      "id": "challenge_medium_22",
+      "text": "REPÜLŐ"
+    },
+    {
+      "id": "challenge_medium_23",
+      "text": "KERÉKPÁR"
+    },
+    {
+      "id": "challenge_medium_24",
+      "text": "BESZÉLGETÉS"
+    }
+  ]
+}
