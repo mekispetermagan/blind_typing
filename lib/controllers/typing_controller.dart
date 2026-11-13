@@ -114,13 +114,31 @@ class TypingController extends ChangeNotifier {
     }
   }
 
-  Future<void> _speakWord(int token) => _speech.sequence(
-    token,
-    sentence.promptStyle == PromptStyle.letters
-        ? sentence.words[wordIndex].split('').map(AudioCues.letter)
-        : [sentence.wordAudioAsset(wordIndex)],
-    gap: const Duration(milliseconds: 250),
-  );
+  Future<void> _speakWord(int token) async {
+    final word = sentence.words[wordIndex];
+    final letters = word.split('').map(AudioCues.letter);
+    if (sentence.promptStyle == PromptStyle.letters) {
+      await _speech.sequence(
+        token,
+        letters,
+        gap: const Duration(milliseconds: 250),
+      );
+      return;
+    }
+
+    _spellingToken = token;
+    try {
+      if (!await _speech.say(token, sentence.wordAudioAsset(wordIndex))) return;
+      if (!await _speech.wait(token, const Duration(seconds: 1))) return;
+      await _speech.sequence(
+        token,
+        letters,
+        gap: const Duration(milliseconds: 250),
+      );
+    } finally {
+      if (_spellingToken == token) _spellingToken = null;
+    }
+  }
 
   void typeCharacter(String character) {
     cancelSpelling();

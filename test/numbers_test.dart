@@ -77,6 +77,8 @@ void main() {
       controller.backspace();
       controller.typeCharacter('1');
       expect(controller.sentenceIndex, 1);
+      await tester.pump();
+      controller.cancelSpelling();
     },
   );
 

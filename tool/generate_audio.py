@@ -61,9 +61,9 @@ def speech_texts():
     yield "count_1", "egy"
     letters = "aábcdeéfghiíjklmnoóöőpqrstuúüűvwxyz"
     names = [
-        "aa", "á", "bé", "cé", "dé", "e", "é", "ef", "gé", "há", "i", "í",
-        "jé", "ká", "el", "emm", "en", "o", "ó", "ö", "ő", "pé", "kú", "err",
-        "es", "té", "u", "ú", "ü", "ű", "vé", "duplavé", "iksz", "ipszilon", "zé",
+        "aa", "á", "bé", "cé", "dé", "e", "é", "ef", "gé", "há", "i", "hosszú í",
+        "jé", "ká", "el", "emm", "en", "o", "hosszú ó", "ö", "hosszú ő", "pé", "kú", "err",
+        "es", "té", "u", "hosszú ú", "ü", "hosszú ű", "vé", "duplavé", "iksz", "ipszilon", "zé",
     ]
     for letter, name in zip(letters, names, strict=True):
         yield f"letter_{ord(letter):04x}", name

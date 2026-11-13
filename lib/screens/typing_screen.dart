@@ -155,7 +155,7 @@ class TypingScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  'Enter: kezdés   F1: szó ismétlése   F2: beírt betűk   F3: módváltás\n'
+                  'Enter: kezdés   F1: szó és betűzés   F2: beírt betűk   F3: módváltás\n'
                   'Backspace: törlés haladó módban   Escape: szünet   Ctrl+W / F4: kilépés',
                   textAlign: TextAlign.center,
                   style: TextStyle(

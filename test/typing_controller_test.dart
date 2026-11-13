@@ -392,13 +392,18 @@ void main() {
         }
         await tester.pump();
         final spoken = List<String>.of(audio.spoken);
-        await tester.pump(const Duration(seconds: 1));
-        expect(audio.spoken, spoken);
-        expect(audio.spoken.last, switch (action) {
+        expect(spoken.last, switch (action) {
           'pause' => AudioCues.letter('p'),
           'complete word' => controller.sentence.wordAudioAsset(1),
           _ => controller.sentence.wordAudioAsset(0),
         });
+        await tester.pump(const Duration(seconds: 1));
+        expect(audio.spoken, [
+          ...spoken,
+          if (action != 'pause')
+            AudioCues.letter(action == 'complete word' ? 'á' : 'p'),
+        ]);
+        controller.cancelSpelling();
       });
     }
 

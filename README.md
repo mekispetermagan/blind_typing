@@ -118,8 +118,12 @@ F4, or Close exits.
 - Switching to Simple discards that suffix and preserves the correct prefix.
 - Words advance on their last correct character. Completed words stay completed.
   The word reward is `correct.mp3`; sentence completion also plays `fanfare.mp3`.
-- F1 repeats the word. F2 spells actual entered characters, including mistakes,
-  with 250 ms between recordings. Any key-down cancels F2 before its normal
+- Word and number prompts, including F1 repeats, speak the target and then
+  spell it after one second, with 250 ms between characters. Targets already
+  prompted letter by letter retain that prompt. Any key-down interrupts these
+  spoken-then-spelled prompts.
+- F2 spells actual entered characters, including mistakes, with 250 ms between
+  recordings. Any key-down cancels F2 before its normal
   action; releases have no effect. Symbols outside the alphabet use a spoken
   “Ismeretlen jel” fallback.
 - Typing stays active during word prompts and rewards. Input during sentence

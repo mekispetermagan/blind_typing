@@ -6770,9 +6770,9 @@
     "sha256": "acf85690cd512b957a9e72f396ac486adf9901c166edda7f22cae991d20cb2a7"
   },
   "letter_00ed": {
-    "text": "í",
+    "text": "hosszú í",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "a64ca0277ad28f1d91d234d8a5c4701f139a917ef0b332ddd95cef060cc7b4e1"
+    "sha256": "7a04212c58963583e5c87104a46038d8f59f55d2174e6e28d06a90637351dc3d"
   },
   "letter_006a": {
     "text": "jé",
@@ -6805,9 +6805,9 @@
     "sha256": "46b255ba7e9535c03382d67d6a4db4788fe7373634761bd77c5a3cfcfc119473"
   },
   "letter_00f3": {
-    "text": "ó",
+    "text": "hosszú ó",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "1b5f21b5b95245b17334a50acc2f394fb3c560f797146e4c8e33d93ca50089cf"
+    "sha256": "46ed1e715310a8797b6ee677823d84cd5e10094bef2a3bc17530201a8a83ad58"
   },
   "letter_00f6": {
     "text": "ö",
@@ -6815,9 +6815,9 @@
     "sha256": "c98e2bee768a9b3e52f294b19d1754752173e961e948c91f041f39c941983b23"
   },
   "letter_0151": {
-    "text": "ő",
+    "text": "hosszú ő",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "e6c54b1d14ac5735e667c5b26d900206dc3b3d42c7583f1350f8b208cdd2fe95"
+    "sha256": "6820af436fc44a9a76dadec662230b9ff764f89d4d07d8224c85800d888dead6"
   },
   "letter_0070": {
     "text": "pé",
@@ -6850,9 +6850,9 @@
     "sha256": "a1c83219d08940d1a44b8f5c3b6247bcb39d9489f0561fc3bbe216a7b6e55512"
   },
   "letter_00fa": {
-    "text": "ú",
+    "text": "hosszú ú",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "aa7b9b86db255dbb1e4909ad8c5b4b4389f3e940a73db64f7d1544c7bc096a2b"
+    "sha256": "98a2a239b8d556d089304a27e1fea410bb9bd93af04913e3a01b0113e9152e65"
   },
   "letter_00fc": {
     "text": "ü",
@@ -6860,9 +6860,9 @@
     "sha256": "c131beb7288c549583d98a24ce5ac2a4ee144b3e25297e6bd1435f59c5ea804b"
   },
   "letter_0171": {
-    "text": "ű",
+    "text": "hosszú ű",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "ea81feaa0226ea33e5813a48ff14570d94330702a13d357e0efbb55be5e90e52"
+    "sha256": "ba0b98e9dfc21cb3056881a682ab84b5f2716d771c2836083d30972f296197b8"
   },
   "letter_0076": {
     "text": "vé",
