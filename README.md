@@ -1,19 +1,38 @@
 # Gépírás
 
 Audio-first Hungarian touch-typing tutor. Linux first; Flutter web and Windows
-remain targets. Menus, lesson content, practice text, and Hungarian audio are
-bundled locally. Practice records are saved on the device.
+remain targets. Menus, lesson content, practice text, and gameplay audio are served by a local
+FastAPI backend. Practice records are saved on the device. A Hungarian error
+announcement is bundled for network failures.
 
 ## Run on Linux
 
-With Flutter and its Linux desktop dependencies installed:
+With Python, Flutter and its Linux desktop dependencies installed, start the backend:
 
 ```sh
+cd backend
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+cp -n .env.example .env
+.venv/bin/uvicorn app.main:app --reload
+```
+
+In another terminal, start the client:
+
+```sh
+cd frontend
 flutter pub get
 flutter run -d linux
 ```
 
-The window starts full-screen. Playback works offline after installation.
+The backend listens on 127.0.0.1:8000. A different client address can be set
+with `--dart-define=BACKEND_URL=http://host:8000`. The window starts full-screen.
+The backend must be reachable to start and load activities. Shared audio is
+cached and checked for updates at startup; activity audio is retained through the
+completion menu and replaced when another activity starts. Interrupted activity
+caches are removed at the next startup. On failure, the bundled announcement
+explains retry and exit keys. SQLite is initialized at `backend/instance/usage.db`
+(configurable in `backend/.env`); it has no tables or usage collection yet.
 
 ## Menus and activities
 
@@ -152,71 +171,71 @@ See the [exercise scoring formula](docs/scoring.md) and the proposed
 
 ## Content
 
-`data/menu.json` contains the main menu tree and pause/completion menus. Branches
+`backend/data/menu.json` contains the main menu tree and pause/completion menus. Branches
 have `children`; activity leaves have a `type` and a content asset reference.
 The supported activity identifiers are `letters`, `words`, and `practice`.
 They select application execution flows; JSON contains no executable callbacks.
-The `progression` array in `data/menu.json` explicitly orders lessons and their activity IDs; omitted activities do not participate in progression. References must be unique and point to menu activities.
+The `progression` array in `backend/data/menu.json` explicitly orders lessons and their activity IDs; omitted activities do not participate in progression. References must be unique and point to menu activities.
 
 Stable IDs determine audio filenames. Titles and optional `speech` text determine
 what appears on screen and is spoken. Only available content is listed.
 
-- `data/lessons/home_row_letters.json`: ordered teaching steps with a target key,
+- `backend/data/lessons/home_row_letters.json`: ordered teaching steps with a target key,
   required success count, instruction, retry, success, and completion phrases.
   Anchor/movement sequences can be expressed as multiple steps.
-- `data/lessons/home_row_words.json`: allowed letters and ordered targets.
+- `backend/data/lessons/home_row_words.json`: allowed letters and ordered targets.
   A target's `promptStyle` is `word` or `letters`.
-- `data/lessons/upper_row_ir_letters.json`: F→R and K→I teaching steps.
-- `data/lessons/upper_row_i_words.json`, `upper_row_r_words.json`, and
+- `backend/data/lessons/upper_row_ir_letters.json`: F→R and K→I teaching steps.
+- `backend/data/lessons/upper_row_i_words.json`, `upper_row_r_words.json`, and
   `upper_row_ir_words.json`: the three lesson-2 word lists and their permitted
   letters.
-- `data/lessons/reach_em_letters.json` and `data/lessons/reach_em_*_words.json`:
+- `backend/data/lessons/reach_em_letters.json` and `backend/data/lessons/reach_em_*_words.json`:
   the lesson-3 teaching steps and three word lists.
-- `data/lessons/reach_uv_letters.json` and `data/lessons/reach_uv_*_words.json`:
+- `backend/data/lessons/reach_uv_letters.json` and `backend/data/lessons/reach_uv_*_words.json`:
   the lesson-4 teaching steps and three word lists.
-- `data/lessons/reach_oz_letters.json` and `data/lessons/reach_oz_*_words.json`:
+- `backend/data/lessons/reach_oz_letters.json` and `backend/data/lessons/reach_oz_*_words.json`:
   the lesson-5 teaching steps and three word lists.
-- `data/lessons/reach_ag_letters.json` and `data/lessons/reach_ag_*_words.json`:
+- `backend/data/lessons/reach_ag_letters.json` and `backend/data/lessons/reach_ag_*_words.json`:
   É→Á and F→G teaching steps and three word drills.
-- `data/lessons/reach_py_letters.json` and `data/lessons/reach_py_*_words.json`:
+- `backend/data/lessons/reach_py_letters.json` and `backend/data/lessons/reach_py_*_words.json`:
   É→P and A→Y teaching steps and three word drills.
-- `data/lessons/reach_nt_letters.json` and `data/lessons/reach_nt_*_words.json`:
+- `backend/data/lessons/reach_nt_letters.json` and `backend/data/lessons/reach_nt_*_words.json`:
   J→N and F→T teaching steps and three word drills.
-- `data/lessons/reach_oc_letters.json` and `data/lessons/reach_oc_*_words.json`:
+- `backend/data/lessons/reach_oc_letters.json` and `backend/data/lessons/reach_oc_*_words.json`:
   É→Ő and D→C teaching steps and three word drills.
-- `data/lessons/reach_hi_letters.json` and `data/lessons/reach_hi_*_words.json`:
+- `backend/data/lessons/reach_hi_letters.json` and `backend/data/lessons/reach_hi_*_words.json`:
   J→H and A→Í teaching steps and three word drills.
-- `data/lessons/reach_ub_letters.json` and `data/lessons/reach_ub_*_words.json`:
+- `backend/data/lessons/reach_ub_letters.json` and `backend/data/lessons/reach_ub_*_words.json`:
   Ő→Ú and F→B teaching steps and three word drills.
-- `data/lessons/reach_ou_letters.json` and `data/lessons/reach_ou_*_words.json`:
+- `backend/data/lessons/reach_ou_letters.json` and `backend/data/lessons/reach_ou_*_words.json`:
   P→Ö and Ő→Ü teaching steps and three word drills.
-- `data/lessons/reach_ow_letters.json` and `data/lessons/reach_ow_*_words.json`:
+- `backend/data/lessons/reach_ow_letters.json` and `backend/data/lessons/reach_ow_*_words.json`:
   Ü→Ó and Á→Ű teaching steps and three word drills.
-- `data/lessons/reach_qxw_letters.json` and `data/lessons/reach_qxw_words.json`:
+- `backend/data/lessons/reach_qxw_letters.json` and `backend/data/lessons/reach_qxw_words.json`:
   A→Q and S→X/W teaching steps and the final word drill.
-- `data/lessons/numbers_letters.json` and `data/lessons/numbers_words.json`:
+- `backend/data/lessons/numbers_letters.json` and `backend/data/lessons/numbers_words.json`:
   number-key teaching steps and the number drill.
-- `data/practice/challenge_*.json`: the four ordered word challenges and their scoring baselines.
+- `backend/data/practice/challenge_*.json`: the four ordered word challenges and their scoring baselines.
 
 Typed models validate menu shape, IDs, nonempty activities, activity types, and
 permitted letters. Adding content of an existing type requires editing JSON,
-regenerating its speech, and rebuilding the app. No source-code menu edits are
-needed. New content directories must also be declared in `pubspec.yaml`.
+regenerating its speech on the backend. No source-code menu edits or frontend
+rebuild are needed for existing content types.
 
 ## Structure
 
-- `lib/main.dart`: initialization and dependency wiring.
-- `lib/app.dart`: application lifecycle bridge, theme, and top-level navigation.
-- `lib/controllers`: application flow and audio orchestration; controllers notify
+- `frontend/lib/main.dart`: initialization and dependency wiring.
+- `frontend/lib/app.dart`: application lifecycle bridge, theme, and top-level navigation.
+- `frontend/lib/controllers`: application flow and audio orchestration; controllers notify
   the presentation layer and delegate mechanics to managers.
-- `lib/managers`: pure Dart typing and guided-teaching rules, state transitions,
+- `frontend/lib/managers`: pure Dart typing and guided-teaching rules, state transitions,
   correction, and progression. No Flutter or audio imports.
-- `lib/models`: immutable content and state snapshots.
-- `lib/screens`: stateless screens receiving data and callbacks.
-- `lib/widgets`: reusable display, keyboard mapping, and menu scrolling. The menu
+- `frontend/lib/models`: immutable content and state snapshots.
+- `frontend/lib/screens`: stateless screens receiving data and callbacks.
+- `frontend/lib/widgets`: reusable display, keyboard mapping, and menu scrolling. The menu
   list owns only its scroll position; navigation decisions stay in the controller.
-- `lib/services`: bundled-content access, audio playback, and interruptible speech.
-- `lib/utils`: pure text normalization.
+- `frontend/lib/services`: content interfaces, audio playback, and interruptible speech.
+- `frontend/lib/utils`: pure text normalization.
 
 The application owns audio initialization/disposal. Leaving an activity cancels
 its speech and pending progression while keeping audio available to menus and
@@ -226,12 +245,12 @@ recordings load on entry and are released when leaving the activity.
 ## Audio assets
 
 Speech uses Hungarian gTTS with normal speed. Generation requires internet;
-playback does not. The approved alphabet uses `aa` for a, `emm` for m, and `err`
+the client fetches gameplay audio from the backend. The approved alphabet uses `aa` for a, `emm` for m, and `err`
 for r; other vowels are single letters. The original good tone is 28 ms. The
 60 ms error buzz combines 600, 1800, and 3000 Hz, with short fades.
 
 ```sh
-python3 -m venv .venv
+cd backend
 .venv/bin/pip install -r tool/requirements.txt
 .venv/bin/python tool/generate_audio.py
 ```
@@ -242,11 +261,12 @@ records text, provider, and speech checksums. Approved alphabet clips are reused
 
 SoLoud uses a 256-frame buffer at 48 kHz (5.3 ms mixing quantum), which does not
 measure total device latency. The bundled font license is in
-`assets/fonts/LICENSE.txt`.
+`frontend/assets/fonts/LICENSE.txt`.
 
 ## Checks
 
 ```sh
+cd frontend
 flutter analyze
 flutter test
 flutter build linux

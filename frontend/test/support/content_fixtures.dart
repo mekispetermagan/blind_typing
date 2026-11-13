@@ -7,7 +7,8 @@ import 'package:blind_typing/models/typing_unit.dart';
 import 'package:blind_typing/services/content_repository.dart';
 
 Map<String, dynamic> readData(String path) =>
-    jsonDecode(File(path).readAsStringSync()) as Map<String, dynamic>;
+    jsonDecode(File('../backend/$path').readAsStringSync())
+        as Map<String, dynamic>;
 TypingExercise get sampleExercise => practiceExercise([
   TypingUnit(id: 'test_sentence_01', text: 'Anna almát kér ma'),
   TypingUnit(id: 'test_sentence_02', text: 'Esik az eső'),

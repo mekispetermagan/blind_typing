@@ -96,7 +96,8 @@ class AppController extends ChangeNotifier {
   }
 
   String get errorMessage =>
-      _failure ?? 'A hang nem indítható. Az Enter újrapróbálja.';
+      _failure ??
+      'A tartalom nem tölthető be. Ellenőrizd a kapcsolatot, vagy értesítsd a rendszergazdát. Enter: újrapróbálás. Escape: vissza. F4: kilépés.';
 
   Future<void> initialize() async {
     final generation = ++_generation;
@@ -105,6 +106,7 @@ class AppController extends ChangeNotifier {
     _failure = null;
     notifyListeners();
     try {
+      await _speech.audio.initialize([AudioCues.contentError]);
       await _speech.audio.initialize(AudioCues.speechAssets);
       final catalog = await _content.loadMenu();
       await _records.load();
@@ -266,6 +268,7 @@ class AppController extends ChangeNotifier {
     if (changed && _activityMenu != null) _sessionSelection = 0;
     notifyListeners();
     if (changed && phase == ExercisePhase.paused) _announceMenu();
+    if (changed && phase == ExercisePhase.error) _say([AudioCues.contentError]);
   }
 
   void pauseActivity() {
@@ -368,8 +371,7 @@ class AppController extends ChangeNotifier {
     if (_disposed || generation != _generation) return;
     debugPrint('Content loading failed: $error');
     _loading = false;
-    _failure =
-        'A tartalom nem tölthető be. Enter: újrapróbálás. Escape: vissza.';
+    _failure = 'A tartalom nem tölthető be. Ellenőrizd a kapcsolatot, vagy értesítsd a rendszergazdát. Enter: újrapróbálás. Escape: vissza. F4: kilépés.';
     notifyListeners();
     _say([AudioCues.contentError]);
   }

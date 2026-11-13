@@ -4,7 +4,7 @@ import 'package:blind_typing/models/typing_state.dart';
 import 'package:blind_typing/screens/menu_screen.dart';
 import 'package:blind_typing/screens/teaching_screen.dart';
 import 'package:blind_typing/screens/typing_screen.dart';
-import 'package:blind_typing/services/content_repository.dart';
+import 'package:blind_typing/api/http_content_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -16,7 +16,7 @@ void main() {
     'lesson 2 teaches F→R/K→I and completes all three word sessions with native audio',
     (tester) async {
       app.main();
-      final repository = AssetContentRepository();
+      final repository = HttpContentRepository();
       final catalog = await repository.loadMenu();
       final lesson = catalog.root.descendants.firstWhere(
         (node) => node.id == 'upper_row_ir',

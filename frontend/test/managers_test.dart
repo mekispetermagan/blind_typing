@@ -117,7 +117,7 @@ void main() {
     final types = <ActivityType>{};
     for (final node in catalog.allNodes) {
       expect(
-        File(node.audioAsset).existsSync(),
+        File('../backend/${node.audioAsset}').existsSync(),
         isTrue,
         reason: node.audioAsset,
       );
@@ -127,7 +127,7 @@ void main() {
       expect(exercise.type, reference.type);
       types.add(exercise.type);
       for (final audio in exercise.audioAssets) {
-        expect(File(audio).existsSync(), isTrue, reason: audio);
+        expect(File('../backend/$audio').existsSync(), isTrue, reason: audio);
       }
     }
     expect(types, {ActivityType.letters, ActivityType.words});
@@ -176,7 +176,7 @@ void main() {
         '-c',
         'import json,sys; from tool.generate_audio import typing_words; print(json.dumps([typing_words(t) for t in json.loads(sys.argv[1])]))',
         jsonEncode(texts),
-      ]);
+      ], workingDirectory: '../backend');
       expect(process.exitCode, 0, reason: process.stderr.toString());
       final generated = (jsonDecode(process.stdout as String) as List)
           .map((words) => (words as List).cast<String>())
@@ -187,7 +187,7 @@ void main() {
       final generatedAssets = await Process.run('python3', [
         '-c',
         'import json; from tool.generate_audio import speech_texts; print(json.dumps(["assets/audio/"+n+".wav" for n,_ in speech_texts()]))',
-      ]);
+      ], workingDirectory: '../backend');
       expect(
         generatedAssets.exitCode,
         0,

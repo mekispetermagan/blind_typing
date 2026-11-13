@@ -30,8 +30,8 @@ migrate_working_dir/
 .flutter-plugins-dependencies
 .pub-cache/
 .pub/
-/build/
-/coverage/
+**/build/
+**/coverage/
 .venv/
 __pycache__/
 
@@ -48,3 +48,8 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+
+# Backend runtime files
+.env
+backend/instance/*.db
+backend/instance/*.db-*

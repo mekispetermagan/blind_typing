@@ -17,7 +17,8 @@ void main() {
     final settings = {'easy': 120, 'medium': 180, 'hard': 180, 'insane': 240};
     for (final MapEntry(key: name, value: seconds) in settings.entries) {
       final json = jsonDecode(
-        File('data/practice/challenge_$name.json').readAsStringSync(),
+        File('../backend/data/practice/challenge_$name.json')
+            .readAsStringSync(),
       ) as Map<String, dynamic>;
       final exercise = TypingExercise.fromJson(json);
       expect(exercise.units, hasLength(24));
@@ -40,7 +41,8 @@ void main() {
   test('each challenge uses its baseline when completed', () async {
     for (final name in ['easy', 'medium', 'hard', 'insane']) {
       final json = jsonDecode(
-        File('data/practice/challenge_$name.json').readAsStringSync(),
+        File('../backend/data/practice/challenge_$name.json')
+            .readAsStringSync(),
       ) as Map<String, dynamic>;
       final exercise = TypingExercise.fromJson(json);
       final controller = TypingController(

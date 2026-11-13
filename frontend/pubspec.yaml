@@ -23,9 +23,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/audio/
-    - data/
-    - data/lessons/
-    - data/practice/
   fonts:
     - family: DejaVuSansMono
       fonts:

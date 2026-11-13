@@ -3,8 +3,11 @@ import 'dart:async';
 import 'package:flutter_soloud/flutter_soloud.dart';
 
 import 'audio_service.dart';
+import '../api/audio_cache.dart';
 
 class SoloudAudioService implements AudioService {
+  SoloudAudioService({this.cache});
+  final AudioCache? cache;
   final SoLoud _engine = SoLoud.instance;
   final Map<String, AudioSource> _sources = {};
   final Map<String, StreamSubscription<StreamSoundEvent>> _subscriptions = {};
@@ -53,9 +56,17 @@ class SoloudAudioService implements AudioService {
         }
       }
       _activity = assets;
+      if (assets.isNotEmpty)
+        await cache?.selectActivity(
+          assets.where((asset) => !_isShared(asset)).toSet(),
+        );
       if (assets.isNotEmpty) await _load(assets);
     });
   }
+
+  bool _isShared(String asset) =>
+      _shared.contains(asset) ||
+      RegExp(r'^assets/audio/result_number_[0-9]+\.wav$').hasMatch(asset);
 
   Future<void> _load(Set<String> assets) async {
     if (_disposed) return;
@@ -66,7 +77,12 @@ class SoloudAudioService implements AudioService {
     for (final asset in assets) {
       if (_disposed) return;
       if (_sources.containsKey(asset)) continue;
-      final source = await _engine.loadAsset(asset, mode: LoadMode.memory);
+      final source = cache == null || asset == AudioCues.contentError
+          ? await _engine.loadAsset(asset, mode: LoadMode.memory)
+          : await _engine.loadFile(
+              await cache!.get(asset, shared: _isShared(asset)),
+              mode: LoadMode.memory,
+            );
       // Keep track of a source even if disposal began during the await.
       _sources[asset] = source;
       if (_disposed) return;

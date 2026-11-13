@@ -4,7 +4,7 @@ import 'package:blind_typing/models/typing_state.dart';
 import 'package:blind_typing/screens/menu_screen.dart';
 import 'package:blind_typing/screens/teaching_screen.dart';
 import 'package:blind_typing/screens/typing_screen.dart';
-import 'package:blind_typing/services/content_repository.dart';
+import 'package:blind_typing/api/http_content_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -16,7 +16,7 @@ void main() {
     'spoken menus, F teaching, 24 drills, and challenges work with native audio',
     (tester) async {
       app.main();
-      final repository = AssetContentRepository();
+      final repository = HttpContentRepository();
       final catalog = await repository.loadMenu();
       Future<TypingExercise> exercise(ActivityType type) async =>
           await repository.loadExercise(
@@ -60,6 +60,7 @@ void main() {
           waitFor(() => find.byType(MenuScreen).evaluate().isNotEmpty);
 
       await waitMenu();
+      await tester.pump(); // Allow the newly mounted menu to receive focus.
       await key(LogicalKeyboardKey.enter); // LECKÉK
       await key(LogicalKeyboardKey.enter); // ASDFJKLÉ
       await key(LogicalKeyboardKey.enter); // betűk
