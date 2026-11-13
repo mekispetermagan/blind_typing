@@ -4360,9 +4360,9 @@
     "sha256": "e8d466361226f828dc9dabf34d55a821b6116574d57d8397e29d8c1bf4e7171f"
   },
   "reach_hi_i_21_word_0": {
-    "text": "vízes",
+    "text": "díszes",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "8b10b72a67452ba9044c60bdd54c4e18d96eec3d3d7062195a05af06d04a624e"
+    "sha256": "e0af87bf21f6dcfc02e314ba43b341e389048cf79f55ab105391917c650a90da"
   },
   "reach_hi_i_22_word_0": {
     "text": "síelés",
@@ -6790,9 +6790,9 @@
     "sha256": "7790add333ebb9012483af91f2b04fe52653cdac194079d370c70f3ec87556b7"
   },
   "challenge_medium_19_word_0": {
-    "text": "pulóver",
+    "text": "puló-ver",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "b5c4c95aa8d080ae893c627e8a279c49df9ca114306c06cef0c65bb4a46aef32"
+    "sha256": "6c3bb6321de589de3c4acb218a8b4bef8b7966e1c57a012a78a2f3cfd5731b98"
   },
   "challenge_medium_20_word_0": {
     "text": "szőnyeg",
@@ -6905,9 +6905,9 @@
     "sha256": "85d1073968e9d4cb52d7a797a44f5b40a0e021998e5b34f597a2fa5ce90d4457"
   },
   "challenge_hard_18_word_0": {
-    "text": "szállodaszoba",
+    "text": "vendégszoba",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "1ccd5a66d18fd9bffb9d150f7e6b7ae503c625d25974d81bffbf7361f88b12e1"
+    "sha256": "6c6dd41e61d5a88c63439f0fd08e5654b120ed075d6a96ef8ea9c92ecee208b8"
   },
   "challenge_hard_19_word_0": {
     "text": "zenehallgatás",
