@@ -23,6 +23,8 @@ class PracticeFeedback {
       'errors',
       'best_time',
       'fewest_errors',
+      'score',
+      'high_score',
       'mixed_mode',
       ..._magnitudes.values,
     ])
@@ -43,6 +45,9 @@ class PracticeFeedback {
         mode == TypingMode.simple ? 'Egyszerű mód.' : 'Haladó mód.',
       'Az időd ${minutes > 0 ? '$minutes perc ' : ''}$seconds másodperc.',
       'A hibás leütések száma ${result.errors}.',
+      if (result.score case final score?) 'A pontszámod $score.',
+      if (result.highScore case final highScore?)
+        'Az eddigi legmagasabb pontszámod $highScore.',
       if (result.bestTime) _bestTime,
       if (result.fewestErrors) _fewestErrors,
     ].join(' ');
@@ -66,6 +71,14 @@ class PracticeFeedback {
     yield _asset('second');
     yield _asset('errors');
     yield* _number(result.errors);
+    if (result.score case final score?) {
+      yield _asset('score');
+      yield* _number(score);
+    }
+    if (result.highScore case final highScore?) {
+      yield _asset('high_score');
+      yield* _number(highScore);
+    }
     if (result.bestTime) yield _asset('best_time');
     if (result.fewestErrors) yield _asset('fewest_errors');
   }

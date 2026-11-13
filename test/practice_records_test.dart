@@ -95,10 +95,10 @@ void main() {
 
       await Future<void>.delayed(Duration.zero);
       expect(jsonDecode(saved!), {
-        'words:drill:simple': [8, 3],
-        'words:drill:advanced': [15, 6],
-        'words:other:simple': [18, 2],
-        'letters:drill': [1, 1],
+        'words:drill:simple': [8, 3, 3222],
+        'words:drill:advanced': [15, 6, 1473],
+        'words:other:simple': [18, 2, 1507],
+        'letters:drill': [1, 1, 28560],
       });
       final reopened = store();
       await reopened.load();
@@ -108,6 +108,65 @@ void main() {
       );
       expect(result.bestTime, isTrue);
       expect(result.fewestErrors, isTrue);
+    },
+  );
+
+  test(
+    'scores, migrates legacy records and persists a separate high score',
+    () async {
+      String? saved = jsonEncode({
+        'words:drill:simple': [120, 1],
+      });
+      PracticeRecords store() => PracticeRecords(
+        read: () async => saved,
+        write: (value) async => saved = value,
+      );
+      final records = store();
+      await records.load();
+      PracticeResult finish(int seconds, int errors, {bool changed = false}) =>
+          records.finish(
+            'drill',
+            PracticeResult(
+              seconds: seconds,
+              errors: errors,
+              mode: TypingMode.simple,
+              changedMode: changed,
+            ),
+          );
+      final baseline = finish(180, 10);
+      expect((baseline.score, baseline.highScore), (100, 100));
+      expect((baseline.bestTime, baseline.fewestErrors), (false, false));
+      final improved = finish(90, 10);
+      expect((improved.score, improved.highScore), (200, 200));
+      final slower = finish(180, 10);
+      expect((slower.score, slower.highScore), (100, 200));
+      final mixed = finish(1, 0, changed: true);
+      expect((mixed.score, mixed.highScore), (null, null));
+      await Future<void>.delayed(Duration.zero);
+      final reopened = store();
+      await reopened.load();
+      final result = reopened.finish(
+        'drill',
+        const PracticeResult(seconds: 180, errors: 10, mode: TypingMode.simple),
+      );
+      expect(result.highScore, 200);
+      final zero = reopened.finish(
+        'zero',
+        const PracticeResult(seconds: 0, errors: 10),
+      );
+      expect(zero.score, 18000);
+      expect(
+        PracticeFeedback.speech(baseline),
+        containsAllInOrder([
+          'assets/audio/result_errors.wav',
+          'assets/audio/result_score.wav',
+          'assets/audio/result_high_score.wav',
+        ]),
+      );
+      expect(
+        PracticeFeedback.speech(mixed),
+        isNot(contains('assets/audio/result_score.wav')),
+      );
     },
   );
 

@@ -104,6 +104,8 @@ def speech_texts():
     yield "result_minute", "perc"
     yield "result_second", "másodperc."
     yield "result_errors", "A hibás leütések száma"
+    yield "result_score", "A pontszámod"
+    yield "result_high_score", "Az eddigi legmagasabb pontszámod"
     yield "result_best_time", "Ez eddig a legjobb időd."
     yield "result_fewest_errors", "Ez eddig a legkevesebb hibád."
     yield "result_mixed_mode", "A feladat közben módot váltottál."

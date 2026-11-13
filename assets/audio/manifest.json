@@ -6964,6 +6964,16 @@
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "e94bd6770e2c55d2d677ec98219b0253918fc75e0ac0e92ac789d8f6c5b17318"
   },
+  "result_score": {
+    "text": "A pontszámod",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "39b5994104dc6c716072bd8288e795ffd4367e8930d415a54b665446bd4cd1f1"
+  },
+  "result_high_score": {
+    "text": "Az eddigi legmagasabb pontszámod",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "25b6a3d4afbc7de4d0c7a0cd511584ea6c17d5c7c62101a76594794c01b39208"
+  },
   "result_best_time": {
     "text": "Ez eddig a legjobb időd.",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",

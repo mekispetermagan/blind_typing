@@ -137,9 +137,13 @@ modes. F1 repeats its current instruction; F3 changes the selection for subseque
 word/practice activities.
 
 Letter teaching and word drills report active typing time and incorrect keystrokes
-on completion. Each activity saves its fastest time and fewest errors locally.
-Word drills keep separate records for Simple and Advanced. An attempt with a
-mode change still reports the results and leaves both records intact.
+on completion. They also report the score and highest score, using
+`round(100 × 180 / max(1, seconds) × 0.95^(errors − 10))`. Each activity
+saves its fastest time, fewest errors, and highest score locally. Word drills
+keep separate records for Simple and Advanced. An attempt with a mode change
+reports time and errors but no score, and leaves all records intact. Older
+records retain their time and error values; the next eligible attempt establishes
+the first high score.
 
 ## Content
 

@@ -8,6 +8,8 @@ class PracticeResult {
     this.changedMode = false,
     this.bestTime = false,
     this.fewestErrors = false,
+    this.score,
+    this.highScore,
   });
 
   final int seconds;
@@ -16,4 +18,6 @@ class PracticeResult {
   final bool changedMode;
   final bool bestTime;
   final bool fewestErrors;
+  final int? score;
+  final int? highScore;
 }
