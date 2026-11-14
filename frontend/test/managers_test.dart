@@ -150,7 +150,9 @@ void main() {
       catalog.nextActivity('home_row_words')?.command,
       MenuCommand.nextLesson,
     );
-    expect(catalog.nextActivity('challenge_easy'), isNull);
+    expect(catalog.nextActivity('challenge_easy')?.id, 'challenge_easy_2');
+    expect(catalog.nextActivity('challenge_easy_3')?.id, 'challenge_medium');
+    expect(catalog.nextActivity('challenge_insane_3'), isNull);
     expect(catalog.routeTo('home_row_words'), isNotNull);
     final json = readData('data/menu.json');
     json['progression'] = [

@@ -672,36 +672,144 @@
         "speech": "Kihívások",
         "children": [
           {
-            "id": "challenge_easy",
-            "title": "Könnyű",
-            "activity": {
-              "type": "words",
-              "content": "data/practice/challenge_easy.json"
-            }
+            "id": "challenge_easy_menu",
+            "title": "Könnyű kihívások",
+            "children": [
+              {
+                "id": "challenge_easy",
+                "title": "Könnyű kihívás 1",
+                "activity": {
+                  "type": "words",
+                  "content": "data/practice/challenge_easy.json"
+                }
+              },
+              {
+                "id": "challenge_easy_2",
+                "title": "Könnyű kihívás 2",
+                "activity": {
+                  "type": "words",
+                  "content": "data/practice/challenge_easy_2.json"
+                }
+              },
+              {
+                "id": "challenge_easy_3",
+                "title": "Könnyű kihívás 3",
+                "activity": {
+                  "type": "words",
+                  "content": "data/practice/challenge_easy_3.json"
+                }
+              },
+              {
+                "id": "challenge_easy_previous",
+                "title": "Vissza az előző menübe",
+                "command": "previous"
+              }
+            ]
           },
           {
-            "id": "challenge_medium",
-            "title": "Közepes",
-            "activity": {
-              "type": "words",
-              "content": "data/practice/challenge_medium.json"
-            }
+            "id": "challenge_medium_menu",
+            "title": "Közepes kihívások",
+            "children": [
+              {
+                "id": "challenge_medium",
+                "title": "Közepes kihívás 1",
+                "activity": {
+                  "type": "words",
+                  "content": "data/practice/challenge_medium.json"
+                }
+              },
+              {
+                "id": "challenge_medium_2",
+                "title": "Közepes kihívás 2",
+                "activity": {
+                  "type": "words",
+                  "content": "data/practice/challenge_medium_2.json"
+                }
+              },
+              {
+                "id": "challenge_medium_3",
+                "title": "Közepes kihívás 3",
+                "activity": {
+                  "type": "words",
+                  "content": "data/practice/challenge_medium_3.json"
+                }
+              },
+              {
+                "id": "challenge_medium_previous",
+                "title": "Vissza az előző menübe",
+                "command": "previous"
+              }
+            ]
           },
           {
-            "id": "challenge_hard",
-            "title": "Nehéz",
-            "activity": {
-              "type": "words",
-              "content": "data/practice/challenge_hard.json"
-            }
+            "id": "challenge_hard_menu",
+            "title": "Nehéz kihívások",
+            "children": [
+              {
+                "id": "challenge_hard",
+                "title": "Nehéz kihívás 1",
+                "activity": {
+                  "type": "words",
+                  "content": "data/practice/challenge_hard.json"
+                }
+              },
+              {
+                "id": "challenge_hard_2",
+                "title": "Nehéz kihívás 2",
+                "activity": {
+                  "type": "words",
+                  "content": "data/practice/challenge_hard_2.json"
+                }
+              },
+              {
+                "id": "challenge_hard_3",
+                "title": "Nehéz kihívás 3",
+                "activity": {
+                  "type": "words",
+                  "content": "data/practice/challenge_hard_3.json"
+                }
+              },
+              {
+                "id": "challenge_hard_previous",
+                "title": "Vissza az előző menübe",
+                "command": "previous"
+              }
+            ]
           },
           {
-            "id": "challenge_insane",
-            "title": "Szupernehéz",
-            "activity": {
-              "type": "words",
-              "content": "data/practice/challenge_insane.json"
-            }
+            "id": "challenge_insane_menu",
+            "title": "Szupernehéz kihívások",
+            "children": [
+              {
+                "id": "challenge_insane",
+                "title": "Szupernehéz kihívás 1",
+                "activity": {
+                  "type": "words",
+                  "content": "data/practice/challenge_insane.json"
+                }
+              },
+              {
+                "id": "challenge_insane_2",
+                "title": "Szupernehéz kihívás 2",
+                "activity": {
+                  "type": "words",
+                  "content": "data/practice/challenge_insane_2.json"
+                }
+              },
+              {
+                "id": "challenge_insane_3",
+                "title": "Szupernehéz kihívás 3",
+                "activity": {
+                  "type": "words",
+                  "content": "data/practice/challenge_insane_3.json"
+                }
+              },
+              {
+                "id": "challenge_insane_previous",
+                "title": "Vissza az előző menübe",
+                "command": "previous"
+              }
+            ]
           },
           {
             "id": "challenges_previous",
@@ -757,6 +865,11 @@
         "id": "complete_next_lesson",
         "title": "Következő lecke",
         "command": "nextLesson"
+      },
+      {
+        "id": "complete_next_challenge",
+        "title": "Következő kihívás",
+        "command": "nextChallenge"
       },
       {
         "id": "complete_back",
@@ -850,5 +963,19 @@
       "numbers_letters",
       "numbers_words"
     ]
+  ],
+  "challengeProgression": [
+    "challenge_easy",
+    "challenge_easy_2",
+    "challenge_easy_3",
+    "challenge_medium",
+    "challenge_medium_2",
+    "challenge_medium_3",
+    "challenge_hard",
+    "challenge_hard_2",
+    "challenge_hard_3",
+    "challenge_insane",
+    "challenge_insane_2",
+    "challenge_insane_3"
   ]
 }

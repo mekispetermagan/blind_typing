@@ -1,0 +1,105 @@
+{
+  "id": "challenge_medium_3",
+  "type": "words",
+  "title": "Közepes kihívás 3",
+  "baselineSeconds": 180,
+  "allowedLetters": "AÁBCDEÉFGHIÍJKLMNOÓÖŐPQRSTUÚÜŰVWXYZ",
+  "units": [
+    {
+      "id": "challenge_medium_3_01",
+      "text": "HÓPEHELY"
+    },
+    {
+      "id": "challenge_medium_3_02",
+      "text": "FÉSÜLKÖDIK"
+    },
+    {
+      "id": "challenge_medium_3_03",
+      "text": "ZSEBLÁMPA"
+    },
+    {
+      "id": "challenge_medium_3_04",
+      "text": "UZSONNA"
+    },
+    {
+      "id": "challenge_medium_3_05",
+      "text": "HŐMÉRŐ"
+    },
+    {
+      "id": "challenge_medium_3_06",
+      "text": "OSZTÁLY"
+    },
+    {
+      "id": "challenge_medium_3_07",
+      "text": "CSEREBOGÁR"
+    },
+    {
+      "id": "challenge_medium_3_08",
+      "text": "NYÁRON"
+    },
+    {
+      "id": "challenge_medium_3_09",
+      "text": "JÚNIUS"
+    },
+    {
+      "id": "challenge_medium_3_10",
+      "text": "RAJZOLÁS"
+    },
+    {
+      "id": "challenge_medium_3_11",
+      "text": "HÓEMBER"
+    },
+    {
+      "id": "challenge_medium_3_12",
+      "text": "KRUMPLI"
+    },
+    {
+      "id": "challenge_medium_3_13",
+      "text": "VASÁRNAP"
+    },
+    {
+      "id": "challenge_medium_3_14",
+      "text": "KISKUTYA"
+    },
+    {
+      "id": "challenge_medium_3_15",
+      "text": "LEOPÁRD"
+    },
+    {
+      "id": "challenge_medium_3_16",
+      "text": "KÖRTE"
+    },
+    {
+      "id": "challenge_medium_3_17",
+      "text": "FECSKE"
+    },
+    {
+      "id": "challenge_medium_3_18",
+      "text": "GESZTENYE"
+    },
+    {
+      "id": "challenge_medium_3_19",
+      "text": "ÁLLATKERT"
+    },
+    {
+      "id": "challenge_medium_3_20",
+      "text": "UGRÁLÁS"
+    },
+    {
+      "id": "challenge_medium_3_21",
+      "text": "TORONY"
+    },
+    {
+      "id": "challenge_medium_3_22",
+      "text": "HÁZTETŐ"
+    },
+    {
+      "id": "challenge_medium_3_23",
+      "text": "HEGYVIDÉK"
+    },
+    {
+      "id": "challenge_medium_3_24",
+      "text": "GOMBÓCOK"
+    }
+  ]
+}

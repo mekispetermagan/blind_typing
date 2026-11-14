@@ -1,0 +1,105 @@
+{
+  "id": "challenge_hard_2",
+  "type": "words",
+  "title": "Nehéz kihívás 2",
+  "baselineSeconds": 180,
+  "allowedLetters": "AÁBCDEÉFGHIÍJKLMNOÓÖŐPQRSTUÚÜŰVWXYZ",
+  "units": [
+    {
+      "id": "challenge_hard_2_01",
+      "text": "MAGYARORSZÁG"
+    },
+    {
+      "id": "challenge_hard_2_02",
+      "text": "SZIVÁRVÁNY"
+    },
+    {
+      "id": "challenge_hard_2_03",
+      "text": "KONYHAASZTAL"
+    },
+    {
+      "id": "challenge_hard_2_04",
+      "text": "GYEREKSZOBA"
+    },
+    {
+      "id": "challenge_hard_2_05",
+      "text": "MOSOGATÓTÁLCA"
+    },
+    {
+      "id": "challenge_hard_2_06",
+      "text": "VIRÁGCSERÉP"
+    },
+    {
+      "id": "challenge_hard_2_07",
+      "text": "SZÜLETÉSNAP"
+    },
+    {
+      "id": "challenge_hard_2_08",
+      "text": "KÉPERNYŐVÉDŐ"
+    },
+    {
+      "id": "challenge_hard_2_09",
+      "text": "REPÜLŐTÉR"
+    },
+    {
+      "id": "challenge_hard_2_10",
+      "text": "KUTYASÉTÁLTATÁS"
+    },
+    {
+      "id": "challenge_hard_2_11",
+      "text": "KÖRFORGALOM"
+    },
+    {
+      "id": "challenge_hard_2_12",
+      "text": "CSEREPESVIRÁG"
+    },
+    {
+      "id": "challenge_hard_2_13",
+      "text": "TÉRKÉPÉSZET"
+    },
+    {
+      "id": "challenge_hard_2_14",
+      "text": "EPERFAGYLALT"
+    },
+    {
+      "id": "challenge_hard_2_15",
+      "text": "NAPRAFORGÓ"
+    },
+    {
+      "id": "challenge_hard_2_16",
+      "text": "SZÍNESCERUZA"
+    },
+    {
+      "id": "challenge_hard_2_17",
+      "text": "TÚRÓGOMBÓC"
+    },
+    {
+      "id": "challenge_hard_2_18",
+      "text": "TELEFONSZÁM"
+    },
+    {
+      "id": "challenge_hard_2_19",
+      "text": "TÖMEGKÖZLEKEDÉS"
+    },
+    {
+      "id": "challenge_hard_2_20",
+      "text": "FESTÉKESDOBOZ"
+    },
+    {
+      "id": "challenge_hard_2_21",
+      "text": "FÜRDŐSZOBA"
+    },
+    {
+      "id": "challenge_hard_2_22",
+      "text": "ÁLLATKERTBEN"
+    },
+    {
+      "id": "challenge_hard_2_23",
+      "text": "VASÚTÁLLOMÁS"
+    },
+    {
+      "id": "challenge_hard_2_24",
+      "text": "HŰTŐSZEKRÉNY"
+    }
+  ]
+}

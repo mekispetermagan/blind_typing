@@ -1,0 +1,105 @@
+{
+  "id": "challenge_medium_2",
+  "type": "words",
+  "title": "Közepes kihívás 2",
+  "baselineSeconds": 180,
+  "allowedLetters": "AÁBCDEÉFGHIÍJKLMNOÓÖŐPQRSTUÚÜŰVWXYZ",
+  "units": [
+    {
+      "id": "challenge_medium_2_01",
+      "text": "TANULÓ"
+    },
+    {
+      "id": "challenge_medium_2_02",
+      "text": "TANÍTÓ"
+    },
+    {
+      "id": "challenge_medium_2_03",
+      "text": "TÁNYÉR"
+    },
+    {
+      "id": "challenge_medium_2_04",
+      "text": "FÜZETEK"
+    },
+    {
+      "id": "challenge_medium_2_05",
+      "text": "RADÍROZ"
+    },
+    {
+      "id": "challenge_medium_2_06",
+      "text": "TULIPÁN"
+    },
+    {
+      "id": "challenge_medium_2_07",
+      "text": "FOCILABDA"
+    },
+    {
+      "id": "challenge_medium_2_08",
+      "text": "KARÁCSONY"
+    },
+    {
+      "id": "challenge_medium_2_09",
+      "text": "PAPÍRHAJÓ"
+    },
+    {
+      "id": "challenge_medium_2_10",
+      "text": "VIRÁGOK"
+    },
+    {
+      "id": "challenge_medium_2_11",
+      "text": "ZSEBKENDŐ"
+    },
+    {
+      "id": "challenge_medium_2_12",
+      "text": "FUTBALL"
+    },
+    {
+      "id": "challenge_medium_2_13",
+      "text": "ELEFÁNT"
+    },
+    {
+      "id": "challenge_medium_2_14",
+      "text": "KÁVÉFŐZŐ"
+    },
+    {
+      "id": "challenge_medium_2_15",
+      "text": "CICÁZIK"
+    },
+    {
+      "id": "challenge_medium_2_16",
+      "text": "NYUSZIKA"
+    },
+    {
+      "id": "challenge_medium_2_17",
+      "text": "TORTA"
+    },
+    {
+      "id": "challenge_medium_2_18",
+      "text": "MÓKUSOK"
+    },
+    {
+      "id": "challenge_medium_2_19",
+      "text": "ÍRÓASZTAL"
+    },
+    {
+      "id": "challenge_medium_2_20",
+      "text": "JÁTSZÓTÉR"
+    },
+    {
+      "id": "challenge_medium_2_21",
+      "text": "KARDIGÁN"
+    },
+    {
+      "id": "challenge_medium_2_22",
+      "text": "KIRÁNDUL"
+    },
+    {
+      "id": "challenge_medium_2_23",
+      "text": "SZENDVICS"
+    },
+    {
+      "id": "challenge_medium_2_24",
+      "text": "OROSZLÁN"
+    }
+  ]
+}

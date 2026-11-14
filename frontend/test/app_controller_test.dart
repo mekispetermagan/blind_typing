@@ -235,11 +235,39 @@ void main() {
       app.moveSelection(1);
       app.activate();
       app.activate();
+      app.activate();
       await settle();
       expect(app.typing!.exercise.id, 'challenge_easy');
       expect(app.typing!.mode, TypingMode.advanced);
     },
   );
+
+  test('challenge completion advances through all difficulties', () async {
+    await app.initialize();
+    app.moveSelection(1);
+    app.activate(); // Challenges
+    app.activate(); // Easy
+    app.activate(); // Easy 1
+    await settle();
+    final ids = [
+      for (final difficulty in ['easy', 'medium', 'hard', 'insane'])
+        for (final suffix in ['', '_2', '_3']) 'challenge_$difficulty$suffix',
+    ];
+    for (var index = 0; index < ids.length; index++) {
+      expect(app.typing!.exercise.id, ids[index]);
+      finishWordDrill();
+      expect(app.menu.children.map((entry) => entry.command), [
+        MenuCommand.restart,
+        if (index + 1 < ids.length) MenuCommand.nextChallenge,
+        MenuCommand.menu,
+      ]);
+      if (index + 1 < ids.length) {
+        app.moveSelection(1);
+        app.activate();
+        await settle();
+      }
+    }
+  });
 
   test('content errors are recoverable and never leave an unusable activity selected', () async {
     await lessonMenu();

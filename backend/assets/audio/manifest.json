@@ -1,4 +1,9 @@
 {
+  "menu_previous": {
+    "text": "Vissza az előző menübe",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "98696a197d8232efd55de0bc87113678f5da7230c0ec76598a87986bfd3b5cd9"
+  },
   "menu_main": {
     "text": "Főmenü",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
@@ -359,25 +364,90 @@
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "8e47ec709839c2321943663160a42bb42f411645a772d290d96cd5e5718dd19e"
   },
-  "menu_challenge_easy": {
-    "text": "Könnyű",
+  "menu_challenge_easy_menu": {
+    "text": "Könnyű kihívások",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "7c8a5a3507dee36fa4be7cf2de47539136dc0fd0e6aa240847f462406bfc2d6a"
+    "sha256": "b49ffd80acc9ee6f53b448c33b72650bc2e7db3c711252c838c6bb665aa48ff7"
+  },
+  "menu_challenge_easy": {
+    "text": "Könnyű kihívás 1",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "98f9a36645307f356a8c76a2dd80499888fa5aeee4a1792565d2a0e16af33de8"
+  },
+  "menu_challenge_easy_2": {
+    "text": "Könnyű kihívás 2",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2ab6e83c01a904baca828f80111fb6e67aaec6821583e0290dfd98e90a50a350"
+  },
+  "menu_challenge_easy_3": {
+    "text": "Könnyű kihívás 3",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "750bf45f2b447daf051e3182195ca5c219c59b08022e870d9414602d54ed6317"
+  },
+  "menu_challenge_medium_menu": {
+    "text": "Közepes kihívások",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f341b97c0774c8be6dfa5466f89129a18fb2ede6ce680a7bd25fa5ce886c6485"
   },
   "menu_challenge_medium": {
-    "text": "Közepes",
+    "text": "Közepes kihívás 1",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "e28bf43abdd47ea72b7e3c2b65e298c77e5dd6dc93e9b7b3e28347ffd95f9fb5"
+    "sha256": "2e5fd8131835c184428ddcb5e32a961effc1d55de50a50a8086e80c59c8c2e82"
+  },
+  "menu_challenge_medium_2": {
+    "text": "Közepes kihívás 2",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "88e4f3c067c0bfbc9d65ee8322e110c86b5412e81d8662791d79d83b96a47a36"
+  },
+  "menu_challenge_medium_3": {
+    "text": "Közepes kihívás 3",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e82875fcbea707a14302990170e3eb9c72019b941d1be567c0dfaa4d4d99cce1"
+  },
+  "menu_challenge_hard_menu": {
+    "text": "Nehéz kihívások",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ebdc12b72cd2a8b08557b969914dfd49d8851864ec613f0d89af6a0d2397048c"
   },
   "menu_challenge_hard": {
-    "text": "Nehéz",
+    "text": "Nehéz kihívás 1",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "6401c20226c3326f8443eb6d30495e1e7ac74e102776522bfb39cb48176605d0"
+    "sha256": "76a132eb646e328c7ef7dbd7ec9197c5d9ac6fca2212978db941a4eae2f89333"
+  },
+  "menu_challenge_hard_2": {
+    "text": "Nehéz kihívás 2",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d5d626ba40df6f57f8f686f4b6d57b3de646898a406889e1b070169c22708032"
+  },
+  "menu_challenge_hard_3": {
+    "text": "Nehéz kihívás 3",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5dbbcd394a06716069d130bcf70470af1550aee9a330eb007c5a11489316b39a"
+  },
+  "menu_challenge_insane_menu": {
+    "text": "Szupernehéz kihívások",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e77626d30bd1a5dabfe2ec6917df40e4ac435de0a83e263b48be0948108283c9"
   },
   "menu_challenge_insane": {
-    "text": "Szupernehéz",
+    "text": "Szupernehéz kihívás 1",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "03d1d80bd7bb1a32632fc15bbc21c9437a4d0fcafe666cc8d2e2f08f10cf625b"
+    "sha256": "a8cf74ba4d260ccf57ec2d228b371f349934579ef2e1711f92d649b0eb017996"
+  },
+  "menu_challenge_insane_2": {
+    "text": "Szupernehéz kihívás 2",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "89fcdbc8410133bd6b92e652001706776622416bb0fb60b3ab5099f885907e89"
+  },
+  "menu_challenge_insane_3": {
+    "text": "Szupernehéz kihívás 3",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f0fa1b1b259f66efc78312d426788f81a9802eac803cd8576a2e9547d07e8efa"
+  },
+  "menu_my_progress": {
+    "text": "Haladásom",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "abed17892d2029c5904f055eaa816de7d091eb7a884bc21344c42bf8ac840ffb"
   },
   "menu_pause_menu": {
     "text": "Szünet",
@@ -418,6 +488,11 @@
     "text": "Következő lecke",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "6eb97cc6cc46521b7cd83996167ba533c373fd0425eba76206764383fdb2abc6"
+  },
+  "menu_complete_next_challenge": {
+    "text": "Következő kihívás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "038535809aac5d10ee0189889197440e7843bf83e2fd915f5b7626c0b34027bc"
   },
   "menu_complete_back": {
     "text": "Vissza a menübe",
@@ -6699,6 +6774,246 @@
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "a105876553e13cf5dd23733d1764c0d87e4e704cfda778c989e0b7bf8a97a3e9"
   },
+  "challenge_easy_2_01_word_0": {
+    "text": "kakaó",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "24b7a5ee14a6177d107001d88a68aa9ac01c60a120d5c4e7f9af61951e5ed1e5"
+  },
+  "challenge_easy_2_02_word_0": {
+    "text": "rigó",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ace2a8b055851e76b0fbe3cced771e0b7fdf091efb8008c37332e7cf16fa0200"
+  },
+  "challenge_easy_2_03_word_0": {
+    "text": "zene",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e187b6568074ed456a28cca5950f1d06863c5969277d18e8820d939cd2e3c002"
+  },
+  "challenge_easy_2_04_word_0": {
+    "text": "dob",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "abe7c84ba3f1a1a36701c7e406dc7a9518244b1e7f1151037ba864fa470c1cc9"
+  },
+  "challenge_easy_2_05_word_0": {
+    "text": "róka",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5be149a0d198c3b7ce039ec4da61a2a895b4c7b106070fe662d8edf9b3bd6d3d"
+  },
+  "challenge_easy_2_06_word_0": {
+    "text": "láb",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5efcb53d75b4afc5a4590250fddaebbb180cf58e578fd45291f6ad9241a35b7a"
+  },
+  "challenge_easy_2_07_word_0": {
+    "text": "piros",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3ec6aa5db050a92605ab1bca51ecd598c9182e6e1e9aa23e3119edc7dda2c01a"
+  },
+  "challenge_easy_2_08_word_0": {
+    "text": "kép",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b87e66d47d2980d9ede8c47d831b1b91f585a42aad85baa86d75731e8d48a39b"
+  },
+  "challenge_easy_2_09_word_0": {
+    "text": "vesz",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e6f3dbeccb44c700a63964e3e6deb73aae25e19cbb46d366255c0af053d1d89b"
+  },
+  "challenge_easy_2_10_word_0": {
+    "text": "tó",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b876ea7543c2d181b119e7d69e6ac493d730fba004ea5ece1357d7e8a9474822"
+  },
+  "challenge_easy_2_11_word_0": {
+    "text": "lekvár",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f02219eb96460730f6a164faae0ef62806247da18dbe98c1cf272c9f36ef5e92"
+  },
+  "challenge_easy_2_12_word_0": {
+    "text": "cica",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e3c4fb552e97a8ed17087904c2be324c81c0633c075013d74331af184ac594fc"
+  },
+  "challenge_easy_2_13_word_0": {
+    "text": "zöld",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3ec79f47536bda3683c92038a01100596666559b891930114002bf80ae9ff63a"
+  },
+  "challenge_easy_2_14_word_0": {
+    "text": "virág",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bcfd03721e74e1df8b4d0e353f70e8be7ea2b01a012eab5bdb914500f5342f20"
+  },
+  "challenge_easy_2_15_word_0": {
+    "text": "iszik",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f9569b752aee4297d5041e52b3d7ab28ecf3d2464426f5fdcf877781fa76c8ef"
+  },
+  "challenge_easy_2_16_word_0": {
+    "text": "asztal",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "87dd4c5d5b87dd31356487798bdd2f63fd5ddff242d4b6639ca063d30ec5236d"
+  },
+  "challenge_easy_2_17_word_0": {
+    "text": "út",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "37eaa4e2e67cdc286fa95bfd4fe9f042b914a0e4d3483851e54c70e3af1010be"
+  },
+  "challenge_easy_2_18_word_0": {
+    "text": "mama",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9ff9c7c30e2d0da553ca64bccc79488afe70e486c6d4fe3559ec095409e518a7"
+  },
+  "challenge_easy_2_19_word_0": {
+    "text": "villa",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f195d643b432482aa02adf592a94836cd613d6bb55ba4de92b4d68992f5e2508"
+  },
+  "challenge_easy_2_20_word_0": {
+    "text": "alma",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ac9e1f57d7df3f350472752364a5686f952a9cce159486ae5c8d4c1a126f38c9"
+  },
+  "challenge_easy_2_21_word_0": {
+    "text": "bácsi",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3ed497d94399f7e2df657fb51061cd63630e309408212d492095134a50cde977"
+  },
+  "challenge_easy_2_22_word_0": {
+    "text": "leves",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "acc19dfbacf5ae75c4fe36644f65dbe55cfdd9367066930dd477f3eb8c50ab56"
+  },
+  "challenge_easy_2_23_word_0": {
+    "text": "park",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "24fef0bcaf9ef65cb07df384fd86d2d90dd0c7175c5057157a9c5833ca1ed18c"
+  },
+  "challenge_easy_2_24_word_0": {
+    "text": "eszik",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4b53423e6709746c859cfd32c4d329c0a6c739c56832614d431710710f3db98c"
+  },
+  "challenge_easy_3_01_word_0": {
+    "text": "hagyma",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "27ff41110b143627ff86e3ba8966795648553498d7027bf95fd5e2e7b50a8c05"
+  },
+  "challenge_easy_3_02_word_0": {
+    "text": "sárga",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c060c8d1b0010e5e2058995e1faa30070015ed8c28b3a817305c1cab985f57f4"
+  },
+  "challenge_easy_3_03_word_0": {
+    "text": "táska",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c0281c79a336fc0b0393599e9975c48665658f139c018ef9499ae32da516c65f"
+  },
+  "challenge_easy_3_04_word_0": {
+    "text": "ruha",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6ba11a01a278c27d9e4d9344a9c4a60f5865c466757ddc4f9ad48e71f0a542d5"
+  },
+  "challenge_easy_3_05_word_0": {
+    "text": "fagyi",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2898bd1f3e808bb77d1baad9c071ddb879f6db14652eef72034f4fc2cd372cbb"
+  },
+  "challenge_easy_3_06_word_0": {
+    "text": "baba",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "434fc081dfb8dc9b6d2259c9e75c3da4763c8ff69cedb97009e8e8e4259b0a5b"
+  },
+  "challenge_easy_3_07_word_0": {
+    "text": "ló",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "883c79175a9fc947e2dd405a72f7e2262c28653f1ad8ca8fccc51c34df9afb23"
+  },
+  "challenge_easy_3_08_word_0": {
+    "text": "csillag",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "191c36dc27caa729eedf3ba85dc3b0516d2b31da431061d5ab7639ee4ff2a3d9"
+  },
+  "challenge_easy_3_09_word_0": {
+    "text": "bors",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "07be1ecede6501f0b7b669f70ded56b714eb689921a3af7dd1d9e9c647302a7d"
+  },
+  "challenge_easy_3_10_word_0": {
+    "text": "név",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f3c1652eaf594a754b252dd188d5c9d1d45dd386aaba76ced29725b5db61ee4b"
+  },
+  "challenge_easy_3_11_word_0": {
+    "text": "híd",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "101b35c095e1d3f58f8af4f90203bfb025b2bbb17886f7f028e5f4f283b3b5a2"
+  },
+  "challenge_easy_3_12_word_0": {
+    "text": "síp",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d4999b5010b089813f177eac4b3f162695354b51308ce3da6776a7b74113393f"
+  },
+  "challenge_easy_3_13_word_0": {
+    "text": "só",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6b9c61e44f0886852400ebd0245652f20be591dfdce4b90c81be40f433903cc9"
+  },
+  "challenge_easy_3_14_word_0": {
+    "text": "szék",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ba407c2ba76d0009cd7bb0a620402cf669f297d62b9b06d991bbd87757c74466"
+  },
+  "challenge_easy_3_15_word_0": {
+    "text": "fehér",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1eaca3b9f139a034832e4b85fd95b72a2d5c672b7c92d10695b88257c55b7209"
+  },
+  "challenge_easy_3_16_word_0": {
+    "text": "répa",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c6248f6be4faf299e6254747da74415854d3fbaefb615555934d86ec145eee4b"
+  },
+  "challenge_easy_3_17_word_0": {
+    "text": "pók",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "611bfb5a982f9ed74661a7f5fd6d65d4a9aa1380ead12e6d31c1864285c4e126"
+  },
+  "challenge_easy_3_18_word_0": {
+    "text": "kanál",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4ea0d29bb0293865480fea003edf3c9399696a1229cbc52ca06466c469b377a6"
+  },
+  "challenge_easy_3_19_word_0": {
+    "text": "liszt",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e61859ca2e9b979a08ca9e7ae8119bc460eb81fcb34153e4ddc9aa1b00712ba3"
+  },
+  "challenge_easy_3_20_word_0": {
+    "text": "megy",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a1b604db0f0953886373f64cfa01df3823fe9ba3fea9fcc6922794c4bab75c9c"
+  },
+  "challenge_easy_3_21_word_0": {
+    "text": "kert",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c78b89c1704ee2496d62e32f7ba47c981f3def032246f5faf3069487fc440287"
+  },
+  "challenge_easy_3_22_word_0": {
+    "text": "malac",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b225914abd23e7ba0941c230a2671f46e8a7feb43a7e3c89caa012bb401b60ce"
+  },
+  "challenge_easy_3_23_word_0": {
+    "text": "bálna",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d17e3d3469ab3643da6722c5834a6ee9ff679bae7d3175456131a1fab02f1dc0"
+  },
+  "challenge_easy_3_24_word_0": {
+    "text": "barack",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9ce3338d0cb5e49e4dd6132b6069dac47f74c4afc22e18f12187a3d8fb44cb2a"
+  },
   "challenge_medium_01_word_0": {
     "text": "mogyoró",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
@@ -6818,6 +7133,246 @@
     "text": "beszélgetés",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "d5687055849101ce918ddbab90a145295bd6b46a3400f0ce0c70cf0572ffc0b5"
+  },
+  "challenge_medium_2_01_word_0": {
+    "text": "tanuló",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d1c181be2e39cc7efbaa77a145a70604a0720d91cf6a392b94baf79391d81645"
+  },
+  "challenge_medium_2_02_word_0": {
+    "text": "tanító",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7d5cc7b129adc9c1aa6b4e6b8d6a5e111dbf22c224a6108775fde8416b7ee684"
+  },
+  "challenge_medium_2_03_word_0": {
+    "text": "tányér",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a9e3d3a99ffeb6db39e2bc257fe225bb6ce79099894b5eb74155159d1d1d3234"
+  },
+  "challenge_medium_2_04_word_0": {
+    "text": "füzetek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "35287eeb8f9dad2afbf7055c0a901ae493a96c4212304368187653e88f1e3188"
+  },
+  "challenge_medium_2_05_word_0": {
+    "text": "radíroz",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "db3a20e4fbb4cc20af97fbabb51ea09c3fd3e7b76ef97cb3427efeb12509d769"
+  },
+  "challenge_medium_2_06_word_0": {
+    "text": "tulipán",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b61d20621205a9383bd2d9ff89a747695b249a12404dedd98eae57af81efde79"
+  },
+  "challenge_medium_2_07_word_0": {
+    "text": "focilabda",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "941670d604cc83219ab08b6cd5227ea93efdb0be41fbc42ab7928b1ee6b3066f"
+  },
+  "challenge_medium_2_08_word_0": {
+    "text": "karácsony",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6b50f6bf7f19e1f11787637d445d6560a75c763bac7b05872653a2db56cc6cdf"
+  },
+  "challenge_medium_2_09_word_0": {
+    "text": "papírhajó",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9b3e6cf8afc3947ce563a07a96cda6757eb16b9589a338a388911c34cdacce04"
+  },
+  "challenge_medium_2_10_word_0": {
+    "text": "virágok",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "13cf131c03c7c6b6058ee779b057e341ec87f844b992ebc50507af33723399a2"
+  },
+  "challenge_medium_2_11_word_0": {
+    "text": "zsebkendő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f7d24d1ba78a5a59207f1ade4cd08df335f591a6ebc6b4bf31fd78718bc9515f"
+  },
+  "challenge_medium_2_12_word_0": {
+    "text": "futball",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f789e70dfcac1bca9bd2848685a4263593d077df51a3eb5630b8d9824e6460fa"
+  },
+  "challenge_medium_2_13_word_0": {
+    "text": "elefánt",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d9fdc454298537740980abc8230c76894795e9d18f8bda16870829dea335ccf8"
+  },
+  "challenge_medium_2_14_word_0": {
+    "text": "kávéfőző",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3f99fdf90b580f582e3fd195b79cda1c3fb6535129fda9cd4c2ef8d55e593e4e"
+  },
+  "challenge_medium_2_15_word_0": {
+    "text": "cicázik",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c4554b27c0c2ea373791847dc8c73ab454ec17170ea8e42f0acb47a62533d16a"
+  },
+  "challenge_medium_2_16_word_0": {
+    "text": "nyuszika",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c1b2c3de6b67f35e4fdd26c45e8266a932fb3d72087e1eb28fe297b5c129ab68"
+  },
+  "challenge_medium_2_17_word_0": {
+    "text": "torta",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9fb1ddf505d9f517eb5698601d1f7ad702232b977576d31df8691d2fd5e28ef0"
+  },
+  "challenge_medium_2_18_word_0": {
+    "text": "mókusok",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b4079e29bae9faeb3adf06ba5a329de07edf9fbd472e1aa8d0dc269b761c39bb"
+  },
+  "challenge_medium_2_19_word_0": {
+    "text": "íróasztal",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fac2e0cc5b1bc66a333092f0db04a6ed01343228dfd9b283159b7122de11c18b"
+  },
+  "challenge_medium_2_20_word_0": {
+    "text": "játszótér",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "18cd1ff4f3063cc96494f4284aa7fd970feae173f3304571a31b1bc25cb87661"
+  },
+  "challenge_medium_2_21_word_0": {
+    "text": "kardigán",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "28dafd468baf3c42a3112d097a9534681ed5e72fc84c4a93e78af6816cd08f1f"
+  },
+  "challenge_medium_2_22_word_0": {
+    "text": "kirándul",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "add68f5d15a5b6140de83d97d7b1c0d75aa59b31b6a885f70360bbc669c9cd8e"
+  },
+  "challenge_medium_2_23_word_0": {
+    "text": "szendvics",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fd61a6c3043205f33bd85722e59ed6d43a5d646780a5210317a1f29f2ad23f35"
+  },
+  "challenge_medium_2_24_word_0": {
+    "text": "oroszlán",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "40f2497b8f7e7339dfae8c5cd595a6f4d124817444999ae42d3418a16bfd79e0"
+  },
+  "challenge_medium_3_01_word_0": {
+    "text": "hópehely",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5950102f965d222f3f7d437f34ed2cee74098977fff22cae71726383a3ee3990"
+  },
+  "challenge_medium_3_02_word_0": {
+    "text": "fésülködik",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6cb605e9702677f6b896f428beac2ded500a56ccd2bc2dd6d0729e0cb3d65b12"
+  },
+  "challenge_medium_3_03_word_0": {
+    "text": "zseblámpa",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "86de3bf02b19a08022f59864fe9eac08c51b6e8b049e38b15e71328dad1aec30"
+  },
+  "challenge_medium_3_04_word_0": {
+    "text": "uzsonna",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4d08308738845be56e698a660f658a36803b7fc5a1c0305377701598ebf3c66c"
+  },
+  "challenge_medium_3_05_word_0": {
+    "text": "hőmérő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5b409fa23c423d168d97926f4af7bec79048253eb12c43ff6968a1316a35ac33"
+  },
+  "challenge_medium_3_06_word_0": {
+    "text": "osztály",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3ab439fd05948aed60d9fd16b1ac20c420b4179f98a5185d851f82b6c999426f"
+  },
+  "challenge_medium_3_07_word_0": {
+    "text": "cserebogár",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "903c3fba2706ec281e8a7ab9d9b1f2954c29af6cb6ef759abee844a17c7b41b7"
+  },
+  "challenge_medium_3_08_word_0": {
+    "text": "nyáron",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "39f2f1563bd559d30c2cf966ab40a0f95ccccac7686e6775d9911c5836fe7cb3"
+  },
+  "challenge_medium_3_09_word_0": {
+    "text": "június",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "85e91b82584c52bf690cee42dfcdf02ead474b139e2286fb269ba284b714e01d"
+  },
+  "challenge_medium_3_10_word_0": {
+    "text": "rajzolás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "256e52b05f15f1017e9a268a5ddd2c2841d34d04dceaf6885a6ac2671b3def69"
+  },
+  "challenge_medium_3_11_word_0": {
+    "text": "hóember",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "839a069d85d46eb8d3880dba4adcf01316a9d458c8ddc325503ce8345ec08091"
+  },
+  "challenge_medium_3_12_word_0": {
+    "text": "krumpli",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "12beb6c6f6442c271777ea894dedda2c7df813a9a92806b8cd286006f20be526"
+  },
+  "challenge_medium_3_13_word_0": {
+    "text": "vasárnap",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3cc3510b7d60fcd40ead5c7c2f7c30e32c11383d407477ff72423ee5fb257122"
+  },
+  "challenge_medium_3_14_word_0": {
+    "text": "kiskutya",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "dac5c67ef88686046151c86461f9937588ef509d8bec4edf6e7cefbab93fbac2"
+  },
+  "challenge_medium_3_15_word_0": {
+    "text": "leopárd",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "cb570b95bd08e1cf46b9376ebf6d5c483100c80667019b994378ce29abcb4585"
+  },
+  "challenge_medium_3_16_word_0": {
+    "text": "körte",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fe168f187547190234e5c1862f33e0eced222e14130b2549eca4c70d7a0f260b"
+  },
+  "challenge_medium_3_17_word_0": {
+    "text": "fecske",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c3636c6dad62fbd5abb94cdb20e2444fd17d36f6eb79539014b3292b68c1206b"
+  },
+  "challenge_medium_3_18_word_0": {
+    "text": "gesztenye",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4145a5f7792781099c93095096945314dbf23f11333f1ab9775d1ecf652caddf"
+  },
+  "challenge_medium_3_19_word_0": {
+    "text": "állatkert",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "72821e4ba44fc8ed56895537b1d6da985d5b4e4d71b597f4b7fd7c6eb03677aa"
+  },
+  "challenge_medium_3_20_word_0": {
+    "text": "ugrálás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "aca902c9942ec27b97d180bad1b3372d1ee90169161e7bde61743aee53145e06"
+  },
+  "challenge_medium_3_21_word_0": {
+    "text": "torony",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bead225d93ce5e11c289feb7aa7d80155c5450929347c1d00fd12c54cc0fa310"
+  },
+  "challenge_medium_3_22_word_0": {
+    "text": "háztető",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0b0181001e78d150313bc3570c2e8cd3d347b73f147ee0d64e19e197bbc0ba3d"
+  },
+  "challenge_medium_3_23_word_0": {
+    "text": "hegyvidék",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c6012b1cf9515db8198888439c0119b24b0bc801e2e67fc73c854630dd9fb985"
+  },
+  "challenge_medium_3_24_word_0": {
+    "text": "gombócok",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9738ef69e46db70124b1b195b6f4410e9522b444a9a960c2a8594f62d0d4fcc2"
   },
   "challenge_hard_01_word_0": {
     "text": "számológép",
@@ -6939,6 +7494,246 @@
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "efc1aa2c1f18d304fa0e939bb37171a758f747c89dfcd0b16b08efff71ecee66"
   },
+  "challenge_hard_2_01_word_0": {
+    "text": "magyarország",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "afd0ef794492636c17ab2641004bd9f3364433c8a2d2c275fb8c89bb61b39c27"
+  },
+  "challenge_hard_2_02_word_0": {
+    "text": "szivárvány",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "72ae6dfb7ede53493385b628cf4d4e604c0c8df8a974b09959a974cd74ddde5f"
+  },
+  "challenge_hard_2_03_word_0": {
+    "text": "konyhaasztal",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4bf2de9d306eeef037b1fb07b3a81c89c4be52b09398133e6d5e3681327475c8"
+  },
+  "challenge_hard_2_04_word_0": {
+    "text": "gyerekszoba",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "28fe70e5ef154a7ddf1bfb4a27df47a0ee92a761ce597c0585e770bb135f6c65"
+  },
+  "challenge_hard_2_05_word_0": {
+    "text": "mosogatótálca",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7636f38f6c6b5037a9b0d22bd33c033763c6f7d2e798d9ad23bb37b57e0b3e70"
+  },
+  "challenge_hard_2_06_word_0": {
+    "text": "virágcserép",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f8377e0c893a25e119499ca4462b824f6612e87b6949e64802ff124444ed3593"
+  },
+  "challenge_hard_2_07_word_0": {
+    "text": "születésnap",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6305e8e5bc061d86e12f4e2d407b8e2317ae3187bd710a875e848f4a692237bb"
+  },
+  "challenge_hard_2_08_word_0": {
+    "text": "képernyővédő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "8e001fdc7823d24ab4aa79503450b85110b31eab95cab345a35f04e98fb0b0c2"
+  },
+  "challenge_hard_2_09_word_0": {
+    "text": "repülőtér",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ec2720e7cfb6c1a58fb2d00b19afcc6b44893ec7a0ae295e8d6637ab692618ff"
+  },
+  "challenge_hard_2_10_word_0": {
+    "text": "kutyasétáltatás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "66e294d78af868bb7268f7e09311e56913570ce6cfc23adb3f8e6cf17f578ebb"
+  },
+  "challenge_hard_2_11_word_0": {
+    "text": "körforgalom",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5abb052510379c48477845af9393b5ee217304e58dc90f060a7abbe9fb4796c6"
+  },
+  "challenge_hard_2_12_word_0": {
+    "text": "cserepesvirág",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f0e8c1eeaa6e4e9f4e882b99dcf46f2781a39b51be40945ac20e973e3ae0762f"
+  },
+  "challenge_hard_2_13_word_0": {
+    "text": "térképészet",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "87b8a0f17c875c6f28574ff7ed35440121ac63e15d41684bba553259bd27bb53"
+  },
+  "challenge_hard_2_14_word_0": {
+    "text": "eperfagylalt",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b65e9d6ceb378515c56bd6c585cd9488afd895e3ecf4f17fc6ab9f8c3cef9bd4"
+  },
+  "challenge_hard_2_15_word_0": {
+    "text": "napraforgó",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d35540140e5013921e272fa16399ac98a5b05f8fcf0b4b7fa902e8221d1f0233"
+  },
+  "challenge_hard_2_16_word_0": {
+    "text": "színesceruza",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3c6357ad61fdea48e1106f47efbaee01efbe5884e8ede892e2afa34465a6169c"
+  },
+  "challenge_hard_2_17_word_0": {
+    "text": "túrógombóc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "440b8ac028e447ba8de4e9b0ad5db2e59ad9ba48681e5e11b1956147b0232f39"
+  },
+  "challenge_hard_2_18_word_0": {
+    "text": "telefonszám",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7abc8cddfac7414f92cb0ab9c6250f98fb3689d39537f758dc2598474ee2b327"
+  },
+  "challenge_hard_2_19_word_0": {
+    "text": "tömegközlekedés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4e9b0086c843d784ac476e37d53d409cc3217c7b321a9191cb9002ca3c5cd2c8"
+  },
+  "challenge_hard_2_20_word_0": {
+    "text": "festékesdoboz",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e28c7089683754165eaa5ef86cab0b3b83c7437b7e567a02a51bfbe26c3dac08"
+  },
+  "challenge_hard_2_21_word_0": {
+    "text": "fürdőszoba",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a86b26b9a77c522217d6a17b3791036b00d427596589d93d342e2bad44fc1306"
+  },
+  "challenge_hard_2_22_word_0": {
+    "text": "állatkertben",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a83ecc0a09b4c352d0d645ce093b93ddf68450c6887d67b0ffd57277786d45a2"
+  },
+  "challenge_hard_2_23_word_0": {
+    "text": "vasútállomás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "658715e9893ec7e7f1fde991987befaf114c1db467b299d7e4612b68ff20e7fb"
+  },
+  "challenge_hard_2_24_word_0": {
+    "text": "hűtőszekrény",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "38c38a917176885ddfc3b05b931498da7353dc7a69d3c696b910b1859448d53b"
+  },
+  "challenge_hard_3_01_word_0": {
+    "text": "számítógép",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "741d91f05fe028879588fc9e3db05a6cf053cdfc3f2e9530db123aca59dc1ea3"
+  },
+  "challenge_hard_3_02_word_0": {
+    "text": "billentyűzet",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fa757bb11a349b592b307954e5355faeecf6ba5045a17d421637ab5ed8ff0430"
+  },
+  "challenge_hard_3_03_word_0": {
+    "text": "tornaterem",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5506d92ee2066588917c4726c674392b65da222dfae8cfc13d1bde9c73a07c3d"
+  },
+  "challenge_hard_3_04_word_0": {
+    "text": "tányértartó",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "877d33af0904fabe068d88f977366bdbe8120ae538b53079937271945857bec7"
+  },
+  "challenge_hard_3_05_word_0": {
+    "text": "tankönyvek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2e8546d222d5bab1266c65134d8048b26c3b0b55e3405718f33e8db6e1de61c8"
+  },
+  "challenge_hard_3_06_word_0": {
+    "text": "vonatjegyek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "110fc32bec7266aa38da519d8533c06e49af395de3c50fe7865069a59f5a9350"
+  },
+  "challenge_hard_3_07_word_0": {
+    "text": "ribizlilekvár",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e993d64119a4904cacc36d050d9e95140b69eb65d78d71e07d40a60735152a34"
+  },
+  "challenge_hard_3_08_word_0": {
+    "text": "párnahuzat",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ac069b7c89563e53d3fb94668e6e33a9220cf5edf6604f18371870e31d70a0e2"
+  },
+  "challenge_hard_3_09_word_0": {
+    "text": "színeskréta",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "901081e3a56c417ac1fb8a01cc8db29a852dba5d37a69d7e4844bfe0f9f7956c"
+  },
+  "challenge_hard_3_10_word_0": {
+    "text": "mesekönyvek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "372814bd564db122afeb6efc3f47b8608f33681e0bf191eeb7a1fb936792094c"
+  },
+  "challenge_hard_3_11_word_0": {
+    "text": "szerszámosláda",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "45414b0423f7b4a2cf57e6b94f72b08ab07125264f11a00749aa509a6573f5a0"
+  },
+  "challenge_hard_3_12_word_0": {
+    "text": "konyhakert",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2b401df266cd54dc10980f5bca069b40fb7d491bf2082599c372a031364338a2"
+  },
+  "challenge_hard_3_13_word_0": {
+    "text": "törölköző",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d5b5e0aa2c97ba99b2a4b5442c9892b61250db4f4664b7b47d078fe0d5d76e97"
+  },
+  "challenge_hard_3_14_word_0": {
+    "text": "festőecset",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5eed18eda109bf0775f1b4448c605bf108896c79f4a6d33fdd08fd6673a2ee05"
+  },
+  "challenge_hard_3_15_word_0": {
+    "text": "csütörtök",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ac3741db29bb99b550aaffa6b3371f5b9ad42322d37194a892590520027ecb1e"
+  },
+  "challenge_hard_3_16_word_0": {
+    "text": "természetjárás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4fd034cfeb6dd74c35bbbe5743d845b9dca0c5adb001458ea1f85c923a8335b1"
+  },
+  "challenge_hard_3_17_word_0": {
+    "text": "zöldségleves",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b2a44e027138b01117e7fb66db3fea41bd4c1fa0a668f975a5502fa7688a9402"
+  },
+  "challenge_hard_3_18_word_0": {
+    "text": "kertészkedés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a576322fa712ad8aa94b8163a5806efa996548f537c837db99377e81fc46589f"
+  },
+  "challenge_hard_3_19_word_0": {
+    "text": "villanykapcsoló",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "98f59748d651052ebf4cd918d53ae16efd61b01e935c56bd56b53c39de88b17b"
+  },
+  "challenge_hard_3_20_word_0": {
+    "text": "osztályterem",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "01d36eb315c5a5ff5b0579938d42c7b83328c1b84bd1766704115054553d15b4"
+  },
+  "challenge_hard_3_21_word_0": {
+    "text": "hajókikötő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "30cc207bcd3c79346e837f5118e943b961cec7b04353bd1a29775beccac5aebc"
+  },
+  "challenge_hard_3_22_word_0": {
+    "text": "szőlőskert",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "61075ece76a37e2b4af4b5c3decffa76b76706d4fc739910f7c09839bf43c2e2"
+  },
+  "challenge_hard_3_23_word_0": {
+    "text": "kulcstartó",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ea3da0e19c64a56e9e101fa368fc825a07632183c78897e3fac7753c5fe322af"
+  },
+  "challenge_hard_3_24_word_0": {
+    "text": "gyermekkönyv",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6d40fc0ac40fb3637e42501722f9a20071e4fd4720c9a21656f9943626ea3100"
+  },
   "challenge_insane_01_word_0": {
     "text": "távirányító",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
@@ -7058,6 +7853,246 @@
     "text": "újrahasznosítás",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "bd9f3aa3526bd5a7e6296b58cd70e05bd2fe44e0d5efd87323e10c05964a830b"
+  },
+  "challenge_insane_2_01_word_0": {
+    "text": "tájékoztatótábla",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ac499c772dad22b3db83997406cc732f3a4c61c9899e7bc056e6cd0005401552"
+  },
+  "challenge_insane_2_02_word_0": {
+    "text": "villamosenergia",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b006ff5fee886b706b7f784514250dc69aba5cc1e9301ad81be55bac2d135bee"
+  },
+  "challenge_insane_2_03_word_0": {
+    "text": "vízerőművek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d7a9fc7002690ed1b03218631f21ac80cf54abdf5bafac32444a888ce1fee4d8"
+  },
+  "challenge_insane_2_04_word_0": {
+    "text": "könyvtárlátogatás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "05fc8e34889d8d1e221ff48a4df1438ec6fbc40825ee5c5f509eadf41bbd130b"
+  },
+  "challenge_insane_2_05_word_0": {
+    "text": "gyümölcstermesztés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "760c20c41a6a91b49a1d5e8f3f80eaae299795ce80fb385f4845564d89ed4c03"
+  },
+  "challenge_insane_2_06_word_0": {
+    "text": "növénygondozás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f067c89e3822d710fb24a18089bc36e9e01266c0b5677503c8dfce1d309d2dd6"
+  },
+  "challenge_insane_2_07_word_0": {
+    "text": "környezetvédelem",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "39dc08726777cabcb2676e3d0d9771d2aac0634440b82a289aee54ac0f332827"
+  },
+  "challenge_insane_2_08_word_0": {
+    "text": "csillagvizsgáló",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7a47201a2309dbfefc5a9e80c9d20ee8da5cbe2efa2ca247380bb5bf55776948"
+  },
+  "challenge_insane_2_09_word_0": {
+    "text": "közlekedésbiztonság",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "8916ff61b33ce861c01ae3c95ec001693a62d1b3b760f2ad25ae7f2b0665f24d"
+  },
+  "challenge_insane_2_10_word_0": {
+    "text": "járműkarbantartás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5695363d0dbed72536bcd3c964edc8ab7878927d2816cf444506a9d68a996bd9"
+  },
+  "challenge_insane_2_11_word_0": {
+    "text": "utazásszervezés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "302ff7e06c5667f89afe7f0432dba6cd984cf4d30c51a99dad21e13269d06b8c"
+  },
+  "challenge_insane_2_12_word_0": {
+    "text": "gyógyszertárlánc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d3849c681312555a8e0dc64488602552f461ca6f53809c617ffc4ff4b0f6723d"
+  },
+  "challenge_insane_2_13_word_0": {
+    "text": "munkavédelem",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9bfb4ac9707d3808cdf8d377ae20a2a6b08ac08dd4ac284666a79ce79104e910"
+  },
+  "challenge_insane_2_14_word_0": {
+    "text": "orvostudomány",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "50d0984e0d27caab9033a79fda0ef563d769faf161aa6f48e53011c892aa3b49"
+  },
+  "challenge_insane_2_15_word_0": {
+    "text": "kerékpárverseny",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6c8cb40960ef75bc9afcef62376556a71b0cc3238acac84159566f7b81011f63"
+  },
+  "challenge_insane_2_16_word_0": {
+    "text": "természetvédelem",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d4828306d184eae69e21f9a3137331a3df4ad075f011aacc6039fbf2e3261580"
+  },
+  "challenge_insane_2_17_word_0": {
+    "text": "vasútépítkezés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "cc274a2cfac89c088496d07c19f80282654925d56a7cf610b2a0b9d3e38d5fcd"
+  },
+  "challenge_insane_2_18_word_0": {
+    "text": "szélerőművek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a803bf199ddea02011e425fa18c6f8dde4547cb3ce01bf7e22f777964acd04a0"
+  },
+  "challenge_insane_2_19_word_0": {
+    "text": "szűrővizsgálat",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4183f9865c08eb3830b30a392aa161302013b1e68004b3a5e5e52308677ccfe1"
+  },
+  "challenge_insane_2_20_word_0": {
+    "text": "madárvédelem",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d346364a8ebfbe8d318ed71cdf87d4d0c0c66edc0088c8ead908090a281ac4ba"
+  },
+  "challenge_insane_2_21_word_0": {
+    "text": "menetrendváltozás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4f20cdfe276d1031db2428c1b1448114eb0c1c66674f7e9a8022f7b1aaff388e"
+  },
+  "challenge_insane_2_22_word_0": {
+    "text": "környezetszennyezés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d34c2a6835102cb0c1505076fdae7dddf6a26d1579c1536cddf09d87201d8771"
+  },
+  "challenge_insane_2_23_word_0": {
+    "text": "autóbuszvezető",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "abbb0f3f7f95e9667b45fa212a266d2e947138e9160904778caf52225594f539"
+  },
+  "challenge_insane_2_24_word_0": {
+    "text": "energiatakarékos",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "47b450ce53c40ba507c3c9d80d934a15ffabb1f87b1e47b0a066c9bfcfcbfdbe"
+  },
+  "challenge_insane_3_01_word_0": {
+    "text": "gyermekgondozás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2d0e4a1f3fb438fa4c0bc6384f65481bdc81fa6b586ade63dc0e94d98068c274"
+  },
+  "challenge_insane_3_02_word_0": {
+    "text": "erdőtelepítés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "046e96d953076e8ef34c1e98db026418fef3e3191fc9e744062552ca187ead71"
+  },
+  "challenge_insane_3_03_word_0": {
+    "text": "gépjárműforgalom",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b9ccd0386a2d0a7a90b596c7160adc7b0734135ff716e5334bc64db48c77a051"
+  },
+  "challenge_insane_3_04_word_0": {
+    "text": "könyvtárvezető",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7b9909016ef1835d7b61f554d94f84bc8784e46494b73ef346ea7bbfaca1555d"
+  },
+  "challenge_insane_3_05_word_0": {
+    "text": "jegypénztáros",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "cbb923a33f8d476b7f219145168a4c4e20ef72c0289054a6939e767db858a2ee"
+  },
+  "challenge_insane_3_06_word_0": {
+    "text": "környezetismeret",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d8376d8f35230a4745c6ab2eefadb91c67d24d6731fc77a00b697af5f3140a1a"
+  },
+  "challenge_insane_3_07_word_0": {
+    "text": "személyszállítás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7cef3b85a1d6754c99c69a0dba6a43d71d81b441b1da10e7919d1fcf53814997"
+  },
+  "challenge_insane_3_08_word_0": {
+    "text": "hulladékgyűjtés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e7d6bdc660c5bb9ae9a10c320cb27033c1ed98d774c15d20619fabb0119987ce"
+  },
+  "challenge_insane_3_09_word_0": {
+    "text": "szivattyúberendezés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "048d05e9c069be5af89a223da9f552288dfb3d0591f6f18079f85294a3db7831"
+  },
+  "challenge_insane_3_10_word_0": {
+    "text": "épületkarbantartás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "55249169c33850c6ee61c09ac8f29f2776f5c1982cdb933e9a3a0c38a6e1e432"
+  },
+  "challenge_insane_3_11_word_0": {
+    "text": "vészkijáratok",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "538bdc9a9567c1a4f7488240b44205cd600bb235d5563d38c219e199aceb6aad"
+  },
+  "challenge_insane_3_12_word_0": {
+    "text": "kerékpárkölcsönző",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5e21a17c6b7944e2993ded1d4f6b9e083915d3887d9b982e60abe4e41186acd9"
+  },
+  "challenge_insane_3_13_word_0": {
+    "text": "gyermekfelügyelet",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a266dace9b9b504eae6446aca01a319eb1f0311cb2351511506a477fc5ca6305"
+  },
+  "challenge_insane_3_14_word_0": {
+    "text": "csomagszállítás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "df08dc61c0faabd6272bc79f7835f2c7de8c914ff5ea6efc0b0305162cfe07af"
+  },
+  "challenge_insane_3_15_word_0": {
+    "text": "gépjárművezetés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c8b29db2beb635bff594c4366c741e08d769f21f8185c8bb82174832e9c4ae69"
+  },
+  "challenge_insane_3_16_word_0": {
+    "text": "tűzvédelmi",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a56896096fce7400af76cf30ba5cb37ff4f1cf398b06ec1d8cbfeab7f01f732b"
+  },
+  "challenge_insane_3_17_word_0": {
+    "text": "könyvkölcsönzés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0e310469a0071bcee2bc9aae41aa0f77465c3f0a477d578d66ab8d282ed31b05"
+  },
+  "challenge_insane_3_18_word_0": {
+    "text": "tanítóképzés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e3b819ddd843f96764791985cb49b067d3b437bb2db8f8cbb0062b1b0689821e"
+  },
+  "challenge_insane_3_19_word_0": {
+    "text": "vízvezetékrendszer",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "01747d8026e9125640a46073f7b6c051480e4a3654afb4c5526e5cf4b9ae8e5e"
+  },
+  "challenge_insane_3_20_word_0": {
+    "text": "vízfogyasztás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ba03517e7daae4b599f8e69bb242388a3635ac9ac51728d3a919f7154360d25a"
+  },
+  "challenge_insane_3_21_word_0": {
+    "text": "időjárásjelentés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "621fb4be2d4ccec7ca25509702d9a06020033422dbe811b7bd767b6f557cedee"
+  },
+  "challenge_insane_3_22_word_0": {
+    "text": "rendezvényszervező",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "626568484c6f36a4fb0c047f21a81b5f32a7d1d941df0dfdfb3cfe37a72a4149"
+  },
+  "challenge_insane_3_23_word_0": {
+    "text": "villamosvezető",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "431c28c6da354aa6230878e9f74f740eb22198238efa2d98d70617a09a10a620"
+  },
+  "challenge_insane_3_24_word_0": {
+    "text": "képernyőfelbontás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0145465bb9a30937d913a55fd3ba1c1c30d57efe3e3d92a60eaa154d6e5e5759"
   },
   "count_3": {
     "text": "három",
@@ -7303,6 +8338,206 @@
     "text": "Ismeretlen jel.",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "72fb6945b432765b56b9583f8536be131543d6c95ce3290fc0a72b04951713bc"
+  },
+  "progress_return_main": {
+    "text": "Vissza a főmenübe. Az Enter visszalép.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "96525805f8036c2c7943a4a37fb77762934b7a2743f074c25bf067bc8a88b413"
+  },
+  "progress_help": {
+    "text": "A fel és le nyíllal lépkedhetsz az elemek között. A bal és jobb nyíl szakaszt vált. A Home és End a szakasz első és utolsó elemére ugrik. Az F egy ismétel. Az Escape visszalép.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "88b193acd5ca05ae038c23b3165f76189c9d7d62e849cf34257af891c360980c"
+  },
+  "progress_section_week": {
+    "text": "Ezen a héten",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "03f1fc1811b46b6fd53be5ec0f2e348e0ab62556a030a34a83639d0dd504688e"
+  },
+  "progress_section_activity": {
+    "text": "Heti gyakorlás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "424a784b4b781f09b6fd5f22e78ffcc147da1c85ba0f537d341c75d671d27dbd"
+  },
+  "progress_section_letters": {
+    "text": "Betűstatisztika",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "028f87f5707ee7573bfa8aa19b2ebf7d8a1347d57f1e2f8e66c4c218888a7332"
+  },
+  "progress_section_recent": {
+    "text": "Legutóbbi feladatok",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bda9d51c4fcd4db04e35a35864c7f375f3f1d4c3e9a55eb5b0668201e6424245"
+  },
+  "progress_completed": {
+    "text": "Befejezett feladatok",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "225241e09d7d879a46530d3c9d9f61f6bc1e429b7c6710cfd555ffcb42f67200"
+  },
+  "progress_interrupted": {
+    "text": "Megszakított feladatok",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1f6b25ae54bb7422b62a4c0896056d4aa5e2431f7bf009462f00fa951218b4d5"
+  },
+  "progress_duration": {
+    "text": "Aktív gyakorlási idő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f2813d735c16b7b023014a376f4296b2d5bb5cb75ea811d291667e7da0b1334f"
+  },
+  "progress_correct": {
+    "text": "Elsőre helyes",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "8d4f2f728f701bc97c03f6ddbdc9d8e04f67f6c418d31298b25e8691e10f24c5"
+  },
+  "progress_incorrect": {
+    "text": "Elsőre hibás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5358e4ab6fe405a2a1fda06afc985948e6f619fe79fa586ab1135778643e9d8b"
+  },
+  "progress_total": {
+    "text": "Összesen",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0c3437347c393cbdb36a98d69d909ad6a4a652b43d8df652d6efcf1b68878c5d"
+  },
+  "progress_percent": {
+    "text": "százalék helyes",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3c5f973642f3f169efc726f0cc5ac6a7e3d872709020ba6ce69bb76d71383448"
+  },
+  "progress_week": {
+    "text": "Hét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2bb551e99822dbe1fe553603fb8c6e2b26d364a5d481877a3a358d17b7b3e4fa"
+  },
+  "progress_until": {
+    "text": "eddig",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bf8e8f1fe785c3838644ca7cd2b63e9aa2bd8d3a3391889f78b095a5aa897c95"
+  },
+  "progress_date": {
+    "text": "Dátum",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6f2108f54b03f783300d6d156a0738b9d8adb0453e42e918091892a7b9f79f84"
+  },
+  "progress_activity": {
+    "text": "Feladat",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "870bcbc4a1d547ddd402b96c7c6d73c4d268e72e4d8f58cce797b695a96ff61b"
+  },
+  "progress_finished": {
+    "text": "Befejezve",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e35b18d5b8e74e77c6016e92b71063fbdf414f519b3b18e66b0d6b9849cc9a6c"
+  },
+  "progress_stopped": {
+    "text": "Megszakítva",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "732b010b0d0dfaa28aadba200c79f961b3d770f54f6d2ce76600a69c97ce6d40"
+  },
+  "progress_empty_letters": {
+    "text": "Még nincs betűstatisztika.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "be3771b36ba82603e392b3bfb48ff98c745a39ce9aa0686cf9a75a53de6fe4f3"
+  },
+  "progress_empty_recent": {
+    "text": "Még nincsenek feladatok.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d39b3ee586e9a100aa995d05364c48a8c77dcff32629cd10cbc9a0983fdc3466"
+  },
+  "progress_month_1": {
+    "text": "január",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4cbbcd021d9bb8f0ca3e03f49e8cdc3a3bbd05b9ed4f11947ffc2a3a0ca930b5"
+  },
+  "progress_month_2": {
+    "text": "február",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e38a1b4663d97337cebd4b8c9df070ec486a8ea8ff2a579a550fa4ab3b007ead"
+  },
+  "progress_month_3": {
+    "text": "március",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "82396005fc9a8daae77730af19726c6b330b7bf2d4812d231ee9f95e76ccbd12"
+  },
+  "progress_month_4": {
+    "text": "április",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fbaa0216acd14b5b04627e2872086f2dd1e9b91c527049425e14ff625a1c8a50"
+  },
+  "progress_month_5": {
+    "text": "május",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5485f0078b76498d4af3e9e1d1a35f3d348610f426e779adf4bc659e0d3468ab"
+  },
+  "progress_month_6": {
+    "text": "június",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a8d5e6b5bde9ef5edf516dd1086686e546d56811c1f6ec4978cef28bc3cfa6ef"
+  },
+  "progress_month_7": {
+    "text": "július",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "67831292ee14c05350bb81a43d605aecef97a338f99d42454dcb294ee5a215cc"
+  },
+  "progress_month_8": {
+    "text": "augusztus",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "de5528aa8715d686a4681d6ea372680d0e8d7b61ae59ec9f951fefe547c23faa"
+  },
+  "progress_month_9": {
+    "text": "szeptember",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "31b9a0f4e84177dda949a3300399231dd5e1a72f791975a755dd811988d81d8f"
+  },
+  "progress_month_10": {
+    "text": "október",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "43705456a21a160808c2d8435552d59a19fdc0caa72a2468fe03d4470e44f29d"
+  },
+  "progress_month_11": {
+    "text": "november",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6ecae016c31b6d449fad3a5d39342d6d311849844fa9fa0d4c162dac1c475958"
+  },
+  "progress_month_12": {
+    "text": "december",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "83bdec37eae3e074fd5aca838b531872e23c0e7d368aa2952c7e6f373b9ce409"
+  },
+  "progress_day_1": {
+    "text": "hétfő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9c2c4fadbbcc97a139700c34c19df3348a13722d6c0e8b5cbc0c6501ce851a5e"
+  },
+  "progress_day_2": {
+    "text": "kedd",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f657cbb172347c64202638223d4b4604e479960b4f639580522b880b7f79b922"
+  },
+  "progress_day_3": {
+    "text": "szerda",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "69a5a2d283a2866f5d8530c2efa6ee9e8160b1fe69f73796318e95b7976bb2c7"
+  },
+  "progress_day_4": {
+    "text": "csütörtök",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ac3741db29bb99b550aaffa6b3371f5b9ad42322d37194a892590520027ecb1e"
+  },
+  "progress_day_5": {
+    "text": "péntek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c2e4762042d7aae5ef185e7d94d3b46d978c5549e8ec63750dd83a5719169e5a"
+  },
+  "progress_day_6": {
+    "text": "szombat",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3081d7692253382eaa845c2abea65dc0c55b08dc19e2632035f00c2b4d66fd2f"
+  },
+  "progress_day_7": {
+    "text": "vasárnap",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e4b19ddba763a68104f890f5f97d2eb4ec3dc614762c4e45a739b2e2859bd925"
   },
   "result_time": {
     "text": "Az időd",
@@ -7911,215 +9146,5 @@
   "bad": {
     "source": "Original synthesized buzz",
     "duration_ms": 60
-  },
-  "menu_my_progress": {
-    "text": "Haladásom",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "abed17892d2029c5904f055eaa816de7d091eb7a884bc21344c42bf8ac840ffb"
-  },
-  "progress_help": {
-    "text": "A fel és le nyíllal lépkedhetsz az elemek között. A bal és jobb nyíl szakaszt vált. A Home és End a szakasz első és utolsó elemére ugrik. Az F egy ismétel. Az Escape visszalép.",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "88b193acd5ca05ae038c23b3165f76189c9d7d62e849cf34257af891c360980c"
-  },
-  "progress_section_week": {
-    "text": "Ezen a héten",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "03f1fc1811b46b6fd53be5ec0f2e348e0ab62556a030a34a83639d0dd504688e"
-  },
-  "progress_section_activity": {
-    "text": "Heti gyakorlás",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "424a784b4b781f09b6fd5f22e78ffcc147da1c85ba0f537d341c75d671d27dbd"
-  },
-  "progress_section_letters": {
-    "text": "Betűstatisztika",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "028f87f5707ee7573bfa8aa19b2ebf7d8a1347d57f1e2f8e66c4c218888a7332"
-  },
-  "progress_section_recent": {
-    "text": "Legutóbbi feladatok",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "bda9d51c4fcd4db04e35a35864c7f375f3f1d4c3e9a55eb5b0668201e6424245"
-  },
-  "progress_completed": {
-    "text": "Befejezett feladatok",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "225241e09d7d879a46530d3c9d9f61f6bc1e429b7c6710cfd555ffcb42f67200"
-  },
-  "progress_interrupted": {
-    "text": "Megszakított feladatok",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "1f6b25ae54bb7422b62a4c0896056d4aa5e2431f7bf009462f00fa951218b4d5"
-  },
-  "progress_duration": {
-    "text": "Aktív gyakorlási idő",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "f2813d735c16b7b023014a376f4296b2d5bb5cb75ea811d291667e7da0b1334f"
-  },
-  "progress_correct": {
-    "text": "Elsőre helyes",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "8d4f2f728f701bc97c03f6ddbdc9d8e04f67f6c418d31298b25e8691e10f24c5"
-  },
-  "progress_incorrect": {
-    "text": "Elsőre hibás",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "5358e4ab6fe405a2a1fda06afc985948e6f619fe79fa586ab1135778643e9d8b"
-  },
-  "progress_total": {
-    "text": "Összesen",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "0c3437347c393cbdb36a98d69d909ad6a4a652b43d8df652d6efcf1b68878c5d"
-  },
-  "progress_percent": {
-    "text": "százalék helyes",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "3c5f973642f3f169efc726f0cc5ac6a7e3d872709020ba6ce69bb76d71383448"
-  },
-  "progress_week": {
-    "text": "Hét",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "2bb551e99822dbe1fe553603fb8c6e2b26d364a5d481877a3a358d17b7b3e4fa"
-  },
-  "progress_until": {
-    "text": "eddig",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "bf8e8f1fe785c3838644ca7cd2b63e9aa2bd8d3a3391889f78b095a5aa897c95"
-  },
-  "progress_date": {
-    "text": "Dátum",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "6f2108f54b03f783300d6d156a0738b9d8adb0453e42e918091892a7b9f79f84"
-  },
-  "progress_activity": {
-    "text": "Feladat",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "870bcbc4a1d547ddd402b96c7c6d73c4d268e72e4d8f58cce797b695a96ff61b"
-  },
-  "progress_finished": {
-    "text": "Befejezve",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "e35b18d5b8e74e77c6016e92b71063fbdf414f519b3b18e66b0d6b9849cc9a6c"
-  },
-  "progress_stopped": {
-    "text": "Megszakítva",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "732b010b0d0dfaa28aadba200c79f961b3d770f54f6d2ce76600a69c97ce6d40"
-  },
-  "progress_empty_letters": {
-    "text": "Még nincs betűstatisztika.",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "be3771b36ba82603e392b3bfb48ff98c745a39ce9aa0686cf9a75a53de6fe4f3"
-  },
-  "progress_empty_recent": {
-    "text": "Még nincsenek feladatok.",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "d39b3ee586e9a100aa995d05364c48a8c77dcff32629cd10cbc9a0983fdc3466"
-  },
-  "progress_month_1": {
-    "text": "január",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "4cbbcd021d9bb8f0ca3e03f49e8cdc3a3bbd05b9ed4f11947ffc2a3a0ca930b5"
-  },
-  "progress_month_2": {
-    "text": "február",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "e38a1b4663d97337cebd4b8c9df070ec486a8ea8ff2a579a550fa4ab3b007ead"
-  },
-  "progress_month_3": {
-    "text": "március",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "82396005fc9a8daae77730af19726c6b330b7bf2d4812d231ee9f95e76ccbd12"
-  },
-  "progress_month_4": {
-    "text": "április",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "fbaa0216acd14b5b04627e2872086f2dd1e9b91c527049425e14ff625a1c8a50"
-  },
-  "progress_month_5": {
-    "text": "május",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "5485f0078b76498d4af3e9e1d1a35f3d348610f426e779adf4bc659e0d3468ab"
-  },
-  "progress_month_6": {
-    "text": "június",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "a8d5e6b5bde9ef5edf516dd1086686e546d56811c1f6ec4978cef28bc3cfa6ef"
-  },
-  "progress_month_7": {
-    "text": "július",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "67831292ee14c05350bb81a43d605aecef97a338f99d42454dcb294ee5a215cc"
-  },
-  "progress_month_8": {
-    "text": "augusztus",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "de5528aa8715d686a4681d6ea372680d0e8d7b61ae59ec9f951fefe547c23faa"
-  },
-  "progress_month_9": {
-    "text": "szeptember",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "31b9a0f4e84177dda949a3300399231dd5e1a72f791975a755dd811988d81d8f"
-  },
-  "progress_month_10": {
-    "text": "október",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "43705456a21a160808c2d8435552d59a19fdc0caa72a2468fe03d4470e44f29d"
-  },
-  "progress_month_11": {
-    "text": "november",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "6ecae016c31b6d449fad3a5d39342d6d311849844fa9fa0d4c162dac1c475958"
-  },
-  "progress_month_12": {
-    "text": "december",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "83bdec37eae3e074fd5aca838b531872e23c0e7d368aa2952c7e6f373b9ce409"
-  },
-  "progress_day_1": {
-    "text": "hétfő",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "9c2c4fadbbcc97a139700c34c19df3348a13722d6c0e8b5cbc0c6501ce851a5e"
-  },
-  "progress_day_2": {
-    "text": "kedd",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "f657cbb172347c64202638223d4b4604e479960b4f639580522b880b7f79b922"
-  },
-  "progress_day_3": {
-    "text": "szerda",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "69a5a2d283a2866f5d8530c2efa6ee9e8160b1fe69f73796318e95b7976bb2c7"
-  },
-  "progress_day_4": {
-    "text": "csütörtök",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "ac3741db29bb99b550aaffa6b3371f5b9ad42322d37194a892590520027ecb1e"
-  },
-  "progress_day_5": {
-    "text": "péntek",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "c2e4762042d7aae5ef185e7d94d3b46d978c5549e8ec63750dd83a5719169e5a"
-  },
-  "progress_day_6": {
-    "text": "szombat",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "3081d7692253382eaa845c2abea65dc0c55b08dc19e2632035f00c2b4d66fd2f"
-  },
-  "progress_day_7": {
-    "text": "vasárnap",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "e4b19ddba763a68104f890f5f97d2eb4ec3dc614762c4e45a739b2e2859bd925"
-  },
-  "menu_previous": {
-    "text": "Vissza az előző menübe",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "98696a197d8232efd55de0bc87113678f5da7230c0ec76598a87986bfd3b5cd9"
-  },
-  "progress_return_main": {
-    "text": "Vissza a főmenübe. Az Enter visszalép.",
-    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "96525805f8036c2c7943a4a37fb77762934b7a2743f074c25bf067bc8a88b413"
   }
 }

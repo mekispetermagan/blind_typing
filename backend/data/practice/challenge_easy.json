@@ -1,7 +1,7 @@
 {
   "id": "challenge_easy",
   "type": "words",
-  "title": "Könnyű",
+  "title": "Könnyű kihívás 1",
   "baselineSeconds": 120,
   "allowedLetters": "AÁBCDEÉFGHIÍJKLMNOÓÖŐPQRSTUÚÜŰVWXYZ",
   "units": [

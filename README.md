@@ -132,15 +132,16 @@ The available content is:
   the three new keys.
 - **LECKÉK → számok:** guided practice for 1–9 and 0, followed by a 24-number
   drill including years and telephone numbers. Leading zeroes are preserved.
-- **KIHÍVÁSOK → Könnyű / Közepes / Nehéz / Szupernehéz:** four ordered
-  24-word challenges, with respective scoring baselines of 120, 180, 180, and
-  240 seconds. Each challenge keeps separate Simple and Advanced records.
+- **KIHÍVÁSOK → Könnyű / Közepes / Nehéz / Szupernehéz:** three 24-word challenges per
+  difficulty, with respective scoring baselines of 120, 180, 180, and 240
+  seconds. Each challenge keeps separate Simple and Advanced records.
 
 Enter starts an opened activity. Escape pauses it and opens a spoken menu with
 Continue, Restart, and Return to Menu. Escape from that menu resumes. Completion
-opens a menu with Restart, Next Exercise or Next Lesson when available, and
-Return to Menu, in that order. Next Exercise opens the next activity in the
-current lesson. Next Lesson opens the first activity of the following lesson.
+opens a menu with Restart, a Next Exercise, Next Lesson, or Next Challenge
+option when available, and Return to Menu, in that order. Next Exercise opens the next activity in the
+current lesson. Next Lesson opens the first activity of the following lesson. Next Challenge opens the next challenge, moving to the next
+difficulty when needed.
 Parent-menu selection is preserved when returning from an activity. Ctrl+W,
 F4, or Close exits.
 
@@ -238,7 +239,7 @@ what appears on screen and is spoken. Only available content is listed.
   A→Q and S→X/W teaching steps and the final word drill.
 - `backend/data/lessons/numbers_letters.json` and `backend/data/lessons/numbers_words.json`:
   number-key teaching steps and the number drill.
-- `backend/data/practice/challenge_*.json`: the four ordered word challenges and their scoring baselines.
+- `backend/data/practice/challenge_*.json`: the twelve ordered word challenges and their scoring baselines.
 
 Typed models validate menu shape, IDs, nonempty activities, activity types, and
 permitted letters. Adding content of an existing type requires editing JSON,

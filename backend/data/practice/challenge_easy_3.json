@@ -1,0 +1,105 @@
+{
+  "id": "challenge_easy_3",
+  "type": "words",
+  "title": "Könnyű kihívás 3",
+  "baselineSeconds": 120,
+  "allowedLetters": "AÁBCDEÉFGHIÍJKLMNOÓÖŐPQRSTUÚÜŰVWXYZ",
+  "units": [
+    {
+      "id": "challenge_easy_3_01",
+      "text": "HAGYMA"
+    },
+    {
+      "id": "challenge_easy_3_02",
+      "text": "SÁRGA"
+    },
+    {
+      "id": "challenge_easy_3_03",
+      "text": "TÁSKA"
+    },
+    {
+      "id": "challenge_easy_3_04",
+      "text": "RUHA"
+    },
+    {
+      "id": "challenge_easy_3_05",
+      "text": "FAGYI"
+    },
+    {
+      "id": "challenge_easy_3_06",
+      "text": "BABA"
+    },
+    {
+      "id": "challenge_easy_3_07",
+      "text": "LÓ"
+    },
+    {
+      "id": "challenge_easy_3_08",
+      "text": "CSILLAG"
+    },
+    {
+      "id": "challenge_easy_3_09",
+      "text": "BORS"
+    },
+    {
+      "id": "challenge_easy_3_10",
+      "text": "NÉV"
+    },
+    {
+      "id": "challenge_easy_3_11",
+      "text": "HÍD"
+    },
+    {
+      "id": "challenge_easy_3_12",
+      "text": "SÍP"
+    },
+    {
+      "id": "challenge_easy_3_13",
+      "text": "SÓ"
+    },
+    {
+      "id": "challenge_easy_3_14",
+      "text": "SZÉK"
+    },
+    {
+      "id": "challenge_easy_3_15",
+      "text": "FEHÉR"
+    },
+    {
+      "id": "challenge_easy_3_16",
+      "text": "RÉPA"
+    },
+    {
+      "id": "challenge_easy_3_17",
+      "text": "PÓK"
+    },
+    {
+      "id": "challenge_easy_3_18",
+      "text": "KANÁL"
+    },
+    {
+      "id": "challenge_easy_3_19",
+      "text": "LISZT"
+    },
+    {
+      "id": "challenge_easy_3_20",
+      "text": "MEGY"
+    },
+    {
+      "id": "challenge_easy_3_21",
+      "text": "KERT"
+    },
+    {
+      "id": "challenge_easy_3_22",
+      "text": "MALAC"
+    },
+    {
+      "id": "challenge_easy_3_23",
+      "text": "BÁLNA"
+    },
+    {
+      "id": "challenge_easy_3_24",
+      "text": "BARACK"
+    }
+  ]
+}

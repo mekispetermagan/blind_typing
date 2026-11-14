@@ -6,10 +6,12 @@ enum MenuCommand {
   menu,
   nextExercise,
   nextLesson,
+  nextChallenge,
   progress,
   previous;
 
-  bool get isProgression => this == nextExercise || this == nextLesson;
+  bool get isProgression =>
+      this == nextExercise || this == nextLesson || this == nextChallenge;
 }
 
 class ActivityReference {
@@ -83,7 +85,9 @@ class MenuCatalog {
     required this.pause,
     required this.complete,
     List<List<String>> progression = const [],
-  }) : progression = List.unmodifiable(
+    List<String> challengeProgression = const [],
+  }) : challengeProgression = List.unmodifiable(challengeProgression),
+       progression = List.unmodifiable(
          progression.map((lesson) => List<String>.unmodifiable(lesson)),
        ) {
     final nodes = allNodes.toList();
@@ -91,7 +95,10 @@ class MenuCatalog {
         .where((node) => node.activity != null)
         .map((node) => node.id)
         .toSet();
-    final ordered = progression.expand((lesson) => lesson).toList();
+    final ordered = [
+      ...progression.expand((lesson) => lesson),
+      ...challengeProgression,
+    ];
     if (progression.any((lesson) => lesson.isEmpty) ||
         ordered.toSet().length != ordered.length ||
         ordered.any((id) => !activities.contains(id)) ||
@@ -145,12 +152,23 @@ class MenuCatalog {
     progression: (json['progression'] as List? ?? [])
         .map((lesson) => (lesson as List).cast<String>())
         .toList(),
+    challengeProgression: (json['challengeProgression'] as List? ?? [])
+        .cast<String>(),
   );
+  final List<String> challengeProgression;
   final List<List<String>> progression;
   final MenuNode root;
   final MenuNode pause;
   final MenuNode complete;
   ({String id, MenuCommand command})? nextActivity(String id) {
+    final challengeIndex = challengeProgression.indexOf(id);
+    if (challengeIndex >= 0) {
+      if (challengeIndex + 1 == challengeProgression.length) return null;
+      return (
+        id: challengeProgression[challengeIndex + 1],
+        command: MenuCommand.nextChallenge,
+      );
+    }
     for (var lesson = 0; lesson < progression.length; lesson++) {
       final index = progression[lesson].indexOf(id);
       if (index < 0) continue;

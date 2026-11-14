@@ -1,0 +1,105 @@
+{
+  "id": "challenge_insane_3",
+  "type": "words",
+  "title": "Szupernehéz kihívás 3",
+  "baselineSeconds": 240,
+  "allowedLetters": "AÁBCDEÉFGHIÍJKLMNOÓÖŐPQRSTUÚÜŰVWXYZ",
+  "units": [
+    {
+      "id": "challenge_insane_3_01",
+      "text": "GYERMEKGONDOZÁS"
+    },
+    {
+      "id": "challenge_insane_3_02",
+      "text": "ERDŐTELEPÍTÉS"
+    },
+    {
+      "id": "challenge_insane_3_03",
+      "text": "GÉPJÁRMŰFORGALOM"
+    },
+    {
+      "id": "challenge_insane_3_04",
+      "text": "KÖNYVTÁRVEZETŐ"
+    },
+    {
+      "id": "challenge_insane_3_05",
+      "text": "JEGYPÉNZTÁROS"
+    },
+    {
+      "id": "challenge_insane_3_06",
+      "text": "KÖRNYEZETISMERET"
+    },
+    {
+      "id": "challenge_insane_3_07",
+      "text": "SZEMÉLYSZÁLLÍTÁS"
+    },
+    {
+      "id": "challenge_insane_3_08",
+      "text": "HULLADÉKGYŰJTÉS"
+    },
+    {
+      "id": "challenge_insane_3_09",
+      "text": "SZIVATTYÚBERENDEZÉS"
+    },
+    {
+      "id": "challenge_insane_3_10",
+      "text": "ÉPÜLETKARBANTARTÁS"
+    },
+    {
+      "id": "challenge_insane_3_11",
+      "text": "VÉSZKIJÁRATOK"
+    },
+    {
+      "id": "challenge_insane_3_12",
+      "text": "KERÉKPÁRKÖLCSÖNZŐ"
+    },
+    {
+      "id": "challenge_insane_3_13",
+      "text": "GYERMEKFELÜGYELET"
+    },
+    {
+      "id": "challenge_insane_3_14",
+      "text": "CSOMAGSZÁLLÍTÁS"
+    },
+    {
+      "id": "challenge_insane_3_15",
+      "text": "GÉPJÁRMŰVEZETÉS"
+    },
+    {
+      "id": "challenge_insane_3_16",
+      "text": "TŰZVÉDELMI"
+    },
+    {
+      "id": "challenge_insane_3_17",
+      "text": "KÖNYVKÖLCSÖNZÉS"
+    },
+    {
+      "id": "challenge_insane_3_18",
+      "text": "TANÍTÓKÉPZÉS"
+    },
+    {
+      "id": "challenge_insane_3_19",
+      "text": "VÍZVEZETÉKRENDSZER"
+    },
+    {
+      "id": "challenge_insane_3_20",
+      "text": "VÍZFOGYASZTÁS"
+    },
+    {
+      "id": "challenge_insane_3_21",
+      "text": "IDŐJÁRÁSJELENTÉS"
+    },
+    {
+      "id": "challenge_insane_3_22",
+      "text": "RENDEZVÉNYSZERVEZŐ"
+    },
+    {
+      "id": "challenge_insane_3_23",
+      "text": "VILLAMOSVEZETŐ"
+    },
+    {
+      "id": "challenge_insane_3_24",
+      "text": "KÉPERNYŐFELBONTÁS"
+    }
+  ]
+}

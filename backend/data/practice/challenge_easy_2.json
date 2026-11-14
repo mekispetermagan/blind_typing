@@ -1,0 +1,105 @@
+{
+  "id": "challenge_easy_2",
+  "type": "words",
+  "title": "Könnyű kihívás 2",
+  "baselineSeconds": 120,
+  "allowedLetters": "AÁBCDEÉFGHIÍJKLMNOÓÖŐPQRSTUÚÜŰVWXYZ",
+  "units": [
+    {
+      "id": "challenge_easy_2_01",
+      "text": "KAKAÓ"
+    },
+    {
+      "id": "challenge_easy_2_02",
+      "text": "RIGÓ"
+    },
+    {
+      "id": "challenge_easy_2_03",
+      "text": "ZENE"
+    },
+    {
+      "id": "challenge_easy_2_04",
+      "text": "DOB"
+    },
+    {
+      "id": "challenge_easy_2_05",
+      "text": "RÓKA"
+    },
+    {
+      "id": "challenge_easy_2_06",
+      "text": "LÁB"
+    },
+    {
+      "id": "challenge_easy_2_07",
+      "text": "PIROS"
+    },
+    {
+      "id": "challenge_easy_2_08",
+      "text": "KÉP"
+    },
+    {
+      "id": "challenge_easy_2_09",
+      "text": "VESZ"
+    },
+    {
+      "id": "challenge_easy_2_10",
+      "text": "TÓ"
+    },
+    {
+      "id": "challenge_easy_2_11",
+      "text": "LEKVÁR"
+    },
+    {
+      "id": "challenge_easy_2_12",
+      "text": "CICA"
+    },
+    {
+      "id": "challenge_easy_2_13",
+      "text": "ZÖLD"
+    },
+    {
+      "id": "challenge_easy_2_14",
+      "text": "VIRÁG"
+    },
+    {
+      "id": "challenge_easy_2_15",
+      "text": "ISZIK"
+    },
+    {
+      "id": "challenge_easy_2_16",
+      "text": "ASZTAL"
+    },
+    {
+      "id": "challenge_easy_2_17",
+      "text": "ÚT"
+    },
+    {
+      "id": "challenge_easy_2_18",
+      "text": "MAMA"
+    },
+    {
+      "id": "challenge_easy_2_19",
+      "text": "VILLA"
+    },
+    {
+      "id": "challenge_easy_2_20",
+      "text": "ALMA"
+    },
+    {
+      "id": "challenge_easy_2_21",
+      "text": "BÁCSI"
+    },
+    {
+      "id": "challenge_easy_2_22",
+      "text": "LEVES"
+    },
+    {
+      "id": "challenge_easy_2_23",
+      "text": "PARK"
+    },
+    {
+      "id": "challenge_easy_2_24",
+      "text": "ESZIK"
+    }
+  ]
+}

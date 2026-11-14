@@ -1,7 +1,7 @@
 {
   "id": "challenge_medium",
   "type": "words",
-  "title": "Közepes",
+  "title": "Közepes kihívás 1",
   "baselineSeconds": 180,
   "allowedLetters": "AÁBCDEÉFGHIÍJKLMNOÓÖŐPQRSTUÚÜŰVWXYZ",
   "units": [

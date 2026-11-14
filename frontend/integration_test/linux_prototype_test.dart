@@ -106,7 +106,8 @@ void main() {
       await key(LogicalKeyboardKey.arrowLeft);
       await key(LogicalKeyboardKey.arrowDown); // KIHÍVÁSOK
       await key(LogicalKeyboardKey.enter);
-      await key(LogicalKeyboardKey.enter); // Könnyű
+      await key(LogicalKeyboardKey.enter); // Könnyű kihívások
+      await key(LogicalKeyboardKey.enter); // Könnyű kihívás 1
       await waitTyping(ExercisePhase.ready);
       expect(typing().mode, TypingMode.advanced);
       await key(LogicalKeyboardKey.enter);
@@ -119,7 +120,7 @@ void main() {
       }
       await waitMenu();
       expect(menu().title, 'Kész a feladat');
-      expect(menu().items, hasLength(2));
+      expect(menu().items, hasLength(3));
       await key(LogicalKeyboardKey.enter); // Restart retains mode
       await waitTyping(ExercisePhase.typing);
       expect(typing().mode, TypingMode.advanced);

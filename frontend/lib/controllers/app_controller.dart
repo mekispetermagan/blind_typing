@@ -91,7 +91,7 @@ class AppController extends ChangeNotifier {
     if (activityMenu == null) return _path.last;
     if (activityPhase != ExercisePhase.complete) return activityMenu;
 
-    final command = _nextLessonActivity?.command;
+    final command = _nextActivity?.command;
     return MenuNode(
       id: activityMenu.id,
       title: activityMenu.title,
@@ -103,7 +103,7 @@ class AppController extends ChangeNotifier {
     );
   }
 
-  ({String id, MenuCommand command})? get _nextLessonActivity {
+  ({String id, MenuCommand command})? get _nextActivity {
     if (_path.isEmpty || _selections.isEmpty) return null;
     final children = _path.last.children;
     final selection = _selections.last;
@@ -210,7 +210,8 @@ class AppController extends ChangeNotifier {
           returnToMenu();
         case MenuCommand.nextExercise:
         case MenuCommand.nextLesson:
-          final next = _nextLessonActivity;
+        case MenuCommand.nextChallenge:
+          final next = _nextActivity;
           if (next == null) return;
           final route = _catalog!.routeTo(next.id)!;
           _path.clear();

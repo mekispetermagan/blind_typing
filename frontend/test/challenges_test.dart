@@ -12,6 +12,37 @@ import 'support/fake_audio_service.dart';
 
 import 'package:flutter_test/flutter_test.dart';
 
+int wordDifficulty(String word) {
+  const groups = ['ASDFJKLÉ', 'QWERUIOPGHÁYX C V M', 'TZŐÍBN', 'ÖÜÓÚŰ'];
+  const fingers = [
+    'AQYÍ',
+    'SWX',
+    'DEC',
+    'FRTGVB',
+    'JZ UHMN',
+    'KI',
+    'LO',
+    'ÉPÁŐÚÖÜÓŰ',
+  ];
+  var total = 0;
+  String? previous;
+  for (final character in word.split('')) {
+    final base = groups.indexWhere((group) => group.contains(character)) + 1;
+    final finger = fingers
+        .firstWhere((group) => group.contains(character))
+        .replaceAll(' ', '');
+    var value = base;
+    if (character == previous) {
+      value = 1;
+    } else if (previous != null && finger.contains(previous)) {
+      value += previous == finger[0] || character == finger[0] ? 1 : 2;
+    }
+    total += value;
+    previous = character;
+  }
+  return total;
+}
+
 void main() {
   test('challenge content supplies 24 words and the agreed baselines', () {
     final settings = {'easy': 120, 'medium': 180, 'hard': 180, 'insane': 240};
@@ -36,6 +67,57 @@ void main() {
     }
     expect(const ExerciseScoring().score(seconds: 180, mistakes: 0), 167);
     expect(const ExerciseScoring().score(seconds: 0, mistakes: 10), 18000);
+  });
+
+  test('all challenge words are unique and progression is complete', () {
+    final words = <String>{};
+    for (final name in ['easy', 'medium', 'hard', 'insane']) {
+      for (final suffix in ['', '_2', '_3']) {
+        final json = jsonDecode(
+          File('../backend/data/practice/challenge_$name$suffix.json')
+              .readAsStringSync(),
+        ) as Map<String, dynamic>;
+        final exercise = TypingExercise.fromJson(json);
+        expect(exercise.units, hasLength(24));
+        for (final unit in exercise.units) {
+          expect(unit.words, hasLength(1));
+          expect(words.add(unit.text.toLowerCase()), isTrue, reason: unit.text);
+        }
+      }
+    }
+    expect(words, hasLength(288));
+  });
+
+  test('new challenge difficulties meet the documented bands and totals', () {
+    final targets = {'easy': 192, 'medium': 384, 'hard': 576, 'insane': 768};
+    for (final MapEntry(key: name, value: target) in targets.entries) {
+      for (final suffix in ['_2', '_3']) {
+        final json = jsonDecode(
+          File('../backend/data/practice/challenge_$name$suffix.json')
+              .readAsStringSync(),
+        ) as Map<String, dynamic>;
+        final exercise = TypingExercise.fromJson(json);
+        var total = 0;
+        for (final unit in exercise.units) {
+          final difficulty = wordDifficulty(unit.text);
+          expect(
+            difficulty,
+            name == 'easy'
+                ? inInclusiveRange(1, 10)
+                : name == 'medium'
+                ? inInclusiveRange(11, 20)
+                : greaterThanOrEqualTo(21),
+            reason: unit.text,
+          );
+          total += difficulty;
+        }
+        expect(
+          total,
+          inInclusiveRange(target * .97, target * 1.03),
+          reason: '$name$suffix',
+        );
+      }
+    }
   });
 
   test('each challenge uses its baseline when completed', () async {

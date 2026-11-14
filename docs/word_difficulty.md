@@ -61,6 +61,6 @@ For example, P→É adds 1 to É because É is the right little finger's home ke
 | Medium | 11–20 |
 | Hard | 21 or more |
 
-For assembling 24-word lists, the proposed target totals are 192 for easy, 384 for medium, 576 for hard, and 768 for an **insane** list. Insane is a higher-target selection of hard words, not a separate word-level threshold. Each word must still meet its list's band, and totals may be approximate.
+For assembling 24-word lists, the proposed target totals are 192 for easy, 384 for medium, 576 for hard, and 768 for an **insane** list. Insane is a higher-target selection of hard words, not a separate word-level threshold. Each word must still meet its list's band, and totals must be within ±3% of the target.
 
 The score measures the effort of typing the entire word, so longer words tend to score higher. It is not a length-independent measure of difficulty.

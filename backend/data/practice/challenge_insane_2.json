@@ -1,0 +1,105 @@
+{
+  "id": "challenge_insane_2",
+  "type": "words",
+  "title": "Szupernehéz kihívás 2",
+  "baselineSeconds": 240,
+  "allowedLetters": "AÁBCDEÉFGHIÍJKLMNOÓÖŐPQRSTUÚÜŰVWXYZ",
+  "units": [
+    {
+      "id": "challenge_insane_2_01",
+      "text": "TÁJÉKOZTATÓTÁBLA"
+    },
+    {
+      "id": "challenge_insane_2_02",
+      "text": "VILLAMOSENERGIA"
+    },
+    {
+      "id": "challenge_insane_2_03",
+      "text": "VÍZERŐMŰVEK"
+    },
+    {
+      "id": "challenge_insane_2_04",
+      "text": "KÖNYVTÁRLÁTOGATÁS"
+    },
+    {
+      "id": "challenge_insane_2_05",
+      "text": "GYÜMÖLCSTERMESZTÉS"
+    },
+    {
+      "id": "challenge_insane_2_06",
+      "text": "NÖVÉNYGONDOZÁS"
+    },
+    {
+      "id": "challenge_insane_2_07",
+      "text": "KÖRNYEZETVÉDELEM"
+    },
+    {
+      "id": "challenge_insane_2_08",
+      "text": "CSILLAGVIZSGÁLÓ"
+    },
+    {
+      "id": "challenge_insane_2_09",
+      "text": "KÖZLEKEDÉSBIZTONSÁG"
+    },
+    {
+      "id": "challenge_insane_2_10",
+      "text": "JÁRMŰKARBANTARTÁS"
+    },
+    {
+      "id": "challenge_insane_2_11",
+      "text": "UTAZÁSSZERVEZÉS"
+    },
+    {
+      "id": "challenge_insane_2_12",
+      "text": "GYÓGYSZERTÁRLÁNC"
+    },
+    {
+      "id": "challenge_insane_2_13",
+      "text": "MUNKAVÉDELEM"
+    },
+    {
+      "id": "challenge_insane_2_14",
+      "text": "ORVOSTUDOMÁNY"
+    },
+    {
+      "id": "challenge_insane_2_15",
+      "text": "KERÉKPÁRVERSENY"
+    },
+    {
+      "id": "challenge_insane_2_16",
+      "text": "TERMÉSZETVÉDELEM"
+    },
+    {
+      "id": "challenge_insane_2_17",
+      "text": "VASÚTÉPÍTKEZÉS"
+    },
+    {
+      "id": "challenge_insane_2_18",
+      "text": "SZÉLERŐMŰVEK"
+    },
+    {
+      "id": "challenge_insane_2_19",
+      "text": "SZŰRŐVIZSGÁLAT"
+    },
+    {
+      "id": "challenge_insane_2_20",
+      "text": "MADÁRVÉDELEM"
+    },
+    {
+      "id": "challenge_insane_2_21",
+      "text": "MENETRENDVÁLTOZÁS"
+    },
+    {
+      "id": "challenge_insane_2_22",
+      "text": "KÖRNYEZETSZENNYEZÉS"
+    },
+    {
+      "id": "challenge_insane_2_23",
+      "text": "AUTÓBUSZVEZETŐ"
+    },
+    {
+      "id": "challenge_insane_2_24",
+      "text": "ENERGIATAKARÉKOS"
+    }
+  ]
+}

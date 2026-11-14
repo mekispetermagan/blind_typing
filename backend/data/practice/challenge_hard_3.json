@@ -1,0 +1,105 @@
+{
+  "id": "challenge_hard_3",
+  "type": "words",
+  "title": "Nehéz kihívás 3",
+  "baselineSeconds": 180,
+  "allowedLetters": "AÁBCDEÉFGHIÍJKLMNOÓÖŐPQRSTUÚÜŰVWXYZ",
+  "units": [
+    {
+      "id": "challenge_hard_3_01",
+      "text": "SZÁMÍTÓGÉP"
+    },
+    {
+      "id": "challenge_hard_3_02",
+      "text": "BILLENTYŰZET"
+    },
+    {
+      "id": "challenge_hard_3_03",
+      "text": "TORNATEREM"
+    },
+    {
+      "id": "challenge_hard_3_04",
+      "text": "TÁNYÉRTARTÓ"
+    },
+    {
+      "id": "challenge_hard_3_05",
+      "text": "TANKÖNYVEK"
+    },
+    {
+      "id": "challenge_hard_3_06",
+      "text": "VONATJEGYEK"
+    },
+    {
+      "id": "challenge_hard_3_07",
+      "text": "RIBIZLILEKVÁR"
+    },
+    {
+      "id": "challenge_hard_3_08",
+      "text": "PÁRNAHUZAT"
+    },
+    {
+      "id": "challenge_hard_3_09",
+      "text": "SZÍNESKRÉTA"
+    },
+    {
+      "id": "challenge_hard_3_10",
+      "text": "MESEKÖNYVEK"
+    },
+    {
+      "id": "challenge_hard_3_11",
+      "text": "SZERSZÁMOSLÁDA"
+    },
+    {
+      "id": "challenge_hard_3_12",
+      "text": "KONYHAKERT"
+    },
+    {
+      "id": "challenge_hard_3_13",
+      "text": "TÖRÖLKÖZŐ"
+    },
+    {
+      "id": "challenge_hard_3_14",
+      "text": "FESTŐECSET"
+    },
+    {
+      "id": "challenge_hard_3_15",
+      "text": "CSÜTÖRTÖK"
+    },
+    {
+      "id": "challenge_hard_3_16",
+      "text": "TERMÉSZETJÁRÁS"
+    },
+    {
+      "id": "challenge_hard_3_17",
+      "text": "ZÖLDSÉGLEVES"
+    },
+    {
+      "id": "challenge_hard_3_18",
+      "text": "KERTÉSZKEDÉS"
+    },
+    {
+      "id": "challenge_hard_3_19",
+      "text": "VILLANYKAPCSOLÓ"
+    },
+    {
+      "id": "challenge_hard_3_20",
+      "text": "OSZTÁLYTEREM"
+    },
+    {
+      "id": "challenge_hard_3_21",
+      "text": "HAJÓKIKÖTŐ"
+    },
+    {
+      "id": "challenge_hard_3_22",
+      "text": "SZŐLŐSKERT"
+    },
+    {
+      "id": "challenge_hard_3_23",
+      "text": "KULCSTARTÓ"
+    },
+    {
+      "id": "challenge_hard_3_24",
+      "text": "GYERMEKKÖNYV"
+    }
+  ]
+}
