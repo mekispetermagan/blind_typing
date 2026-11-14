@@ -7911,5 +7911,10 @@
   "bad": {
     "source": "Original synthesized buzz",
     "duration_ms": 60
+  },
+  "menu_my_progress": {
+    "text": "Haladásom",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "abed17892d2029c5904f055eaa816de7d091eb7a884bc21344c42bf8ac840ffb"
   }
 }

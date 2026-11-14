@@ -18,8 +18,10 @@ class LetterTeachingController extends ChangeNotifier {
     required LetterExercise exercise,
     required this._speech,
     PracticeRecords? records,
+    this.onAttempt,
   }) : _manager = LetterTeachingManager(exercise),
        _records = records ?? PracticeRecords();
+  final AttemptSnapshotSink? onAttempt;
   final LetterTeachingManager _manager;
   final SpeechCoordinator _speech;
   final PracticeRecords _records;
@@ -41,6 +43,7 @@ class LetterTeachingController extends ChangeNotifier {
       ]);
       if (_disposed || !_speech.isCurrent(token)) return;
       _manager.ready();
+      _attempt?.interrupt();
       _attempt = null;
       _practiceResult = null;
       notifyListeners();
@@ -56,22 +59,37 @@ class LetterTeachingController extends ChangeNotifier {
       return;
     }
     if (!_manager.restart()) return;
+    _attempt?.interrupt();
     _practiceResult = null;
-    _attempt = PracticeAttempt();
+    _attempt = PracticeAttempt(
+      activityId: exercise.id,
+      activityType: exercise.type.name,
+      onSnapshot: onAttempt,
+    );
     _syncAttemptClock();
+    _attempt?.publish();
     notifyListeners();
     repeatInstruction();
   }
 
   void typeCharacter(String character) {
     final previous = step;
+    final position = '${state.stepIndex}:${state.successes}';
     final result = _manager.typeCharacter(character);
     if (result == TeachingResult.ignored) return;
     if (result == TeachingResult.incorrect) _attempt!.recordError();
+    _attempt?.recordTarget(
+      position,
+      previous.key,
+      correct: result != TeachingResult.incorrect,
+    );
     _syncAttemptClock();
     if (result == TeachingResult.completed) {
       _practiceResult = _records.finish(exercise.id, _attempt!.finish());
+      _attempt!.publish(status: 'completed', score: _practiceResult?.score);
       _attempt = null;
+    } else {
+      _attempt?.publish();
     }
     try {
       _speech.audio.feedback(correct: result != TeachingResult.incorrect);
@@ -165,6 +183,7 @@ class LetterTeachingController extends ChangeNotifier {
 
   @override
   void dispose() {
+    _attempt?.interrupt();
     _disposed = true;
     _speech.begin();
     super.dispose();

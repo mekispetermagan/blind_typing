@@ -23,10 +23,12 @@ class TypingController extends ChangeNotifier {
     required this._speech,
     TypingMode mode = TypingMode.simple,
     PracticeRecords? records,
+    this.onAttempt,
     this._countdownInterval = const Duration(seconds: 1),
   }) : _manager = TypingSessionManager(exercise, mode: mode),
        _records = records ?? PracticeRecords();
 
+  final AttemptSnapshotSink? onAttempt;
   final TypingSessionManager _manager;
   final SpeechCoordinator _speech;
   final Duration _countdownInterval;
@@ -61,6 +63,7 @@ class TypingController extends ChangeNotifier {
       ]);
       if (!_current(token)) return;
       _manager.ready();
+      _attempt?.interrupt();
       _attempt = null;
       _practiceResult = null;
       notifyListeners();
@@ -76,10 +79,17 @@ class TypingController extends ChangeNotifier {
       return;
     }
     if (!_manager.restart()) return;
+    _attempt?.interrupt();
     _practiceResult = null;
-    if (exercise.isWordDrill) {
-      _attempt = PracticeAttempt(mode: mode)..setAcceptingInput(true);
-    }
+    _attempt =
+        PracticeAttempt(
+            mode: mode,
+            activityId: exercise.id,
+            activityType: exercise.type.name,
+            onSnapshot: onAttempt,
+          )
+          ..setAcceptingInput(exercise.isWordDrill)
+          ..publish();
     notifyListeners();
     unawaited(_beginUnit(_speech.begin()));
   }
@@ -107,6 +117,7 @@ class TypingController extends ChangeNotifier {
           }
         }
         _manager.beginTyping();
+        _attempt?.setAcceptingInput(true);
         notifyListeners();
       }
       await _speakWord(token);
@@ -143,17 +154,37 @@ class TypingController extends ChangeNotifier {
 
   void typeCharacter(String character) {
     cancelSpelling();
+    if (phase != ExercisePhase.typing || character.trim().isEmpty) return;
+    final target = sentence.words[wordIndex][letterIndex];
+    final position = '$sentenceIndex:$wordIndex:$letterIndex';
+    final aligned = enteredCharacters.length == letterIndex;
     final result = _manager.typeCharacter(character);
     if (result == TypingResult.ignored) return;
     if (result == TypingResult.incorrect) _attempt?.recordError();
+    if (aligned) {
+      _attempt?.recordTarget(
+        position,
+        target,
+        correct: result != TypingResult.incorrect,
+      );
+    }
     final attempt = _attempt;
     if (result == TypingResult.completed && attempt != null) {
-      _practiceResult = _records.finish(
-        exercise.id,
-        attempt.finish(),
-        scoring: ExerciseScoring(baselineSeconds: exercise.baselineSeconds),
-      );
+      final result = attempt.finish();
+      if (exercise.isWordDrill) {
+        _practiceResult = _records.finish(
+          exercise.id,
+          result,
+          scoring: ExerciseScoring(baselineSeconds: exercise.baselineSeconds),
+        );
+      }
+      attempt.publish(status: 'completed', score: _practiceResult?.score);
       _attempt = null;
+    } else {
+      if (result == TypingResult.unitAdvanced && !exercise.isWordDrill) {
+        _attempt?.setAcceptingInput(false);
+      }
+      _attempt?.publish();
     }
     try {
       _speech.audio.feedback(correct: result != TypingResult.incorrect);
@@ -214,6 +245,7 @@ class TypingController extends ChangeNotifier {
     cancelSpelling();
     _manager.toggleMode();
     _attempt?.recordModeChange();
+    _attempt?.publish();
     notifyListeners();
     if (phase == ExercisePhase.reading) {
       unawaited(_beginUnit(_speech.begin(), announceMode: true));
@@ -260,6 +292,7 @@ class TypingController extends ChangeNotifier {
   void pause() {
     if (!_manager.pause()) return;
     _attempt?.setAcceptingInput(false);
+    _attempt?.publish();
     _spellingToken = null;
     _speech.begin();
     notifyListeners();
@@ -272,6 +305,7 @@ class TypingController extends ChangeNotifier {
     }
     if (!_manager.resume()) return;
     _attempt?.setAcceptingInput(phase == ExercisePhase.typing);
+    _attempt?.publish();
     notifyListeners();
     if (phase == ExercisePhase.typing) {
       repeatWord();
@@ -299,6 +333,7 @@ class TypingController extends ChangeNotifier {
 
   @override
   void dispose() {
+    _attempt?.interrupt();
     _disposed = true;
     _speech.begin();
     super.dispose();

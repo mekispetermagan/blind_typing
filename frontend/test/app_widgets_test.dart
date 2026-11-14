@@ -6,6 +6,7 @@ import 'package:blind_typing/controllers/app_controller.dart';
 import 'package:blind_typing/models/menu.dart';
 import 'package:blind_typing/models/typing_state.dart';
 import 'package:blind_typing/screens/menu_screen.dart';
+import 'package:blind_typing/screens/progress_screen.dart';
 import 'package:blind_typing/screens/teaching_screen.dart';
 import 'package:blind_typing/screens/typing_screen.dart';
 import 'package:blind_typing/services/speech_coordinator.dart';
@@ -117,6 +118,41 @@ void main() {
       await tester.pumpWidget(const SizedBox.shrink());
       await tester.pump(const Duration(seconds: 1));
       expect(audio.disposed, isTrue);
+    },
+  );
+
+  testWidgets(
+    'main menu opens progress and its back button restores the selection',
+    (tester) async {
+      final audio = FakeAudioService();
+      final app = AppController(
+        content: FileContentRepository(),
+        speech: SpeechCoordinator(audio),
+      );
+      await tester.pumpWidget(TypingApp(controller: app, onClose: () {}));
+      await tester.pumpAndSettle();
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
+      await tester.pump();
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
+      await tester.pump();
+      expect(app.selectedIndex, 2);
+      expect(audio.spoken.last, 'assets/audio/menu_my_progress.wav');
+      await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+      await tester.pump();
+      expect(find.byType(ProgressScreen), findsOneWidget);
+      await tester.pump(); // Allow the progress view to receive focus.
+      await tester.sendKeyEvent(LogicalKeyboardKey.escape);
+      await tester.pump();
+      expect(find.byType(MenuScreen), findsOneWidget);
+      expect(app.selectedIndex, 2);
+      expect(audio.spoken.last, 'assets/audio/menu_my_progress.wav');
+      await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+      await tester.pump();
+      expect(find.byType(ProgressScreen), findsOneWidget);
+      await tester.tap(find.byTooltip('Vissza'));
+      await tester.pump();
+      expect(find.byType(MenuScreen), findsOneWidget);
+      expect(app.selectedIndex, 2);
     },
   );
 

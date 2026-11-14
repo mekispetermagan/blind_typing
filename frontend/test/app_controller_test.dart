@@ -75,6 +75,28 @@ void main() {
     expect(app.activityPhase, ExercisePhase.complete);
   }
 
+  test(
+    'progress is the spoken third main-menu item and returns to that selection',
+    () async {
+      await app.initialize();
+      expect(app.menu.children.map((node) => node.id).take(3).toList(), [
+        'lessons',
+        'challenges',
+        'my_progress',
+      ]);
+      app.moveSelection(2);
+      await settle();
+      expect(audio.spoken.last, 'assets/audio/menu_my_progress.wav');
+      app.activate();
+      expect(app.page, AppPage.progress);
+      app.back();
+      await settle();
+      expect(app.page, AppPage.menu);
+      expect(app.selectedIndex, 2);
+      expect(audio.spoken.last, 'assets/audio/menu_my_progress.wav');
+    },
+  );
+
   test('navigation speaks selection, cancels previous speech, and retains parent selection', () async {
     await app.initialize();
     expect(content.loaded, isEmpty); // Exercise recordings load on entry.

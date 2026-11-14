@@ -5,7 +5,8 @@ enum MenuCommand {
   restart,
   menu,
   nextExercise,
-  nextLesson;
+  nextLesson,
+  progress;
 
   bool get isProgression => this == nextExercise || this == nextLesson;
 }
@@ -93,10 +94,24 @@ class MenuCatalog {
         ordered.any((id) => !activities.contains(id)) ||
         nodes.map((node) => node.id).toSet().length != nodes.length ||
         [root, pause, complete].any((node) => node.children.isEmpty) ||
-        root.descendants.any((node) => node.command != null) ||
-        pause.children.any((node) => node.command?.isProgression ?? true) ||
+        root.descendants.any(
+          (node) =>
+              node.command != null &&
+              !(node.command == MenuCommand.progress &&
+                  root.children.contains(node)),
+        ) ||
+        pause.children.any(
+          (node) => !{
+            MenuCommand.resume,
+            MenuCommand.restart,
+            MenuCommand.menu,
+          }.contains(node.command),
+        ) ||
         complete.children.any(
-          (node) => node.command == null || node.command == MenuCommand.resume,
+          (node) =>
+              node.command == null ||
+              node.command == MenuCommand.resume ||
+              node.command == MenuCommand.progress,
         ) ||
         !complete.children.any(
           (node) => node.command?.isProgression == false,

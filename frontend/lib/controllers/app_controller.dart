@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 
 import '../models/exercise.dart';
 import '../models/menu.dart';
+import '../managers/practice_attempt.dart';
 import '../services/audio_service.dart';
 import '../services/content_repository.dart';
 import '../services/practice_feedback.dart';
@@ -12,7 +13,7 @@ import '../services/speech_coordinator.dart';
 import 'letter_teaching_controller.dart';
 import 'typing_controller.dart';
 
-enum AppPage { loading, menu, typing, teaching, error }
+enum AppPage { loading, menu, typing, teaching, progress, error }
 
 /// Owns navigation and shared services; exercise rules belong to managers.
 class AppController extends ChangeNotifier {
@@ -21,8 +22,10 @@ class AppController extends ChangeNotifier {
     required this._speech,
     this.countdownInterval = const Duration(seconds: 1),
     PracticeRecords? records,
+    this.onAttempt,
   }) : _records = records ?? PracticeRecords();
 
+  final AttemptSnapshotSink? onAttempt;
   final ContentRepository _content;
   final SpeechCoordinator _speech;
   final PracticeRecords _records;
@@ -36,6 +39,7 @@ class AppController extends ChangeNotifier {
   LetterTeachingController? _teaching;
   ExercisePhase? _lastPhase;
   bool _loading = true;
+  bool _showProgress = false;
   bool _disposed = false;
   String? _failure;
   int _generation = 0;
@@ -52,6 +56,7 @@ class AppController extends ChangeNotifier {
   };
   AppPage get page {
     if (_loading) return AppPage.loading;
+    if (_showProgress) return AppPage.progress;
     if (_failure != null || activityPhase == ExercisePhase.error) {
       return AppPage.error;
     }
@@ -169,6 +174,10 @@ class AppController extends ChangeNotifier {
       unawaited(_openActivity(entry.activity!));
     } else {
       switch (entry.command!) {
+        case MenuCommand.progress:
+          _speech.begin();
+          _showProgress = true;
+          notifyListeners();
         case MenuCommand.resume:
           _typing?.togglePause();
           _teaching?.resume();
@@ -197,7 +206,11 @@ class AppController extends ChangeNotifier {
   }
 
   void back() {
-    if (_activityMenu != null) {
+    if (_showProgress) {
+      _showProgress = false;
+      notifyListeners();
+      _announceMenu();
+    } else if (_activityMenu != null) {
       if (activityPhase == ExercisePhase.paused) {
         _typing?.togglePause();
         _teaching?.resume();
@@ -233,6 +246,7 @@ class AppController extends ChangeNotifier {
         case TypingExercise():
           _typing = TypingController(
             exercise: exercise,
+            onAttempt: onAttempt,
             speech: _speech,
             mode: _mode,
             records: _records,
@@ -242,6 +256,7 @@ class AppController extends ChangeNotifier {
         case LetterExercise():
           _teaching = LetterTeachingController(
             exercise: exercise,
+            onAttempt: onAttempt,
             speech: _speech,
             records: _records,
           )..addListener(_activityChanged);

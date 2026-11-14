@@ -32,7 +32,23 @@ cached and checked for updates at startup; activity audio is retained through th
 completion menu and replaced when another activity starts. Interrupted activity
 caches are removed at the next startup. On failure, the bundled announcement
 explains retry and exit keys. SQLite is initialized at `backend/instance/usage.db`
-(configurable in `backend/.env`); it has no tables or usage collection yet.
+(configurable in `backend/.env`); it contains user, activity-attempt, and per-key statistics tables.
+The current local database contains one initial admin; authentication is not implemented yet. In local development, attempt
+snapshots are attributed to the sole database user; uploads are disabled if
+there is more than one user. The unauthenticated attempt API is for local use
+only. The client queues snapshots locally and retries failed uploads. The database and credentials are not tracked
+in Git. Timestamps are stored as UTC.
+
+## Student progress (visual prototype)
+
+The main menu's **Haladásom** item opens a scrollable progress page. It shows
+completed activities and active time this week, completed counts for the last
+eight local calendar weeks, first-try key statistics, and the ten most recent
+completed or interrupted attempts. Letter statistics include interrupted
+attempts; completion counts and time include completed attempts only. Stacked
+charts show the current week by day and first-try counts by key. The page
+uses the sole local database user and currently has no spoken or dedicated
+keyboard navigation. The progress endpoint is unauthenticated and local-only.
 
 ## Menus and activities
 

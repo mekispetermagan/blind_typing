@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'controllers/app_controller.dart';
 import 'screens/menu_screen.dart';
+import 'screens/progress_screen.dart';
 import 'screens/status_screen.dart';
 import 'screens/teaching_screen.dart';
 import 'screens/typing_screen.dart';
@@ -93,6 +94,8 @@ class _ApplicationView extends StatelessWidget {
           onToggleMode: controller.toggleMode,
           onClose: onClose,
         );
+      case AppPage.progress:
+        return ProgressScreen(onBack: controller.back);
       case AppPage.typing:
         final typing = controller.typing!;
         return TypingScreen(
