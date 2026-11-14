@@ -152,7 +152,9 @@ F4, or Close exits.
 - Correct characters play a short good tone. Wrong characters play a buzz.
 - F3 toggles Simple/Advanced and announces the mode. Simple is the launch default;
   the selection survives activity changes and exercise restarts.
-- Simple ignores wrong characters; Backspace does nothing.
+- Simple ignores wrong characters; Backspace does nothing. After 2,000 ms
+  without a character, it speaks the next letter once. Correct and wrong
+  characters both restart the delay; word prompts finish before it starts.
 - Advanced retains mistakes and subsequent characters. Backspace removes the
   last entered character, including correct characters, within the current word.
   The incorrect suffix is shown in red and must be deleted before continuing.

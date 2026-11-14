@@ -246,6 +246,58 @@ void main() {
     expect(controller.phase, ExercisePhase.ready);
   });
 
+  testWidgets('simple hints reset after correct and mistaken keys', (
+    tester,
+  ) async {
+    await controller.initialize();
+    controller.start();
+    await tester.pump();
+    controller.typeCharacter('a'); // Interrupt the prompt; N is next.
+    audio.spoken.clear();
+    await tester.pump(const Duration(milliseconds: 1999));
+    expect(audio.spoken, isEmpty);
+    await tester.pump(const Duration(milliseconds: 1));
+    expect(audio.spoken, [AudioCues.letter('n')]);
+    await tester.pump(const Duration(milliseconds: 300));
+    controller.typeCharacter('l');
+    await tester.pump(const Duration(milliseconds: 1999));
+    expect(audio.spoken, [AudioCues.letter('n')]);
+    await tester.pump(const Duration(milliseconds: 1));
+    expect(audio.spoken, [AudioCues.letter('n'), AudioCues.letter('n')]);
+    await tester.pump(const Duration(seconds: 3));
+    expect(audio.spoken, hasLength(2));
+    controller.typeCharacter('n');
+    await tester.pump(const Duration(milliseconds: 2000));
+    expect(audio.spoken.last, AudioCues.letter('n'));
+    expect(audio.spoken, hasLength(3));
+  });
+
+  testWidgets('hints wait for prompts and are cancelled by pause and mode', (
+    tester,
+  ) async {
+    await controller.initialize();
+    audio.holdSpeech = true;
+    controller.start();
+    for (var i = 0; i < 4; i++) {
+      audio.finishSpeech();
+      await tester.pump();
+    }
+    expect(controller.phase, ExercisePhase.typing);
+    await tester.pump(const Duration(seconds: 3));
+    expect(audio.spoken.last, sampleSentences.first.wordAudioAsset(0));
+    controller.typeCharacter('a');
+    controller.pause();
+    final count = audio.spoken.length;
+    await tester.pump(const Duration(seconds: 2));
+    expect(audio.spoken, hasLength(count));
+    audio.holdSpeech = false;
+    controller.togglePause();
+    controller.typeCharacter('n');
+    controller.toggleMode();
+    await tester.pump(const Duration(seconds: 2));
+    expect(audio.spoken.last, AudioCues.modeAdvanced);
+  });
+
   group('spelling the accepted prefix', () {
     setUp(() {
       controller.dispose();
@@ -317,6 +369,7 @@ void main() {
         expect(controller.wordIndex, 0);
         expect(controller.phase, ExercisePhase.typing);
         expect(audio.feedbackResults, hasLength(feedbackCount));
+        controller.pause();
       },
     );
 
@@ -332,6 +385,7 @@ void main() {
       expect(audio.spoken, 'árvíztűr'.split('').map(AudioCues.letter));
       expect(controller.wordIndex, 1);
       expect(controller.letterIndex, 8);
+      controller.pause();
     });
 
     testWidgets(
@@ -347,6 +401,7 @@ void main() {
         expect(controller.letterIndex, 4);
         expect(audio.feedbackResults.last, isFalse);
         expect(controller.phase, ExercisePhase.typing);
+        controller.pause();
       },
     );
 

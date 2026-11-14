@@ -36,6 +36,7 @@ class TypingController extends ChangeNotifier {
   PracticeAttempt? _attempt;
   PracticeResult? _practiceResult;
   int? _spellingToken;
+  Timer? _hintTimer;
   bool _disposed = false;
 
   PracticeResult? get practiceResult => _practiceResult;
@@ -129,32 +130,65 @@ class TypingController extends ChangeNotifier {
   Future<void> _speakWord(int token) async {
     final word = sentence.words[wordIndex];
     final letters = word.split('').map(AudioCues.letter);
-    if (sentence.promptStyle == PromptStyle.letters) {
-      await _speech.sequence(
-        token,
-        letters,
-        gap: const Duration(milliseconds: 250),
-      );
-      return;
-    }
-
     _spellingToken = token;
     try {
-      if (!await _speech.say(token, sentence.wordAudioAsset(wordIndex))) return;
-      if (!await _speech.wait(token, const Duration(seconds: 1))) return;
-      await _speech.sequence(
-        token,
-        letters,
-        gap: const Duration(milliseconds: 250),
-      );
+      if (sentence.promptStyle == PromptStyle.letters) {
+        await _speech.sequence(
+          token,
+          letters,
+          gap: const Duration(milliseconds: 250),
+        );
+      } else {
+        if (!await _speech.say(token, sentence.wordAudioAsset(wordIndex))) {
+          return;
+        }
+        if (!await _speech.wait(token, const Duration(seconds: 1))) return;
+        await _speech.sequence(
+          token,
+          letters,
+          gap: const Duration(milliseconds: 250),
+        );
+      }
     } finally {
       if (_spellingToken == token) _spellingToken = null;
+      if (_current(token)) _scheduleHint();
     }
+  }
+
+  void _cancelHint() {
+    _hintTimer?.cancel();
+    _hintTimer = null;
+  }
+
+  void _scheduleHint() {
+    _cancelHint();
+    if (_disposed ||
+        phase != ExercisePhase.typing ||
+        mode != TypingMode.simple) {
+      return;
+    }
+    _hintTimer = Timer(const Duration(milliseconds: 2000), () {
+      _hintTimer = null;
+      if (_disposed ||
+          phase != ExercisePhase.typing ||
+          mode != TypingMode.simple) {
+        return;
+      }
+      final token = _speech.begin();
+      final letter = sentence.words[wordIndex][letterIndex];
+      unawaited(
+        _speech.say(token, AudioCues.letter(letter)).catchError((Object _) {
+          _fail(token);
+          return false;
+        }),
+      );
+    });
   }
 
   void typeCharacter(String character) {
     cancelSpelling();
     if (phase != ExercisePhase.typing || character.trim().isEmpty) return;
+    _cancelHint();
     final target = sentence.words[wordIndex][letterIndex];
     final position = '$sentenceIndex:$wordIndex:$letterIndex';
     final aligned = enteredCharacters.length == letterIndex;
@@ -197,6 +231,7 @@ class TypingController extends ChangeNotifier {
         case TypingResult.completed:
           unawaited(_finish(_speech.begin()));
         default:
+          _scheduleHint();
           break;
       }
     } catch (_) {
@@ -243,6 +278,7 @@ class TypingController extends ChangeNotifier {
       return;
     }
     cancelSpelling();
+    _cancelHint();
     _manager.toggleMode();
     _attempt?.recordModeChange();
     _attempt?.publish();
@@ -257,6 +293,7 @@ class TypingController extends ChangeNotifier {
   void repeatWord() {
     if (phase != ExercisePhase.typing) return;
     cancelSpelling();
+    _cancelHint();
     final token = _speech.begin();
     unawaited(_speakWord(token).catchError((Object _) => _fail(token)));
   }
@@ -264,6 +301,7 @@ class TypingController extends ChangeNotifier {
   void spellEnteredLetters() {
     cancelSpelling();
     if (phase != ExercisePhase.typing || enteredCharacters.isEmpty) return;
+    _cancelHint();
     final token = _speech.begin();
     _spellingToken = token;
     unawaited(_spell(token, enteredCharacters));
@@ -280,6 +318,7 @@ class TypingController extends ChangeNotifier {
       _fail(token);
     } finally {
       if (_spellingToken == token) _spellingToken = null;
+      if (_current(token)) _scheduleHint();
     }
   }
 
@@ -291,6 +330,7 @@ class TypingController extends ChangeNotifier {
 
   void pause() {
     if (!_manager.pause()) return;
+    _cancelHint();
     _attempt?.setAcceptingInput(false);
     _attempt?.publish();
     _spellingToken = null;
@@ -318,13 +358,19 @@ class TypingController extends ChangeNotifier {
     cancelSpelling();
     final token = _speech.begin();
     unawaited(
-      _speech.sequence(token, assets).catchError((Object _) => _fail(token)),
+      _speech
+          .sequence(token, assets)
+          .then((_) {
+            if (_current(token)) _scheduleHint();
+          })
+          .catchError((Object _) => _fail(token)),
     );
   }
 
   void _fail(int token) {
     if (!_current(token)) return;
     _spellingToken = null;
+    _cancelHint();
     _speech.begin();
     _manager.fail();
     _attempt?.setAcceptingInput(false);
@@ -334,6 +380,7 @@ class TypingController extends ChangeNotifier {
   @override
   void dispose() {
     _attempt?.interrupt();
+    _cancelHint();
     _disposed = true;
     _speech.begin();
     super.dispose();

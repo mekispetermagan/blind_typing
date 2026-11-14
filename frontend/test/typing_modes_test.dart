@@ -233,6 +233,7 @@ void main() {
       AudioCues.modeSimple,
     ]);
     expect(controller.enteredText, 'a');
+    controller.pause();
   });
 
   testWidgets(
