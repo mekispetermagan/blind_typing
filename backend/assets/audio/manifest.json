@@ -7916,5 +7916,200 @@
     "text": "Haladásom",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "abed17892d2029c5904f055eaa816de7d091eb7a884bc21344c42bf8ac840ffb"
+  },
+  "progress_help": {
+    "text": "A fel és le nyíllal lépkedhetsz az elemek között. A bal és jobb nyíl szakaszt vált. A Home és End a szakasz első és utolsó elemére ugrik. Az F egy ismétel. Az Escape visszalép.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "88b193acd5ca05ae038c23b3165f76189c9d7d62e849cf34257af891c360980c"
+  },
+  "progress_section_week": {
+    "text": "Ezen a héten",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "03f1fc1811b46b6fd53be5ec0f2e348e0ab62556a030a34a83639d0dd504688e"
+  },
+  "progress_section_activity": {
+    "text": "Heti gyakorlás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "424a784b4b781f09b6fd5f22e78ffcc147da1c85ba0f537d341c75d671d27dbd"
+  },
+  "progress_section_letters": {
+    "text": "Betűstatisztika",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "028f87f5707ee7573bfa8aa19b2ebf7d8a1347d57f1e2f8e66c4c218888a7332"
+  },
+  "progress_section_recent": {
+    "text": "Legutóbbi feladatok",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bda9d51c4fcd4db04e35a35864c7f375f3f1d4c3e9a55eb5b0668201e6424245"
+  },
+  "progress_completed": {
+    "text": "Befejezett feladatok",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "225241e09d7d879a46530d3c9d9f61f6bc1e429b7c6710cfd555ffcb42f67200"
+  },
+  "progress_interrupted": {
+    "text": "Megszakított feladatok",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1f6b25ae54bb7422b62a4c0896056d4aa5e2431f7bf009462f00fa951218b4d5"
+  },
+  "progress_duration": {
+    "text": "Aktív gyakorlási idő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f2813d735c16b7b023014a376f4296b2d5bb5cb75ea811d291667e7da0b1334f"
+  },
+  "progress_correct": {
+    "text": "Elsőre helyes",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "8d4f2f728f701bc97c03f6ddbdc9d8e04f67f6c418d31298b25e8691e10f24c5"
+  },
+  "progress_incorrect": {
+    "text": "Elsőre hibás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5358e4ab6fe405a2a1fda06afc985948e6f619fe79fa586ab1135778643e9d8b"
+  },
+  "progress_total": {
+    "text": "Összesen",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0c3437347c393cbdb36a98d69d909ad6a4a652b43d8df652d6efcf1b68878c5d"
+  },
+  "progress_percent": {
+    "text": "százalék helyes",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3c5f973642f3f169efc726f0cc5ac6a7e3d872709020ba6ce69bb76d71383448"
+  },
+  "progress_week": {
+    "text": "Hét",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2bb551e99822dbe1fe553603fb8c6e2b26d364a5d481877a3a358d17b7b3e4fa"
+  },
+  "progress_until": {
+    "text": "eddig",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bf8e8f1fe785c3838644ca7cd2b63e9aa2bd8d3a3391889f78b095a5aa897c95"
+  },
+  "progress_date": {
+    "text": "Dátum",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6f2108f54b03f783300d6d156a0738b9d8adb0453e42e918091892a7b9f79f84"
+  },
+  "progress_activity": {
+    "text": "Feladat",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "870bcbc4a1d547ddd402b96c7c6d73c4d268e72e4d8f58cce797b695a96ff61b"
+  },
+  "progress_finished": {
+    "text": "Befejezve",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e35b18d5b8e74e77c6016e92b71063fbdf414f519b3b18e66b0d6b9849cc9a6c"
+  },
+  "progress_stopped": {
+    "text": "Megszakítva",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "732b010b0d0dfaa28aadba200c79f961b3d770f54f6d2ce76600a69c97ce6d40"
+  },
+  "progress_empty_letters": {
+    "text": "Még nincs betűstatisztika.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "be3771b36ba82603e392b3bfb48ff98c745a39ce9aa0686cf9a75a53de6fe4f3"
+  },
+  "progress_empty_recent": {
+    "text": "Még nincsenek feladatok.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d39b3ee586e9a100aa995d05364c48a8c77dcff32629cd10cbc9a0983fdc3466"
+  },
+  "progress_month_1": {
+    "text": "január",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4cbbcd021d9bb8f0ca3e03f49e8cdc3a3bbd05b9ed4f11947ffc2a3a0ca930b5"
+  },
+  "progress_month_2": {
+    "text": "február",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e38a1b4663d97337cebd4b8c9df070ec486a8ea8ff2a579a550fa4ab3b007ead"
+  },
+  "progress_month_3": {
+    "text": "március",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "82396005fc9a8daae77730af19726c6b330b7bf2d4812d231ee9f95e76ccbd12"
+  },
+  "progress_month_4": {
+    "text": "április",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fbaa0216acd14b5b04627e2872086f2dd1e9b91c527049425e14ff625a1c8a50"
+  },
+  "progress_month_5": {
+    "text": "május",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "5485f0078b76498d4af3e9e1d1a35f3d348610f426e779adf4bc659e0d3468ab"
+  },
+  "progress_month_6": {
+    "text": "június",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a8d5e6b5bde9ef5edf516dd1086686e546d56811c1f6ec4978cef28bc3cfa6ef"
+  },
+  "progress_month_7": {
+    "text": "július",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "67831292ee14c05350bb81a43d605aecef97a338f99d42454dcb294ee5a215cc"
+  },
+  "progress_month_8": {
+    "text": "augusztus",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "de5528aa8715d686a4681d6ea372680d0e8d7b61ae59ec9f951fefe547c23faa"
+  },
+  "progress_month_9": {
+    "text": "szeptember",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "31b9a0f4e84177dda949a3300399231dd5e1a72f791975a755dd811988d81d8f"
+  },
+  "progress_month_10": {
+    "text": "október",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "43705456a21a160808c2d8435552d59a19fdc0caa72a2468fe03d4470e44f29d"
+  },
+  "progress_month_11": {
+    "text": "november",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6ecae016c31b6d449fad3a5d39342d6d311849844fa9fa0d4c162dac1c475958"
+  },
+  "progress_month_12": {
+    "text": "december",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "83bdec37eae3e074fd5aca838b531872e23c0e7d368aa2952c7e6f373b9ce409"
+  },
+  "progress_day_1": {
+    "text": "hétfő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9c2c4fadbbcc97a139700c34c19df3348a13722d6c0e8b5cbc0c6501ce851a5e"
+  },
+  "progress_day_2": {
+    "text": "kedd",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "f657cbb172347c64202638223d4b4604e479960b4f639580522b880b7f79b922"
+  },
+  "progress_day_3": {
+    "text": "szerda",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "69a5a2d283a2866f5d8530c2efa6ee9e8160b1fe69f73796318e95b7976bb2c7"
+  },
+  "progress_day_4": {
+    "text": "csütörtök",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ac3741db29bb99b550aaffa6b3371f5b9ad42322d37194a892590520027ecb1e"
+  },
+  "progress_day_5": {
+    "text": "péntek",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c2e4762042d7aae5ef185e7d94d3b46d978c5549e8ec63750dd83a5719169e5a"
+  },
+  "progress_day_6": {
+    "text": "szombat",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3081d7692253382eaa845c2abea65dc0c55b08dc19e2632035f00c2b4d66fd2f"
+  },
+  "progress_day_7": {
+    "text": "vasárnap",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e4b19ddba763a68104f890f5f97d2eb4ec3dc614762c4e45a739b2e2859bd925"
   }
 }

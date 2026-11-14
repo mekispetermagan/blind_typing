@@ -21,6 +21,34 @@ ROOT = Path(__file__).resolve().parents[1]
 AUDIO = ROOT / "assets" / "audio"
 RATE = 48000
 
+# Reusable progress-view speech fragments. Status clips are bundled separately.
+PROGRESS_SPEECH = {
+    'progress_help': 'A fel és le nyíllal lépkedhetsz az elemek között. A bal és jobb nyíl szakaszt vált. A Home és End a szakasz első és utolsó elemére ugrik. Az F egy ismétel. Az Escape visszalép.',
+    'progress_section_week': 'Ezen a héten',
+    'progress_section_activity': 'Heti gyakorlás',
+    'progress_section_letters': 'Betűstatisztika',
+    'progress_section_recent': 'Legutóbbi feladatok',
+    'progress_completed': 'Befejezett feladatok',
+    'progress_interrupted': 'Megszakított feladatok',
+    'progress_duration': 'Aktív gyakorlási idő',
+    'progress_correct': 'Elsőre helyes',
+    'progress_incorrect': 'Elsőre hibás',
+    'progress_total': 'Összesen',
+    'progress_percent': 'százalék helyes',
+    'progress_week': 'Hét',
+    'progress_until': 'eddig',
+    'progress_date': 'Dátum',
+    'progress_activity': 'Feladat',
+    'progress_finished': 'Befejezve',
+    'progress_stopped': 'Megszakítva',
+    'progress_empty_letters': 'Még nincs betűstatisztika.',
+    'progress_empty_recent': 'Még nincsenek feladatok.',
+}
+for _index, _name in enumerate(['január', 'február', 'március', 'április', 'május', 'június', 'július', 'augusztus', 'szeptember', 'október', 'november', 'december'], 1):
+    PROGRESS_SPEECH[f'progress_month_{_index}'] = _name
+for _index, _name in enumerate(['hétfő', 'kedd', 'szerda', 'csütörtök', 'péntek', 'szombat', 'vasárnap'], 1):
+    PROGRESS_SPEECH[f'progress_day_{_index}'] = _name
+
 
 def typing_words(text):
     if re.fullmatch(r"[0-9]+", text):
@@ -100,6 +128,8 @@ def speech_texts():
     yield "mode_simple", "Egyszerű mód."
     yield "mode_advanced", "Haladó mód."
     yield "unknown_character", "Ismeretlen jel."
+
+    yield from PROGRESS_SPEECH.items()
 
     yield "result_time", "Az időd"
     yield "result_minute", "perc"

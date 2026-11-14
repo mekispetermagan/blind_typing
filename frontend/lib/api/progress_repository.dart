@@ -22,6 +22,7 @@ class KeyProgress {
 class ProgressAttempt {
   const ProgressAttempt({
     required this.title,
+    this.activityId,
     required this.startedAt,
     required this.status,
     required this.activeDurationMs,
@@ -31,6 +32,7 @@ class ProgressAttempt {
   factory ProgressAttempt.fromJson(Map<String, dynamic> json) =>
       ProgressAttempt(
         title: json['title'] as String,
+        activityId: json['activity_id'] as String?,
         startedAt: DateTime.parse(json['started_at'] as String).toLocal(),
         status: json['status'] as String,
         activeDurationMs: json['active_duration_ms'] as int,
@@ -40,6 +42,7 @@ class ProgressAttempt {
             .toList(),
       );
   final String title;
+  final String? activityId;
   final DateTime startedAt;
   final String status;
   final int activeDurationMs;

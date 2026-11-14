@@ -95,7 +95,12 @@ class _ApplicationView extends StatelessWidget {
           onClose: onClose,
         );
       case AppPage.progress:
-        return ProgressScreen(onBack: controller.back);
+        return ProgressScreen(
+          onBack: controller.back,
+          onClose: onClose,
+          speech: controller.progressSpeech,
+          activityAudio: controller.progressActivityAudio,
+        );
       case AppPage.typing:
         final typing = controller.typing!;
         return TypingScreen(

@@ -64,20 +64,20 @@ class PracticeFeedback {
     yield _asset('time');
     final minutes = result.seconds ~/ 60;
     if (minutes > 0) {
-      yield* _number(minutes, beforeUnit: true);
+      yield* number(minutes, beforeUnit: true);
       yield _asset('minute');
     }
-    yield* _number(result.seconds % 60, beforeUnit: true);
+    yield* number(result.seconds % 60, beforeUnit: true);
     yield _asset('second');
     yield _asset('errors');
-    yield* _number(result.errors);
+    yield* number(result.errors);
     if (result.score case final score?) {
       yield _asset('score');
-      yield* _number(score);
+      yield* number(score);
     }
     if (result.highScore case final highScore?) {
       yield _asset('high_score');
-      yield* _number(highScore);
+      yield* number(highScore);
     }
     if (result.bestTime) yield _asset('best_time');
     if (result.fewestErrors) yield _asset('fewest_errors');
@@ -91,16 +91,18 @@ class PracticeFeedback {
     return _asset('number_$number');
   }
 
-  static Iterable<String> _number(int number, {bool beforeUnit = false}) sync* {
+  static Iterable<String> number(int number, {bool beforeUnit = false}) sync* {
     for (final MapEntry(key: magnitude, :value) in _magnitudes.entries) {
       if (number < magnitude) continue;
       final count = number ~/ magnitude;
       if (count > 1 || magnitude >= 1000000) {
-        yield* _number(count, beforeUnit: true);
+        yield* PracticeFeedback.number(count, beforeUnit: true);
       }
       yield _asset(value);
       final rest = number % magnitude;
-      if (rest > 0) yield* _number(rest, beforeUnit: beforeUnit);
+      if (rest > 0) {
+        yield* PracticeFeedback.number(rest, beforeUnit: beforeUnit);
+      }
       return;
     }
     yield _numberAsset(number, beforeUnit: beforeUnit);

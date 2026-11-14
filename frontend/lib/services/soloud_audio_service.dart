@@ -56,10 +56,11 @@ class SoloudAudioService implements AudioService {
         }
       }
       _activity = assets;
-      if (assets.isNotEmpty)
+      if (assets.isNotEmpty) {
         await cache?.selectActivity(
           assets.where((asset) => !_isShared(asset)).toSet(),
         );
+      }
       if (assets.isNotEmpty) await _load(assets);
     });
   }
@@ -77,7 +78,11 @@ class SoloudAudioService implements AudioService {
     for (final asset in assets) {
       if (_disposed) return;
       if (_sources.containsKey(asset)) continue;
-      final source = cache == null || asset == AudioCues.contentError
+      final source =
+          cache == null ||
+              asset == AudioCues.contentError ||
+              asset == AudioCues.progressLoading ||
+              asset == AudioCues.progressFailure
           ? await _engine.loadAsset(asset, mode: LoadMode.memory)
           : await _engine.loadFile(
               await cache!.get(asset, shared: _isShared(asset)),

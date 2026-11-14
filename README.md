@@ -39,7 +39,7 @@ there is more than one user. The unauthenticated attempt API is for local use
 only. The client queues snapshots locally and retries failed uploads. The database and credentials are not tracked
 in Git. Timestamps are stored as UTC.
 
-## Student progress (visual prototype)
+## Student progress
 
 The main menu's **Haladásom** item opens a scrollable progress page. It shows
 completed activities and active time this week, completed counts for the last
@@ -47,8 +47,11 @@ eight local calendar weeks, first-try key statistics, and the ten most recent
 completed or interrupted attempts. Letter statistics include interrupted
 attempts; completion counts and time include completed attempts only. Stacked
 charts show the current week by day and first-try counts by key. The page
-uses the sole local database user and currently has no spoken or dedicated
-keyboard navigation. The progress endpoint is unauthenticated and local-only.
+uses the sole local database user. Up/Down move between spoken items; Left/Right
+change sections; Home/End select the first or last item; F1 repeats; Escape
+returns to the main menu. Enter retries a failed load. Loading and error speech
+is bundled, while other progress audio is fetched from the backend. The progress
+endpoint is unauthenticated and local-only.
 
 ## Menus and activities
 
@@ -271,7 +274,9 @@ cd backend
 .venv/bin/python tool/generate_audio.py
 ```
 
-The generator reads the menu's referenced JSON content. Existing recordings are
+The generator reads the menu's referenced JSON content. To regenerate the
+progress phrases and bundled loading/error clips, run
+`.venv/bin/python tool/generate_progress_audio.py` from `backend/`. Existing recordings are
 reused when spoken text is unchanged; `--force` regenerates speech. The manifest
 records text, provider, and speech checksums. Approved alphabet clips are reused.
 
@@ -288,6 +293,7 @@ flutter test
 flutter build linux
 flutter test integration_test/linux_prototype_test.dart -d linux
 flutter test integration_test/lesson_two_test.dart -d linux
+flutter test integration_test/progress_speech_test.dart -d linux
 ```
 
 The native check needs a desktop/audio device and exercises spoken menus, F

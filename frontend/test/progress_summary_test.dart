@@ -121,7 +121,10 @@ void main() {
       ),
     );
     await tester.pumpAndSettle();
-    expect(find.text('A haladási adatok nem tölthetők be.'), findsOneWidget);
+    expect(
+      find.textContaining('A haladási adatok nem tölthetők be.'),
+      findsOneWidget,
+    );
     expect(find.text('Újrapróbálás'), findsOneWidget);
   });
 }

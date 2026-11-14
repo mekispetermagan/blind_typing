@@ -45,6 +45,26 @@ class AppController extends ChangeNotifier {
   int _generation = 0;
   ActivityReference? _failedActivity;
 
+  SpeechCoordinator get progressSpeech => _speech;
+  Map<String, List<String>> get progressActivityAudio {
+    final result = <String, List<String>>{};
+    void visit(MenuNode node, List<String> path) {
+      final clips = [...path, node.audioAsset];
+      if (node.activity case final activity?) {
+        final id = activity.content.split('/').last.replaceFirst('.json', '');
+        result[id] = clips;
+      }
+      for (final child in node.children) {
+        visit(child, clips);
+      }
+    }
+
+    for (final node in _catalog?.root.children ?? const <MenuNode>[]) {
+      visit(node, []);
+    }
+    return result;
+  }
+
   TypingController? get typing => _typing;
   LetterTeachingController? get teaching => _teaching;
   TypingMode get mode => _mode;

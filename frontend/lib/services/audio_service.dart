@@ -24,6 +24,8 @@ abstract final class AudioCues {
   static const wrongKeyPrefix = 'assets/audio/wrong_key_prefix.wav';
   static const wrongKeySuffix = 'assets/audio/wrong_key_suffix.wav';
   static const contentError = 'assets/audio/content_error.wav';
+  static const progressLoading = 'assets/audio/progress_loading.wav';
+  static const progressFailure = 'assets/audio/progress_failure.wav';
   static const welcome = 'assets/audio/welcome.wav';
   static const paused = 'assets/audio/paused.wav';
   static const complete = 'assets/audio/complete.wav';

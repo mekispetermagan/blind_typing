@@ -1,0 +1,187 @@
+import 'dart:async';
+import 'dart:io';
+
+import 'package:blind_typing/api/progress_repository.dart';
+import 'package:blind_typing/models/progress_navigation.dart';
+import 'package:blind_typing/screens/progress_screen.dart';
+import 'package:blind_typing/services/audio_service.dart';
+import 'package:blind_typing/services/speech_coordinator.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+import 'support/fake_audio_service.dart';
+
+class FailingProgressAudio extends FakeAudioService {
+  @override
+  Future<void> initialize(Iterable<String> assets) async {
+    final list = assets.toList();
+    if (list.contains('assets/audio/progress_help.wav')) {
+      throw StateError('audio backend unavailable');
+    }
+    await super.initialize(list);
+  }
+}
+
+StudentProgress sampleProgress() => StudentProgress(
+  name: 'Test',
+  attempts: [
+    ProgressAttempt(
+      activityId: 'sample',
+      title: 'Ö gyakorlás',
+      startedAt: DateTime(2026, 11, 12),
+      status: 'completed',
+      activeDurationMs: 120000,
+      mistakeCount: 3,
+      keys: [const KeyProgress(key: 'ö', correct: 3, incorrect: 1)],
+    ),
+  ],
+);
+
+void main() {
+  test('cardinal dates use existing number clips and each item has its audio asset', () {
+    final nav = ProgressNavigation(sampleProgress(), DateTime(2026, 11, 12), {
+      'sample': ['assets/audio/menu_my_progress.wav'],
+    });
+    expect(nav.sections[1].items.length, 15); // Seven days plus eight weeks.
+    final thursday = nav.sections[1].items[3].audio;
+    expect(
+      thursday,
+      containsAllInOrder([
+        'assets/audio/progress_day_4.wav',
+        'assets/audio/result_number_2_before_unit.wav',
+        'assets/audio/result_thousand.wav',
+        'assets/audio/result_number_26.wav',
+        'assets/audio/progress_month_11.wav',
+        'assets/audio/result_number_12.wav',
+      ]),
+    );
+    for (final asset in nav.allAudio) {
+      expect(File('../backend/$asset').existsSync(), isTrue, reason: asset);
+    }
+    expect(File('assets/audio/progress_loading.wav').existsSync(), isTrue);
+    expect(File('assets/audio/progress_failure.wav').existsSync(), isTrue);
+  });
+
+  testWidgets('arrows, Home, End and F1 speak items while skipping charts', (
+    tester,
+  ) async {
+    final audio = FakeAudioService();
+    var wentBack = false;
+    await tester.pumpWidget(
+      MaterialApp(
+        home: ProgressScreen(
+          loadProgress: () async => sampleProgress(),
+          speech: SpeechCoordinator(audio),
+          activityAudio: const {
+            'sample': ['assets/audio/menu_my_progress.wav'],
+          },
+          onBack: () => wentBack = true,
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    expect(
+      audio.loaded,
+      containsAll([AudioCues.progressLoading, AudioCues.progressFailure]),
+    );
+    expect(audio.spoken, contains('assets/audio/progress_help.wav'));
+    Future<void> key(LogicalKeyboardKey key) async {
+      await tester.sendKeyEvent(key);
+      await tester.pumpAndSettle();
+    }
+
+    audio.spoken.clear();
+    await key(LogicalKeyboardKey.arrowRight);
+    expect(
+      audio.spoken,
+      contains('assets/audio/progress_section_activity.wav'),
+    );
+    expect(audio.spoken, contains('assets/audio/progress_day_1.wav'));
+    audio.spoken.clear();
+    await key(LogicalKeyboardKey.arrowDown);
+    expect(audio.spoken, contains('assets/audio/progress_day_2.wav'));
+    audio.spoken.clear();
+    await key(LogicalKeyboardKey.end);
+    expect(audio.spoken, contains('assets/audio/progress_week.wav'));
+    audio.spoken.clear();
+    await key(LogicalKeyboardKey.home);
+    expect(audio.spoken, contains('assets/audio/progress_day_1.wav'));
+    audio.spoken.clear();
+    await key(LogicalKeyboardKey.arrowRight);
+    expect(audio.spoken, contains('assets/audio/letter_00f6.wav'));
+    expect(audio.spoken, contains('assets/audio/progress_correct.wav'));
+    audio.spoken.clear();
+    await key(LogicalKeyboardKey.f1);
+    expect(audio.spoken, contains('assets/audio/letter_00f6.wav'));
+    audio.spoken.clear();
+    await key(LogicalKeyboardKey.arrowRight);
+    expect(audio.spoken, contains('assets/audio/menu_my_progress.wav'));
+    audio.spoken.clear();
+    audio.holdSpeech = true;
+    await tester.sendKeyEvent(LogicalKeyboardKey.f1);
+    await tester.pump();
+    await tester.sendKeyEvent(LogicalKeyboardKey.arrowLeft);
+    await tester.pump();
+    expect(audio.interrupted, isNotEmpty);
+    await tester.sendKeyEvent(LogicalKeyboardKey.escape);
+    await tester.pump();
+    expect(wentBack, isTrue);
+  });
+
+  testWidgets('missing backend audio announces the bundled failure', (
+    tester,
+  ) async {
+    final audio = FailingProgressAudio();
+    await tester.pumpWidget(
+      MaterialApp(
+        home: ProgressScreen(
+          speech: SpeechCoordinator(audio),
+          loadProgress: () async => sampleProgress(),
+          onBack: () {},
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    expect(audio.spoken.last, AudioCues.progressFailure);
+    expect(
+      find.textContaining('A haladási adatok nem tölthetők be.'),
+      findsOneWidget,
+    );
+  });
+
+  testWidgets(
+    'loading and failure are bundled, spoken, repeatable and retryable',
+    (tester) async {
+      final audio = FakeAudioService();
+      final first = Completer<StudentProgress>();
+      var calls = 0;
+      await tester.pumpWidget(
+        MaterialApp(
+          home: ProgressScreen(
+            speech: SpeechCoordinator(audio),
+            loadProgress: () {
+              calls++;
+              return calls == 1 ? first.future : Future.value(sampleProgress());
+            },
+            onBack: () {},
+          ),
+        ),
+      );
+      await tester.pump();
+      await tester.pump();
+      expect(audio.spoken, contains(AudioCues.progressLoading));
+      first.completeError(StateError('offline'));
+      await tester.pumpAndSettle();
+      expect(audio.spoken.last, AudioCues.progressFailure);
+      await tester.sendKeyEvent(LogicalKeyboardKey.f1);
+      await tester.pumpAndSettle();
+      expect(audio.spoken.last, AudioCues.progressFailure);
+      await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+      await tester.pumpAndSettle();
+      expect(calls, 2);
+      expect(find.text('Betűstatisztika'), findsOneWidget);
+      expect(audio.spoken, contains('assets/audio/progress_help.wav'));
+    },
+  );
+}

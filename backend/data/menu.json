@@ -627,7 +627,8 @@
       },
       {
         "id": "my_progress",
-        "title": "Haladásom",
+        "title": "HALADÁSOM",
+        "speech": "Haladásom",
         "command": "progress"
       }
     ]
