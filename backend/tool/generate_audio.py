@@ -23,6 +23,7 @@ RATE = 48000
 
 # Reusable progress-view speech fragments. Status clips are bundled separately.
 PROGRESS_SPEECH = {
+    'progress_return_main': 'Vissza a főmenübe. Az Enter visszalép.',
     'progress_help': 'A fel és le nyíllal lépkedhetsz az elemek között. A bal és jobb nyíl szakaszt vált. A Home és End a szakasz első és utolsó elemére ugrik. Az F egy ismétel. Az Escape visszalép.',
     'progress_section_week': 'Ezen a héten',
     'progress_section_activity': 'Heti gyakorlás',
@@ -60,12 +61,14 @@ def speech_texts():
     catalog = json.loads((ROOT / "data" / "menu.json").read_text())
     references = {}
     def walk(node):
-        yield f"menu_{node['id']}", node.get("speech", node["title"])
+        if node.get('command') != 'previous':
+            yield f"menu_{node['id']}", node.get("speech", node["title"])
         if "activity" in node:
             reference = node["activity"]
             references[reference["content"]] = reference["type"]
         for child in node.get("children", []):
             yield from walk(child)
+    yield 'menu_previous', 'Vissza az előző menübe'
     for menu in (catalog["root"], catalog["pause"], catalog["complete"]):
         yield from walk(menu)
     for asset, activity_type in references.items():

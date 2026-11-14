@@ -95,7 +95,7 @@ void main() {
         app.moveSelection(1);
         app.activate();
         expect(app.menu.id, 'upper_row_ir');
-        expect(app.menu.children, hasLength(4));
+        expect(app.menu.children, hasLength(5));
         app.toggleMode();
         app.activateIndex(index + 1);
         await settle();

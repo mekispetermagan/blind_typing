@@ -156,6 +156,37 @@ void main() {
     },
   );
 
+  testWidgets(
+    'keyboard selects the last submenu item and returns to its parent',
+    (tester) async {
+      final audio = FakeAudioService();
+      final app = AppController(
+        content: FileContentRepository(),
+        speech: SpeechCoordinator(audio),
+      );
+      await tester.pumpWidget(TypingApp(controller: app, onClose: () {}));
+      await tester.pumpAndSettle();
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
+      await tester.pump();
+      await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+      await tester.pump();
+      expect(app.menu.id, 'challenges');
+      for (var i = 0; i < 4; i++) {
+        await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
+        await tester.pump();
+      }
+      expect(
+        app.menu.children[app.selectedIndex].title,
+        'Vissza az előző menübe',
+      );
+      expect(audio.spoken.last, 'assets/audio/menu_previous.wav');
+      await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+      await tester.pump();
+      expect(app.menu.id, 'main');
+      expect(app.selectedIndex, 1);
+    },
+  );
+
   testWidgets('long data-driven menus keep keyboard selection visible', (
     tester,
   ) async {

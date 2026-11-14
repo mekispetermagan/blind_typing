@@ -8111,5 +8111,15 @@
     "text": "vasárnap",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "e4b19ddba763a68104f890f5f97d2eb4ec3dc614762c4e45a739b2e2859bd925"
+  },
+  "menu_previous": {
+    "text": "Vissza az előző menübe",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "98696a197d8232efd55de0bc87113678f5da7230c0ec76598a87986bfd3b5cd9"
+  },
+  "progress_return_main": {
+    "text": "Vissza a főmenübe. Az Enter visszalép.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "96525805f8036c2c7943a4a37fb77762934b7a2743f074c25bf067bc8a88b413"
   }
 }

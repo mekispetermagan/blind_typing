@@ -194,6 +194,8 @@ class AppController extends ChangeNotifier {
       unawaited(_openActivity(entry.activity!));
     } else {
       switch (entry.command!) {
+        case MenuCommand.previous:
+          back();
         case MenuCommand.progress:
           _speech.begin();
           _showProgress = true;

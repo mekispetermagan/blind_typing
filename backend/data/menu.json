@@ -28,6 +28,11 @@
                   "type": "words",
                   "content": "data/lessons/home_row_words.json"
                 }
+              },
+              {
+                "id": "home_row_previous",
+                "title": "Vissza az előző menübe",
+                "command": "previous"
               }
             ]
           },
@@ -70,6 +75,11 @@
                   "type": "words",
                   "content": "data/lessons/upper_row_ir_words.json"
                 }
+              },
+              {
+                "id": "upper_row_ir_previous",
+                "title": "Vissza az előző menübe",
+                "command": "previous"
               }
             ]
           },
@@ -112,6 +122,11 @@
                   "type": "words",
                   "content": "data/lessons/reach_em_em_words.json"
                 }
+              },
+              {
+                "id": "reach_em_previous",
+                "title": "Vissza az előző menübe",
+                "command": "previous"
               }
             ]
           },
@@ -154,6 +169,11 @@
                   "type": "words",
                   "content": "data/lessons/reach_uv_uv_words.json"
                 }
+              },
+              {
+                "id": "reach_uv_previous",
+                "title": "Vissza az előző menübe",
+                "command": "previous"
               }
             ]
           },
@@ -196,6 +216,11 @@
                   "type": "words",
                   "content": "data/lessons/reach_oz_oz_words.json"
                 }
+              },
+              {
+                "id": "reach_oz_previous",
+                "title": "Vissza az előző menübe",
+                "command": "previous"
               }
             ]
           },
@@ -238,6 +263,11 @@
                   "type": "words",
                   "content": "data/lessons/reach_ag_ag_words.json"
                 }
+              },
+              {
+                "id": "reach_ag_previous",
+                "title": "Vissza az előző menübe",
+                "command": "previous"
               }
             ]
           },
@@ -280,6 +310,11 @@
                   "type": "words",
                   "content": "data/lessons/reach_py_py_words.json"
                 }
+              },
+              {
+                "id": "reach_py_previous",
+                "title": "Vissza az előző menübe",
+                "command": "previous"
               }
             ]
           },
@@ -322,6 +357,11 @@
                   "type": "words",
                   "content": "data/lessons/reach_nt_nt_words.json"
                 }
+              },
+              {
+                "id": "reach_nt_previous",
+                "title": "Vissza az előző menübe",
+                "command": "previous"
               }
             ]
           },
@@ -364,6 +404,11 @@
                   "type": "words",
                   "content": "data/lessons/reach_oc_oc_words.json"
                 }
+              },
+              {
+                "id": "reach_oc_previous",
+                "title": "Vissza az előző menübe",
+                "command": "previous"
               }
             ]
           },
@@ -406,6 +451,11 @@
                   "type": "words",
                   "content": "data/lessons/reach_hi_hi_words.json"
                 }
+              },
+              {
+                "id": "reach_hi_previous",
+                "title": "Vissza az előző menübe",
+                "command": "previous"
               }
             ]
           },
@@ -448,6 +498,11 @@
                   "type": "words",
                   "content": "data/lessons/reach_ub_ub_words.json"
                 }
+              },
+              {
+                "id": "reach_ub_previous",
+                "title": "Vissza az előző menübe",
+                "command": "previous"
               }
             ]
           },
@@ -490,6 +545,11 @@
                   "type": "words",
                   "content": "data/lessons/reach_ou_ou_words.json"
                 }
+              },
+              {
+                "id": "reach_ou_previous",
+                "title": "Vissza az előző menübe",
+                "command": "previous"
               }
             ]
           },
@@ -532,6 +592,11 @@
                   "type": "words",
                   "content": "data/lessons/reach_ow_ou_words.json"
                 }
+              },
+              {
+                "id": "reach_ow_previous",
+                "title": "Vissza az előző menübe",
+                "command": "previous"
               }
             ]
           },
@@ -556,6 +621,11 @@
                   "type": "words",
                   "content": "data/lessons/reach_qxw_words.json"
                 }
+              },
+              {
+                "id": "reach_qxw_previous",
+                "title": "Vissza az előző menübe",
+                "command": "previous"
               }
             ]
           },
@@ -581,8 +651,18 @@
                   "type": "words",
                   "content": "data/lessons/numbers_words.json"
                 }
+              },
+              {
+                "id": "numbers_previous",
+                "title": "Vissza az előző menübe",
+                "command": "previous"
               }
             ]
+          },
+          {
+            "id": "lessons_previous",
+            "title": "Vissza az előző menübe",
+            "command": "previous"
           }
         ]
       },
@@ -622,6 +702,11 @@
               "type": "words",
               "content": "data/practice/challenge_insane.json"
             }
+          },
+          {
+            "id": "challenges_previous",
+            "title": "Vissza az előző menübe",
+            "command": "previous"
           }
         ]
       },

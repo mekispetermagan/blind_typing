@@ -6,7 +6,8 @@ enum MenuCommand {
   menu,
   nextExercise,
   nextLesson,
-  progress;
+  progress,
+  previous;
 
   bool get isProgression => this == nextExercise || this == nextLesson;
 }
@@ -65,7 +66,9 @@ class MenuNode {
   final List<MenuNode> children;
   final ActivityReference? activity;
   final MenuCommand? command;
-  String get audioAsset => 'assets/audio/menu_$id.wav';
+  String get audioAsset => command == MenuCommand.previous
+      ? 'assets/audio/menu_previous.wav'
+      : 'assets/audio/menu_$id.wav';
   Iterable<MenuNode> get descendants sync* {
     yield this;
     for (final child in children) {
@@ -97,8 +100,22 @@ class MenuCatalog {
         root.descendants.any(
           (node) =>
               node.command != null &&
-              !(node.command == MenuCommand.progress &&
-                  root.children.contains(node)),
+              !((node.command == MenuCommand.progress &&
+                      root.children.contains(node)) ||
+                  (node.command == MenuCommand.previous &&
+                      node != root &&
+                      !root.children.contains(node))),
+        ) ||
+        root.descendants.any(
+          (node) =>
+              node.children
+                      .where((child) => child.command == MenuCommand.previous)
+                      .length >
+                  1 ||
+              (node.children.any(
+                    (child) => child.command == MenuCommand.previous,
+                  ) &&
+                  node.children.last.command != MenuCommand.previous),
         ) ||
         pause.children.any(
           (node) => !{
@@ -111,7 +128,8 @@ class MenuCatalog {
           (node) =>
               node.command == null ||
               node.command == MenuCommand.resume ||
-              node.command == MenuCommand.progress,
+              node.command == MenuCommand.progress ||
+              node.command == MenuCommand.previous,
         ) ||
         !complete.children.any(
           (node) => node.command?.isProgression == false,

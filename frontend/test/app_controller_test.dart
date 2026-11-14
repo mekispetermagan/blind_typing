@@ -160,12 +160,42 @@ void main() {
     },
   );
 
+  test('nested menus end with a spoken one-level-back action', () async {
+    await app.initialize();
+    final root = app.menu;
+    expect(
+      root.children.any((node) => node.command == MenuCommand.previous),
+      isFalse,
+    );
+    for (final branch in root.descendants.where(
+      (node) => node != root && node.children.isNotEmpty,
+    )) {
+      expect(
+        branch.children.last.command,
+        MenuCommand.previous,
+        reason: branch.id,
+      );
+      expect(branch.children.last.title, 'Vissza az előző menübe');
+      expect(branch.children.last.audioAsset, 'assets/audio/menu_previous.wav');
+    }
+    app.activate(); // Lessons.
+    app.activate(); // First lesson.
+    app.activateIndex(app.menu.children.length - 1);
+    await settle();
+    expect(app.menu.id, 'lessons');
+    expect(app.selectedIndex, 0);
+    app.activateIndex(app.menu.children.length - 1);
+    await settle();
+    expect(app.menu.id, 'main');
+    expect(app.selectedIndex, 0);
+  });
+
   test('the final lesson activity offers restart and return', () async {
     await app.initialize();
     app.activate(); // LECKÉK
-    app.activateIndex(app.menu.children.length - 1);
+    app.activateIndex(app.menu.children.length - 2);
     final lessonId = app.menu.id;
-    final lastIndex = app.menu.children.length - 1;
+    final lastIndex = app.menu.children.length - 2;
     app.activateIndex(lastIndex);
     await settle();
     finishWordDrill();

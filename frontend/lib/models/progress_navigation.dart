@@ -157,6 +157,12 @@ class ProgressNavigation {
                 ),
               ],
       ),
+      ProgressSection('Vissza a főmenübe', progressCue('return_main'), [
+        ProgressItem(
+          title: 'Vissza a főmenübe',
+          audio: [progressCue('return_main')],
+        ),
+      ]),
     ];
   }
   final ProgressSummary summary;

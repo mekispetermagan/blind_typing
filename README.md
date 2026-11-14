@@ -49,14 +49,16 @@ attempts; completion counts and time include completed attempts only. Stacked
 charts show the current week by day and first-try counts by key. The page
 uses the sole local database user. Up/Down move between spoken items; Left/Right
 change sections; Home/End select the first or last item; F1 repeats; Escape
-returns to the main menu. Enter retries a failed load. Loading and error speech
+returns to the main menu. The final section offers the same return action with
+Enter. Enter also retries a failed load. Loading and error speech
 is bundled, while other progress audio is fetched from the backend. The progress
 endpoint is unauthenticated and local-only.
 
 ## Menus and activities
 
 The application starts at the spoken main menu. Up/Down selects an item;
-Enter/Right opens it; Escape/Left returns to its parent. F1 repeats the selection.
+Enter/Right opens it; Escape/Left returns to its parent. Each nested menu also
+ends with a spoken return item. F1 repeats the selection.
 Rapid navigation interrupts previous speech instead of building a speech queue.
 Mouse selection is also available.
 

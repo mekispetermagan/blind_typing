@@ -129,6 +129,32 @@ void main() {
     expect(wentBack, isTrue);
   });
 
+  testWidgets('final progress section announces return and Enter goes back', (
+    tester,
+  ) async {
+    final audio = FakeAudioService();
+    var wentBack = false;
+    await tester.pumpWidget(
+      MaterialApp(
+        home: ProgressScreen(
+          speech: SpeechCoordinator(audio),
+          loadProgress: () async => sampleProgress(),
+          onBack: () => wentBack = true,
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    for (var i = 0; i < 4; i++) {
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowRight);
+      await tester.pumpAndSettle();
+    }
+    expect(audio.spoken.last, 'assets/audio/progress_return_main.wav');
+    expect(find.text('Vissza a főmenübe'), findsOneWidget);
+    await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+    await tester.pump();
+    expect(wentBack, isTrue);
+  });
+
   testWidgets('missing backend audio announces the bundled failure', (
     tester,
   ) async {

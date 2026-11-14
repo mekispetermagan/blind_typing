@@ -138,7 +138,12 @@ class _ProgressScreenState extends State<ProgressScreen> {
       _itemIndex = 0;
     });
     final section = navigation.sections[_sectionIndex];
-    _say([section.audio, ...section.items.first.audio]);
+    final firstAudio = section.items.first.audio;
+    _say(
+      firstAudio.length == 1 && firstAudio.first == section.audio
+          ? firstAudio
+          : [section.audio, ...firstAudio],
+    );
     _scrollToSelection();
   }
 
@@ -195,6 +200,12 @@ class _ProgressScreenState extends State<ProgressScreen> {
       _repeat();
     } else if (key == LogicalKeyboardKey.enter && _failed) {
       setState(_load);
+    } else if (key == LogicalKeyboardKey.enter &&
+        !_busy &&
+        _navigation != null &&
+        _sectionIndex == _navigation!.sections.length - 1 &&
+        widget.onBack != null) {
+      _leave();
     } else if (key == LogicalKeyboardKey.arrowLeft) {
       _moveSection(-1);
     } else if (key == LogicalKeyboardKey.arrowRight) {
@@ -307,6 +318,8 @@ class _ProgressScreenState extends State<ProgressScreen> {
                     _section(context, sections[3].title),
                     for (var i = 0; i < sections[3].items.length; i++)
                       _item(3, i),
+                    const SizedBox(height: 24),
+                    _item(4, 0),
                   ],
                 ),
               ),
@@ -326,8 +339,17 @@ class _ProgressScreenState extends State<ProgressScreen> {
       selectedTileColor: Theme.of(context).colorScheme.primaryContainer,
       title: Text(item.title),
       subtitle: item.subtitle == null ? null : Text(item.subtitle!),
-      trailing: item.trailing == null ? null : Text(item.trailing!),
+      trailing: section == _navigation!.sections.length - 1
+          ? const Icon(Icons.arrow_back)
+          : item.trailing == null
+          ? null
+          : Text(item.trailing!),
       onTap: () {
+        if (section == _navigation!.sections.length - 1 &&
+            widget.onBack != null) {
+          _leave();
+          return;
+        }
         setState(() {
           _sectionIndex = section;
           _itemIndex = index;
