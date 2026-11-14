@@ -129,6 +129,7 @@ class _StackedBars extends StatelessWidget {
         ],
         barTouchData: BarTouchData(
           touchTooltipData: BarTouchTooltipData(
+            fitInsideVertically: true,
             getTooltipColor: (_) =>
                 Theme.of(context).colorScheme.surfaceContainerHighest,
             getTooltipItem: (group, groupIndex, rod, rodIndex) {
