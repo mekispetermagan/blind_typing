@@ -43,8 +43,16 @@ void main() {
     final nav = ProgressNavigation(sampleProgress(), DateTime(2026, 11, 12), {
       'sample': ['assets/audio/menu_my_progress.wav'],
     });
+    expect(nav.sections.first.title, 'Az elmúlt 7 napban');
     expect(nav.sections[1].items.length, 15); // Seven days plus eight weeks.
-    final thursday = nav.sections[1].items[3].audio;
+    expect(nav.sections[1].items[7].title, '2026.11.06 – 2026.11.12');
+    expect(nav.sections[1].items[8].title, '2026.10.30 – 2026.11.05');
+    final thursdayItem = nav.sections[1].items[6];
+    expect(
+      thursdayItem.subtitle,
+      'Befejezett: 1 · Megszakított: 0\nAktív gyakorlási idő: 2 perc',
+    );
+    final thursday = thursdayItem.audio;
     expect(
       thursday,
       containsAllInOrder([
@@ -54,6 +62,9 @@ void main() {
         'assets/audio/result_number_26.wav',
         'assets/audio/progress_month_11.wav',
         'assets/audio/result_number_12.wav',
+        'assets/audio/progress_duration.wav',
+        'assets/audio/result_number_2_before_unit.wav',
+        'assets/audio/result_minute.wav',
       ]),
     );
     for (final asset in nav.allAudio) {
@@ -61,6 +72,43 @@ void main() {
     }
     expect(File('assets/audio/progress_loading.wav').existsSync(), isTrue);
     expect(File('assets/audio/progress_failure.wav').existsSync(), isTrue);
+  });
+
+  test('daily and weekly times truncate after summing, including speech', () {
+    final progress = StudentProgress(
+      name: 'Test',
+      attempts: [
+        ProgressAttempt(
+          title: 'First',
+          startedAt: DateTime(2026, 11, 11),
+          status: 'completed',
+          activeDurationMs: 59000,
+          mistakeCount: 0,
+          keys: const [],
+        ),
+        ProgressAttempt(
+          title: 'Second',
+          startedAt: DateTime(2026, 11, 12),
+          status: 'completed',
+          activeDurationMs: 31000,
+          mistakeCount: 0,
+          keys: const [],
+        ),
+      ],
+    );
+    final nav = ProgressNavigation(progress, DateTime(2026, 11, 12), {});
+    final weekly = nav.sections[0].items[1];
+    expect(weekly.title, 'Aktív gyakorlási idő: 1 perc');
+    expect(weekly.audio.last, 'assets/audio/result_minute.wav');
+    expect(weekly.audio, isNot(contains('assets/audio/result_second.wav')));
+    for (final day in nav.sections[1].items.sublist(5, 7)) {
+      expect(day.subtitle, contains('Aktív gyakorlási idő: 0 perc'));
+      expect(day.audio.last, 'assets/audio/result_minute.wav');
+      expect(day.audio, isNot(contains('assets/audio/result_second.wav')));
+    }
+    final recent = nav.sections[3].items.first;
+    expect(recent.subtitle, contains('0 perc 59 másodperc'));
+    expect(recent.audio, contains('assets/audio/result_second.wav'));
   });
 
   testWidgets('arrows, Home, End and F1 speak items while skipping charts', (
@@ -97,16 +145,19 @@ void main() {
       audio.spoken,
       contains('assets/audio/progress_section_activity.wav'),
     );
-    expect(audio.spoken, contains('assets/audio/progress_day_1.wav'));
+    final now = DateTime.now();
+    final firstDay = DateTime(now.year, now.month, now.day - 6).weekday;
+    final secondDay = firstDay % 7 + 1;
+    expect(audio.spoken, contains('assets/audio/progress_day_$firstDay.wav'));
     audio.spoken.clear();
     await key(LogicalKeyboardKey.arrowDown);
-    expect(audio.spoken, contains('assets/audio/progress_day_2.wav'));
+    expect(audio.spoken, contains('assets/audio/progress_day_$secondDay.wav'));
     audio.spoken.clear();
     await key(LogicalKeyboardKey.end);
     expect(audio.spoken, contains('assets/audio/progress_week.wav'));
     audio.spoken.clear();
     await key(LogicalKeyboardKey.home);
-    expect(audio.spoken, contains('assets/audio/progress_day_1.wav'));
+    expect(audio.spoken, contains('assets/audio/progress_day_$firstDay.wav'));
     audio.spoken.clear();
     await key(LogicalKeyboardKey.arrowRight);
     expect(audio.spoken, contains('assets/audio/letter_00f6.wav'));

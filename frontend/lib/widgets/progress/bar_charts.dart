@@ -8,6 +8,7 @@ import '../../models/progress_summary.dart';
 
 const _green = Color(0xff52c77b);
 const _red = Color(0xffff7777);
+const _weekdayLabels = ['H', 'K', 'Sze', 'Cs', 'P', 'Szo', 'V'];
 
 class WeeklyActivityChart extends StatelessWidget {
   const WeeklyActivityChart({super.key, required this.days});
@@ -20,7 +21,7 @@ class WeeklyActivityChart extends StatelessWidget {
       const _Legend(green: 'Befejezett', red: 'Megszakított'),
       const SizedBox(height: 12),
       _StackedBars(
-        labels: const ['H', 'K', 'Sze', 'Cs', 'P', 'Szo', 'V'],
+        labels: [for (final day in days) _weekdayLabels[day.date.weekday - 1]],
         values: [for (final day in days) (day.completed, day.interrupted)],
         greenLabel: 'Befejezett',
         redLabel: 'Megszakított',

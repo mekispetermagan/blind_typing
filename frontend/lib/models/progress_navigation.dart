@@ -41,8 +41,11 @@ class ProgressNavigation {
         ],
       ),
       ProgressItem(
-        title: 'Aktív gyakorlási idő: ${_duration(current.durationMs)}',
-        audio: [progressCue('duration'), ..._durationAudio(current.durationMs)],
+        title: 'Aktív gyakorlási idő: ${_durationMinutes(current.durationMs)}',
+        audio: [
+          progressCue('duration'),
+          ..._durationMinutesAudio(current.durationMs),
+        ],
       ),
     ];
     final dailyItems = [
@@ -50,7 +53,8 @@ class ProgressNavigation {
         ProgressItem(
           title: '${_weekdays[day.date.weekday - 1]} · ${_date(day.date)}',
           subtitle:
-              'Befejezett: ${day.completed} · Megszakított: ${day.interrupted}',
+              'Befejezett: ${day.completed} · Megszakított: ${day.interrupted}\n'
+              'Aktív gyakorlási idő: ${_durationMinutes(day.durationMs)}',
           audio: [
             progressCue('day_${day.date.weekday}'),
             ..._dateAudio(day.date),
@@ -58,6 +62,8 @@ class ProgressNavigation {
             ...PracticeFeedback.number(day.completed),
             progressCue('interrupted'),
             ...PracticeFeedback.number(day.interrupted),
+            progressCue('duration'),
+            ..._durationMinutesAudio(day.durationMs),
           ],
         ),
     ];
@@ -128,7 +134,11 @@ class ProgressNavigation {
         ),
     ];
     sections = [
-      ProgressSection('Ezen a héten', progressCue('section_week'), todayItems),
+      ProgressSection(
+        'Az elmúlt 7 napban',
+        progressCue('section_week'),
+        todayItems,
+      ),
       ProgressSection('Heti gyakorlás', progressCue('section_activity'), [
         ...dailyItems,
         ...weekItems,
@@ -187,6 +197,8 @@ const _weekdays = [
 ];
 String _date(DateTime date) =>
     '${date.year}.${date.month.toString().padLeft(2, '0')}.${date.day.toString().padLeft(2, '0')}';
+String _durationMinutes(int milliseconds) => '${milliseconds ~/ 60000} perc';
+
 String _duration(int milliseconds) {
   final seconds = milliseconds ~/ 1000;
   return '${seconds ~/ 60} perc ${seconds % 60} másodperc';
@@ -198,10 +210,14 @@ Iterable<String> _dateAudio(DateTime date) sync* {
   yield* PracticeFeedback.number(date.day);
 }
 
+Iterable<String> _durationMinutesAudio(int milliseconds) sync* {
+  yield* PracticeFeedback.number(milliseconds ~/ 60000, beforeUnit: true);
+  yield 'assets/audio/result_minute.wav';
+}
+
 Iterable<String> _durationAudio(int milliseconds) sync* {
   final seconds = milliseconds ~/ 1000;
-  yield* PracticeFeedback.number(seconds ~/ 60, beforeUnit: true);
-  yield 'assets/audio/result_minute.wav';
+  yield* _durationMinutesAudio(milliseconds);
   yield* PracticeFeedback.number(seconds % 60, beforeUnit: true);
   yield 'assets/audio/result_second.wav';
 }

@@ -42,11 +42,13 @@ in Git. Timestamps are stored as UTC.
 ## Student progress
 
 The main menu's **Haladásom** item opens a scrollable progress page. It shows
-completed activities and active time this week, completed counts for the last
-eight local calendar weeks, first-try key statistics, and the ten most recent
-completed or interrupted attempts. Letter statistics include interrupted
-attempts; completion counts and time include completed attempts only. Stacked
-charts show the current week by day and first-try counts by key. The page
+completed activities and active time over the last seven local calendar days,
+daily active time, completed counts for eight consecutive seven-day periods,
+first-try key
+statistics, and the ten most recent completed or interrupted attempts. Letter
+statistics include interrupted attempts; completion counts and time include
+completed attempts only. Stacked
+charts show the last seven days by day and first-try counts by key. The page
 uses the sole local database user. Up/Down move between spoken items; Left/Right
 change sections; Home/End select the first or last item; F1 repeats; Escape
 returns to the main menu. The final section offers the same return action with

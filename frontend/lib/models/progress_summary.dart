@@ -8,36 +8,50 @@ class WeekProgress {
 }
 
 class DayProgress {
-  const DayProgress(this.date, this.completed, this.interrupted);
+  const DayProgress(
+    this.date,
+    this.completed,
+    this.interrupted,
+    this.durationMs,
+  );
   final DateTime date;
   final int completed;
   final int interrupted;
+  final int durationMs;
 }
 
 class ProgressSummary {
   ProgressSummary(StudentProgress progress, DateTime now) {
     final today = now.toLocal();
-    final monday = DateTime(
-      today.year,
-      today.month,
-      today.day - today.weekday + 1,
-    );
+    final firstDay = DateTime(today.year, today.month, today.day - 6);
     days = List.generate(7, (index) {
-      final start = DateTime(monday.year, monday.month, monday.day + index);
+      final start = DateTime(
+        firstDay.year,
+        firstDay.month,
+        firstDay.day + index,
+      );
       final end = DateTime(start.year, start.month, start.day + 1);
       final dayAttempts = progress.attempts.where(
         (attempt) =>
             !attempt.startedAt.isBefore(start) &&
             attempt.startedAt.isBefore(end),
       );
+      final completed = dayAttempts.where(
+        (attempt) => attempt.status == 'completed',
+      );
       return DayProgress(
         start,
-        dayAttempts.where((attempt) => attempt.status == 'completed').length,
+        completed.length,
         dayAttempts.where((attempt) => attempt.status == 'interrupted').length,
+        completed.fold(0, (sum, attempt) => sum + attempt.activeDurationMs),
       );
     });
     weeks = List.generate(8, (index) {
-      final start = DateTime(monday.year, monday.month, monday.day - 7 * index);
+      final start = DateTime(
+        firstDay.year,
+        firstDay.month,
+        firstDay.day - 7 * index,
+      );
       final end = DateTime(start.year, start.month, start.day + 7);
       final completed = progress.attempts.where(
         (attempt) =>

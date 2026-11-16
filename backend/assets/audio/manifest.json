@@ -8350,9 +8350,9 @@
     "sha256": "88b193acd5ca05ae038c23b3165f76189c9d7d62e849cf34257af891c360980c"
   },
   "progress_section_week": {
-    "text": "Ezen a héten",
+    "text": "Az elmúlt 7 napban",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
-    "sha256": "03f1fc1811b46b6fd53be5ec0f2e348e0ab62556a030a34a83639d0dd504688e"
+    "sha256": "63e25c20d2c8a76c722af1b04c3e4b60c545d187569ef495e871195ddd112f44"
   },
   "progress_section_activity": {
     "text": "Heti gyakorlás",

@@ -297,7 +297,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
                     const SizedBox(height: 24),
                     _section(context, sections[1].title),
                     const Text(
-                      'Aktuális hét: elkezdett feladatok nap szerint, hétfőtől vasárnapig',
+                      'Az elmúlt 7 nap: elkezdett feladatok nap szerint',
                     ),
                     WeeklyActivityChart(days: navigation.summary.days),
                     const SizedBox(height: 16),

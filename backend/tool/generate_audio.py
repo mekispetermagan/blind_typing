@@ -25,7 +25,7 @@ RATE = 48000
 PROGRESS_SPEECH = {
     'progress_return_main': 'Vissza a főmenübe. Az Enter visszalép.',
     'progress_help': 'A fel és le nyíllal lépkedhetsz az elemek között. A bal és jobb nyíl szakaszt vált. A Home és End a szakasz első és utolsó elemére ugrik. Az F egy ismétel. Az Escape visszalép.',
-    'progress_section_week': 'Ezen a héten',
+    'progress_section_week': 'Az elmúlt 7 napban',
     'progress_section_activity': 'Heti gyakorlás',
     'progress_section_letters': 'Betűstatisztika',
     'progress_section_recent': 'Legutóbbi feladatok',
