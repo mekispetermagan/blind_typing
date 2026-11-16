@@ -4,9 +4,11 @@ import 'dart:io';
 import 'backend.dart';
 
 class AudioCache {
-  AudioCache({Directory? root}) : _configuredRoot = root;
+  AudioCache({Directory? root, this.fetch = backendGet})
+    : _configuredRoot = root;
 
   final Directory? _configuredRoot;
+  final Future<HttpClientResponse> Function(String path, {String? etag}) fetch;
   Directory? _root;
   String? _activityKey;
 
@@ -40,18 +42,34 @@ class AudioCache {
     if (!RegExp(r'^[a-zA-Z0-9_]+\.(wav|mp3)$').hasMatch(name)) {
       throw FormatException('Invalid audio asset: $asset');
     }
-    final file = File('${_root!.path}/${shared ? 'shared' : 'activity'}/$name');
+    final studentName = RegExp(r'^student_name_([0-9]+)_[0-9a-f]{16}\.wav$')
+        .firstMatch(name);
+    final hwAudio = RegExp(
+      r'^homework_audio_([0-9a-f]{32})_([0-9a-f]{64})\.wav$',
+    ).firstMatch(name);
+    final teacherAudio = RegExp(
+      r'^homework_teacher_([0-9a-f]{32})_[0-9a-f]{16}\.wav$',
+    ).firstMatch(name);
+    final cachedName = hwAudio == null
+        ? name
+        : 'homework_pool_${hwAudio[2]}.wav';
+    final isShared = shared || hwAudio != null;
+    final file = File(
+      '${_root!.path}/${isShared ? 'shared' : 'activity'}/$cachedName',
+    );
     final tagFile = File('${file.path}.etag');
-    if (!shared && await file.exists()) return file.path;
+    if (!isShared && await file.exists()) return file.path;
     final etag = await file.exists() && await tagFile.exists()
         ? await tagFile.readAsString()
         : null;
-    final studentName = RegExp(r'^student_name_([0-9]+)_[0-9a-f]{16}\.wav$')
-        .firstMatch(name);
-    final path = studentName == null
-        ? '/api/audio/$name'
-        : '/api/trainer/students/${studentName[1]}/name-audio';
-    final response = await backendGet(path, etag: etag);
+    final path = studentName != null
+        ? '/api/trainer/students/${studentName[1]}/name-audio'
+        : hwAudio != null
+        ? '/api/homeworks/${hwAudio[1]}/audio/${hwAudio[2]}'
+        : teacherAudio != null
+        ? '/api/homeworks/${teacherAudio[1]}/trainer-audio'
+        : '/api/audio/$name';
+    final response = await fetch(path, etag: etag);
     if (response.statusCode == 304 && await file.exists()) {
       await response.drain<void>();
       return file.path;

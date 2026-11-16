@@ -35,6 +35,8 @@ class TypingController extends ChangeNotifier {
   final PracticeRecords _records;
   PracticeAttempt? _attempt;
   PracticeResult? _practiceResult;
+  Future<void>? completionAnnouncement;
+  String? lastAttemptId;
   int? _spellingToken;
   Timer? _hintTimer;
   bool _disposed = false;
@@ -60,7 +62,8 @@ class TypingController extends ChangeNotifier {
       await _speech.audio.setActivityAssets([
         ...AudioCues.speechAssets,
         ...exercise.audioAssets,
-        if (exercise.isWordDrill) ...PracticeFeedback.audioAssets,
+        if (exercise.isWordDrill || exercise.type == ActivityType.homework)
+          ...PracticeFeedback.audioAssets,
       ]);
       if (!_current(token)) return;
       _manager.ready();
@@ -82,15 +85,18 @@ class TypingController extends ChangeNotifier {
     if (!_manager.restart()) return;
     _attempt?.interrupt();
     _practiceResult = null;
-    _attempt =
-        PracticeAttempt(
-            mode: mode,
-            activityId: exercise.id,
-            activityType: exercise.type.name,
-            onSnapshot: onAttempt,
-          )
-          ..setAcceptingInput(exercise.isWordDrill)
-          ..publish();
+    final attempt = PracticeAttempt(
+      mode: mode,
+      activityId: exercise.id,
+      activityType: exercise.type.name,
+      onSnapshot: onAttempt,
+    );
+    _attempt = attempt;
+    lastAttemptId = attempt.id;
+    completionAnnouncement = null;
+    attempt
+      ..setAcceptingInput(exercise.isWordDrill)
+      ..publish();
     notifyListeners();
     unawaited(_beginUnit(_speech.begin()));
   }
@@ -205,7 +211,17 @@ class TypingController extends ChangeNotifier {
     final attempt = _attempt;
     if (result == TypingResult.completed && attempt != null) {
       final result = attempt.finish();
-      if (exercise.isWordDrill) {
+      if (exercise.type == ActivityType.homework) {
+        final score = ExerciseScoring(baselineSeconds: exercise.baselineSeconds)
+            .score(seconds: result.seconds, mistakes: result.errors);
+        _practiceResult = PracticeResult(
+          seconds: result.seconds,
+          errors: result.errors,
+          mode: result.mode,
+          changedMode: result.changedMode,
+          score: score,
+        );
+      } else if (exercise.isWordDrill) {
         _practiceResult = _records.finish(
           exercise.id,
           result,
@@ -229,7 +245,8 @@ class TypingController extends ChangeNotifier {
         case TypingResult.unitAdvanced:
           unawaited(_beginUnit(_speech.begin(), celebrate: true));
         case TypingResult.completed:
-          unawaited(_finish(_speech.begin()));
+          completionAnnouncement = _finish(_speech.begin());
+          unawaited(completionAnnouncement);
         default:
           _scheduleHint();
           break;

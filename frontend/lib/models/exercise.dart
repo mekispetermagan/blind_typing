@@ -1,6 +1,6 @@
 import 'typing_unit.dart';
 
-enum ActivityType { letters, words, practice }
+enum ActivityType { letters, words, practice, homework }
 
 sealed class ExerciseDefinition {
   const ExerciseDefinition({
@@ -59,15 +59,20 @@ class TypingExercise extends ExerciseDefinition {
     title: json['title'] as String,
     type: ActivityType.values.byName(json['type'] as String),
     allowedLetters: json['allowedLetters'] as String?,
-    baselineSeconds: json['baselineSeconds'] as int? ?? 180,
+    baselineSeconds: json['baselineSeconds'] as num? ?? 180,
     units: (json['units'] as List)
-        .map((unit) => TypingUnit.fromJson(unit as Map<String, dynamic>))
+        .map(
+          (unit) => TypingUnit.fromJson(
+            unit as Map<String, dynamic>,
+            homework: json['type'] == 'homework',
+          ),
+        )
         .toList(),
   );
 
   final List<TypingUnit> units;
   final String? allowedLetters;
-  final int baselineSeconds;
+  final num baselineSeconds;
   bool get isWordDrill => type == ActivityType.words;
   @override
   Iterable<String> get audioAssets =>

@@ -78,7 +78,7 @@ class AuthApiTests(unittest.TestCase):
                 commands = [child.get('command') for child in children]
                 self.assertEqual(commands[-1], 'logout')
                 if area != 'student':
-                    expected = ['students', 'areaSelector', 'logout'] if area == 'trainer' else ['areaSelector', 'logout']
+                    expected = ['addHomework', 'viewHomeworks', 'students', 'areaSelector', 'logout'] if area == 'trainer' else ['areaSelector', 'logout']
                     self.assertEqual(commands, expected)
                 else:
                     self.assertEqual('areaSelector' in commands, identifier != 'xyz')

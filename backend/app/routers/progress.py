@@ -8,7 +8,8 @@ from sqlalchemy.orm import Session
 from ..config import ROOT
 from ..database import engine
 from ..auth import current_user
-from ..models import ActivityAttempt, AttemptKeyStatistics, AttemptStatus, User
+from ..homework_audio import resolve_asset
+from ..models import ActivityAttempt, AttemptKeyStatistics, AttemptStatus, Homework, HomeworkEntry, User
 from ..schemas.progress import KeyProgress, ProgressAttempt, StudentProgress
 
 router = APIRouter(prefix='/api/progress')
@@ -43,6 +44,13 @@ def progress_for_user(session: Session, user: User) -> StudentProgress:
             incorrect=row.first_try_incorrect_count,
         ))
     titles = activity_titles()
+    homework_audio = {}
+    for hw in session.scalars(select(Homework).where(Homework.student_id == user.id)):
+        trainer = session.get(User, hw.trainer_id)
+        entry = session.scalar(select(HomeworkEntry).where(HomeworkEntry.homework_id == hw.id).order_by(HomeworkEntry.position).limit(1))
+        titles[f'homework_{hw.id}'] = f'Házi feladat – {trainer.name}' + (f' – {entry.text}' if entry else '')
+        if entry is not None:
+            homework_audio[f'homework_{hw.id}'] = ['assets/audio/menu_homeworks.wav', resolve_asset(hw.id, json.loads(entry.audio)['sentence'])]
     return StudentProgress(name=user.name, attempts=[
         ProgressAttempt(
             activity_id=attempt.activity_id,
@@ -51,6 +59,8 @@ def progress_for_user(session: Session, user: User) -> StudentProgress:
             status=attempt.status.value,
             active_duration_ms=attempt.active_duration_ms,
             mistake_count=attempt.mistake_count,
+            score=attempt.score,
+            title_audio=homework_audio.get(attempt.activity_id, []),
             keys=keys.get(attempt.id, []),
         ) for attempt in attempts
     ])

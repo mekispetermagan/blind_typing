@@ -42,7 +42,10 @@ class TypingSessionManager {
       _state = _state.copyWith(phase: ExercisePhase.typing, countdown: null);
 
   TypingResult typeCharacter(String character) {
-    if (_state.phase != ExercisePhase.typing || character.trim().isEmpty) {
+    if (_state.phase != ExercisePhase.typing ||
+        character.trim().isEmpty ||
+        (exercise.type == ActivityType.homework &&
+            RegExp(r'^[\p{P}\p{S}]+$', unicode: true).hasMatch(character))) {
       return TypingResult.ignored;
     }
     final correct =

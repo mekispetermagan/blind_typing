@@ -353,6 +353,7 @@ class _TypingSessionState extends State<_TypingSession> {
         ? AudioCues.menuWelcome
         : 'assets/audio/menu_area_welcome.wav',
     onAttempt: widget.sync.save,
+    homeworkEvents: widget.sync.homeworkEvents,
     onLogout: widget.onLogout,
     onAreaSelector: widget.onAreaSelector,
     speech: SpeechCoordinator(_BorrowedAudio(widget.audio)),

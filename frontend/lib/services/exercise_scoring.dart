@@ -11,7 +11,7 @@ class ExerciseScoring {
        assert(mistakeMultiplier > 0 && mistakeMultiplier <= 1),
        assert(baselinePoints > 0);
 
-  final int baselineSeconds;
+  final num baselineSeconds;
   final int baselineMistakes;
   final double mistakeMultiplier;
   final int baselinePoints;

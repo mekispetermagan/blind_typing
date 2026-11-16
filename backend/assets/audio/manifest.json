@@ -9216,5 +9216,255 @@
     "text": "Vissza a tanulókhoz. Az Enter visszalép.",
     "provider": "gTTS / Google Translate, hu, default voice, normal speed",
     "sha256": "df6077605474b7e3c3bbf3d4f2cb2fc0d436f1ae845b5b1ac71d34623fbaa55f"
+  },
+  "menu_homeworks": {
+    "text": "Házi feladatok",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "10c93356b751b355bef0c6d784f3658cd614489aa1e9a9d518ffd11515571099"
+  },
+  "menu_add_homework": {
+    "text": "Házi feladat feladása",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "1a13f9a4b1e0d2449cc96fb8aacaf521ab13b45015eedcd85334604204c903ca"
+  },
+  "menu_view_homeworks": {
+    "text": "Házi feladatok megtekintése",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "628654cbe829208268541653e9f708d0a708fec8980025b37df1487ecd5bd7b5"
+  },
+  "student_selection_homework_help": {
+    "text": "Válassz tanulót a fel és le nyíllal. Az Enter kiválasztja. Az F egy ismétel. Az Escape visszalép.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "7a1f6bc519a843aae2940833c63beeb8bcd9de6f869a2d1e3af89d36f024a474"
+  },
+  "homework_form_help": {
+    "text": "Házi feladat. Tab vált a mezők között. A dátum év-hónap-nap formátumú, az idő óra-perc. Az Enter új sort ad hozzá. A feladat elküldéséhez válaszd a feladás gombot. Az F egy megismétli az aktuális mezőt.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "06abbead0c55bf35790b3fab3b8ad4c218e95b9ed09d1741ad7804270b536b70"
+  },
+  "homework_date": {
+    "text": "Határidő dátuma, év-hónap-nap",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c5fe410f397cac76762a8b024ba798700ccb70189edfff88dca640e8031452f4"
+  },
+  "homework_time": {
+    "text": "Határidő ideje, óra-perc",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fa74221ffdeb663207f2858d1be7ea8f38b404e234e4ffd7481739407655af55"
+  },
+  "homework_entry": {
+    "text": "Gyakorlandó szöveg",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b809107131f90e17e9cbd52abdf319750380454fc9cb2a537f3f1e6cd07a5ec3"
+  },
+  "homework_repetitions": {
+    "text": "Ismétlések száma",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "abd59c907c6abbf9bc334ededfe53b1e7e22ab04622b80ffa439f5740512575b"
+  },
+  "homework_add_row": {
+    "text": "Új sor hozzáadása",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d24eb9d4c6424b3128f8ee45031774991254de0adafc09c4f09180d5dab6be49"
+  },
+  "homework_remove_row": {
+    "text": "Sor törlése",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bb7561f853a4c1849ccf95233ac375bba965ac089bd1dbb630d8fc01202ba1d3"
+  },
+  "homework_reopen": {
+    "text": "Újranyitás új határidővel",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9e851e3a26517f79a1db0bf1b2a372de5ba850d3c24e7dd7d252972e48892e74"
+  },
+  "homework_save_deadline": {
+    "text": "Új határidő mentése",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "8f7ddc8841aab78fd4ec6011e330a9b999ca374f39663809749dff567380b0c6"
+  },
+  "homework_invalid": {
+    "text": "Hibás adat. A határidő legalább hatvan perccel legyen később, és minden sor tartalmazzon szöveget és pozitív ismétlésszámot.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d6872632f4cdf107979db6e5d3f19e637ddac6cf25b5509aac760a6b7fd56546"
+  },
+  "homework_saving": {
+    "text": "Házi feladat mentése és hangok készítése. Kérlek várj.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ad75f57a6360f0e1b4d2123082f8d5273ce49d097ce3fcd45d542fd584fa1d66"
+  },
+  "homework_created": {
+    "text": "A házi feladat mentve.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0e00790dec6d9993fa2196b743b1bf0aec79a29d985c766ca7b325c7a51bddd9"
+  },
+  "homework_list_help": {
+    "text": "A fel és le nyíllal választhatsz. Az Enter megnyitja. Az F egy ismétel. Az Escape visszalép.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "42722f4347d90ece30e210baee90c2e10f495332f323a161bba9f388047e83f9"
+  },
+  "homework_empty": {
+    "text": "Nincs megjeleníthető házi feladat.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a796744ec3f4c072d9aee00b3c31489db0259047a21a1b3b8a11d6dfe7c9559c"
+  },
+  "homework_deadline": {
+    "text": "Határidő",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bed3e77d73bc43886add0d3a6d2b3a296862f6c46c1f8aeabee0a766b7fc27cd"
+  },
+  "homework_status_open_unsubmitted": {
+    "text": "Nyitott, nincs beadva",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ed61bd87833debe3a96cec89af5591dfbded83271ed32b2ea89137cd2a075006"
+  },
+  "homework_status_open_submitted": {
+    "text": "Nyitott, beadva",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b26bc581624ca79e7cd9514a604278154ec53de850fc58cbb945cc778ed8c7e5"
+  },
+  "homework_status_expired_unsubmitted": {
+    "text": "Lejárt, nincs beadva",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "51bf03e0660df6805cf303948888d84f79a036ba7a70a77f422d62d37aed971a"
+  },
+  "homework_status_expired_submitted": {
+    "text": "Lejárt, beadva",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "790f1fa7dfb225817addf2bcef2d74061f54113660edbb65b2188f6ad1dba1b7"
+  },
+  "homework_no_attempt": {
+    "text": "Még nincs beadás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c4c7a0fbdbabbd1c067d3160ddbb06647b88415fb9f218621986b85ff4e6a9b5"
+  },
+  "homework_latest": {
+    "text": "Legutóbbi beadás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "793b9f6aeb49eb140b49b917e878402737ccad3b94349d614b0e372c8b4fad5a"
+  },
+  "homework_earlier": {
+    "text": "Korábbi beadások megtekintése",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "af34361878921852f753572e3b399e36307dcfe29c91795b005c249d2ef28082"
+  },
+  "homework_attempts_help": {
+    "text": "Korábbi beadások. A fel és le nyíllal választhatsz. Az F egy ismétel. Az Escape visszalép.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "58ea5d8d53344d5cb53607d8c01e31f92ecc48defbc8059d65f516c19eab0275"
+  },
+  "homework_start_expired": {
+    "text": "A határidő lejárt. A feladat nem adható be.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "697fbe3bb5aaaaf9f35a45e59de7e7242484447c1b3a5af0988a18980a38a8f7"
+  },
+  "homework_completion_pending": {
+    "text": "A beadás folyamatban van.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "9e6f4f4aa33dfac7d74706c929c00c35ffd1491ecfff88301fc016818418dbb4"
+  },
+  "homework_completion_saved": {
+    "text": "A házi feladat beadva.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a36d97860f1ea26826ec335ee4c6a6aa450e15f9d018b4d983b243eee427e327"
+  },
+  "homework_completion_expired": {
+    "text": "A beadás nem sikerült, mert a határidő lejárt. A gyakorlás megszakítottként szerepel.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e45af3dd594ec25c33c4c681e952681b3d1fcfe02ec8a689563f7fa6e6790d86"
+  },
+  "homework_back_list": {
+    "text": "Vissza a házi feladatokhoz",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b69091f471e1a8e0cf88bb700376fe7ecf2c518e9cc06ca97a680006761c3388"
+  },
+  "homework_try_again": {
+    "text": "Újrapróbálás",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "d5e2ac5abfa239e6080b15c53a63f05a8b217bafa583c5ee1332a2a907448350"
+  },
+  "homework_back_main": {
+    "text": "Vissza a főmenübe",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "e382d85591ff533f4be2467f1318e5bc2959d5f40491e604617472c9731f9e38"
+  },
+  "homework_delete": {
+    "text": "Törlés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6553ec0869c5c1600ced81d9bd875fdce9385dd2f33c92f01f9c221c3a66aaf7"
+  },
+  "homework_space": {
+    "text": "szóköz",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "0835b94a1de70099630a1d8963f73086c6909a23dd587cfaa5d0721dd643e37f"
+  },
+  "homework_punctuation": {
+    "text": "Írásjel",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "a8b518a44aa44332e1d4a85bba124b1ff33fc4d713a32a0816c3c436ece9e4e8"
+  },
+  "homework_trainer_list_help": {
+    "text": "A fel és le nyíllal válassz házi feladatot. Az Enter megnyitja a beadásokat. Az R újranyitja a lejárt feladatot. Az F egy ismétel. Az Escape visszalép.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "8f46433b8eb3f8ce19c45999e459356d15a045213e04f91c6618a08e5bd53ea1"
+  },
+  "homework_comma": {
+    "text": "vessző",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "fa3df8bf87f80f969f6bf88c4299ccee235e55084e7357427c4842afd846bc03"
+  },
+  "homework_colon": {
+    "text": "kettőspont",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "dba549508db136ab50beaf6da58cad140245da52bc4bbb48686daaecae075522"
+  },
+  "homework_dash": {
+    "text": "kötőjel",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "aa18df85e6b12e771c36f62e6a620a45e49932043e96bf5ec11e57f406b8dcda"
+  },
+  "homework_question": {
+    "text": "kérdőjel",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c2986f863c74112b14125dcf2ec2e8b8cc1459569600287387decc8062db5e52"
+  },
+  "homework_exclamation": {
+    "text": "felkiáltójel",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "380de1c9623732f1ead545c3ea336ad87f38da4745e11bb4dfc1ea537615fdb7"
+  },
+  "homework_semicolon": {
+    "text": "pontosvessző",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b90e32712b2dafd0e4ee9213abf6afa784026fbc7f1b4b13fbf7a2bb9fcb4ede"
+  },
+  "homework_slash": {
+    "text": "perjel",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "3c560d22f65c2cec2e9adc6464310e213a916c3c9f8334bc59ce9fbf4ff19f17"
+  },
+  "homework_open_paren": {
+    "text": "nyitó zárójel",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "8370f3866911377b0c846b23ca4070d7a59bc22a2731c4cc6b568ad955adc82a"
+  },
+  "homework_close_paren": {
+    "text": "záró zárójel",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "742d45b6e66a425e446e9e973f4b5450ec2921cb03c2ebeff443731958c3a529"
+  },
+  "homework_quote": {
+    "text": "idézőjel",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2501cecf3877905774318368f8633f17f9cac25525d9b5783b39896dc33521e5"
+  },
+  "homework_apostrophe": {
+    "text": "aposztróf",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "60ea012a6ecd5d6db527c08dcaff70bbe216a8430e01c4c86b1b6e93f23e2ad5"
+  },
+  "homework_row": {
+    "text": "Sor",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "c84171c51027d5ee70ef8c9d252f28eb1f36f6e9efcaf6a64f9cf020c99f0ccd"
   }
 }

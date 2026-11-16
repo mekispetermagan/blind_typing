@@ -187,6 +187,33 @@ void main() {
     },
   );
 
+  test('homework menu starts the correct flow and returns to menu', () async {
+    final catalog = await content.loadMenu();
+    content.menuOverride = MenuCatalog(
+      root: MenuNode(
+        id: 'main_homework',
+        title: 'Főmenü',
+        children: [
+          MenuNode(
+            id: 'homeworks',
+            title: 'Házi feladatok',
+            command: MenuCommand.homeworks,
+          ),
+          MenuNode(id: 'logout', title: 'Kilépés', command: MenuCommand.logout),
+        ],
+      ),
+      pause: catalog.pause,
+      complete: catalog.complete,
+    );
+    await app.initialize();
+    app.activate();
+    expect(app.page, AppPage.homework);
+    expect(app.homeworkFlow, HomeworkFlowKind.student);
+    app.back();
+    expect(app.page, AppPage.menu);
+    expect(app.homeworkFlow, isNull);
+  });
+
   test('navigation speaks selection, cancels previous speech, and retains parent selection', () async {
     await app.initialize();
     expect(content.loaded, isEmpty); // Exercise recordings load on entry.

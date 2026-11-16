@@ -92,6 +92,7 @@ class SoloudAudioService implements AudioService {
       final source =
           cache == null ||
               asset.startsWith('assets/audio/login_') ||
+              asset.startsWith('assets/audio/homework_local_') ||
               asset == 'assets/audio/student_selection_loading.wav' ||
               asset == 'assets/audio/student_selection_failure.wav' ||
               asset == AudioCues.contentError ||

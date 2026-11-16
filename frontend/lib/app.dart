@@ -8,6 +8,7 @@ import 'screens/menu_screen.dart';
 import 'screens/progress_screen.dart';
 import 'screens/status_screen.dart';
 import 'screens/student_selection_screen.dart';
+import 'screens/homework_flow_screen.dart';
 import 'screens/teaching_screen.dart';
 import 'screens/typing_screen.dart';
 
@@ -109,6 +110,8 @@ class _ApplicationView extends StatelessWidget {
           onClose: onClose,
           showMode: showMode,
         );
+      case AppPage.homework:
+        return HomeworkFlowScreen(controller: controller, onClose: onClose);
       case AppPage.students:
         return StudentSelectionScreen(
           speech: controller.progressSpeech,

@@ -344,7 +344,22 @@ class _ProgressScreenState extends State<ProgressScreen> {
                     for (var i = 0; i < sections[3].items.length; i++)
                       _item(3, i),
                     const SizedBox(height: 24),
-                    _item(4, 0),
+                    for (
+                      var section = 4;
+                      section < sections.length;
+                      section++
+                    ) ...[
+                      if (section < sections.length - 1)
+                        _section(context, sections[section].title),
+                      for (
+                        var item = 0;
+                        item < sections[section].items.length;
+                        item++
+                      )
+                        _item(section, item),
+                      if (section < sections.length - 1)
+                        const SizedBox(height: 24),
+                    ],
                   ],
                 ),
               ),

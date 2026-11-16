@@ -110,6 +110,37 @@ void main() {
     },
   );
 
+  test(
+    'progress exposes every homework submission, not only ten recent attempts',
+    () {
+      final progress = StudentProgress(
+        name: 'Teszt',
+        attempts: [
+          for (var i = 0; i < 13; i++)
+            ProgressAttempt(
+              activityId: 'homework_123',
+              title: 'Házi feladat $i',
+              startedAt: DateTime(2026, 11, 12),
+              status: 'completed',
+              activeDurationMs: 1000,
+              mistakeCount: 0,
+              keys: const [],
+            ),
+        ],
+      );
+      final navigation = ProgressNavigation(
+        progress,
+        DateTime(2026, 11, 12),
+        {},
+      );
+      final homeworks = navigation.sections.firstWhere(
+        (section) => section.title == 'Házi feladatok',
+      );
+      expect(homeworks.items.length, 13);
+      expect(navigation.sections.last.title, 'Vissza a főmenübe');
+    },
+  );
+
   test('daily and weekly times truncate after summing, including speech', () {
     final progress = StudentProgress(
       name: 'Test',

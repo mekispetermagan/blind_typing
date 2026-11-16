@@ -9,6 +9,9 @@ enum MenuCommand {
   nextChallenge,
   progress,
   students,
+  homeworks,
+  addHomework,
+  viewHomeworks,
   logout,
   areaSelector,
   previous;
@@ -112,6 +115,9 @@ class MenuCatalog {
               node.command != null &&
               !(((node.command == MenuCommand.progress ||
                           node.command == MenuCommand.students ||
+                          node.command == MenuCommand.homeworks ||
+                          node.command == MenuCommand.addHomework ||
+                          node.command == MenuCommand.viewHomeworks ||
                           node.command == MenuCommand.logout ||
                           node.command == MenuCommand.areaSelector) &&
                       root.children.contains(node)) ||
@@ -153,6 +159,9 @@ class MenuCatalog {
               node.command == MenuCommand.resume ||
               node.command == MenuCommand.progress ||
               node.command == MenuCommand.students ||
+              node.command == MenuCommand.homeworks ||
+              node.command == MenuCommand.addHomework ||
+              node.command == MenuCommand.viewHomeworks ||
               node.command == MenuCommand.logout ||
               node.command == MenuCommand.areaSelector ||
               node.command == MenuCommand.previous,

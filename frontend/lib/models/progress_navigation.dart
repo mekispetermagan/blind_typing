@@ -113,27 +113,38 @@ class ProgressNavigation {
           ],
         ),
     ];
+    ProgressItem attemptItem(ProgressAttempt attempt) => ProgressItem(
+      title: attempt.title,
+      subtitle:
+          '${_date(attempt.startedAt)} · ${attempt.status == 'completed' ? 'Befejezve' : 'Megszakítva'}\nAktív idő: ${_duration(attempt.activeDurationMs)} · Hibák: ${attempt.mistakeCount}${attempt.score == null ? '' : ' · Pontszám: ${attempt.score}'}',
+      audio: [
+        progressCue('activity'),
+        if (attempt.titleAudio.isNotEmpty)
+          ...attempt.titleAudio
+        else if (activityAudio[attempt.activityId] case final clips?)
+          ...clips
+        else
+          ..._spell(attempt.title),
+        progressCue('date'),
+        ..._dateAudio(attempt.startedAt),
+        progressCue(attempt.status == 'completed' ? 'finished' : 'stopped'),
+        progressCue('duration'),
+        ..._durationAudio(attempt.activeDurationMs),
+        'assets/audio/result_errors.wav',
+        ...PracticeFeedback.number(attempt.mistakeCount),
+        if (attempt.score case final score?) ...[
+          'assets/audio/result_score.wav',
+          ...PracticeFeedback.number(score),
+        ],
+      ],
+    );
     final recentItems = [
-      for (final attempt in progress.attempts.take(10))
-        ProgressItem(
-          title: attempt.title,
-          subtitle:
-              '${_date(attempt.startedAt)} · ${attempt.status == 'completed' ? 'Befejezve' : 'Megszakítva'}\nAktív idő: ${_duration(attempt.activeDurationMs)} · Hibák: ${attempt.mistakeCount}',
-          audio: [
-            progressCue('activity'),
-            if (activityAudio[attempt.activityId] case final clips?)
-              ...clips
-            else
-              ..._spell(attempt.title),
-            progressCue('date'),
-            ..._dateAudio(attempt.startedAt),
-            progressCue(attempt.status == 'completed' ? 'finished' : 'stopped'),
-            progressCue('duration'),
-            ..._durationAudio(attempt.activeDurationMs),
-            'assets/audio/result_errors.wav',
-            ...PracticeFeedback.number(attempt.mistakeCount),
-          ],
-        ),
+      for (final attempt in progress.attempts.take(10)) attemptItem(attempt),
+    ];
+    final homeworkItems = [
+      for (final attempt in progress.attempts)
+        if (attempt.activityId?.startsWith('homework_') == true)
+          attemptItem(attempt),
     ];
     sections = [
       ProgressSection(
@@ -169,6 +180,12 @@ class ProgressNavigation {
                 ),
               ],
       ),
+      if (homeworkItems.isNotEmpty)
+        ProgressSection(
+          'Házi feladatok',
+          'assets/audio/menu_homeworks.wav',
+          homeworkItems,
+        ),
       ProgressSection(backTitle, backAudio, [
         ProgressItem(title: backTitle, audio: [backAudio]),
       ]),

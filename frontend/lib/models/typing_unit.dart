@@ -8,7 +8,17 @@ class TypingUnit {
     required this.id,
     required this.text,
     this.promptStyle = PromptStyle.word,
-  }) : words = RegExp(r'^[0-9]+$').hasMatch(text)
+    this.homework = false,
+    this.sentenceAudio,
+    this.wordAudio,
+  }) : words = homework
+           ? List.unmodifiable(
+               RegExp(
+                 r'[\p{L}\p{N}]+',
+                 unicode: true,
+               ).allMatches(text).map((m) => m.group(0)!),
+             )
+           : RegExp(r'^[0-9]+$').hasMatch(text)
            ? List.unmodifiable([text])
            : typingWords(text) {
     if (!RegExp(r'^[a-zA-Z0-9_]+$').hasMatch(id) || words.isEmpty) {
@@ -16,9 +26,15 @@ class TypingUnit {
     }
   }
 
-  factory TypingUnit.fromJson(Map<String, dynamic> json) => TypingUnit(
+  factory TypingUnit.fromJson(
+    Map<String, dynamic> json, {
+    bool homework = false,
+  }) => TypingUnit(
     id: json['id'] as String,
     text: json['text'] as String,
+    homework: homework,
+    sentenceAudio: json['sentenceAudio'] as String?,
+    wordAudio: (json['wordAudio'] as List?)?.cast<String>(),
     promptStyle: PromptStyle.values.byName(
       json['promptStyle'] as String? ?? 'word',
     ),
@@ -28,8 +44,12 @@ class TypingUnit {
   final String text;
   final List<String> words;
   final PromptStyle promptStyle;
-  String get audioAsset => 'assets/audio/${id}_sentence.wav';
-  String wordAudioAsset(int index) => 'assets/audio/${id}_word_$index.wav';
+  final bool homework;
+  final String? sentenceAudio;
+  final List<String>? wordAudio;
+  String get audioAsset => sentenceAudio ?? 'assets/audio/${id}_sentence.wav';
+  String wordAudioAsset(int index) =>
+      wordAudio?[index] ?? 'assets/audio/${id}_word_$index.wav';
 
   Iterable<String> audioAssets({required bool readSentence}) sync* {
     if (readSentence) yield audioAsset;

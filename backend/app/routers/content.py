@@ -29,6 +29,7 @@ def area_menu(area: str, user: User = Depends(current_user)):
     catalog = menu()
     return_item = {'id': 'area_selector', 'title': 'Vissza a területválasztóhoz', 'command': 'areaSelector'}
     if area == 'student':
+        catalog['root']['children'].insert(-1, {'id': 'homeworks', 'title': 'Házi feladatok', 'command': 'homeworks'})
         if user.role in {Role.TRAINER, Role.ADMIN}:
             catalog['root']['children'].insert(-1, return_item)
     else:
@@ -36,6 +37,8 @@ def area_menu(area: str, user: User = Depends(current_user)):
         items = [return_item, {'id': 'logout', 'title': 'Kilépés', 'command': 'logout'}]
         if area == 'trainer':
             items.insert(0, {'id': 'student_progress', 'title': 'Tanulók haladása', 'command': 'students'})
+            items.insert(0, {'id': 'view_homeworks', 'title': 'Házi feladatok megtekintése', 'command': 'viewHomeworks'})
+            items.insert(0, {'id': 'add_homework', 'title': 'Házi feladat feladása', 'command': 'addHomework'})
         catalog['root'] = {
             'id': f'{area}_main', 'title': title, 'children': items,
         }

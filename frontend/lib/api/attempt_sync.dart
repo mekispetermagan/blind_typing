@@ -4,8 +4,15 @@ import 'dart:developer' as developer;
 import 'dart:io';
 
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/foundation.dart';
 
 import 'backend.dart';
+
+class HomeworkSyncEvent {
+  const HomeworkSyncEvent(this.attemptId, this.status);
+  final String attemptId;
+  final String status;
+}
 
 /// Persists pending snapshots before delivery; latest revision wins per attempt.
 class AttemptSync {
@@ -24,6 +31,7 @@ class AttemptSync {
     this.sessionToken,
   }) : _read = read,
        _write = write;
+  final homeworkEvents = ValueNotifier<HomeworkSyncEvent?>(null);
   final String baseUrl;
   final String storageKey;
   final String? sessionToken;
@@ -75,6 +83,10 @@ class AttemptSync {
   void save(Map<String, dynamic> snapshot) {
     final id = snapshot['id'] as String;
     _pending[id] = snapshot;
+    if (snapshot['activity_type'] == 'homework' &&
+        snapshot['status'] == 'completed') {
+      homeworkEvents.value = HomeworkSyncEvent(id, 'pending');
+    }
     if (snapshot['status'] == 'in_progress') {
       _active[id] = snapshot;
     } else {
@@ -108,12 +120,24 @@ class AttemptSync {
   Future<void> _send() async {
     while (!_disposed && _pending.isNotEmpty) {
       if (sessionToken != null && backendToken != sessionToken) return;
-      final id = _pending.keys.first;
+      final completedHomework = _pending.entries.where(
+        (entry) =>
+            entry.value['activity_type'] == 'homework' &&
+            entry.value['status'] == 'completed',
+      );
+      final id = completedHomework.isEmpty
+          ? _pending.keys.first
+          : completedHomework.first.key;
       final snapshot = _pending[id]!;
       try {
-        final request = await _client.putUrl(
-          Uri.parse('$baseUrl/api/attempts/$id'),
-        );
+        final isHomework = snapshot['activity_type'] == 'homework';
+        final homeworkId = isHomework
+            ? (snapshot['activity_id'] as String).substring('homework_'.length)
+            : null;
+        final path = isHomework
+            ? '/api/homeworks/$homeworkId/attempts/$id'
+            : '/api/attempts/$id';
+        final request = await _client.putUrl(Uri.parse('$baseUrl$path'));
         final token = sessionToken ?? backendToken;
         if (token != null)
           request.headers.set(HttpHeaders.authorizationHeader, 'Bearer $token');
@@ -128,13 +152,29 @@ class AttemptSync {
         final response = await request.close().timeout(
           const Duration(seconds: 30),
         );
-        await response.drain<void>();
+        final body = await response.transform(utf8.decoder).join();
+        if (response.statusCode == 409 &&
+            isHomework &&
+            snapshot['status'] == 'completed' &&
+            body.contains('deadline_expired')) {
+          if (_pending[id]?['revision'] == snapshot['revision']) {
+            _pending[id] = Map.of(snapshot)
+              ..['status'] = 'interrupted'
+              ..['revision'] = (snapshot['revision'] as int) + 1;
+            await _persist();
+            homeworkEvents.value = HomeworkSyncEvent(id, 'expired');
+          }
+          continue;
+        }
         if (response.statusCode == 401 && token != null)
           onUnauthorized?.call(token);
         if (response.statusCode != 200) {
           throw StateError('Attempt upload: ${response.statusCode}');
         }
         if (_pending[id]?['revision'] == snapshot['revision']) {
+          if (isHomework && snapshot['status'] == 'completed') {
+            homeworkEvents.value = HomeworkSyncEvent(id, 'saved');
+          }
           _pending.remove(id);
           await _persist();
         }

@@ -27,6 +27,8 @@ class ProgressAttempt {
     required this.status,
     required this.activeDurationMs,
     required this.mistakeCount,
+    this.score,
+    this.titleAudio = const [],
     required this.keys,
   });
   factory ProgressAttempt.fromJson(Map<String, dynamic> json) =>
@@ -37,6 +39,8 @@ class ProgressAttempt {
         status: json['status'] as String,
         activeDurationMs: json['active_duration_ms'] as int,
         mistakeCount: json['mistake_count'] as int,
+        score: json['score'] as int?,
+        titleAudio: (json['title_audio'] as List? ?? []).cast<String>(),
         keys: (json['keys'] as List<dynamic>)
             .map((item) => KeyProgress.fromJson(item as Map<String, dynamic>))
             .toList(),
@@ -47,6 +51,8 @@ class ProgressAttempt {
   final String status;
   final int activeDurationMs;
   final int mistakeCount;
+  final int? score;
+  final List<String> titleAudio;
   final List<KeyProgress> keys;
 }
 

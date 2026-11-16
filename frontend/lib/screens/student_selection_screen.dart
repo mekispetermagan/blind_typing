@@ -17,6 +17,8 @@ class StudentSelectionScreen extends StatefulWidget {
     required this.onClose,
     this.initialStudentId,
     this.loadStudents,
+    this.title = 'Tanulók haladása',
+    this.selectionHelpAudio = 'assets/audio/student_selection_help.wav',
     super.key,
   });
   final SpeechCoordinator speech;
@@ -25,6 +27,8 @@ class StudentSelectionScreen extends StatefulWidget {
   final VoidCallback onClose;
   final int? initialStudentId;
   final Future<List<TrainerStudent>> Function()? loadStudents;
+  final String title;
+  final String selectionHelpAudio;
 
   @override
   State<StudentSelectionScreen> createState() => _StudentSelectionScreenState();
@@ -33,7 +37,6 @@ class StudentSelectionScreen extends StatefulWidget {
 class _StudentSelectionScreenState extends State<StudentSelectionScreen> {
   static const loadingAudio = 'assets/audio/student_selection_loading.wav';
   static const failureAudio = 'assets/audio/student_selection_failure.wav';
-  static const helpAudio = 'assets/audio/student_selection_help.wav';
   static const emptyAudio = 'assets/audio/student_selection_empty.wav';
   static const returnAudio = 'assets/audio/student_selection_return.wav';
   List<TrainerStudent> students = [];
@@ -72,7 +75,7 @@ class _StudentSelectionScreenState extends State<StudentSelectionScreen> {
       final loaded =
           await (widget.loadStudents?.call() ?? TrainerRepository().students());
       await widget.speech.audio.initialize([
-        helpAudio,
+        widget.selectionHelpAudio,
         emptyAudio,
         returnAudio,
         for (final student in loaded) ...student.nameAudio,
@@ -86,7 +89,11 @@ class _StudentSelectionScreenState extends State<StudentSelectionScreen> {
         selected = previous < 0 ? 0 : previous;
         loading = false;
       });
-      _say([helpAudio, if (students.isEmpty) emptyAudio, ..._selectedAudio]);
+      _say([
+        widget.selectionHelpAudio,
+        if (students.isEmpty) emptyAudio,
+        ..._selectedAudio,
+      ]);
     } catch (_) {
       if (!mounted || request != generation) return;
       setState(() {
@@ -182,7 +189,7 @@ class _StudentSelectionScreenState extends State<StudentSelectionScreen> {
         LogicalKeyboardKey.f1: _repeat,
       },
       child: Scaffold(
-        appBar: AppBar(title: const Text('Tanulók haladása')),
+        appBar: AppBar(title: Text(widget.title)),
         body: Padding(
           padding: const EdgeInsets.all(32),
           child: Column(

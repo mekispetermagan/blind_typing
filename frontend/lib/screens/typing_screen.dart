@@ -102,6 +102,11 @@ class TypingScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 24),
             child: Column(
               children: [
+                if (showSentence && sentence.homework)
+                  Text(
+                    sentence.text,
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
                 if (showSentence)
                   SentenceDisplay(
                     words: sentence.words,

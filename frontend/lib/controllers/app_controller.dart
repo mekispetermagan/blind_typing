@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 
 import '../models/exercise.dart';
+import '../api/attempt_sync.dart';
 import '../api/trainer_repository.dart';
 import '../models/menu.dart';
 import '../managers/practice_attempt.dart';
@@ -14,7 +15,18 @@ import '../services/speech_coordinator.dart';
 import 'letter_teaching_controller.dart';
 import 'typing_controller.dart';
 
-enum AppPage { loading, menu, typing, teaching, progress, students, error }
+enum AppPage {
+  loading,
+  menu,
+  typing,
+  teaching,
+  progress,
+  students,
+  homework,
+  error,
+}
+
+enum HomeworkFlowKind { student, add, view }
 
 /// Owns navigation and shared services; exercise rules belong to managers.
 class AppController extends ChangeNotifier {
@@ -27,11 +39,13 @@ class AppController extends ChangeNotifier {
     this.onAttempt,
     this.onLogout,
     this.onAreaSelector,
+    this.homeworkEvents,
   }) : _records = records ?? PracticeRecords();
 
   final AttemptSnapshotSink? onAttempt;
   final VoidCallback? onLogout;
   final VoidCallback? onAreaSelector;
+  final ValueListenable<HomeworkSyncEvent?>? homeworkEvents;
   final ContentRepository _content;
   final SpeechCoordinator _speech;
   final PracticeRecords _records;
@@ -48,6 +62,7 @@ class AppController extends ChangeNotifier {
   bool _loading = true;
   bool _showProgress = false;
   bool _showStudents = false;
+  HomeworkFlowKind? homeworkFlow;
   TrainerStudent? selectedStudent;
   bool _disposed = false;
   String? _failure;
@@ -55,6 +70,7 @@ class AppController extends ChangeNotifier {
   ActivityReference? _failedActivity;
 
   SpeechCoordinator get progressSpeech => _speech;
+  PracticeRecords get practiceRecords => _records;
   Map<String, List<String>> get progressActivityAudio =>
       _catalog?.activityAudio ?? {};
 
@@ -71,6 +87,7 @@ class AppController extends ChangeNotifier {
     if (_loading) return AppPage.loading;
     if (_showProgress) return AppPage.progress;
     if (_showStudents) return AppPage.students;
+    if (homeworkFlow != null) return AppPage.homework;
     if (_failure != null || activityPhase == ExercisePhase.error) {
       return AppPage.error;
     }
@@ -194,6 +211,18 @@ class AppController extends ChangeNotifier {
           onLogout?.call();
         case MenuCommand.previous:
           back();
+        case MenuCommand.homeworks:
+          _speech.begin();
+          homeworkFlow = HomeworkFlowKind.student;
+          notifyListeners();
+        case MenuCommand.addHomework:
+          _speech.begin();
+          homeworkFlow = HomeworkFlowKind.add;
+          notifyListeners();
+        case MenuCommand.viewHomeworks:
+          _speech.begin();
+          homeworkFlow = HomeworkFlowKind.view;
+          notifyListeners();
         case MenuCommand.students:
           _speech.begin();
           _showStudents = true;
@@ -235,6 +264,10 @@ class AppController extends ChangeNotifier {
       _showProgress = false;
       notifyListeners();
       if (!_showStudents) _announceMenu();
+    } else if (homeworkFlow != null) {
+      homeworkFlow = null;
+      notifyListeners();
+      _announceMenu();
     } else if (_showStudents) {
       _showStudents = false;
       selectedStudent = null;
