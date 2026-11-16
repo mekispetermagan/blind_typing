@@ -27,7 +27,7 @@ class ModelTests(unittest.TestCase):
     def test_user_and_attempt_statistics(self):
         password = PasswordHasher()
         with Session(self.engine) as session:
-            user = User(name='Mekis Péter', role=Role.ADMIN, credential_hash=password.hash('1234'))
+            user = User(name='Mekis Péter', identifier='peter', role=Role.ADMIN, credential_hash=password.hash('1234'))
             session.add(user)
             session.flush()
             session.add(ActivityAttempt(
@@ -59,7 +59,7 @@ class ModelTests(unittest.TestCase):
             with self.assertRaises(IntegrityError):
                 session.commit()
             session.rollback()
-            session.add(User(name='Test', role=Role.STUDENT))
+            session.add(User(name='Test', identifier='test', role=Role.STUDENT))
             session.flush()
             session.add(ActivityAttempt(
                 id='bad', user_id=1, activity_id='test', activity_type='words',

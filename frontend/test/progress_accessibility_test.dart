@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:blind_typing/api/progress_repository.dart';
+import 'package:blind_typing/api/trainer_repository.dart';
 import 'package:blind_typing/models/progress_navigation.dart';
 import 'package:blind_typing/screens/progress_screen.dart';
 import 'package:blind_typing/services/audio_service.dart';
@@ -73,6 +74,41 @@ void main() {
     expect(File('assets/audio/progress_loading.wav').existsSync(), isTrue);
     expect(File('assets/audio/progress_failure.wav').existsSync(), isTrue);
   });
+
+  testWidgets(
+    'trainer progress announces student and returns to the selector',
+    (tester) async {
+      final audio = FakeAudioService();
+      var returned = false;
+      await tester.pumpWidget(
+        MaterialApp(
+          home: ProgressScreen(
+            student: const TrainerStudent(
+              id: 1,
+              name: 'Péter',
+              nameAudioRevision: '0123456789abcdef',
+            ),
+            loadProgress: () async => sampleProgress(),
+            speech: SpeechCoordinator(audio),
+            onBack: () => returned = true,
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      expect(find.text('Péter – Haladás'), findsOneWidget);
+      expect(
+        audio.spoken,
+        contains('assets/audio/student_name_1_0123456789abcdef.wav'),
+      );
+      for (var i = 0; i < 4; i++) {
+        await tester.sendKeyEvent(LogicalKeyboardKey.arrowRight);
+        await tester.pumpAndSettle();
+      }
+      expect(audio.spoken.last, 'assets/audio/progress_return_students.wav');
+      await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+      expect(returned, isTrue);
+    },
+  );
 
   test('daily and weekly times truncate after summing, including speech', () {
     final progress = StudentProgress(

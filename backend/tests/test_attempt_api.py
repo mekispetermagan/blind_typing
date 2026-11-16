@@ -22,7 +22,7 @@ class AttemptApiTests(unittest.TestCase):
         self.addCleanup(self.engine.dispose)
         Base.metadata.create_all(self.engine)
         with Session(self.engine) as session:
-            session.add(User(name='test', role=Role.ADMIN))
+            session.add(User(name='test', identifier='test', role=Role.ADMIN))
             session.commit()
         self.patcher = patch('app.routers.attempts.engine', self.engine)
         self.patcher.start()
@@ -34,11 +34,11 @@ class AttemptApiTests(unittest.TestCase):
                          keys={'ö': dict(first_try_correct_count=0, first_try_incorrect_count=1)})
 
     def test_snapshots_are_idempotent_and_stale_updates_do_not_replace_newer(self):
-        save_attempt(self.id, AttemptSnapshot(**self.data))
+        save_attempt(self.id, AttemptSnapshot(**self.data), User(id=1))
         updated = dict(self.data, revision=2, status='completed',
                        ended_at='2026-01-01T10:01:00Z', mistake_count=2)
-        save_attempt(self.id, AttemptSnapshot(**updated))
-        save_attempt(self.id, AttemptSnapshot(**self.data))
+        save_attempt(self.id, AttemptSnapshot(**updated), User(id=1))
+        save_attempt(self.id, AttemptSnapshot(**self.data), User(id=1))
         with Session(self.engine) as session:
             attempt = session.scalar(select(ActivityAttempt))
             counts = session.scalars(select(AttemptKeyStatistics)).all()
@@ -49,13 +49,16 @@ class AttemptApiTests(unittest.TestCase):
             self.assertEqual(counts[0].key, 'ö')
             self.assertEqual(counts[0].first_try_incorrect_count, 1)
 
-    def test_multiple_users_require_identity_design(self):
+    def test_multiple_users_are_isolated(self):
         with Session(self.engine) as session:
-            session.add(User(name='other', role=Role.STUDENT))
+            session.add(User(name='other', identifier='other', role=Role.STUDENT))
             session.commit()
-        with self.assertRaises(HTTPException) as error:
-            save_attempt(self.id, AttemptSnapshot(**self.data))
-        self.assertEqual(error.exception.status_code, 409)
+        save_attempt(self.id, AttemptSnapshot(**self.data), User(id=1))
+        save_attempt(self.id, AttemptSnapshot(**dict(self.data, revision=10)), User(id=2))
+        with Session(self.engine) as session:
+            attempt = session.scalar(select(ActivityAttempt))
+            self.assertEqual(attempt.user_id, 1)
+            self.assertEqual(attempt.revision, 0)
 
 
 if __name__ == '__main__':

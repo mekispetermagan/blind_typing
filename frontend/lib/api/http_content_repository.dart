@@ -6,6 +6,8 @@ import '../services/content_repository.dart';
 import 'backend.dart';
 
 class HttpContentRepository implements ContentRepository {
+  HttpContentRepository({this.area = 'student'});
+  final String area;
   Future<Map<String, dynamic>> _read(String path) async {
     final response = await backendGet(path);
     if (response.statusCode != 200) {
@@ -18,7 +20,7 @@ class HttpContentRepository implements ContentRepository {
 
   @override
   Future<MenuCatalog> loadMenu() async =>
-      MenuCatalog.fromJson(await _read('/api/menu'));
+      MenuCatalog.fromJson(await _read('/api/areas/$area/menu'));
 
   @override
   Future<ExerciseDefinition> loadExercise(ActivityReference reference) async {

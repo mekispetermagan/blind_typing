@@ -823,6 +823,11 @@
         "title": "HALADÁSOM",
         "speech": "Haladásom",
         "command": "progress"
+      },
+      {
+        "id": "logout",
+        "title": "Kilépés",
+        "command": "logout"
       }
     ]
   },

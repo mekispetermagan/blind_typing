@@ -3,16 +3,24 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import 'controllers/app_controller.dart';
+import 'api/http_content_repository.dart';
 import 'screens/menu_screen.dart';
 import 'screens/progress_screen.dart';
 import 'screens/status_screen.dart';
+import 'screens/student_selection_screen.dart';
 import 'screens/teaching_screen.dart';
 import 'screens/typing_screen.dart';
 
 class TypingApp extends StatefulWidget {
-  const TypingApp({required this.controller, required this.onClose, super.key});
+  const TypingApp({
+    required this.controller,
+    required this.onClose,
+    this.showMode = true,
+    super.key,
+  });
   final AppController controller;
   final VoidCallback onClose;
+  final bool showMode;
   @override
   State<TypingApp> createState() => _TypingAppState();
 }
@@ -57,15 +65,21 @@ class _TypingAppState extends State<TypingApp> with WidgetsBindingObserver {
       builder: (context, _) => _ApplicationView(
         controller: widget.controller,
         onClose: widget.onClose,
+        showMode: widget.showMode,
       ),
     ),
   );
 }
 
 class _ApplicationView extends StatelessWidget {
-  const _ApplicationView({required this.controller, required this.onClose});
+  const _ApplicationView({
+    required this.controller,
+    required this.onClose,
+    required this.showMode,
+  });
   final AppController controller;
   final VoidCallback onClose;
+  final bool showMode;
   @override
   Widget build(BuildContext context) {
     switch (controller.page) {
@@ -93,6 +107,15 @@ class _ApplicationView extends StatelessWidget {
           onRepeat: controller.repeat,
           onToggleMode: controller.toggleMode,
           onClose: onClose,
+          showMode: showMode,
+        );
+      case AppPage.students:
+        return StudentSelectionScreen(
+          speech: controller.progressSpeech,
+          onSelect: controller.viewStudent,
+          initialStudentId: controller.selectedStudent?.id,
+          onBack: controller.back,
+          onClose: onClose,
         );
       case AppPage.progress:
         return ProgressScreen(
@@ -100,6 +123,12 @@ class _ApplicationView extends StatelessWidget {
           onClose: onClose,
           speech: controller.progressSpeech,
           activityAudio: controller.progressActivityAudio,
+          student: controller.selectedStudent,
+          loadActivityAudio: controller.selectedStudent == null
+              ? null
+              : () async => (await HttpContentRepository(
+                  area: 'student',
+                ).loadMenu()).activityAudio,
         );
       case AppPage.typing:
         final typing = controller.typing!;

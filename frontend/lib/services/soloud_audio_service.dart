@@ -41,6 +41,17 @@ class SoloudAudioService implements AudioService {
     });
   }
 
+  Future<void> initializeLogin() => _serialize(() async {
+    await _load({
+      'assets/audio/login_welcome.wav',
+      'assets/audio/login_identifier.wav',
+      'assets/audio/login_pin.wav',
+      'assets/audio/login_submit.wav',
+      'assets/audio/login_failure.wav',
+      'assets/audio/login_expired.wav',
+    });
+  });
+
   @override
   Future<void> setActivityAssets(Iterable<String> speechAssets) {
     final assets = speechAssets.toSet();
@@ -80,6 +91,9 @@ class SoloudAudioService implements AudioService {
       if (_sources.containsKey(asset)) continue;
       final source =
           cache == null ||
+              asset.startsWith('assets/audio/login_') ||
+              asset == 'assets/audio/student_selection_loading.wav' ||
+              asset == 'assets/audio/student_selection_failure.wav' ||
               asset == AudioCues.contentError ||
               asset == AudioCues.progressLoading ||
               asset == AudioCues.progressFailure

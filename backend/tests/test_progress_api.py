@@ -24,7 +24,7 @@ class ProgressApiTests(unittest.TestCase):
         self.patcher.start()
         self.addCleanup(self.patcher.stop)
         with Session(self.engine) as session:
-            session.add(User(name='Test', role=Role.STUDENT))
+            session.add(User(name='Test', identifier='test', role=Role.STUDENT))
             session.flush()
             for index, status in enumerate((AttemptStatus.COMPLETED, AttemptStatus.INTERRUPTED, AttemptStatus.IN_PROGRESS)):
                 session.add(ActivityAttempt(id=str(index), user_id=1, activity_id='reach_ou_o_words',
@@ -35,7 +35,7 @@ class ProgressApiTests(unittest.TestCase):
             session.commit()
 
     def test_only_finished_attempts_and_correct_counts_returned(self):
-        progress = student_progress()
+        progress = student_progress(User(id=1, name='Test'))
         self.assertEqual(progress.name, 'Test')
         self.assertEqual([a.status for a in progress.attempts], ['interrupted', 'completed'])
         self.assertEqual(progress.attempts[0].keys[0].correct, 3)
@@ -43,10 +43,8 @@ class ProgressApiTests(unittest.TestCase):
         self.assertIsNotNone(progress.attempts[0].started_at.tzinfo)
         self.assertNotEqual(progress.attempts[0].title, 'reach_ou_o_words')
 
-    def test_does_not_guess_user_when_multiple_exist(self):
+    def test_progress_is_scoped_to_current_user(self):
         with Session(self.engine) as session:
-            session.add(User(name='Other', role=Role.STUDENT))
+            session.add(User(name='Other', identifier='other', role=Role.STUDENT))
             session.commit()
-        with self.assertRaises(HTTPException) as error:
-            student_progress()
-        self.assertEqual(error.exception.status_code, 409)
+        self.assertEqual(student_progress(User(id=2, name='Other')).attempts, [])

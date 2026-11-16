@@ -66,8 +66,11 @@ class StudentProgress {
 }
 
 class ProgressRepository {
-  Future<StudentProgress> load() async {
-    final response = await backendGet('/api/progress');
+  Future<StudentProgress> load({int? studentId}) async {
+    final path = studentId == null
+        ? '/api/progress'
+        : '/api/trainer/students/$studentId/progress';
+    final response = await backendGet(path);
     if (response.statusCode != 200) {
       await response.drain<void>();
       throw StateError('Progress request failed: ${response.statusCode}');

@@ -9146,5 +9146,75 @@
   "bad": {
     "source": "Original synthesized buzz",
     "duration_ms": 60
+  },
+  "menu_logout": {
+    "text": "Kilépés",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "6c42a8fad78638267951dbce2f4877088e976f01f1a509f0b671ed69f591e570"
+  },
+  "menu_area_selection": {
+    "text": "Válassz területet! A fel és le nyíllal választhatsz. Az Enter megnyitja a kijelölt területet. Az F egy megismétli a kijelölt elemet.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2226837a71e6246d0a73c7194c862409bccec6401e836705f6bde5609d2169b2"
+  },
+  "menu_area_admin": {
+    "text": "Adminisztrátor",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "4dacd1f34f0f93f528df44d9f38c5c9a9e586886d9cc34bbb2fbc1d07e418499"
+  },
+  "menu_area_trainer": {
+    "text": "Oktató",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "066bd521a7a1f9db43a7d04355cbeee2a1b6b2527d5e5636674282cf7f49ecdc"
+  },
+  "menu_area_student": {
+    "text": "Tanuló",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "dfd1216500bc732e05a31b39468a567c3a8708744a1c04529f96c98ea0e2152a"
+  },
+  "menu_area_selector": {
+    "text": "Vissza a területválasztóhoz",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "ee9b0235e71e8be3337ff1fe6aa29d6c1efac2f3d5347ab562aa2bc34eb17ef8"
+  },
+  "menu_admin_main": {
+    "text": "Adminisztrátor főmenü",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b5ec886690dd464d2ee0b72b2747833c6862447cc2397a892711dbbce21ad939"
+  },
+  "menu_trainer_main": {
+    "text": "Oktatói főmenü",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "bd91f27fd2e675dd894796828face3580cdd05a2e39f0b2e2bf0d405da6f1579"
+  },
+  "menu_area_welcome": {
+    "text": "A fel és le nyíllal választhatsz. Az Enter megnyitja a kijelölt elemet. Az F egy megismétli a kijelölt elemet.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "77a46e83b761efc442b72c2f452e7e5c9e691b0bd27f54f8cb88e91bd0b07df6"
+  },
+  "menu_student_progress": {
+    "text": "Tanulók haladása",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "2f43eaaffe718b4c4083d1f7e668f440b4ade7134580e43b895e36ebef80f5c4"
+  },
+  "student_selection_help": {
+    "text": "Válassz tanulót a fel és le nyíllal. Az Enter megnyitja a haladási adatokat. Az F egy ismétel. Az Escape visszalép.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "38cc2139f3a1f50bc7fae758d4622ac0cd75f9cd3cc632d16c3a00dab32c39ce"
+  },
+  "student_selection_empty": {
+    "text": "Nincsenek hozzád rendelt tanulók.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "b5a1a18f1830ae91f5c6442cc9e003ec41a8ab7cfa8149b46bc99d7b1d48e94e"
+  },
+  "student_selection_return": {
+    "text": "Vissza az oktatói főmenübe",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "487d32e1cdc42a56af0a9f41f59122abfd695f874cab50bc008b54e582ae0d7c"
+  },
+  "progress_return_students": {
+    "text": "Vissza a tanulókhoz. Az Enter visszalép.",
+    "provider": "gTTS / Google Translate, hu, default voice, normal speed",
+    "sha256": "df6077605474b7e3c3bbf3d4f2cb2fc0d436f1ae845b5b1ac71d34623fbaa55f"
   }
 }

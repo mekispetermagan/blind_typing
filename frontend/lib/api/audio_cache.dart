@@ -46,7 +46,12 @@ class AudioCache {
     final etag = await file.exists() && await tagFile.exists()
         ? await tagFile.readAsString()
         : null;
-    final response = await backendGet('/api/audio/$name', etag: etag);
+    final studentName = RegExp(r'^student_name_([0-9]+)_[0-9a-f]{16}\.wav$')
+        .firstMatch(name);
+    final path = studentName == null
+        ? '/api/audio/$name'
+        : '/api/trainer/students/${studentName[1]}/name-audio';
+    final response = await backendGet(path, etag: etag);
     if (response.statusCode == 304 && await file.exists()) {
       await response.drain<void>();
       return file.path;

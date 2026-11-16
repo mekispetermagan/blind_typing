@@ -21,6 +21,7 @@ class MenuScreen extends StatelessWidget {
     required this.onRepeat,
     required this.onToggleMode,
     required this.onClose,
+    this.showMode = true,
     super.key,
   });
   final String title;
@@ -36,6 +37,7 @@ class MenuScreen extends StatelessWidget {
   final VoidCallback onRepeat;
   final VoidCallback onToggleMode;
   final VoidCallback onClose;
+  final bool showMode;
   @override
   Widget build(BuildContext context) => AppKeyboard(
     onClose: onClose,
@@ -48,7 +50,7 @@ class MenuScreen extends StatelessWidget {
       LogicalKeyboardKey.arrowLeft: onBack,
       LogicalKeyboardKey.escape: onBack,
       LogicalKeyboardKey.f1: onRepeat,
-      LogicalKeyboardKey.f3: onToggleMode,
+      if (showMode) LogicalKeyboardKey.f3: onToggleMode,
     },
     child: Scaffold(
       appBar: AppBar(
@@ -80,11 +82,13 @@ class MenuScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            Text(mode == TypingMode.simple ? 'Egyszerű mód' : 'Haladó mód'),
-            const SizedBox(height: 16),
-            const Text(
+            if (showMode) ...[
+              Text(mode == TypingMode.simple ? 'Egyszerű mód' : 'Haladó mód'),
+              const SizedBox(height: 16),
+            ],
+            Text(
               '↑ ↓: választás   Enter / →: megnyitás   Escape / ←: vissza\n'
-              'F1: ismétlés   F3: módváltás   Ctrl+W / F4: kilépés',
+              'F1: ismétlés   ${showMode ? 'F3: módváltás   ' : ''}Ctrl+W / F4: kilépés',
             ),
           ],
         ),

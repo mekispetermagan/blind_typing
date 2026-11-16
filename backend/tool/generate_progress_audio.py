@@ -11,6 +11,8 @@ from gtts import gTTS
 from generate_audio import PROGRESS_SPEECH, ROOT, RATE
 
 BUNDLED = {
+    'student_selection_loading': 'Tanulók betöltése. Kérlek várj.',
+    'student_selection_failure': 'A tanulók nem tölthetők be. Az Enter újrapróbálja. Az Escape visszalép.',
     'progress_loading': 'A haladási adatok betöltése. Kérlek várj.',
     'progress_failure': 'A haladási adatok nem tölthetők be. Az Enter újrapróbálja. Az Escape visszalép.',
 }

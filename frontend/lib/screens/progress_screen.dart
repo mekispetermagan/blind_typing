@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../api/progress_repository.dart';
+import '../api/trainer_repository.dart';
 import '../models/progress_navigation.dart';
 import '../services/audio_service.dart';
 import '../services/speech_coordinator.dart';
@@ -17,12 +18,16 @@ class ProgressScreen extends StatefulWidget {
     this.onClose,
     this.speech,
     this.activityAudio = const {},
+    this.student,
+    this.loadActivityAudio,
   });
   final Future<StudentProgress> Function()? loadProgress;
   final VoidCallback? onBack;
   final VoidCallback? onClose;
   final SpeechCoordinator? speech;
   final Map<String, List<String>> activityAudio;
+  final TrainerStudent? student;
+  final Future<Map<String, List<String>>> Function()? loadActivityAudio;
 
   @override
   State<ProgressScreen> createState() => _ProgressScreenState();
@@ -68,14 +73,29 @@ class _ProgressScreenState extends State<ProgressScreen> {
         _say([AudioCues.progressLoading]);
       }
       final progress =
-          await (widget.loadProgress ?? ProgressRepository().load)();
+          await (widget.loadProgress?.call() ??
+              ProgressRepository().load(studentId: widget.student?.id));
+      final activityAudio =
+          await (widget.loadActivityAudio?.call() ??
+              Future.value(widget.activityAudio));
       if (!mounted || generation != _generation) return progress;
       final navigation = ProgressNavigation(
         progress,
         DateTime.now(),
-        widget.activityAudio,
+        activityAudio,
+        backTitle: widget.student == null
+            ? 'Vissza a főmenübe'
+            : 'Vissza a tanulókhoz',
+        backAudio: widget.student == null
+            ? progressCue('return_main')
+            : progressCue('return_students'),
       );
-      if (speech != null) await speech.audio.initialize(navigation.allAudio);
+      if (speech != null) {
+        await speech.audio.initialize([
+          ...navigation.allAudio,
+          if (widget.student case final student?) ...student.nameAudio,
+        ]);
+      }
       if (!mounted || generation != _generation) return progress;
       _navigation = navigation;
       _sectionIndex = 0;
@@ -87,6 +107,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
       _busy = false;
       if (speech != null) {
         _say([
+          if (widget.student case final student?) ...student.nameAudio,
           progressCue('help'),
           navigation.sections.first.audio,
           ...navigation.sections.first.items.first.audio,
@@ -236,7 +257,11 @@ class _ProgressScreenState extends State<ProgressScreen> {
     onKeyEvent: _onKey,
     child: Scaffold(
       appBar: AppBar(
-        title: const Text('Haladásom'),
+        title: Text(
+          widget.student == null
+              ? 'Haladásom'
+              : '${widget.student!.name} – Haladás',
+        ),
         leading: widget.onBack == null
             ? null
             : IconButton(

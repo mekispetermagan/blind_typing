@@ -33,11 +33,27 @@ completion menu and replaced when another activity starts. Interrupted activity
 caches are removed at the next startup. On failure, the bundled announcement
 explains retry and exit keys. SQLite is initialized at `backend/instance/usage.db`
 (configurable in `backend/.env`); it contains user, activity-attempt, and per-key statistics tables.
-The current local database contains one initial admin; authentication is not implemented yet. In local development, attempt
-snapshots are attributed to the sole database user; uploads are disabled if
-there is more than one user. The unauthenticated attempt API is for local use
-only. The client queues snapshots locally and retries failed uploads. The database and credentials are not tracked
-in Git. Timestamps are stored as UTC.
+For the local demo, users sign in with one identifier and a PIN. The existing
+Péter account and Fruzsina's admin account can be configured once with
+`cd backend && PYTHONPATH=. .venv/bin/python tool/setup_demo_users.py`. The
+script asks for their shared six-digit demo PIN and assigns Fruzsina as Péter's
+trainer. It retains Péter's existing attempts. Back up an existing database
+before running the setup script; rerunning it resets both demo PINs.
+
+Every API endpoint except login requires a session token. The session expires
+after ten minutes without keyboard or pointer interaction, with no fixed maximum
+for an active session. The backend enforces the timeout; background uploads do
+not extend it. Local attempt queues and practice records are scoped to the
+signed-in user, and existing local records are migrated to Péter's account.
+This PIN-based setup is for the local demo; authentication policy for wider
+use is still to be determined. Timestamps are stored as UTC.
+
+## Trainer student progress
+
+In the trainer area, **Tanulók haladása** lists the signed-in trainer's assigned
+students. Select a name to open the same progress view; Escape returns to the
+student selector. Only assigned students' progress is accessible. The demo has
+pre-recorded names for the two initial users; other names are spelled aloud.
 
 ## Student progress
 
@@ -49,16 +65,16 @@ statistics, and the ten most recent completed or interrupted attempts. Letter
 statistics include interrupted attempts; completion counts and time include
 completed attempts only. Stacked
 charts show the last seven days by day and first-try counts by key. The page
-uses the sole local database user. Up/Down move between spoken items; Left/Right
+uses the signed-in user. Up/Down move between spoken items; Left/Right
 change sections; Home/End select the first or last item; F1 repeats; Escape
 returns to the main menu. The final section offers the same return action with
 Enter. Enter also retries a failed load. Loading and error speech
 is bundled, while other progress audio is fetched from the backend. The progress
-endpoint is unauthenticated and local-only.
+endpoint requires authentication.
 
 ## Menus and activities
 
-The application starts at the spoken main menu. Up/Down selects an item;
+After login, admins and trainers choose an area; students enter the student main menu directly. Each area has a spoken main menu, and admins and trainers can return to the area selector. **Kilépés**, its last item, signs out and returns to the login screen. Up/Down selects an item;
 Enter/Right opens it; Escape/Left returns to its parent. Each nested menu also
 ends with a spoken return item. F1 repeats the selection.
 Rapid navigation interrupts previous speech instead of building a speech queue.

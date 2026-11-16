@@ -1,4 +1,5 @@
 import 'package:blind_typing/controllers/app_controller.dart';
+import 'package:blind_typing/api/trainer_repository.dart';
 import 'package:blind_typing/models/exercise.dart';
 import 'package:blind_typing/models/menu.dart';
 import 'package:blind_typing/models/typing_state.dart';
@@ -94,6 +95,95 @@ void main() {
       expect(app.page, AppPage.menu);
       expect(app.selectedIndex, 2);
       expect(audio.spoken.last, 'assets/audio/menu_my_progress.wav');
+    },
+  );
+
+  test('last main-menu item is spoken and activates logout', () async {
+    app.dispose();
+    var logoutCount = 0;
+    app = AppController(
+      content: content,
+      speech: SpeechCoordinator(audio),
+      onLogout: () => logoutCount++,
+    );
+    await app.initialize();
+    final item = app.menu.children.last;
+    expect(item.title, 'Kilépés');
+    expect(item.command, MenuCommand.logout);
+    app.moveSelection(app.menu.children.length - 1);
+    await settle();
+    expect(audio.spoken.last, 'assets/audio/menu_logout.wav');
+    app.activate();
+    expect(logoutCount, 1);
+  });
+
+  test('the area selector command returns through its callback', () async {
+    final catalog = await content.loadMenu();
+    content.menuOverride = MenuCatalog(
+      root: MenuNode(
+        id: 'areas_root',
+        title: 'Főmenü',
+        children: [
+          MenuNode(
+            id: 'area_selector',
+            title: 'Vissza',
+            command: MenuCommand.areaSelector,
+          ),
+          MenuNode(id: 'logout', title: 'Kilépés', command: MenuCommand.logout),
+        ],
+      ),
+      pause: catalog.pause,
+      complete: catalog.complete,
+    );
+    app.dispose();
+    var returned = false;
+    app = AppController(
+      content: content,
+      speech: SpeechCoordinator(audio),
+      onAreaSelector: () => returned = true,
+    );
+    await app.initialize();
+    app.activate();
+    expect(returned, isTrue);
+  });
+
+  test(
+    'trainer navigates student selector, progress, then back to menu',
+    () async {
+      final catalog = await content.loadMenu();
+      content.menuOverride = MenuCatalog(
+        root: MenuNode(
+          id: 'trainer_root',
+          title: 'Oktató',
+          children: [
+            MenuNode(
+              id: 'student_progress',
+              title: 'Tanulók haladása',
+              command: MenuCommand.students,
+            ),
+            MenuNode(
+              id: 'logout',
+              title: 'Kilépés',
+              command: MenuCommand.logout,
+            ),
+          ],
+        ),
+        pause: catalog.pause,
+        complete: catalog.complete,
+      );
+      await app.initialize();
+      app.activate();
+      expect(app.page, AppPage.students);
+      const student = TrainerStudent(id: 7, name: 'Teszt');
+      app.viewStudent(student);
+      expect(app.page, AppPage.progress);
+      expect(app.selectedStudent, student);
+      app.back();
+      expect(app.page, AppPage.students);
+      expect(app.selectedStudent, student);
+      app.back();
+      expect(app.page, AppPage.menu);
+      expect(app.selectedStudent, isNull);
     },
   );
 

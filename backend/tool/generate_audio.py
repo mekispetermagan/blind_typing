@@ -69,6 +69,19 @@ def speech_texts():
         for child in node.get("children", []):
             yield from walk(child)
     yield 'menu_previous', 'Vissza az előző menübe'
+    yield 'menu_student_progress', 'Tanulók haladása'
+    yield 'student_selection_help', 'Válassz tanulót a fel és le nyíllal. Az Enter megnyitja a haladási adatokat. Az F egy ismétel. Az Escape visszalép.'
+    yield 'student_selection_empty', 'Nincsenek hozzád rendelt tanulók.'
+    yield 'student_selection_return', 'Vissza az oktatói főmenübe'
+    yield 'progress_return_students', 'Vissza a tanulókhoz. Az Enter visszalép.'
+    yield 'menu_area_welcome', 'A fel és le nyíllal választhatsz. Az Enter megnyitja a kijelölt elemet. Az F egy megismétli a kijelölt elemet.'
+    yield 'menu_area_selection', 'Válassz területet! A fel és le nyíllal választhatsz. Az Enter megnyitja a kijelölt területet. Az F egy megismétli a kijelölt elemet.'
+    yield 'menu_area_admin', 'Adminisztrátor'
+    yield 'menu_area_trainer', 'Oktató'
+    yield 'menu_area_student', 'Tanuló'
+    yield 'menu_area_selector', 'Vissza a területválasztóhoz'
+    yield 'menu_admin_main', 'Adminisztrátor főmenü'
+    yield 'menu_trainer_main', 'Oktatói főmenü'
     for menu in (catalog["root"], catalog["pause"], catalog["complete"]):
         yield from walk(menu)
     for asset, activity_type in references.items():

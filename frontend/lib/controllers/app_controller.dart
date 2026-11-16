@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 
 import '../models/exercise.dart';
+import '../api/trainer_repository.dart';
 import '../models/menu.dart';
 import '../managers/practice_attempt.dart';
 import '../services/audio_service.dart';
@@ -13,7 +14,7 @@ import '../services/speech_coordinator.dart';
 import 'letter_teaching_controller.dart';
 import 'typing_controller.dart';
 
-enum AppPage { loading, menu, typing, teaching, progress, error }
+enum AppPage { loading, menu, typing, teaching, progress, students, error }
 
 /// Owns navigation and shared services; exercise rules belong to managers.
 class AppController extends ChangeNotifier {
@@ -21,15 +22,21 @@ class AppController extends ChangeNotifier {
     required this._content,
     required this._speech,
     this.countdownInterval = const Duration(seconds: 1),
+    this.menuWelcome = AudioCues.menuWelcome,
     PracticeRecords? records,
     this.onAttempt,
+    this.onLogout,
+    this.onAreaSelector,
   }) : _records = records ?? PracticeRecords();
 
   final AttemptSnapshotSink? onAttempt;
+  final VoidCallback? onLogout;
+  final VoidCallback? onAreaSelector;
   final ContentRepository _content;
   final SpeechCoordinator _speech;
   final PracticeRecords _records;
   final Duration countdownInterval;
+  final String menuWelcome;
   MenuCatalog? _catalog;
   final List<MenuNode> _path = [];
   final List<int> _selections = [];
@@ -40,30 +47,16 @@ class AppController extends ChangeNotifier {
   ExercisePhase? _lastPhase;
   bool _loading = true;
   bool _showProgress = false;
+  bool _showStudents = false;
+  TrainerStudent? selectedStudent;
   bool _disposed = false;
   String? _failure;
   int _generation = 0;
   ActivityReference? _failedActivity;
 
   SpeechCoordinator get progressSpeech => _speech;
-  Map<String, List<String>> get progressActivityAudio {
-    final result = <String, List<String>>{};
-    void visit(MenuNode node, List<String> path) {
-      final clips = [...path, node.audioAsset];
-      if (node.activity case final activity?) {
-        final id = activity.content.split('/').last.replaceFirst('.json', '');
-        result[id] = clips;
-      }
-      for (final child in node.children) {
-        visit(child, clips);
-      }
-    }
-
-    for (final node in _catalog?.root.children ?? const <MenuNode>[]) {
-      visit(node, []);
-    }
-    return result;
-  }
+  Map<String, List<String>> get progressActivityAudio =>
+      _catalog?.activityAudio ?? {};
 
   TypingController? get typing => _typing;
   LetterTeachingController? get teaching => _teaching;
@@ -77,6 +70,7 @@ class AppController extends ChangeNotifier {
   AppPage get page {
     if (_loading) return AppPage.loading;
     if (_showProgress) return AppPage.progress;
+    if (_showStudents) return AppPage.students;
     if (_failure != null || activityPhase == ExercisePhase.error) {
       return AppPage.error;
     }
@@ -132,7 +126,7 @@ class AppController extends ChangeNotifier {
     notifyListeners();
     try {
       await _speech.audio.initialize([AudioCues.contentError]);
-      await _speech.audio.initialize(AudioCues.speechAssets);
+      await _speech.audio.initialize([...AudioCues.speechAssets, menuWelcome]);
       final catalog = await _content.loadMenu();
       await _records.load();
       await _speech.audio.initialize(
@@ -149,7 +143,7 @@ class AppController extends ChangeNotifier {
       _loading = false;
       notifyListeners();
       _say([
-        AudioCues.menuWelcome,
+        menuWelcome,
         menu.audioAsset,
         menu.children[selectedIndex].audioAsset,
       ]);
@@ -194,8 +188,16 @@ class AppController extends ChangeNotifier {
       unawaited(_openActivity(entry.activity!));
     } else {
       switch (entry.command!) {
+        case MenuCommand.areaSelector:
+          onAreaSelector?.call();
+        case MenuCommand.logout:
+          onLogout?.call();
         case MenuCommand.previous:
           back();
+        case MenuCommand.students:
+          _speech.begin();
+          _showStudents = true;
+          notifyListeners();
         case MenuCommand.progress:
           _speech.begin();
           _showProgress = true;
@@ -232,6 +234,11 @@ class AppController extends ChangeNotifier {
     if (_showProgress) {
       _showProgress = false;
       notifyListeners();
+      if (!_showStudents) _announceMenu();
+    } else if (_showStudents) {
+      _showStudents = false;
+      selectedStudent = null;
+      notifyListeners();
       _announceMenu();
     } else if (_activityMenu != null) {
       if (activityPhase == ExercisePhase.paused) {
@@ -250,6 +257,14 @@ class AppController extends ChangeNotifier {
     } else if (page == AppPage.error && _catalog != null) {
       returnToMenu();
     }
+  }
+
+  void viewStudent(TrainerStudent student) {
+    if (!_showStudents) return;
+    selectedStudent = student;
+    _showProgress = true;
+    _speech.begin();
+    notifyListeners();
   }
 
   Future<void> _openActivity(ActivityReference reference) async {

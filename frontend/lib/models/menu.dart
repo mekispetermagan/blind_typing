@@ -8,6 +8,9 @@ enum MenuCommand {
   nextLesson,
   nextChallenge,
   progress,
+  students,
+  logout,
+  areaSelector,
   previous;
 
   bool get isProgression =>
@@ -107,12 +110,25 @@ class MenuCatalog {
         root.descendants.any(
           (node) =>
               node.command != null &&
-              !((node.command == MenuCommand.progress &&
+              !(((node.command == MenuCommand.progress ||
+                          node.command == MenuCommand.students ||
+                          node.command == MenuCommand.logout ||
+                          node.command == MenuCommand.areaSelector) &&
                       root.children.contains(node)) ||
                   (node.command == MenuCommand.previous &&
                       node != root &&
                       !root.children.contains(node))),
         ) ||
+        root.children
+                .where((node) => node.command == MenuCommand.logout)
+                .length >
+            1 ||
+        (root.children.any(
+              (node) =>
+                  node.command == MenuCommand.logout ||
+                  node.command == MenuCommand.areaSelector,
+            ) &&
+            root.children.last.command != MenuCommand.logout) ||
         root.descendants.any(
           (node) =>
               node.children
@@ -136,6 +152,9 @@ class MenuCatalog {
               node.command == null ||
               node.command == MenuCommand.resume ||
               node.command == MenuCommand.progress ||
+              node.command == MenuCommand.students ||
+              node.command == MenuCommand.logout ||
+              node.command == MenuCommand.areaSelector ||
               node.command == MenuCommand.previous,
         ) ||
         !complete.children.any(
@@ -200,6 +219,25 @@ class MenuCatalog {
     }
 
     return visit(root, []);
+  }
+
+  Map<String, List<String>> get activityAudio {
+    final result = <String, List<String>>{};
+    void visit(MenuNode node, List<String> path) {
+      final clips = [...path, node.audioAsset];
+      if (node.activity case final activity?) {
+        final id = activity.content.split('/').last.replaceFirst('.json', '');
+        result[id] = clips;
+      }
+      for (final child in node.children) {
+        visit(child, clips);
+      }
+    }
+
+    for (final node in root.children) {
+      visit(node, []);
+    }
+    return result;
   }
 
   Iterable<MenuNode> get allNodes =>

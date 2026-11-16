@@ -29,8 +29,10 @@ class ProgressNavigation {
   ProgressNavigation(
     StudentProgress progress,
     DateTime now,
-    Map<String, List<String>> activityAudio,
-  ) : summary = ProgressSummary(progress, now) {
+    Map<String, List<String>> activityAudio, {
+    String backTitle = 'Vissza a főmenübe',
+    String backAudio = 'assets/audio/progress_return_main.wav',
+  }) : summary = ProgressSummary(progress, now) {
     final current = summary.weeks.first;
     final todayItems = [
       ProgressItem(
@@ -167,11 +169,8 @@ class ProgressNavigation {
                 ),
               ],
       ),
-      ProgressSection('Vissza a főmenübe', progressCue('return_main'), [
-        ProgressItem(
-          title: 'Vissza a főmenübe',
-          audio: [progressCue('return_main')],
-        ),
+      ProgressSection(backTitle, backAudio, [
+        ProgressItem(title: backTitle, audio: [backAudio]),
       ]),
     ];
   }
