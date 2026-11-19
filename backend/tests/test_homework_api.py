@@ -25,9 +25,9 @@ class HomeworkTests(unittest.TestCase):
             p = patch(f'app.{module}.engine', self.engine); p.start(); self.addCleanup(p.stop)
         database.initialize_database()
         with Session(self.engine) as session:
-            session.add_all([User(name='Trainer', identifier='trainer', role=Role.TRAINER, credential_hash=hasher.hash('123456')),
-                             User(name='Student', identifier='student', role=Role.STUDENT, credential_hash=hasher.hash('1234')),
-                             User(name='Other', identifier='other', role=Role.TRAINER, credential_hash=hasher.hash('123456'))])
+            session.add_all([User(name='Trainer', identifier='trainer', role=Role.TRAINER, credential_hash=hasher.hash('123456'), pin_temporary=False),
+                             User(name='Student', identifier='student', role=Role.STUDENT, credential_hash=hasher.hash('1234'), pin_temporary=False),
+                             User(name='Other', identifier='other', role=Role.TRAINER, credential_hash=hasher.hash('123456'), pin_temporary=False)])
             session.flush(); session.add_all([TrainerStudent(trainer_id=1, student_id=2), TrainerStudent(trainer_id=3, student_id=2)]); session.commit()
         self.client = TestClient(app); self.addCleanup(self.client.close)
         self.trainer = self.login('trainer', '123456'); self.student = self.login('student', '1234'); self.other = self.login('other', '123456')
@@ -89,7 +89,7 @@ class HomeworkTests(unittest.TestCase):
     def test_unassigned_user_cannot_access_homework_or_submit(self):
         hw_id=self.create().json()['id']
         with Session(self.engine) as session:
-            session.add(User(name='Outsider',identifier='outsider',role=Role.STUDENT,credential_hash=hasher.hash('1234')))
+            session.add(User(name='Outsider',identifier='outsider',role=Role.STUDENT,credential_hash=hasher.hash('1234'),pin_temporary=False))
             session.commit()
         outsider=self.login('outsider','1234')
         self.assertEqual(self.client.get(f'/api/homeworks/{hw_id}',headers=outsider).status_code,403)

@@ -6,8 +6,9 @@ import '../services/content_repository.dart';
 import 'backend.dart';
 
 class HttpContentRepository implements ContentRepository {
-  HttpContentRepository({this.area = 'student'});
+  HttpContentRepository({this.area = 'student', this.includePinChange = false});
   final String area;
+  final bool includePinChange;
   Future<Map<String, dynamic>> _read(String path) async {
     final response = await backendGet(path);
     if (response.statusCode != 200) {
@@ -19,8 +20,22 @@ class HttpContentRepository implements ContentRepository {
   }
 
   @override
-  Future<MenuCatalog> loadMenu() async =>
-      MenuCatalog.fromJson(await _read('/api/areas/$area/menu'));
+  Future<MenuCatalog> loadMenu() async {
+    final catalog = await _read('/api/areas/$area/menu');
+    if (includePinChange) {
+      final root = catalog['root'] as Map<String, dynamic>;
+      final children = root['children'] as List<dynamic>;
+      final logout = children.indexWhere(
+        (child) => child['command'] == 'logout',
+      );
+      children.insert(logout < 0 ? children.length : logout, {
+        'id': 'change_pin',
+        'title': 'PIN-kód módosítása',
+        'command': 'changePin',
+      });
+    }
+    return MenuCatalog.fromJson(catalog);
+  }
 
   @override
   Future<ExerciseDefinition> loadExercise(ActivityReference reference) async {

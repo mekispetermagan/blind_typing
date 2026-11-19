@@ -12,6 +12,7 @@ enum MenuCommand {
   homeworks,
   addHomework,
   viewHomeworks,
+  changePin,
   logout,
   areaSelector,
   previous;
@@ -76,6 +77,8 @@ class MenuNode {
   final MenuCommand? command;
   String get audioAsset => command == MenuCommand.previous
       ? 'assets/audio/menu_previous.wav'
+      : command == MenuCommand.changePin
+      ? 'assets/audio/login_pin_change.wav'
       : 'assets/audio/menu_$id.wav';
   Iterable<MenuNode> get descendants sync* {
     yield this;
@@ -118,6 +121,7 @@ class MenuCatalog {
                           node.command == MenuCommand.homeworks ||
                           node.command == MenuCommand.addHomework ||
                           node.command == MenuCommand.viewHomeworks ||
+                          node.command == MenuCommand.changePin ||
                           node.command == MenuCommand.logout ||
                           node.command == MenuCommand.areaSelector) &&
                       root.children.contains(node)) ||
@@ -162,6 +166,7 @@ class MenuCatalog {
               node.command == MenuCommand.homeworks ||
               node.command == MenuCommand.addHomework ||
               node.command == MenuCommand.viewHomeworks ||
+              node.command == MenuCommand.changePin ||
               node.command == MenuCommand.logout ||
               node.command == MenuCommand.areaSelector ||
               node.command == MenuCommand.previous,

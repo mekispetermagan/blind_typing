@@ -16,11 +16,13 @@ class TypingApp extends StatefulWidget {
   const TypingApp({
     required this.controller,
     required this.onClose,
+    this.pinScreen,
     this.showMode = true,
     super.key,
   });
   final AppController controller;
   final VoidCallback onClose;
+  final Widget Function(VoidCallback onBack)? pinScreen;
   final bool showMode;
   @override
   State<TypingApp> createState() => _TypingAppState();
@@ -66,6 +68,7 @@ class _TypingAppState extends State<TypingApp> with WidgetsBindingObserver {
       builder: (context, _) => _ApplicationView(
         controller: widget.controller,
         onClose: widget.onClose,
+        pinScreen: widget.pinScreen,
         showMode: widget.showMode,
       ),
     ),
@@ -76,10 +79,12 @@ class _ApplicationView extends StatelessWidget {
   const _ApplicationView({
     required this.controller,
     required this.onClose,
+    required this.pinScreen,
     required this.showMode,
   });
   final AppController controller;
   final VoidCallback onClose;
+  final Widget Function(VoidCallback onBack)? pinScreen;
   final bool showMode;
   @override
   Widget build(BuildContext context) {
@@ -93,6 +98,8 @@ class _ApplicationView extends StatelessWidget {
           onRetry: controller.retry,
           onBack: controller.back,
         );
+      case AppPage.changePin:
+        return pinScreen!(controller.back);
       case AppPage.menu:
         return MenuScreen(
           title: controller.menu.title,

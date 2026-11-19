@@ -35,9 +35,9 @@ class AuthApiTests(unittest.TestCase):
         database.initialize_database()
         with Session(self.engine) as session:
             session.add_all([
-                User(name='Admin', identifier='Admin@example.org', role=Role.ADMIN, credential_hash=hasher.hash('123456')),
-                User(name='Student', identifier='xyz', role=Role.STUDENT, credential_hash=hasher.hash('1234')),
-                User(name='Trainer', identifier='trainer', role=Role.TRAINER, credential_hash=hasher.hash('123456')),
+                User(name='Admin', identifier='Admin@example.org', role=Role.ADMIN, credential_hash=hasher.hash('123456'), pin_temporary=False),
+                User(name='Student', identifier='xyz', role=Role.STUDENT, credential_hash=hasher.hash('1234'), pin_temporary=False),
+                User(name='Trainer', identifier='trainer', role=Role.TRAINER, credential_hash=hasher.hash('123456'), pin_temporary=False),
             ])
             session.commit()
         self.client = TestClient(app)
@@ -59,6 +59,34 @@ class AuthApiTests(unittest.TestCase):
         self.assertEqual(self.client.post('/api/auth/logout', headers=headers).status_code, 200)
         self.assertEqual(self.client.get('/api/menu', headers=headers).status_code, 401)
         self.assertEqual(self.login('xyz', '1234').status_code, 200)
+
+    def test_temporary_pin_requires_setup_and_accepts_the_same_pin(self):
+        with Session(self.engine) as session:
+            session.get(User, 2).pin_temporary = True
+            session.commit()
+        response = self.login('xyz', '1234').json()
+        self.assertTrue(response['pin_temporary'])
+        headers = {'Authorization': f'Bearer {response["token"]}'}
+        self.assertEqual(self.client.get('/api/menu', headers=headers).status_code, 403)
+        self.assertEqual(self.client.post('/api/auth/pin', headers=headers, json={'new_pin': '123456'}).status_code, 422)
+        self.assertEqual(self.client.get('/api/menu', headers=headers).status_code, 403)
+        for _ in range(2):
+            self.assertEqual(self.client.post('/api/auth/pin', headers=headers, json={'new_pin': '1234'}).status_code, 200)
+        self.assertEqual(self.client.get('/api/menu', headers=headers).status_code, 200)
+        self.assertFalse(self.login('xyz', '1234').json()['pin_temporary'])
+
+    def test_change_pin_requires_current_pin_and_revokes_other_sessions(self):
+        auth = self.login('trainer', '123456').json()
+        second = self.login('trainer', '123456').json()
+        headers = {'Authorization': f'Bearer {auth["token"]}'}
+        other = {'Authorization': f'Bearer {second["token"]}'}
+        self.assertEqual(self.client.post('/api/auth/pin', headers=headers, json={'new_pin': '763501'}).status_code, 409)
+        self.assertEqual(self.client.post('/api/auth/pin', headers=headers, json={'current_pin': '000000', 'new_pin': '763501'}).status_code, 400)
+        self.assertEqual(self.client.post('/api/auth/pin', headers=headers, json={'current_pin': '123456', 'new_pin': '763501'}).status_code, 200)
+        self.assertEqual(self.client.get('/api/menu', headers=headers).status_code, 200)
+        self.assertEqual(self.client.get('/api/menu', headers=other).status_code, 401)
+        self.assertEqual(self.login('trainer', '123456').status_code, 401)
+        self.assertFalse(self.login('trainer', '763501').json()['pin_temporary'])
 
     def test_area_permissions_and_menu_options(self):
         self.assertEqual(self.client.get('/api/areas/admin/menu').status_code, 401)

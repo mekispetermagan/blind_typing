@@ -25,6 +25,7 @@ class User(Base):
         nullable=False,
     )
     credential_hash: Mapped[str | None] = mapped_column(String, nullable=True)
+    pin_temporary: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True, server_default='1')
     joined_at: Mapped[datetime] = mapped_column(DateTime, default=utc_now, nullable=False)
     credential_expires_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
     student_active: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)

@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, event
+from sqlalchemy import create_engine, event, inspect
 
 from .config import DATABASE_PATH
 from . import models  # Register models with Base.metadata.
@@ -16,6 +16,7 @@ def initialize_database():
     DATABASE_PATH.parent.mkdir(parents=True, exist_ok=True)
     # Existing development databases predate identifiers and student status.
     with engine.begin() as connection:
+        connection.exec_driver_sql('BEGIN IMMEDIATE')
         existing = connection.exec_driver_sql("SELECT name FROM sqlite_master WHERE type='table' AND name='users'").first()
         if existing:
             columns = {column[1] for column in connection.exec_driver_sql('PRAGMA table_info(users)')}
@@ -23,6 +24,10 @@ def initialize_database():
                 connection.exec_driver_sql('ALTER TABLE users ADD COLUMN identifier VARCHAR')
             if 'student_active' not in columns:
                 connection.exec_driver_sql('ALTER TABLE users ADD COLUMN student_active BOOLEAN NOT NULL DEFAULT 1')
+            if 'pin_temporary' not in columns:
+                connection.exec_driver_sql('ALTER TABLE users ADD COLUMN pin_temporary BOOLEAN NOT NULL DEFAULT 1')
+                if inspect(connection).has_table('auth_sessions'):
+                    connection.exec_driver_sql('DELETE FROM auth_sessions')
             connection.exec_driver_sql('CREATE UNIQUE INDEX IF NOT EXISTS ix_users_identifier ON users(identifier)')
     Base.metadata.create_all(engine)
     with engine.begin() as connection:

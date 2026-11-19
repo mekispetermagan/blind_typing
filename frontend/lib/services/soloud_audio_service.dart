@@ -52,6 +52,20 @@ class SoloudAudioService implements AudioService {
     });
   });
 
+  Future<void> initializePinForm() => _serialize(() async {
+    await _load({
+      'assets/audio/login_pin_change.wav',
+      'assets/audio/login_pin_setup.wav',
+      'assets/audio/login_pin_current.wav',
+      'assets/audio/login_pin_new.wav',
+      'assets/audio/login_pin_repeat.wav',
+      'assets/audio/login_pin_save.wav',
+      'assets/audio/login_pin_cancel.wav',
+      'assets/audio/login_pin_logout.wav',
+      'assets/audio/login_pin_error.wav',
+    });
+  });
+
   @override
   Future<void> setActivityAssets(Iterable<String> speechAssets) {
     final assets = speechAssets.toSet();

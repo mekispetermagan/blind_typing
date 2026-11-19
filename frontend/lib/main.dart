@@ -8,6 +8,7 @@ import 'app.dart';
 import 'controllers/app_controller.dart';
 import 'models/area.dart';
 import 'screens/area_selection_screen.dart';
+import 'screens/pin_change_screen.dart';
 import 'api/auth_session.dart';
 import 'api/http_content_repository.dart';
 import 'api/audio_cache.dart';
@@ -16,11 +17,20 @@ import 'services/audio_service.dart';
 import 'services/practice_records.dart';
 import 'services/soloud_audio_service.dart';
 import 'services/speech_coordinator.dart';
+import 'widgets/pin_field.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const DemoApp());
 }
+
+ThemeData _authTheme() => ThemeData(
+  colorScheme: ColorScheme.fromSeed(
+    seedColor: Colors.teal,
+    brightness: Brightness.dark,
+  ),
+  fontFamily: 'DejaVuSansMono',
+);
 
 class DemoApp extends StatefulWidget {
   const DemoApp({super.key});
@@ -57,13 +67,27 @@ class _DemoAppState extends State<DemoApp> {
     onPointerSignal: (_) => auth.interaction(),
     child: ListenableBuilder(
       listenable: auth,
-      builder: (context, _) => auth.token == null
-          ? _LoginScreen(auth: auth, audio: audio)
-          : _AuthenticatedView(
-              key: ValueKey(auth.userId),
-              auth: auth,
+      builder: (context, _) {
+        if (auth.token == null) return _LoginScreen(auth: auth, audio: audio);
+        if (auth.pinTemporary) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: _authTheme(),
+            home: PinChangeScreen(
+              pinLength: auth.pinLength,
+              setupRequired: true,
               audio: audio,
+              onSave: auth.savePin,
+              onCancel: () => unawaited(auth.logout()),
             ),
+          );
+        }
+        return _AuthenticatedView(
+          key: ValueKey(auth.userId),
+          auth: auth,
+          audio: audio,
+        );
+      },
     ),
   );
 }
@@ -166,18 +190,12 @@ class _LoginScreenState extends State<_LoginScreen> {
   @override
   Widget build(BuildContext context) => MaterialApp(
     debugShowCheckedModeBanner: false,
-    theme: ThemeData(
-      colorScheme: ColorScheme.fromSeed(
-        seedColor: Colors.teal,
-        brightness: Brightness.dark,
-      ),
-      fontFamily: 'DejaVuSansMono',
-    ),
+    theme: _authTheme(),
     home: Scaffold(
       body: Center(
         child: SingleChildScrollView(
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 480),
+            constraints: const BoxConstraints(maxWidth: PinField.formMaxWidth),
             child: Padding(
               padding: const EdgeInsets.all(24),
               child: Column(
@@ -194,30 +212,31 @@ class _LoginScreenState extends State<_LoginScreen> {
                     focusNode: identifierFocus,
                     autofocus: true,
                     autofillHints: const [AutofillHints.username],
+                    style: const TextStyle(fontSize: 32),
                     decoration: const InputDecoration(
-                      labelText: 'E-mail cím vagy telefonszám',
+                      label: Text('E-mail cím vagy telefonszám'),
+                      labelStyle: TextStyle(fontSize: 32),
+                      floatingLabelStyle: TextStyle(fontSize: 32),
                     ),
                     textInputAction: TextInputAction.next,
                     onSubmitted: (_) => pinFocus.requestFocus(),
                   ),
                   const SizedBox(height: 16),
-                  TextField(
+                  PinField(
                     controller: pin,
                     focusNode: pinFocus,
-                    obscureText: true,
-                    keyboardType: TextInputType.number,
-                    inputFormatters: [
-                      FilteringTextInputFormatter.digitsOnly,
-                      LengthLimitingTextInputFormatter(6),
-                    ],
-                    decoration: const InputDecoration(labelText: 'PIN-kód'),
-                    onSubmitted: (_) => _submit(),
+                    label: 'PIN-kód',
+                    hint: '4 vagy 6 számjegy',
+                    length: 6,
+                    readOnly: loading,
+                    onSubmit: _submit,
                   ),
                   if (failed)
                     const Padding(
                       padding: EdgeInsets.only(top: 16),
                       child: Text(
                         'A bejelentkezés nem sikerült. Ellenőrizd az adataidat és a kapcsolatot.',
+                        style: TextStyle(fontSize: 28),
                       ),
                     ),
                   const SizedBox(height: 24),
@@ -319,6 +338,14 @@ class _AuthenticatedViewState extends State<_AuthenticatedView> {
         preferences: preferences,
         recordsKey: recordsKey,
         onLogout: () => unawaited(widget.auth.logout()),
+        pinScreen: (onBack) => PinChangeScreen(
+          pinLength: widget.auth.pinLength,
+          setupRequired: false,
+          audio: widget.audio,
+          onSave: widget.auth.savePin,
+          onCancel: onBack,
+          onSaved: onBack,
+        ),
       );
     },
   );
@@ -334,6 +361,7 @@ class _TypingSession extends StatefulWidget {
     required this.preferences,
     required this.recordsKey,
     required this.onLogout,
+    required this.pinScreen,
   });
   final AppArea area;
   final VoidCallback onAreaSelector;
@@ -342,13 +370,17 @@ class _TypingSession extends StatefulWidget {
   final SharedPreferencesAsync preferences;
   final String recordsKey;
   final VoidCallback onLogout;
+  final Widget Function(VoidCallback onBack) pinScreen;
   @override
   State<_TypingSession> createState() => _TypingSessionState();
 }
 
 class _TypingSessionState extends State<_TypingSession> {
   late final controller = AppController(
-    content: HttpContentRepository(area: widget.area.name),
+    content: HttpContentRepository(
+      area: widget.area.name,
+      includePinChange: true,
+    ),
     menuWelcome: widget.area == AppArea.student
         ? AudioCues.menuWelcome
         : 'assets/audio/menu_area_welcome.wav',
@@ -366,6 +398,7 @@ class _TypingSessionState extends State<_TypingSession> {
   Widget build(BuildContext context) => TypingApp(
     controller: controller,
     onClose: () => SystemNavigator.pop(),
+    pinScreen: widget.pinScreen,
     showMode: widget.area == AppArea.student,
   );
 }

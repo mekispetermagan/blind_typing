@@ -23,6 +23,7 @@ enum AppPage {
   progress,
   students,
   homework,
+  changePin,
   error,
 }
 
@@ -62,6 +63,7 @@ class AppController extends ChangeNotifier {
   bool _loading = true;
   bool _showProgress = false;
   bool _showStudents = false;
+  bool _changingPin = false;
   HomeworkFlowKind? homeworkFlow;
   TrainerStudent? selectedStudent;
   bool _disposed = false;
@@ -87,6 +89,7 @@ class AppController extends ChangeNotifier {
     if (_loading) return AppPage.loading;
     if (_showProgress) return AppPage.progress;
     if (_showStudents) return AppPage.students;
+    if (_changingPin) return AppPage.changePin;
     if (homeworkFlow != null) return AppPage.homework;
     if (_failure != null || activityPhase == ExercisePhase.error) {
       return AppPage.error;
@@ -209,6 +212,10 @@ class AppController extends ChangeNotifier {
           onAreaSelector?.call();
         case MenuCommand.logout:
           onLogout?.call();
+        case MenuCommand.changePin:
+          _speech.begin();
+          _changingPin = true;
+          notifyListeners();
         case MenuCommand.previous:
           back();
         case MenuCommand.homeworks:
@@ -260,7 +267,11 @@ class AppController extends ChangeNotifier {
   }
 
   void back() {
-    if (_showProgress) {
+    if (_changingPin) {
+      _changingPin = false;
+      notifyListeners();
+      _announceMenu();
+    } else if (_showProgress) {
       _showProgress = false;
       notifyListeners();
       if (!_showStudents) _announceMenu();

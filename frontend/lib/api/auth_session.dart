@@ -4,8 +4,9 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 
-import 'backend.dart';
 import '../models/area.dart';
+import '../models/pin_update_result.dart';
+import 'backend.dart';
 
 class AuthSession extends ChangeNotifier {
   AuthSession({this.baseUrl = backendUrl});
@@ -16,6 +17,8 @@ class AuthSession extends ChangeNotifier {
   String? identifier;
   String? name;
   UserRole? role;
+  bool pinTemporary = false;
+  int get pinLength => role == UserRole.student ? 4 : 6;
   bool expired = false;
   DateTime? _lastInteraction;
   DateTime? _lastReported;
@@ -49,6 +52,7 @@ class AuthSession extends ChangeNotifier {
         userId = data['user_id'] as int;
         this.identifier = identifier.trim().toLowerCase();
         name = data['name'] as String;
+        pinTemporary = data['pin_temporary'] == true;
         expired = false;
         backendToken = token;
         onUnauthorized = _unauthorized;
@@ -69,6 +73,60 @@ class AuthSession extends ChangeNotifier {
     }
   }
 
+  Future<PinUpdateResult> savePin(
+    String? currentPin,
+    String newPin,
+    String confirmation,
+  ) async {
+    final current = token;
+    if (current == null) return PinUpdateResult.failed;
+    if (newPin.length != pinLength || !RegExp(r'^[0-9]+$').hasMatch(newPin)) {
+      return PinUpdateResult.invalidNewPin;
+    }
+    if (newPin != confirmation) return PinUpdateResult.mismatch;
+    if (currentPin != null &&
+        (currentPin.length != pinLength ||
+            !RegExp(r'^[0-9]+$').hasMatch(currentPin))) {
+      return PinUpdateResult.incorrectCurrentPin;
+    }
+
+    final client = HttpClient()
+      ..connectionTimeout = const Duration(seconds: 10);
+    try {
+      final request = await client.postUrl(Uri.parse('$baseUrl/api/auth/pin'));
+      request.headers.set(HttpHeaders.authorizationHeader, 'Bearer $current');
+      request.headers.contentType = ContentType.json;
+      request.write(
+        jsonEncode({'new_pin': newPin, 'current_pin': ?currentPin}),
+      );
+      final response = await request.close().timeout(
+        const Duration(seconds: 30),
+      );
+      await response.drain<void>().timeout(const Duration(seconds: 30));
+      if (token != current) return PinUpdateResult.failed;
+      switch (response.statusCode) {
+        case 200:
+          if (pinTemporary) {
+            pinTemporary = false;
+            notifyListeners();
+          }
+          return PinUpdateResult.saved;
+        case 400:
+          return PinUpdateResult.incorrectCurrentPin;
+        case 401:
+        case 409:
+          _unauthorized(current);
+          return PinUpdateResult.failed;
+        default:
+          return PinUpdateResult.failed;
+      }
+    } catch (_) {
+      return PinUpdateResult.failed;
+    } finally {
+      client.close(force: true);
+    }
+  }
+
   Future<void> logout() async {
     final current = token;
     if (current == null) return;
@@ -76,6 +134,7 @@ class AuthSession extends ChangeNotifier {
     _idleTimer?.cancel();
     token = null;
     role = null;
+    pinTemporary = false;
     backendToken = null;
     expired = false;
     notifyListeners();
@@ -123,6 +182,7 @@ class AuthSession extends ChangeNotifier {
     _idleTimer?.cancel();
     token = null;
     role = null;
+    pinTemporary = false;
     backendToken = null;
     expired = true;
     notifyListeners();

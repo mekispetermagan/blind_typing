@@ -9,7 +9,7 @@ from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from sqlalchemy.orm import Session
 
 from .database import engine
-from .models import AuthSession, User
+from .models import AuthSession, Role, User
 from .models.base import utc_now
 
 IDLE_LIMIT = timedelta(minutes=10)
@@ -32,7 +32,11 @@ def verify_pin(value: str, pin: str) -> bool:
         return False
 
 
-def current_user(credentials: HTTPAuthorizationCredentials | None = Depends(bearer)) -> User:
+def valid_pin(pin: str, role: Role) -> bool:
+    return len(pin) == (4 if role == Role.STUDENT else 6) and pin.isascii() and pin.isdigit()
+
+
+def authenticated_user(credentials: HTTPAuthorizationCredentials | None = Depends(bearer)) -> User:
     if credentials is None:
         raise HTTPException(401, 'Authentication required', headers={'WWW-Authenticate': 'Bearer'})
     with Session(engine) as session:
@@ -43,3 +47,9 @@ def current_user(credentials: HTTPAuthorizationCredentials | None = Depends(bear
                 session.commit()
             raise HTTPException(401, 'Session expired', headers={'WWW-Authenticate': 'Bearer'})
         return session.get(User, auth.user_id)
+
+
+def current_user(user: User = Depends(authenticated_user)) -> User:
+    if user.pin_temporary:
+        raise HTTPException(403, 'PIN setup required')
+    return user
