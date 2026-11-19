@@ -12,6 +12,7 @@ class MenuScreen extends StatelessWidget {
     required this.breadcrumb,
     this.summary,
     required this.items,
+    this.uppercaseTitles = false,
     required this.selectedIndex,
     required this.mode,
     required this.onMove,
@@ -28,6 +29,7 @@ class MenuScreen extends StatelessWidget {
   final String breadcrumb;
   final String? summary;
   final List<MenuNode> items;
+  final bool uppercaseTitles;
   final int selectedIndex;
   final TypingMode mode;
   final ValueChanged<int> onMove;
@@ -77,6 +79,7 @@ class MenuScreen extends StatelessWidget {
             Expanded(
               child: MenuList(
                 items: items,
+                uppercaseTitles: uppercaseTitles,
                 selectedIndex: selectedIndex,
                 onActivate: onActivateIndex,
               ),

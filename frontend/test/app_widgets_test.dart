@@ -72,9 +72,11 @@ void main() {
       }
 
       expect(find.byType(MenuScreen), findsOneWidget);
+      expect(find.text('KILÉPÉS'), findsOneWidget);
       await capture('main_menu');
       await key(LogicalKeyboardKey.enter);
       await key(LogicalKeyboardKey.arrowRight);
+      expect(find.text('betűk'), findsOneWidget);
       await key(LogicalKeyboardKey.enter);
       expect(find.byType(TeachingScreen), findsOneWidget);
       await capture('teaching');

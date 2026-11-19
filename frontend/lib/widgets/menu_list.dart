@@ -6,11 +6,13 @@ import '../models/menu.dart';
 class MenuList extends StatefulWidget {
   const MenuList({
     required this.items,
+    this.uppercaseTitles = false,
     required this.selectedIndex,
     required this.onActivate,
     super.key,
   });
   final List<MenuNode> items;
+  final bool uppercaseTitles;
   final int selectedIndex;
   final ValueChanged<int> onActivate;
   @override
@@ -53,7 +55,10 @@ class _MenuListState extends State<MenuList> {
         selected: index == widget.selectedIndex,
         selectedTileColor: Theme.of(context).colorScheme.primaryContainer,
         title: Text(
-          widget.items[index].title,
+          widget.uppercaseTitles
+              ? widget.items[index].title.toUpperCase()
+              : widget.items[index].title,
+          semanticsLabel: widget.items[index].title,
           style: const TextStyle(fontSize: 24),
         ),
         trailing: Icon(

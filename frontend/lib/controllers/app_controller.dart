@@ -100,6 +100,8 @@ class AppController extends ChangeNotifier {
     return _typing != null ? AppPage.typing : AppPage.teaching;
   }
 
+  bool get isAreaMainMenu => page == AppPage.menu && menu == _catalog?.root;
+
   MenuNode get menu {
     final activityMenu = _activityMenu;
     if (activityMenu == null) return _path.last;

@@ -106,6 +106,7 @@ class _ApplicationView extends StatelessWidget {
           breadcrumb: controller.breadcrumb,
           summary: controller.completionSummary,
           items: controller.menu.children,
+          uppercaseTitles: controller.isAreaMainMenu,
           selectedIndex: controller.selectedIndex,
           mode: controller.mode,
           onMove: controller.moveSelection,
